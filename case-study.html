@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study – AECION</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-4">
+      <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
+      <nav class="space-x-6">
+        <a href="index.html#vision" class="hover:text-gray-300 transition">Vision</a>
+        <a href="index.html#technology" class="hover:text-gray-300 transition">Technology</a>
+        <a href="index.html#case-study" class="text-white font-semibold underline">Case Study</a>
+        <a href="index.html#impact" class="hover:text-gray-300 transition">Impact</a>
+        <a href="index.html#cta" class="hover:text-gray-300 transition">Partner</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 fade-in" id="overview">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4">Quantum-Enabled Autoantibody Mapping</h1>
+    <p class="text-lg md:text-2xl mb-8 text-gray-300">
+      Real-time, multi-organ mechanistic insights through a digital twin powered by quantum entanglement and coherence.
+    </p>
+    <div class="flex flex-col md:flex-row gap-4 mb-4">
+      <a href="index.html" class="border border-white px-6 py-3 font-semibold hover:bg-gray-800 rounded-md">
+        Return to Homepage
+      </a>
+      <a href="mailto:support@aecion.com" class="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-500 rounded-md">
+        Email Support
+      </a>
+    </div>
+  </section>
+
+  <!-- Overview Section -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
+    <h2 class="text-4xl font-bold mb-8 text-white text-center">Overview</h2>
+    <p class="text-gray-300 text-center mb-6">
+      Anti–Jo-1 autoantibodies initiate rapid, multi-step inflammatory cascades that traditional assays cannot fully capture. 
+      Our platform uses quantum entanglement and coherence principles to spatiotemporally map autoantibody proliferation and simulate disease trajectories in a live digital twin.
+    </p>
+    <p class="text-gray-300 text-center">
+      This approach compresses years of pathology into seconds, providing mechanistic insights, predictive simulations, and precision-guided therapeutic targets.
+    </p>
+  </section>
+
+  <!-- Quantum Principles Section -->
+  <section class="bg-gray-900 py-20 px-4 fade-in">
+    <h2 class="text-4xl font-bold mb-12 text-white text-center">Quantum Principles & Digital Twin Mapping</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
+        <h3 class="text-2xl font-semibold mb-4">Quantum Entanglement</h3>
+        <p class="text-gray-300">
+          Preserves correlations of molecular and cellular signals across tissues in real-time, enabling precise multi-organ mapping.
+        </p>
+      </div>
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.2s">
+        <h3 class="text-2xl font-semibold mb-4">Quantum Coherence</h3>
+        <p class="text-gray-300">
+          Maintains the flow of information between immune, muscular, pulmonary, GI, and neural systems to model full disease dynamics.
+        </p>
+      </div>
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.4s">
+        <h3 class="text-2xl font-semibold mb-4">Digital Twin Simulation</h3>
+        <p class="text-gray-300">
+          Constructs a virtual replica of patient physiology, simulating autoantibody cascades and downstream organ-specific effects in seconds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mechanistic Cascade Section -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
+    <h2 class="text-4xl font-bold mb-12 text-white text-center">Mechanistic Cascade of Anti–Jo-1</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in">
+        <h3 class="text-2xl font-semibold mb-4">Clinical Phenotyping & Autoantibody Profiling</h3>
+        <p class="text-gray-300">
+          Multi-modal integration of symptoms, organ-specific manifestations, and anti–Jo-1 presence enables stratification of antisynthetase phenotypes and precise disease trajectory mapping.
+        </p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in" style="animation-delay:0.2s">
+        <h3 class="text-2xl font-semibold mb-4">Tissue & Organ Systems</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2">
+          <li>Muscle → Myositis, fiber necrosis</li>
+          <li>Lung → Interstitial lung disease</li>
+          <li>Gastrointestinal → TNF-α-mediated GERD</li>
+          <li>Esophagus → Sphincter dysfunction</li>
+          <li>Skin → SRC-driven dermal inflammation</li>
+          <li>Joints → Polyarthritis</li>
+          <li>Neurological → Connectomic misalignment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Molecular Players Section -->
+  <section class="bg-gray-900 py-20 px-4 fade-in">
+    <h2 class="text-4xl font-bold mb-12 text-white text-center">Key Molecular Players</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
+        <h3 class="text-2xl font-semibold mb-4">SYK</h3>
+        <p class="text-gray-300">Amplifies pro-inflammatory signaling via NF-κB, MAPK, and PI3K-AKT, driving cytokine transcription and immune cell recruitment.</p>
+      </div>
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.2s">
+        <h3 class="text-2xl font-semibold mb-4">SRC</h3>
+        <p class="text-gray-300">Mediates dermal inflammation, barrier dysfunction, and amplification of autoantibody-driven skin pathology.</p>
+      </div>
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.4s">
+        <h3 class="text-2xl font-semibold mb-4">MMP-3 & TNF-α</h3>
+        <p class="text-gray-300">Drives multi-organ inflammation, ECM remodeling, TNF-α amplification, and neuromuscular disruption leading to GERD, ocular symptoms, and Raynaud’s phenomenon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Systems Integration Section -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
+    <h2 class="text-4xl font-bold mb-12 text-white text-center">Systems-Level Quantum Integration</h2>
+    <p class="text-gray-300 text-center mb-8">
+      Multi-organ atlas of anti–Jo-1 activity using quantum-coherent digital twin simulations, revealing inter-organ signaling, organ-specific pathology, and predictive outcomes.
+    </p>
+    <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto fade-in">
+      <div class="bg-gray-900 border border-gray-700 p-4 rounded-2xl text-gray-200 font-semibold text-center">Muscle Fiber Necrosis</div>
+      <div class="bg-gray-900 border border-gray-700 p-4 rounded-2xl text-gray-200 font-semibold text-center">Interstitial Lung Disease</div>
+      <div class="bg-gray-900 border border-gray-700 p-4 rounded-2xl text-gray-200 font-semibold text-center">GERD & Esophageal Dysfunction</div>
+      <div class="bg-gray-900 border border-gray-700 p-4 rounded-2xl text-gray-200 font-semibold text-center">Neuroimmune Connectomic Misalignment</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center fade-in">
+    <p class="text-gray-300 mb-4">
+      All case study simulations and mappings are powered by our proprietary quantum-digital twin platform.
+    </p>
+    <p class="text-gray-500 mb-4">Email us directly: <a href="mailto:support@aecion.com" class="hover:text-white">support@aecion.com</a></p>
+  </footer>
+
+  <script>
+    lucide.replace();
+    // Scroll fade-in for elements
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
