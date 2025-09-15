@@ -8,6 +8,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html { scroll-behavior: smooth; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -15,48 +17,42 @@
   <!-- Navigation -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-      <a href="#" class="text-2xl font-bold">AECION</a>
-      <nav class="space-x-6">
-        <a href="#vision" class="hover:text-gray-300">Vision</a>
-        <a href="#technology" class="hover:text-gray-300">Technology</a>
-        <a href="#case-study" class="hover:text-gray-300">Case Study</a>
-        <a href="#impact" class="hover:text-gray-300">Impact</a>
-        <a href="#cta" class="hover:text-gray-300">Partner</a>
+      <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
+      <nav class="space-x-4 sm:space-x-6">
+        <a href="index.html" class="font-semibold underline">Home</a>
+        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
+        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
+        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-black via-gray-900 to-black">
-    <!-- Placeholder for Video or Animated Graphic -->
-    <div class="w-full h-96 bg-gray-800 rounded-xl mb-8 flex justify-center items-center">
+    <div class="w-full h-64 sm:h-96 bg-gray-800 rounded-xl mb-8 flex justify-center items-center fade-in">
       <p class="text-gray-400">[Animated 3D Digital Twin Video Placeholder]</p>
     </div>
-    <h1 class="text-5xl md:text-6xl font-bold mb-4">The Digital Twin of Health.</h1>
-    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mb-8">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">The Digital Twin of Health.</h1>
+    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
       Visualize disease at its source. Our quantum sensing platform provides real-time, spatiotemporal mapping of biological processes for unprecedented diagnostics and personalized therapy.
     </p>
-    <div class="flex flex-col md:flex-row gap-4">
-      <a href="#technology" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500">Discover Our Technology</a>
-      <a href="#cta" class="border border-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800">Request a Demo</a>
+    <div class="flex flex-col sm:flex-row gap-4 fade-in" style="animation-delay:0.6s;">
+      <a href="technology.html" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">Discover Our Technology</a>
+      <a href="#cta" class="border border-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800 transition">Request a Demo</a>
     </div>
   </section>
 
-  <!-- Section 2: Vision -->
-  <section class="py-20 px-4 max-w-6xl mx-auto text-center" id="vision">
-    <h2 class="text-4xl font-bold mb-6">From Molecules to Medicine.</h2>
-    <p class="text-gray-300 mb-4">
-      We are bridging the gap between molecular biology and real-time clinical insights. Our proprietary technology uses entangled qubits as biological sensors, allowing us to go beyond traditional diagnostics.
-    </p>
-    <p class="text-gray-300">
-      For the first time, we can observe the precise location, movement, and activity of autoantibodies and other biomarkers within the body, creating a living, breathing digital twin of a human condition. This is not just data; it's a dynamic map of disease progression.
-    </p>
+  <!-- Sections -->
+  <section class="py-20 px-4 max-w-6xl mx-auto text-center fade-in" id="vision">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6">From Molecules to Medicine.</h2>
+    <p class="text-gray-300 mb-4">We are bridging the gap between molecular biology and real-time clinical insights. Our proprietary technology uses entangled qubits as biological sensors, allowing us to go beyond traditional diagnostics.</p>
+    <p class="text-gray-300">For the first time, we can observe the precise location, movement, and activity of autoantibodies and other biomarkers within the body, creating a living, breathing digital twin of a human condition. This is not just data; it's a dynamic map of disease progression.</p>
   </section>
 
-  <!-- Section 3: Technology -->
-  <section class="bg-gray-900 py-20 px-4" id="technology">
-    <h2 class="text-4xl font-bold mb-12 text-center">How It Works: Quantum-Enabled Precision.</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  <section class="bg-gray-900 py-20 px-4 fade-in" id="technology">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">How It Works: Quantum-Enabled Precision.</h2>
+    <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
         <i data-lucide="zap" class="w-10 h-10 text-blue-400 mx-auto mb-4"></i>
         <h3 class="text-2xl font-semibold mb-2">Quantum Entanglement</h3>
@@ -75,64 +71,37 @@
     </div>
   </section>
 
-  <!-- Section 4: Case Study -->
-  <section class="py-20 px-4 max-w-6xl mx-auto text-center" id="case-study">
-    <h2 class="text-4xl font-bold mb-8">The Digital Twin of Antisynthetase Syndrome</h2>
-    <p class="text-gray-300 mb-6">
-      We have successfully demonstrated the power of our platform with the anti-Jo-1 autoantibody, a key biomarker for Antisynthetase Syndrome (ASyS).
-    </p>
-    <ul class="list-disc list-inside text-gray-300 space-y-2 mb-6">
-      <li><strong>Real-time Visualization:</strong> Live 3D map of myositis, interstitial lung disease, and joint inflammation in ASyS patients.</li>
-      <li><strong>Predictive Analytics:</strong> Spatiotemporal patterns predict flare-ups and disease progression.</li>
-      <li><strong>Personalized Therapeutics:</strong> Simulation engine allows clinicians to optimize drug interventions.</li>
-    </ul>
-  </section>
-
-  <!-- Section 5: Impact -->
-  <section class="bg-gray-900 py-20 px-4" id="impact">
-    <h2 class="text-4xl font-bold mb-12 text-center">The Future of Medicine, Today</h2>
-    <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto text-center">
-      <div class="p-6 bg-black border border-gray-700 rounded-2xl hover:scale-105 transform transition">
-        <h3 class="text-2xl font-semibold mb-2">Enhanced Diagnostics</h3>
-        <p class="text-gray-300">Continuous, real-time view of disease.</p>
-      </div>
-      <div class="p-6 bg-black border border-gray-700 rounded-2xl hover:scale-105 transform transition">
-        <h3 class="text-2xl font-semibold mb-2">Precision Therapy</h3>
-        <p class="text-gray-300">Optimize drug efficacy and dosage.</p>
-      </div>
-      <div class="p-6 bg-black border border-gray-700 rounded-2xl hover:scale-105 transform transition">
-        <h3 class="text-2xl font-semibold mb-2">Accelerated Research</h3>
-        <p class="text-gray-300">Visualize drug-target interactions at the quantum level.</p>
-      </div>
-      <div class="p-6 bg-black border border-gray-700 rounded-2xl hover:scale-105 transform transition">
-        <h3 class="text-2xl font-semibold mb-2">Unprecedented Insights</h3>
-        <p class="text-gray-300">Unlock invisible biological processes and disease mechanisms.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 6: Call to Action -->
-  <section class="py-20 px-4 max-w-6xl mx-auto text-center" id="cta">
-    <h2 class="text-4xl font-bold mb-6">Partner with Us</h2>
-    <p class="text-gray-300 mb-6">
-      Are you a pharmaceutical company, a leading research institution, or a healthcare provider committed to innovation? Join us in shaping the future of medicine.
-    </p>
-    <div class="flex flex-col md:flex-row gap-4 justify-center">
-      <a href="#" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500">Schedule a Consultation</a>
-      <a href="#" class="border border-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800">Download Our White Paper</a>
-    </div>
-  </section>
-
   <!-- Footer -->
-  <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center">
+  <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center fade-in">
     <div class="mb-4">
-      <a href="#" class="hover:text-white mx-2">About Us</a> |
-      <a href="#" class="hover:text-white mx-2">The Science</a> |
-      <a href="#" class="hover:text-white mx-2">News</a>
+      <a href="index.html" class="hover:text-white mx-2 transition">About Us</a> |
+      <a href="technology.html" class="hover:text-white mx-2 transition">Technology</a> |
+      <a href="case-study.html" class="hover:text-white mx-2 transition">Case Study</a> |
+      <a href="impact.html" class="hover:text-white mx-2 transition">Impact</a>
     </div>
     <div class="mb-4">
-      <span>Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-white">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</span>
+      <span>Phone: 123-456-7890 | Email: 
+        <a href="mailto:support@aecion.com" class="hover:text-white transition">support@aecion.com</a> | 
+        Address: 123 Quantum Way, Tech City
+      </span>
     </div>
     <div class="mb-4 flex justify-center gap-4 text-gray-500">
-      <i data-lucide="linkedin" class="w-6 h-6 hover:text-white"></i>
-      <i data-lucide="twitter" class
+      <a href="#"><i data-lucide="linkedin" class="w-6 h-6 hover:text-white transition"></i></a>
+      <a href="#"><i data-lucide="twitter" class="w-6 h-6 hover:text-white transition"></i></a>
+      <a href="#"><i data-lucide="github" class="w-6 h-6 hover:text-white transition"></i></a>
+    </div>
+    <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
+  </footer>
+
+  <script>
+    lucide.replace();
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.style.animationPlayState = 'running'; }
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

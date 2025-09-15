@@ -32,7 +32,7 @@
       <nav class="space-x-6">
         <a href="index.html#vision" class="hover:text-gray-300 transition">Vision</a>
         <a href="index.html#technology" class="hover:text-gray-300 transition">Technology</a>
-        <a href="index.html#case-study" class="text-white font-semibold underline">Case Study</a>
+        <a href="case-study.html" class="text-white font-semibold underline">Case Study</a>
         <a href="index.html#impact" class="hover:text-gray-300 transition">Impact</a>
         <a href="index.html#cta" class="hover:text-gray-300 transition">Partner</a>
       </nav>
@@ -150,6 +150,11 @@
     </div>
   </section>
 
+  <!-- Back to Home Button -->
+  <section class="py-12 text-center">
+    <a href="index.html" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">Back to Home</a>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center fade-in">
     <p class="text-gray-300 mb-4">
@@ -160,7 +165,6 @@
 
   <script>
     lucide.replace();
-    // Scroll fade-in for elements
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
