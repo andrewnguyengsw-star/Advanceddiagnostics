@@ -1,41 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
   <title>Case Study – AECION</title>
+  <meta name="description" content="Explore AECION's quantum-digital twin platform in action, mapping autoantibody dynamics and multi-organ interactions in real time.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.aecion.com/case-study" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.aecion.com/case-study">
+  <meta property="og:title" content="Case Study – AECION">
+  <meta property="og:description" content="Explore AECION's quantum-digital twin platform in action, mapping autoantibody dynamics and multi-organ interactions in real time.">
+  <meta property="og:image" content="https://www.aecion.com/case-study-og.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Case Study – AECION">
+  <meta name="twitter:description" content="Explore AECION's quantum-digital twin platform in action, mapping autoantibody dynamics and multi-organ interactions in real time.">
+  <meta name="twitter:image" content="https://www.aecion.com/case-study-twitter.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Robots Meta Tag -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AECION",
+    "url": "https://www.aecion.com",
+    "logo": "https://www.aecion.com/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/aecion",
+      "https://twitter.com/aecion",
+      "https://www.facebook.com/aecion"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-123-456-7890",
+      "contactType": "Customer Support",
+      "email": "support@aecion.com"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.aecion.com/case-study",
+    "name": "Case Study – AECION",
+    "description": "Explore AECION's quantum-digital twin platform in action, mapping autoantibody dynamics and multi-organ interactions in real time."
+  }
+  </script>
+
+  <!-- TailwindCSS and Icon Library -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Existing Styles -->
   <style>
     html { scroll-behavior: smooth; }
-
-    /* Fade-in animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
 
-  <!-- Navigation Bar -->
+  <!-- Navigation -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
-      <nav class="space-x-6">
-        <a href="index.html#vision" class="hover:text-gray-300 transition">Vision</a>
-        <a href="index.html#technology" class="hover:text-gray-300 transition">Technology</a>
-        <a href="case-study.html" class="text-white font-semibold underline">Case Study</a>
-        <a href="index.html#impact" class="hover:text-gray-300 transition">Impact</a>
-        <a href="index.html#cta" class="hover:text-gray-300 transition">Partner</a>
+      <nav class="space-x-4 sm:space-x-6">
+        <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
+        <a href="case-study.html" class="font-semibold underline">Case Study</a>
+        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
+        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
       </nav>
     </div>
   </header>
@@ -47,12 +97,8 @@
       Real-time, multi-organ mechanistic insights through a digital twin powered by quantum entanglement and coherence.
     </p>
     <div class="flex flex-col md:flex-row gap-4 mb-4">
-      <a href="index.html" class="border border-white px-6 py-3 font-semibold hover:bg-gray-800 rounded-md">
-        Return to Homepage
-      </a>
-      <a href="mailto:support@aecion.com" class="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-500 rounded-md">
-        Email Support
-      </a>
+      <a href="index.html" class="border border-white px-6 py-3 font-semibold hover:bg-gray-800 rounded-md">Return to Homepage</a>
+      <a href="mailto:support@aecion.com" class="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-500 rounded-md">Email Support</a>
     </div>
   </section>
 
@@ -118,50 +164,19 @@
     </div>
   </section>
 
-  <!-- Key Molecular Players Section -->
-  <section class="bg-gray-900 py-20 px-4 fade-in">
-    <h2 class="text-4xl font-bold mb-12 text-white text-center">Key Molecular Players</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
-        <h3 class="text-2xl font-semibold mb-4">SYK</h3>
-        <p class="text-gray-300">Amplifies pro-inflammatory signaling via NF-κB, MAPK, and PI3K-AKT, driving cytokine transcription and immune cell recruitment.</p>
-      </div>
-      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.2s">
-        <h3 class="text-2xl font-semibold mb-4">SRC</h3>
-        <p class="text-gray-300">Mediates dermal inflammation, barrier dysfunction, and amplification of autoantibody-driven skin pathology.</p>
-      </div>
-      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.4s">
-        <h3 class="text-2xl font-semibold mb-4">MMP-3 & TNF-α</h3>
-        <p class="text-gray-300">Drives multi-organ inflammation, ECM remodeling, TNF-α amplification, and neuromuscular disruption leading to GERD, ocular symptoms, and Raynaud’s phenomenon.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Systems Integration Section -->
-  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
-    <h2 class="text-4xl font-bold mb-12 text-white text-center">Systems-Level Quantum Integration</h2>
-    <p class="text-gray-300 text-center mb-8">
-      Multi-organ atlas of anti–Jo-1 activity using quantum-coherent digital twin simulations, revealing inter-organ signaling, organ-specific pathology, and predictive outcomes.
-    </p>
-    <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto fade-in">
-      <div class="bg-gray-900 border border-gray-700 p-4 rounded-2xl text-gray-200 font-semibold text-center">Muscle Fiber Necrosis</div>
-      <div class="bg-gray-900 border border-gray-700 p-4 rounded-2xl text-gray-200 font-semibold text-center">Interstitial Lung Disease</div>
-      <div class="bg-gray-900 border border-gray-700 p-4 rounded-2xl text-gray-200 font-semibold text-center">GERD & Esophageal Dysfunction</div>
-      <div class="bg-gray-900 border border-gray-700 p-4 rounded-2xl text-gray-200 font-semibold text-center">Neuroimmune Connectomic Misalignment</div>
-    </div>
-  </section>
-
-  <!-- Back to Home Button -->
-  <section class="py-12 text-center">
-    <a href="index.html" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">Back to Home</a>
-  </section>
-
   <!-- Footer -->
   <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center fade-in">
     <p class="text-gray-300 mb-4">
       All case study simulations and mappings are powered by our proprietary quantum-digital twin platform.
     </p>
     <p class="text-gray-500 mb-4">Email us directly: <a href="mailto:support@aecion.com" class="hover:text-white">support@aecion.com</a></p>
+    <div class="mb-4">
+      <a href="index.html" class="hover:text-white mx-2 transition">Home</a> |
+      <a href="technology.html" class="hover:text-white mx-2 transition">Technology</a> |
+      <a href="quantum-application.html" class="hover:text-white mx-2 transition">Quantum Application</a> |
+      <a href="case-study.html" class="hover:text-white mx-2 transition">Case Study</a> |
+      <a href="impact.html" class="hover:text-white mx-2 transition">Impact</a>
+    </div>
   </footer>
 
   <script>

@@ -1,13 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
   <title>Impact – AECION</title>
   <meta name="description" content="See the impact of AECION's quantum-biophysical platform on human, animal, and plant health — transforming diagnostics and insights.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.aecion.com/impact" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.aecion.com/impact">
+  <meta property="og:title" content="Impact – AECION">
+  <meta property="og:description" content="See the impact of AECION's quantum-biophysical platform on human, animal, and plant health — transforming diagnostics and insights.">
+  <meta property="og:image" content="https://www.aecion.com/impact-og.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Impact – AECION">
+  <meta name="twitter:description" content="See the impact of AECION's quantum-biophysical platform on human, animal, and plant health — transforming diagnostics and insights.">
+  <meta name="twitter:image" content="https://www.aecion.com/impact-twitter.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AECION",
+    "url": "https://www.aecion.com",
+    "logo": "https://www.aecion.com/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/aecion",
+      "https://twitter.com/aecion",
+      "https://www.facebook.com/aecion"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-123-456-7890",
+      "contactType": "Customer Support",
+      "email": "support@aecion.com"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.aecion.com/impact",
+    "name": "Impact – AECION",
+    "description": "See the impact of AECION's quantum-biophysical platform on human, animal, and plant health — transforming diagnostics and insights."
+  }
+  </script>
+
+  <!-- Tailwind and Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Styles -->
   <style>
     html { scroll-behavior: smooth; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
@@ -41,7 +100,7 @@
 
   <!-- Impact Grid -->
   <section class="py-20 px-4 max-w-6xl mx-auto grid md:grid-cols-3 gap-8 fade-in">
-    <div class="bg-gray-900 p-6 rounded-2xl text-center">
+    <div class="bg-gray-900 p-6 rounded-2xl text-center hover:scale-105 transform transition">
       <img src="images/human-health.jpg" alt="Human health and mind" class="rounded-xl mb-4 w-full h-48 object-cover">
       <h3 class="text-2xl font-semibold mb-4">Human Health & Mind</h3>
       <ul class="list-disc list-inside text-gray-300 space-y-2">
@@ -52,14 +111,14 @@
         <li>Insights for parents, caregivers, and therapists</li>
       </ul>
     </div>
-    <div class="bg-gray-900 p-6 rounded-2xl text-center">
+    <div class="bg-gray-900 p-6 rounded-2xl text-center hover:scale-105 transform transition">
       <img src="images/animal-health.jpg" alt="Animal health and behavior" class="rounded-xl mb-4 w-full h-48 object-cover">
       <h3 class="text-2xl font-semibold mb-4">Animal Health & Behavior</h3>
       <ul class="list-disc list-inside text-gray-300 space-y-2">
         <li>Diagnose conditions and detect distress behaviors</li>
       </ul>
     </div>
-    <div class="bg-gray-900 p-6 rounded-2xl text-center">
+    <div class="bg-gray-900 p-6 rounded-2xl text-center hover:scale-105 transform transition">
       <img src="images/plant-health.jpg" alt="Plant health" class="rounded-xl mb-4 w-full h-48 object-cover">
       <h3 class="text-2xl font-semibold mb-4">Plant Health</h3>
       <ul class="list-disc list-inside text-gray-300 space-y-2">
@@ -87,9 +146,14 @@
   </footer>
 
   <script>
+    lucide.replace();
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('opacity-100'); entry.target.classList.remove('opacity-0'); }});
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
   </script>

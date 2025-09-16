@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AECION | Redefining Health at the Quantum Level</title>
+  <meta name="description" content="Observe disease at its source. AECION uses quantum sensing to create a dynamic, living map of human biology.">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.aecion.com/" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.aecion.com/">
+  <meta property="og:title" content="AECION | Redefining Health at the Quantum Level">
+  <meta property="og:description" content="Observe disease at its source. AECION uses quantum sensing to create a dynamic, living map of human biology.">
+  <meta property="og:image" content="https://www.aecion.com/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AECION | Redefining Health at the Quantum Level">
+  <meta name="twitter:description" content="Observe disease at its source. AECION uses quantum sensing to create a dynamic, living map of human biology.">
+  <meta name="twitter:image" content="https://www.aecion.com/twitter-image.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+  <!-- Robots Meta Tag -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AECION",
+    "url": "https://www.aecion.com",
+    "logo": "https://www.aecion.com/logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/aecion",
+      "https://twitter.com/aecion",
+      "https://www.facebook.com/aecion"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-123-456-7890",
+      "contactType": "Customer Support",
+      "email": "support@aecion.com"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.aecion.com",
+    "name": "AECION",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.aecion.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- TailwindCSS and Icon Library -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Existing Styles -->
   <style>
     html { scroll-behavior: smooth; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
@@ -21,6 +86,7 @@
       <nav class="space-x-4 sm:space-x-6">
         <a href="index.html" class="font-semibold underline">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
         <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
         <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
@@ -33,90 +99,54 @@
     <div class="w-full h-64 sm:h-96 bg-gray-800 rounded-xl mb-8 flex justify-center items-center fade-in">
       <p class="text-gray-400">[Animated 3D Digital Twin Video Placeholder]</p>
     </div>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">The Digital Twin of Health.</h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">The Digital Twin of Health</h1>
     <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
-      Visualize disease at its source. Our quantum sensing platform provides real-time, spatiotemporal mapping of biological processes for unprecedented diagnostics and personalized therapy.
+      Observe disease at its source. Our platform uses quantum sensing to create a dynamic, living map of human biology.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 fade-in" style="animation-delay:0.6s;">
       <a href="technology.html" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">Discover Our Technology</a>
-      <a href="#cta" class="border border-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800 transition">Request a Demo</a>
+      <a href="quantum-application.html" class="border border-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800 transition">Explore Our Quantum Platform</a>
     </div>
   </section>
 
-  <!-- Vision Section -->
+  <!-- Overview Section -->
   <section class="py-20 px-4 max-w-6xl mx-auto text-center fade-in" id="vision">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6">From Molecules to Medicine.</h2>
-    <p class="text-gray-300 mb-4">We are bridging the gap between molecular biology and real-time clinical insights. Our proprietary technology uses entangled qubits as biological sensors, allowing us to go beyond traditional diagnostics.</p>
-    <p class="text-gray-300">For the first time, we can observe the precise location, movement, and activity of autoantibodies and other biomarkers within the body, creating a living, breathing digital twin of a human condition. This is not just data; it's a dynamic map of disease progression.</p>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6">From Molecules to Medicine</h2>
+    <p class="text-gray-300 mb-4">We bridge molecular biology and clinical insights using entangled qubits as biological sensors. For the first time, we can track the precise location and activity of biomarkers in the body.</p>
+    <p class="text-gray-300">This dynamic map allows unprecedented understanding of disease progression, guiding precise interventions.</p>
   </section>
 
   <!-- How It Works Section -->
   <section class="bg-gray-900 py-20 px-4 fade-in" id="technology">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">How It Works: Quantum-Enabled Precision.</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">How It Works</h2>
     <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
         <i data-lucide="zap" class="w-10 h-10 text-blue-400 mx-auto mb-4"></i>
         <h3 class="text-2xl font-semibold mb-2">Quantum Entanglement</h3>
-        <p class="text-gray-300">We tag biomarkers with an entangled qubit pair. One half (signal qubit) is deployed in the body, the other (idler qubit) is monitored remotely within our quantum computing platform.</p>
+        <p class="text-gray-300">Biomarkers are tagged with entangled qubits, allowing one to sense biological events while the other is monitored remotely.</p>
       </div>
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
         <i data-lucide="activity" class="w-10 h-10 text-purple-400 mx-auto mb-4"></i>
         <h3 class="text-2xl font-semibold mb-2">Real-Time Interaction</h3>
-        <p class="text-gray-300">When a biological event occurs—such as an autoantibody binding—it instantly collapses the signal qubit's quantum state.</p>
+        <p class="text-gray-300">Biological events, like antibody binding, instantly affect the quantum state of the probe, capturing activity in real time.</p>
       </div>
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
         <i data-lucide="monitor" class="w-10 h-10 text-green-400 mx-auto mb-4"></i>
         <h3 class="text-2xl font-semibold mb-2">Instantaneous Mapping</h3>
-        <p class="text-gray-300">Due to entanglement, this change is mirrored in the idler qubit. Our system translates it into a precise, time-stamped location on your personalized digital twin.</p>
+        <p class="text-gray-300">Entanglement ensures changes are mirrored to the monitoring qubit, creating a precise map of biological activity.</p>
       </div>
     </div>
   </section>
 
-  <!-- Quantum Comparison Section -->
-  <section class="bg-black text-white py-16 px-6 md:px-20 fade-in">
-    <div class="max-w-7xl mx-auto">
-      <!-- Section Header -->
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold mb-4">How We’re Different from Quantum Computing</h2>
-        <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-          We use quantum physics to observe biology in real time — not to simulate it.
-        </p>
-      </div>
-
-      <!-- Comparison Table -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <!-- Quantum Computing Column -->
-        <div class="bg-gray-900 p-8 rounded-2xl shadow-lg">
-          <h3 class="text-2xl font-semibold mb-6">Quantum Computing</h3>
-          <ul class="space-y-4 text-gray-300">
-            <li>• Goal: Simulate molecules or run general-purpose algorithms on a quantum computer.</li>
-            <li>• Requires <strong>millions of error-corrected qubits</strong> to simulate large proteins or complex systems.</li>
-            <li>• Produces <strong>theoretical predictions</strong> about how a system might behave.</li>
-            <li>• Mainly focused on future drug discovery simulations or optimization problems.</li>
-            <li>• Still many years away from simulating full biological systems at scale.</li>
-          </ul>
-        </div>
-
-        <!-- Our Platform Column -->
-        <div class="bg-gray-900 p-8 rounded-2xl shadow-lg">
-          <h3 class="text-2xl font-semibold mb-6">Our Quantum Biosensing Platform</h3>
-          <ul class="space-y-4 text-gray-300">
-            <li>• Goal: <strong>Directly observe and analyze every human condition and every drug</strong> in real time using entanglement and quantum sensing.</li>
-            <li>• Works with <strong>quantum probes and entangled photons</strong> — no need for large-scale, fault-tolerant quantum computers.</li>
-            <li>• Produces <strong>real-world, real-time measurements</strong> of how biology is actually behaving across immune, neural, and metabolic systems.</li>
-            <li>• Can analyze <strong>every drug, every molecule, every biological pathway</strong> dynamically — revealing exactly how interventions work at the quantum level.</li>
-            <li>• Can be applied to <strong>any disease, any biological signal, any human condition</strong>, with direct readouts that are clinically relevant.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Key Takeaway -->
-      <div class="mt-12 text-center max-w-3xl mx-auto">
-        <p class="text-lg text-gray-300">
-          <strong>Key Takeaway:</strong> We are <strong>not a general-purpose quantum computer company</strong>. We are building the first <strong>quantum biosensing and mapping platform</strong> capable of observing any human condition and analyzing any drug in real time, delivering quantum-level insight into health, disease, and treatment response.
-        </p>
-      </div>
-    </div>
+  <!-- Quantum Application Teaser Section -->
+  <section class="py-20 px-4 max-w-6xl mx-auto text-center fade-in" id="quantum-app">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6">Our Quantum Application</h2>
+    <p class="text-gray-300 mb-6 max-w-3xl mx-auto">
+      Explore the full power of our quantum biosensing platform. Using entanglement and quantum probes, we can observe biology as it happens — from molecules to entire human systems. This enables real-time mapping of disease, drug interactions, and human biology at a level no classical system can achieve.
+    </p>
+    <a href="quantum-application.html" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">
+      Learn More About Our Quantum Platform
+    </a>
   </section>
 
   <!-- Footer -->
@@ -124,6 +154,7 @@
     <div class="mb-4">
       <a href="index.html" class="hover:text-white mx-2 transition">About Us</a> |
       <a href="technology.html" class="hover:text-white mx-2 transition">Technology</a> |
+      <a href="quantum-application.html" class="hover:text-white mx-2 transition">Quantum Application</a> |
       <a href="case-study.html" class="hover:text-white mx-2 transition">Case Study</a> |
       <a href="impact.html" class="hover:text-white mx-2 transition">Impact</a>
     </div>
@@ -151,5 +182,6 @@
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
   </script>
+
 </body>
 </html>
