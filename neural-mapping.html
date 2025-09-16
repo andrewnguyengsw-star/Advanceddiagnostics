@@ -4,42 +4,36 @@
   <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neural Impulse Mapping – AECION</title>
-  <meta name="description" content="Explore AECION's quantum-digital twin platform translating neural impulses into predictive clinical insights in real time.">
+  <title>Quantum Neural Mapping in Antisynthetase Syndrome – AECION</title>
+  <meta name="description" content="Explore how quantum neural mapping decodes systemic inflammatory processes in Antisynthetase Syndrome, from autoantibody activation to systemic manifestations.">
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.aecion.com/neural-impulse-mapping" />
+  <link rel="canonical" href="https://www.aecion.com/quantum-neural-mapping-antisynthetase-syndrome" />
 
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.aecion.com/neural-impulse-mapping">
-  <meta property="og:title" content="Neural Impulse Mapping – AECION">
-  <meta property="og:description" content="Explore AECION's quantum-digital twin platform translating neural impulses into predictive clinical insights in real time.">
-  <meta property="og:image" content="https://www.aecion.com/neural-impulse-og.png">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.aecion.com/quantum-neural-mapping-antisynthetase-syndrome">
+  <meta property="og:title" content="Quantum Neural Mapping in Antisynthetase Syndrome – AECION">
+  <meta property="og:description" content="Explore how quantum neural mapping decodes systemic inflammatory processes in Antisynthetase Syndrome, from autoantibody activation to systemic manifestations.">
+  <meta property="og:image" content="https://www.aecion.com/og-image.png">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Neural Impulse Mapping – AECION">
-  <meta name="twitter:description" content="Explore AECION's quantum-digital twin platform translating neural impulses into predictive clinical insights in real time.">
-  <meta name="twitter:image" content="https://www.aecion.com/neural-impulse-twitter.png">
+  <meta name="twitter:title" content="Quantum Neural Mapping in Antisynthetase Syndrome – AECION">
+  <meta name="twitter:description" content="Explore how quantum neural mapping decodes systemic inflammatory processes in Antisynthetase Syndrome, from autoantibody activation to systemic manifestations.">
+  <meta name="twitter:image" content="https://www.aecion.com/twitter-image.png">
 
   <!-- Favicons -->
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-  <!-- Robots Meta Tag -->
-  <meta name="robots" content="index, follow">
-
-  <!-- TailwindCSS and Icon Library -->
+  <!-- TailwindCSS & Lucide Icons -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Existing Styles -->
+  <!-- Styles -->
   <style>
     html { scroll-behavior: smooth; }
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
-    .fade-delay-1 { animation-delay: 0.2s; }
-    .fade-delay-2 { animation-delay: 0.4s; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
@@ -49,12 +43,34 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
-      <nav class="space-x-4 sm:space-x-6">
+
+      <!-- Desktop Menu -->
+      <nav id="desktop-menu" class="hidden sm:flex space-x-4 sm:space-x-6">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
         <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
-        <a href="neural-impulse-mapping.html" class="font-semibold underline" aria-current="page">Neural Mapping</a>
+        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
+        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="sm:hidden">
+        <button id="menu-toggle" aria-label="Toggle navigation menu" class="p-2 rounded-md border border-gray-500">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700 overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-out">
+      <nav class="flex flex-col px-4 py-4 space-y-2">
+        <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
         <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
       </nav>
@@ -62,114 +78,129 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 fade-in" id="overview">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4">Neural Impulse Mapping & Clinical Translation</h1>
-    <p class="text-lg md:text-2xl mb-8 text-gray-300">
-      Converting quantum-detected neural activity into actionable clinical insights across organ systems in real time.
-    </p>
-    <div class="flex flex-col md:flex-row gap-4 mb-4">
-      <a href="case-study.html" class="border border-white px-6 py-3 font-semibold hover:bg-gray-800 rounded-md">Back to Case Study</a>
-      <a href="mailto:support@aecion.com" class="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-500 rounded-md">Contact Support</a>
-    </div>
-  </section>
-
-  <!-- Introduction -->
-  <section class="py-16 px-4 max-w-6xl mx-auto fade-in">
-    <h2 class="text-4xl font-bold mb-8 text-white text-center">Why Neural Impulse Mapping Matters</h2>
-    <p class="text-gray-300 text-center mb-6 max-w-4xl mx-auto">
-      Neural impulses are the body's rapid electrical communications. By detecting subtle fluctuations at the quantum level, our platform can reveal early signs of disease progression, organ dysfunction, and cognitive or behavioral changes before they manifest clinically.
-    </p>
-    <p class="text-gray-300 text-center max-w-4xl mx-auto">
-      This fusion of quantum sensing and digital twin simulation enables predictive, mechanistic, and personalized healthcare.
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-black via-gray-900 to-black">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">Quantum Neural Mapping in Antisynthetase Syndrome</h1>
+    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
+      Decoding systemic inflammation through quantum neural mapping: from anti-Jo-1 autoantibody activation to neuro-immune-lymphatic feedback loops.
     </p>
   </section>
 
-  <!-- How It Works -->
-  <section class="bg-gray-900 py-20 px-4 fade-in">
-    <h2 class="text-4xl font-bold mb-12 text-white text-center">How It Works</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
-        <h3 class="text-2xl font-semibold mb-4">Quantum Neural Detection</h3>
-        <p class="text-gray-300">
-          Ultra-sensitive quantum probes detect micro-fluctuations across central and peripheral nervous systems, capturing electrical activity invisible to traditional sensors.
-        </p>
-      </div>
-      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in fade-delay-1">
-        <h3 class="text-2xl font-semibold mb-4">Pattern Recognition & Entanglement Mapping</h3>
-        <p class="text-gray-300">
-          Signals are analyzed to identify correlated activity across distributed neural regions, generating synchronized maps of neural impulses in real time.
-        </p>
-      </div>
-      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in fade-delay-2">
-        <h3 class="text-2xl font-semibold mb-4">Clinical Translation</h3>
-        <p class="text-gray-300">
-          Detected patterns are converted into predictive clinical outputs, providing early markers for organ-specific dysfunction, cognitive states, and behavioral tendencies.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-20 space-y-16">
+    <!-- 1. Anti-Jo-1 Autoantibody Activation -->
+    <section class="fade-in" style="animation-delay:0.2s;">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">1. Anti-Jo-1 Autoantibody Activation</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Anti-Jo-1 autoantibodies initiate immune-mediated tissue damage.</li>
+        <li>Pro-inflammatory signaling pathways, notably <strong>NF-κB</strong>, are activated, leading to apoptosis and localized inflammation.</li>
+        <li>Peripheral tissues (muscles, joints, gastrointestinal tract) experience stress, edema, and immune activation.</li>
+      </ul>
+    </section>
 
-  <!-- Applications / Benefits -->
-  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
-    <h2 class="text-4xl font-bold mb-12 text-white text-center">Applications & Benefits</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in">
-        <h3 class="text-2xl font-semibold mb-4">Early Disease Detection</h3>
-        <p class="text-gray-300">
-          Identify subtle physiological or behavioral changes before they manifest clinically, enabling preemptive interventions.
-        </p>
-      </div>
-      <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in fade-delay-1">
-        <h3 class="text-2xl font-semibold mb-4">Mechanistic Insights</h3>
-        <p class="text-gray-300">
-          Understand how neural impulses drive organ-specific effects, linking microscopic signals to macroscopic clinical outcomes.
-        </p>
-      </div>
-      <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in fade-delay-2">
-        <h3 class="text-2xl font-semibold mb-4">Precision Therapy Guidance</h3>
-        <p class="text-gray-300">
-          Use real-time neural data to personalize interventions and monitor therapeutic efficacy across multiple systems.
-        </p>
-      </div>
-    </div>
-  </section>
+    <!-- 2. Peripheral and Visceral Neural Sensing -->
+    <section class="fade-in" style="animation-delay:0.4s;">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">2. Peripheral and Visceral Neural Sensing</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Peripheral nociceptors in muscles and joints detect tissue damage and inflammatory mediators.</li>
+        <li>Visceral nociceptors in the GI tract sense cytokine-induced irritation and tissue stress.</li>
+        <li>These peripheral signals encode the intensity, location, and temporal pattern of inflammation.</li>
+      </ul>
+    </section>
 
-  <!-- Call-to-Action -->
-  <section id="cta" class="py-16 px-4 text-center fade-in">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Partner with AECION</h2>
-    <p class="text-gray-300 mb-8 max-w-3xl mx-auto">
-      Collaborate with us to leverage quantum neural mapping for early detection, mechanistic understanding, and precision intervention.
-    </p>
-    <a href="mailto:support@aecion.com" class="bg-blue-600 text-white px-8 py-4 font-semibold rounded-md hover:bg-blue-500 transition">Contact Us</a>
-  </section>
+    <!-- 3. Central Neural Integration -->
+    <section class="fade-in" style="animation-delay:0.6s;">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">3. Central Neural Integration</h2>
+      <p class="text-gray-300 mb-4">Signals from peripheral and visceral nociceptors propagate to the spinal cord, brainstem, and hypothalamus. CNS centers integrate multi-site inputs, producing a neural signature that reflects the systemic inflammatory state. These neural signatures can be decoded to infer:</p>
+      <ul class="list-disc list-inside text-gray-300 space-y-2 ml-6">
+        <li>Lymphatic activation and cytokine release (TNF-α, IL-6)</li>
+        <li>NF-κB pathway activity</li>
+        <li>Peripheral edema and nociceptive stress</li>
+      </ul>
+    </section>
+
+    <!-- 4. Systemic Manifestations -->
+    <section class="fade-in" style="animation-delay:0.8s;">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">4. Systemic Manifestations Inferred via Quantum Neural Mapping</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li><strong>Musculoskeletal Pain:</strong> Resulting from peripheral nociceptor activation and central processing.</li>
+        <li><strong>Gastrointestinal Symptoms / GERD:</strong> CNS-mediated autonomic modulation affects esophageal motility; local GI inflammation contributes to systemic cytokine release.</li>
+        <li><strong>Fatigue:</strong> Chronic lymphatic-mediated cytokine signaling influences hypothalamic centers, altering energy perception, sleep regulation, and CNS processing.</li>
+        <li><strong>Allergic Responses:</strong> GI-lymphatic axis activation integrates with systemic immune pathways, manifesting as rhinitis, nasal congestion, or generalized inflammation.</li>
+      </ul>
+    </section>
+
+    <!-- 5. Feedback and Amplification Loops -->
+    <section class="fade-in" style="animation-delay:1s;">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">5. Feedback and Amplification Loops</h2>
+      <p class="text-gray-300">Peripheral inflammation drives CNS integration, which can modulate autonomic outputs affecting the lymphatic system, GI function, and systemic immune responses. GERD and other GI disturbances act both as targets and amplifiers of systemic inflammation. Fatigue, pain, and immune dysregulation are interconnected through this neuro-immune-lymphatic feedback loop.</p>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center fade-in">
-    <p class="text-gray-300 mb-4">
-      All neural impulse mapping and predictive simulations are powered by our proprietary quantum-digital twin platform.
-    </p>
-    <p class="text-gray-500 mb-4">Email us directly: <a href="mailto:support@aecion.com" class="hover:text-white">support@aecion.com</a></p>
     <div class="mb-4">
-      <a href="index.html" class="hover:text-white mx-2 transition">Home</a> |
+      <a href="index.html" class="hover:text-white mx-2 transition">About Us</a> |
       <a href="technology.html" class="hover:text-white mx-2 transition">Technology</a> |
       <a href="quantum-application.html" class="hover:text-white mx-2 transition">Quantum Application</a> |
+      <a href="quantum-neural-mapping.html" class="hover:text-white mx-2 transition">Quantum Neural Mapping</a> |
       <a href="case-study.html" class="hover:text-white mx-2 transition">Case Study</a> |
-      <a href="neural-impulse-mapping.html" class="hover:text-white mx-2 transition">Neural Mapping</a> |
       <a href="impact.html" class="hover:text-white mx-2 transition">Impact</a>
     </div>
+    <div class="mb-4">
+      <span>Phone: 123-456-7890 | Email: 
+        <a href="mailto:support@aecion.com" class="hover:text-white transition">support@aecion.com</a> | 
+        Address: 123 Quantum Way, Tech City
+      </span>
+    </div>
+    <div class="mb-4 flex justify-center gap-4 text-gray-500">
+      <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-6 h-6 hover:text-white transition"></i></a>
+      <a href="#" aria-label="Twitter"><i data-lucide="twitter" class="w-6 h-6 hover:text-white transition"></i></a>
+      <a href="#" aria-label="GitHub"><i data-lucide="github" class="w-6 h-6 hover:text-white transition"></i></a>
+    </div>
+    <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
+  <!-- Scripts -->
   <script>
     lucide.replace();
+
+    // Fade-in animation
     const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.style.animationPlayState = 'running';
-        }
+        if(entry.isIntersecting){ entry.target.style.animationPlayState='running'; }
       });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      if(menuOpen){
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+        menuToggle.querySelector('i').setAttribute('data-lucide','x');
+      } else {
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        menuToggle.querySelector('i').setAttribute('data-lucide','menu');
+      }
+      lucide.replace();
+    });
+
+    // Highlight current page
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if(link.getAttribute('href') === currentPage){
+        link.classList.add('font-semibold','underline');
+      } else {
+        link.classList.remove('font-semibold','underline');
+      }
+    });
   </script>
 
 </body>

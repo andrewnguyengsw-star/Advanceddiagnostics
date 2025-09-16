@@ -36,10 +36,7 @@
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    .slide-down { animation: slideDown 0.3s ease forwards; }
-    .slide-up { animation: slideUp 0.3s ease forwards; }
-    @keyframes slideDown { 0% { max-height: 0; opacity: 0; } 100% { max-height: 500px; opacity: 1; } }
-    @keyframes slideUp { 0% { max-height: 500px; opacity: 1; } 100% { max-height: 0; opacity: 0; } }
+    #mobile-menu { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease, opacity 0.3s ease; }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -50,9 +47,11 @@
       <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
 
       <!-- Desktop Menu -->
-      <nav id="desktop-menu" class="hidden sm:flex space-x-4 sm:space-x-6">
+      <nav class="hidden sm:flex space-x-4 sm:space-x-6">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
         <a href="impact.html" class="font-semibold underline">Impact</a>
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
@@ -67,10 +66,12 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden sm:hidden bg-black border-t border-gray-700 overflow-hidden">
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
         <a href="impact.html" class="font-semibold underline">Impact</a>
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
@@ -127,6 +128,8 @@
     <div class="flex justify-center gap-6 mb-4">
       <a href="index.html" class="text-gray-500 hover:text-white">Home</a>
       <a href="technology.html" class="text-gray-500 hover:text-white">Technology</a>
+      <a href="quantum-application.html" class="text-gray-500 hover:text-white">Quantum Application</a>
+      <a href="quantum-neural-mapping.html" class="text-gray-500 hover:text-white">Quantum Neural Mapping</a>
       <a href="case-study.html" class="text-gray-500 hover:text-white">Case Study</a>
       <a href="impact.html" class="text-gray-500 hover:text-white">Impact</a>
       <a href="#cta" class="text-gray-500 hover:text-white">Partner</a>
@@ -152,19 +155,18 @@
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
 
-    menuToggle?.addEventListener('click', () => {
-      if (!menuOpen) {
-        mobileMenu.classList.remove('hidden', 'slide-up');
-        mobileMenu.classList.add('slide-down');
-        menuOpen = true;
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      if(menuOpen){
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+        menuToggle.querySelector('i').setAttribute('data-lucide','x');
       } else {
-        mobileMenu.classList.remove('slide-down');
-        mobileMenu.classList.add('slide-up');
-        mobileMenu.addEventListener('animationend', () => {
-          if (!menuOpen) mobileMenu.classList.add('hidden');
-        }, { once: true });
-        menuOpen = false;
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        menuToggle.querySelector('i').setAttribute('data-lucide','menu');
       }
+      lucide.replace();
     });
   </script>
 

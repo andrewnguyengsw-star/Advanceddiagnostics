@@ -76,11 +76,13 @@
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    /* Mobile menu slide animation */
-    .slide-down { animation: slideDown 0.3s ease forwards; }
-    .slide-up { animation: slideUp 0.3s ease forwards; }
-    @keyframes slideDown { 0% { max-height: 0; opacity: 0; } 100% { max-height: 500px; opacity: 1; } }
-    @keyframes slideUp { 0% { max-height: 500px; opacity: 1; } 100% { max-height: 0; opacity: 0; } }
+    /* Mobile menu smooth transition */
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -110,7 +112,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden sm:hidden bg-black border-t border-gray-700 overflow-hidden">
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
@@ -220,28 +222,29 @@
     let menuOpen = false;
 
     menuToggle.addEventListener('click', () => {
-      if (!menuOpen) {
-        mobileMenu.classList.remove('hidden', 'slide-up');
-        mobileMenu.classList.add('slide-down');
-        menuOpen = true;
+      menuOpen = !menuOpen;
+
+      if(menuOpen){
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+        menuToggle.querySelector('i').setAttribute('data-lucide','x');
       } else {
-        mobileMenu.classList.remove('slide-down');
-        mobileMenu.classList.add('slide-up');
-        mobileMenu.addEventListener('animationend', () => {
-          if (!menuOpen) mobileMenu.classList.add('hidden');
-        }, { once: true });
-        menuOpen = false;
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        menuToggle.querySelector('i').setAttribute('data-lucide','menu');
       }
+      lucide.replace();
     });
 
     // Highlight current page in mobile menu
     const mobileLinks = mobileMenu.querySelectorAll('a');
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
     mobileLinks.forEach(link => {
       const linkPath = link.getAttribute('href');
-      if(linkPath === window.location.pathname.split("/").pop() || (linkPath === 'index.html' && window.location.pathname.split("/").pop() === '')) {
-        link.classList.add('font-semibold', 'underline');
+      if(linkPath === currentPage){
+        link.classList.add('font-semibold','underline');
       } else {
-        link.classList.remove('font-semibold', 'underline');
+        link.classList.remove('font-semibold','underline');
       }
     });
   </script>

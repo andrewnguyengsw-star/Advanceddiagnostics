@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AECION | Our Quantum Application</title>
+  <meta name="description" content="Observe biology in real time at the quantum level — from molecules to entire human systems.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html { scroll-behavior: smooth; }
+
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
   </style>
@@ -18,10 +20,33 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
-      <nav class="space-x-4 sm:space-x-6">
+
+      <!-- Desktop Menu -->
+      <nav id="desktop-menu" class="hidden sm:flex space-x-4 sm:space-x-6">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
         <a href="quantum-application.html" class="font-semibold underline">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
+        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="sm:hidden">
+        <button id="menu-toggle" aria-label="Toggle navigation menu" class="p-2 rounded-md border border-gray-500">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700 overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-out">
+      <nav class="flex flex-col px-4 py-4 space-y-2">
+        <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
         <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
@@ -73,70 +98,6 @@
     </div>
   </section>
 
-  <!-- What This Enables Section -->
-  <section class="py-20 px-4 max-w-6xl mx-auto fade-in" id="enables">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6">3. What This Enables</h2>
-    <ul class="list-disc list-inside text-gray-300 space-y-2">
-      <li><strong>Quantum Simulation at Biological Scale:</strong> Understanding highly complex molecules without needing impractically large quantum computers.</li>
-      <li><strong>Quantum Metrology for Medicine:</strong> Non-invasive, real-time observation of molecular pathology.</li>
-      <li><strong>Paradigm Shift:</strong> Instead of static pictures and population statistics, we observe the quantum-level events that initiate disease, enabling precisely targeted interventions.</li>
-    </ul>
-  </section>
-
-  <!-- Quantum Principle Section -->
-  <section class="bg-gray-900 py-20 px-4 fade-in" id="principle">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Observing Disease Through Entanglement</h2>
-    <p class="text-gray-300 mb-4 max-w-3xl mx-auto">At the heart of our platform is quantum entanglement as a measurement tool for autoimmune-driven pathology.</p>
-    <ul class="list-disc list-inside text-gray-300 space-y-2 max-w-3xl mx-auto">
-      <li><strong>Biological Trigger:</strong> Elevated Anti-Jo-1 antibodies bind HisRS, triggering tissue damage and inflammatory cascades.</li>
-      <li><strong>Electrochemical Signaling:</strong> Field changes transduced through peripheral and central nervous system alter polarization gradients.</li>
-      <li><strong>Quantum Coupling:</strong> Entangled photon pairs detect these subtle polarization shifts and carry information to a remote quantum readout.</li>
-      <li><strong>Real-Time Observation:</strong> Measurements reflect collective molecular and electrochemical dynamics at concentrations typical of antisynthetase syndrome.</li>
-    </ul>
-  </section>
-
-  <!-- Universal Application Section -->
-  <section class="py-20 px-4 max-w-6xl mx-auto fade-in" id="universal">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6">Universal Quantum Biosensing Application</h2>
-    <p class="text-gray-300 mb-6 max-w-3xl mx-auto">Our platform can capture any human biological state — from single-molecule interactions to whole-body signaling — in real time.</p>
-    <ul class="list-disc list-inside text-gray-300 space-y-2">
-      <li><strong>Beyond Autoimmunity:</strong> Autoimmune diseases, cancer, neurodegeneration, infectious disease, metabolic/hormonal regulation, and drug-target interactions.</li>
-      <li><strong>How It Works:</strong> Quantum sensing network, signal coupling, entangled readout, and spatiotemporal reconstruction.</li>
-      <li><strong>Why This is Different:</strong> Observes biology directly rather than simulating it — bypassing the need for massive fault-tolerant qubits.</li>
-    </ul>
-  </section>
-
-  <!-- Quantum Computing Comparison Section -->
-  <section class="bg-black text-white py-16 px-6 md:px-20 fade-in" id="comparison">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-bold mb-4">How This Compares to Quantum Computing</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div class="bg-gray-900 p-8 rounded-2xl shadow-lg">
-          <h3 class="text-2xl font-semibold mb-6">Quantum Computing</h3>
-          <ul class="space-y-4 text-gray-300">
-            <li>Goal: Simulate molecules or run general-purpose algorithms.</li>
-            <li>Requires millions of error-corrected qubits for large proteins.</li>
-            <li>Produces theoretical predictions.</li>
-            <li>Mainly for future drug discovery or optimization problems.</li>
-            <li>Still many years from simulating full biological systems at scale.</li>
-          </ul>
-        </div>
-        <div class="bg-gray-900 p-8 rounded-2xl shadow-lg">
-          <h3 class="text-2xl font-semibold mb-6">Our Quantum Biosensing Platform</h3>
-          <ul class="space-y-4 text-gray-300">
-            <li>Goal: Directly observe and analyze every human condition and every drug in real time.</li>
-            <li>Works with quantum probes and entangled photons — no large-scale fault-tolerant qubits required.</li>
-            <li>Produces real-world, real-time measurements of immune, neural, and metabolic activity.</li>
-            <li>Analyzes every molecule, pathway, and intervention dynamically.</li>
-            <li>Applicable to any disease, biological signal, or human condition, with clinically relevant readouts.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center fade-in">
     <div class="mb-4">
@@ -162,6 +123,8 @@
 
   <script>
     lucide.replace();
+
+    // Scroll fade-in using Intersection Observer
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -169,6 +132,35 @@
       });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      if(menuOpen){
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+        menuToggle.querySelector('i').setAttribute('data-lucide','x');
+      } else {
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        menuToggle.querySelector('i').setAttribute('data-lucide','menu');
+      }
+      lucide.replace();
+    });
+
+    // Highlight current page
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if(link.getAttribute('href') === currentPage){
+        link.classList.add('font-semibold','underline');
+      } else {
+        link.classList.remove('font-semibold','underline');
+      }
+    });
   </script>
 
 </body>
