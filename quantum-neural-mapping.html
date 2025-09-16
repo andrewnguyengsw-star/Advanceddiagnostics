@@ -35,6 +35,11 @@
     html { scroll-behavior: smooth; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    .slide-down { animation: slideDown 0.3s ease forwards; }
+    .slide-up { animation: slideUp 0.3s ease forwards; }
+    @keyframes slideDown { 0% { max-height: 0; opacity: 0; } 100% { max-height: 500px; opacity: 1; } }
+    @keyframes slideUp { 0% { max-height: 500px; opacity: 1; } 100% { max-height: 0; opacity: 0; } }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -43,7 +48,28 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
-      <nav class="space-x-4 sm:space-x-6">
+
+      <!-- Desktop Menu -->
+      <nav id="desktop-menu" class="hidden sm:flex space-x-4 sm:space-x-6">
+        <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
+        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
+        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="sm:hidden">
+        <button id="menu-toggle" class="p-2 rounded-md border border-gray-500">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden sm:hidden bg-black border-t border-gray-700 overflow-hidden">
+      <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
         <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
@@ -62,7 +88,7 @@
     </p>
   </section>
 
-  <!-- Sections -->
+  <!-- Main Content -->
   <main class="max-w-6xl mx-auto px-4 py-20 space-y-16">
 
     <!-- 1. Anti-Jo-1 Autoantibody Activation -->
@@ -96,7 +122,7 @@
       </ul>
     </section>
 
-    <!-- 4. Systemic Manifestations Inferred via Neural Mapping -->
+    <!-- 4. Systemic Manifestations -->
     <section class="fade-in" style="animation-delay:0.8s;">
       <h2 class="text-3xl sm:text-4xl font-bold mb-6">4. Systemic Manifestations Inferred via Neural Mapping</h2>
       <ul class="list-disc list-inside text-gray-300 space-y-2">
@@ -141,13 +167,42 @@
   <!-- Scripts -->
   <script>
     lucide.replace();
+
+    // Fade-in animation
     const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.style.animationPlayState = 'running'; }
+        if(entry.isIntersecting){ entry.target.style.animationPlayState='running'; }
       });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      if (!menuOpen) {
+        mobileMenu.classList.remove('hidden', 'slide-up');
+        mobileMenu.classList.add('slide-down');
+        menuOpen = true;
+      } else {
+        mobileMenu.classList.remove('slide-down');
+        mobileMenu.classList.add('slide-up');
+        mobileMenu.addEventListener('animationend', () => {
+          if (!menuOpen) mobileMenu.classList.add('hidden');
+        }, { once: true });
+        menuOpen = false;
+      }
+    });
+
+    // Highlight current page
+    const page = window.location.pathname.split("/").pop() || 'index.html';
+    const desktopLinks = document.querySelectorAll('#desktop-menu a');
+    desktopLinks.forEach(link => { if(link.getAttribute('href') === page){ link.classList.add('font-semibold','underline'); } });
+    const mobileLinks = document.querySelectorAll('#mobile-menu a');
+    mobileLinks.forEach(link => { if(link.getAttribute('href') === page){ link.classList.add('font-semibold','underline'); } });
   </script>
 
 </body>
