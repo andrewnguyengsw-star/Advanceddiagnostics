@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AECION | Our Quantum Application</title>
-  <meta name="description" content="Observe biology in real time at the quantum level — from molecules to entire human systems.">
+  <title>AECION | Quantum Computing for Disease & Drug Metabolism</title>
+  <meta name="description" content="Harnessing quantum entanglement to decode disease pathology and drug metabolism, transforming the future of medicine.">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
@@ -20,20 +20,12 @@
       opacity: 0;
       transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
     }
-    #mobile-menu.open {
-      display: block;
-    }
+    #mobile-menu.open { display: block; }
 
     /* Hamburger → X animation */
-    #menu-toggle.open span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-    #menu-toggle.open span:nth-child(2) {
-      opacity: 0;
-    }
-    #menu-toggle.open span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -42,8 +34,6 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
-
-      <!-- Desktop Menu -->
       <nav id="desktop-menu" class="hidden sm:flex space-x-4 sm:space-x-6">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
@@ -53,8 +43,6 @@
         <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
       </nav>
-
-      <!-- Mobile Menu Button -->
       <div class="sm:hidden">
         <button id="menu-toggle" aria-label="Toggle navigation menu"
           class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
@@ -64,8 +52,6 @@
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
@@ -81,46 +67,105 @@
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-black via-gray-900 to-black">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">Our Quantum Application</h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">Quantum Computing: Unlocking the Complexity of Human Health</h1>
     <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
-      Observing biology in real time at the quantum level — from molecules to entire human systems.
+      We harness quantum entanglement to decode disease pathology and drug metabolism, transforming the future of medicine.
+    </p>
+    <a href="#section1" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition fade-in" style="animation-delay:0.6s;">Learn More</a>
+  </section>
+
+  <!-- Section 1: What is Quantum Computing -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in" id="section1">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">What is Quantum Computing?</h2>
+    <p class="text-gray-300 mb-6 text-center max-w-4xl mx-auto">
+      Quantum computing uses qubits instead of classical bits. Through superposition and entanglement, quantum systems can process many possibilities at once, making them ideal for solving highly complex problems.
+    </p>
+    <p class="text-gray-300 text-center mb-6">Graphic idea: Classical bits (0/1) vs. Qubits (0 + 1 at once)</p>
+  </section>
+
+  <!-- Section 2: Understanding Complexity -->
+  <section class="bg-gray-900 py-20 px-4 fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Understanding Complexity</h2>
+    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
+      Complexity = how difficult something is to solve or predict.
+    </p>
+    <ul class="list-disc list-inside text-gray-300 max-w-4xl mx-auto space-y-2">
+      <li>Computer Science: Complexity measures resources (time, memory) → expressed in Big-O notation.</li>
+      <li>Systems Science: Complexity grows when many parts interact unpredictably (e.g., weather, biology).</li>
+    </ul>
+    <p class="text-gray-300 text-center mt-4">Graphic idea: Simple pendulum → Weather system (low → high complexity)</p>
+  </section>
+
+  <!-- Section 3: Why Complexity Matters -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Why Complexity Matters in Quantum Computing</h2>
+    <p class="text-gray-300 mb-6 max-w-4xl mx-auto text-center">
+      Classical computers struggle with exponential complexity (like simulating molecules). Quantum computing can shift complexity boundaries, making the impossible solvable.
+    </p>
+    <ul class="list-disc list-inside text-gray-300 max-w-4xl mx-auto space-y-2">
+      <li>Shor’s Algorithm: makes factoring efficient.</li>
+      <li>Grover’s Algorithm: accelerates searching.</li>
+      <li>Quantum simulations: model chemistry and biology.</li>
+    </ul>
+    <p class="text-gray-300 text-center mt-4 font-semibold">Tagline: Quantum doesn’t replace classical computing — it extends what’s possible.</p>
+  </section>
+
+  <!-- Section 4: What We’re Doing -->
+  <section class="bg-gray-900 py-20 px-4 fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Harnessing Quantum Entanglement for Health</h2>
+    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
+      Diseases and drugs trigger microenvironment deviations that alter chemical signaling pathways and reshape cellular responses. We apply quantum entanglement to model and process these deviations, offering new insights into disease pathology and drug metabolism.
     </p>
   </section>
 
-  <!-- Challenge of Scale Section -->
-  <section class="py-20 px-4 max-w-6xl mx-auto fade-in" id="challenge">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6">1. The Challenge of Scale: Capturing the Anti-Jo-1 Antigen</h2>
-    <p class="text-gray-300 mb-4">Our quantum platform tackles one of the hardest problems in biomedicine: understanding the histidyl-tRNA synthetase (HisRS) protein — the target of Anti-Jo-1 antibodies.</p>
-    <ul class="list-disc list-inside text-gray-300 space-y-2">
-      <li><strong>Massive Complexity:</strong> HisRS contains 6,000–11,000 atoms, making it too complex for classical simulation.</li>
-      <li><strong>Beyond Classical Simulation:</strong> Accurately modeling folding, interactions, and dynamics requires solving the quantum behavior of every electron and nucleus — beyond even the fastest supercomputers.</li>
-      <li><strong>Beyond Current Quantum Limits:</strong> NISQ-era quantum computers can only handle very small molecules. Simulating HisRS at biological scale would normally require millions of error-corrected qubits.</li>
-    </ul>
-    <p class="text-gray-300 mt-4">Our application overcomes this by using quantum sensing and entanglement rather than brute-force simulation — extracting real-world, real-time data directly from the biological system.</p>
+  <!-- Section 5: Our Application -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Our Application Is the Quantum Dream — Realized Today</h2>
+    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
+      Our platform already embodies the dream of quantum computing: modeling complex systems, simulating biology at scale, and processing entangled, nonlinear interactions of disease and drug-induced microenvironment deviations.
+    </p>
+    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
+      We pioneer applications now, demonstrating the quantum promise in practice for medicine — while others wait for hardware to catch up.
+    </p>
   </section>
 
-  <!-- Method of Observation Section -->
-  <section class="bg-gray-900 py-20 px-4 fade-in" id="observation">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">2. The Method of Observation: Quantum Sensing of Disease in Action</h2>
-    <p class="text-gray-300 mb-6 text-center max-w-3xl mx-auto">Instead of simulating molecules in silico, our approach observes biology as it happens — turning living molecular systems into quantum-readable data sources.</p>
-    <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-      <div>
-        <h3 class="text-2xl font-semibold mb-2">Quantum Sensing Network</h3>
-        <p class="text-gray-300 mb-4">A distributed array of quantum probes interfaces with the biological environment containing HisRS.</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold mb-2">Entangled Measurement</h3>
-        <p class="text-gray-300 mb-4">Probes are quantum-entangled, so a perturbation at one point in the protein is correlated across the network, providing a synchronized view of molecular dynamics.</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold mb-2">Ultra-Sensitive Coherence Tracking</h3>
-        <p class="text-gray-300 mb-4">Each probe’s quantum state is exquisitely sensitive to local electromagnetic fluctuations caused by protein folding, domain motions, and molecular interactions.</p>
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold mb-2">4D Pathology Mapping</h3>
-        <p class="text-gray-300 mb-4">By measuring changes in probe coherence, we reconstruct a spatiotemporal map of HisRS behavior — watching in real time how misfolding triggers the autoimmune cascade of antisynthetase syndrome.</p>
-      </div>
-    </div>
+  <!-- Section 6: Future of Quantum Computing & Our Work -->
+  <section class="bg-gray-900 py-20 px-4 fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">The Future of Quantum Computing & Our Work</h2>
+    <ul class="list-disc list-inside text-gray-300 max-w-4xl mx-auto space-y-2">
+      <li>Simulating biology beyond classical limits.</li>
+      <li>Driving breakthroughs in medicine, materials, and AI.</li>
+      <li>Today: modeling disease and drug interactions through quantum-inspired methods.</li>
+      <li>Tomorrow: personalized medicine, faster drug development, and deeper understanding of complex diseases as next-gen hardware arrives.</li>
+    </ul>
+  </section>
+
+  <!-- Section 7: Applications -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Applications</h2>
+    <ul class="list-disc list-inside text-gray-300 max-w-4xl mx-auto space-y-2">
+      <li>Drug Discovery: Simulating molecular interactions and predicting metabolism/side effects.</li>
+      <li>Disease Research: Understanding cancer, autoimmune, and neurodegenerative conditions as dynamic systems.</li>
+      <li>Personalized Medicine: Tailored therapies based on signaling patterns and microenvironment signatures.</li>
+      <li>Healthcare Innovation: Faster, more predictive models for treatment outcomes and clinical decision support.</li>
+    </ul>
+  </section>
+
+  <!-- Section 8: Current Limits -->
+  <section class="bg-gray-900 py-20 px-4 fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Current Limits</h2>
+    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
+      Quantum hardware is still evolving (error-prone, small qubit counts). Our work pioneers early applications, preparing frameworks for next-generation breakthroughs while demonstrating value today.
+    </p>
+  </section>
+
+  <!-- CTA / Closing Section -->
+  <section id="cta" class="py-20 px-4 max-w-6xl mx-auto text-center fade-in">
+    <h2 class="text-4xl font-bold mb-6">The Future of Medicine is Quantum</h2>
+    <p class="text-gray-300 mb-6 max-w-4xl mx-auto">
+      Join us as we redefine how disease and drugs are understood, predicted, and treated.
+    </p>
+    <a href="contact.html" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">Get Started</a>
   </section>
 
   <!-- Footer -->
@@ -169,9 +214,7 @@
         mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
-        setTimeout(() => {
-          if (!menuOpen) mobileMenu.style.display = 'none';
-        }, 300);
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
     });
 
