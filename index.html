@@ -30,82 +30,31 @@
   <!-- Robots Meta Tag -->
   <meta name="robots" content="index, follow">
 
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AECION",
-    "url": "https://www.aecion.com",
-    "logo": "https://www.aecion.com/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/aecion",
-      "https://twitter.com/aecion",
-      "https://www.facebook.com/aecion"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-123-456-7890",
-      "contactType": "Customer Support",
-      "email": "support@aecion.com"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://www.aecion.com",
-    "name": "AECION",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.aecion.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
-  <!-- TailwindCSS and Icon Library -->
+  <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Styles -->
   <style>
     html { scroll-behavior: smooth; }
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    /* Mobile menu smooth transition + fallback */
+    /* Mobile menu smooth transition */
     #mobile-menu {
       display: none;
       max-height: 0;
       overflow: hidden;
       opacity: 0;
-      transition: max-height 0.28s ease-out, opacity 0.28s ease-out;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
     }
-    #mobile-menu.open {
-      display: block;
-    }
+    #mobile-menu.open { display: block; }
 
-    /* Animated hamburger -> X (button) */
-    #menu-toggle {
-      -webkit-tap-highlight-color: transparent;
-    }
-    #menu-toggle span {
-      display: block;
-      width: 1.5rem; /* w-6 */
-      height: 2px;   /* h-0.5 */
-      background: #fff;
-      transition: transform 0.28s cubic-bezier(.2,.9,.2,1), opacity 0.18s ease;
-    }
-    #menu-toggle span + span { margin-top: 0.25rem; } /* mt-1 */
+    /* Hamburger → X animation */
     #menu-toggle.open span:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
     }
     #menu-toggle.open span:nth-child(2) {
       opacity: 0;
-      transform: scaleX(0);
     }
     #menu-toggle.open span:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
@@ -130,17 +79,12 @@
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
       </nav>
 
-      <!-- Mobile Menu Button (animated hamburger) -->
+      <!-- Mobile Menu Button -->
       <div class="sm:hidden">
-        <button
-          id="menu-toggle"
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-          class="relative flex flex-col justify-center items-center w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 transition z-50 p-2"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+        <button id="menu-toggle" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500 bg-black">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
         </button>
       </div>
     </div>
@@ -186,17 +130,14 @@
     <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">How It Works</h2>
     <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
-        <i data-lucide="zap" class="w-10 h-10 text-blue-400 mx-auto mb-4"></i>
         <h3 class="text-2xl font-semibold mb-2">Quantum Entanglement</h3>
         <p class="text-gray-300">Biomarkers are tagged with entangled qubits, allowing one to sense biological events while the other is monitored remotely.</p>
       </div>
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
-        <i data-lucide="activity" class="w-10 h-10 text-purple-400 mx-auto mb-4"></i>
         <h3 class="text-2xl font-semibold mb-2">Real-Time Interaction</h3>
         <p class="text-gray-300">Biological events, like antibody binding, instantly affect the quantum state of the probe, capturing activity in real time.</p>
       </div>
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
-        <i data-lucide="monitor" class="w-10 h-10 text-green-400 mx-auto mb-4"></i>
         <h3 class="text-2xl font-semibold mb-2">Instantaneous Mapping</h3>
         <p class="text-gray-300">Entanglement ensures changes are mirrored to the monitoring qubit, creating a precise map of biological activity.</p>
       </div>
@@ -225,15 +166,10 @@
       <a href="impact.html" class="hover:text-white mx-2 transition">Impact</a>
     </div>
     <div class="mb-4">
-      <span>Phone: 123-456-7890 | Email: 
-        <a href="mailto:support@aecion.com" class="hover:text-white transition">support@aecion.com</a> | 
+      <span>Phone: 123-456-7890 | Email:
+        <a href="mailto:support@aecion.com" class="hover:text-white transition">support@aecion.com</a> |
         Address: 123 Quantum Way, Tech City
       </span>
-    </div>
-    <div class="mb-4 flex justify-center gap-4 text-gray-500">
-      <a href="#"><i data-lucide="linkedin" class="w-6 h-6 hover:text-white transition"></i></a>
-      <a href="#"><i data-lucide="twitter" class="w-6 h-6 hover:text-white transition"></i></a>
-      <a href="#"><i data-lucide="github" class="w-6 h-6 hover:text-white transition"></i></a>
     </div>
     <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
@@ -243,14 +179,12 @@
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = 'running';
-        }
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
       });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile Menu Toggle (animated hamburger)
+    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
@@ -258,33 +192,17 @@
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
       menuToggle.classList.toggle('open', menuOpen);
-      menuToggle.setAttribute('aria-expanded', String(menuOpen));
 
       if (menuOpen) {
-        // show
         mobileMenu.classList.add('open');
         mobileMenu.style.display = 'block';
-        // force reflow then set maxHeight for transition (ensures smooth)
-        void mobileMenu.offsetHeight;
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
         mobileMenu.style.opacity = '1';
-        document.body.style.overflow = 'hidden';
       } else {
-        // hide
         mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
-        setTimeout(() => {
-          if (!menuOpen) mobileMenu.style.display = 'none';
-          document.body.style.overflow = '';
-        }, 300); // match transition duration
-      }
-    });
-
-    // Close menu with Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menuOpen) {
-        menuToggle.click();
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
     });
 
@@ -292,18 +210,10 @@
     const mobileLinks = mobileMenu.querySelectorAll('a');
     const currentPage = window.location.pathname.split("/").pop() || 'index.html';
     mobileLinks.forEach(link => {
-      const linkPath = link.getAttribute('href');
-      if (linkPath === currentPage) {
-        link.classList.add('font-semibold','underline');
-      } else {
-        link.classList.remove('font-semibold','underline');
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('font-semibold', 'underline');
       }
     });
-
-    // Run lucide.replace AFTER listeners are attached so other icons render
-    if (typeof lucide !== 'undefined' && lucide.replace) {
-      lucide.replace();
-    }
   </script>
 
 </body>
