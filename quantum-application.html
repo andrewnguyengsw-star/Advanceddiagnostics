@@ -4,25 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AECION | Quantum Computing for Disease & Drug Metabolism</title>
-  <meta name="description" content="Harnessing quantum entanglement to decode disease pathology and drug metabolism, transforming the future of medicine.">
+  <meta name="description" content="Harness quantum entanglement to decode disease pathology and drug metabolism, transforming the future of medicine.">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
-    /* Mobile menu hidden state */
-    #mobile-menu {
-      display: none;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    }
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
     #mobile-menu.open { display: block; }
-
-    /* Hamburger → X animation */
     #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     #menu-toggle.open span:nth-child(2) { opacity: 0; }
     #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -71,101 +60,156 @@
     <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
       We harness quantum entanglement to decode disease pathology and drug metabolism, transforming the future of medicine.
     </p>
-    <a href="#section1" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition fade-in" style="animation-delay:0.6s;">Learn More</a>
+    <a href="#learn-more" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-500 transition fade-in" style="animation-delay:0.6s;">Learn More</a>
   </section>
 
-  <!-- Section 1: What is Quantum Computing -->
-  <section class="py-20 px-4 max-w-6xl mx-auto fade-in" id="section1">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">What is Quantum Computing?</h2>
-    <p class="text-gray-300 mb-6 text-center max-w-4xl mx-auto">
-      Quantum computing uses qubits instead of classical bits. Through superposition and entanglement, quantum systems can process many possibilities at once, making them ideal for solving highly complex problems.
-    </p>
-    <p class="text-gray-300 text-center mb-6">Graphic idea: Classical bits (0/1) vs. Qubits (0 + 1 at once)</p>
+  <!-- Section 1: What is Quantum Computing? -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">What is Quantum Computing?</h2>
+      <p class="text-gray-300 mb-4">
+        Quantum computing uses qubits instead of classical bits. Through superposition and entanglement, quantum systems can process many possibilities at once, making them ideal for solving highly complex problems.
+      </p>
+      <p class="text-gray-300 font-semibold">Graphic Idea: Classical bits (0/1) vs. Qubits (0 + 1 at once)</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+      <span class="text-gray-300">[Graphic Placeholder]</span>
+    </div>
   </section>
 
-  <!-- Section 2: Understanding Complexity -->
-  <section class="bg-gray-900 py-20 px-4 fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Understanding Complexity</h2>
-    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
-      Complexity = how difficult something is to solve or predict.
-    </p>
-    <ul class="list-disc list-inside text-gray-300 max-w-4xl mx-auto space-y-2">
-      <li>Computer Science: Complexity measures resources (time, memory) → expressed in Big-O notation.</li>
-      <li>Systems Science: Complexity grows when many parts interact unpredictably (e.g., weather, biology).</li>
-    </ul>
-    <p class="text-gray-300 text-center mt-4">Graphic idea: Simple pendulum → Weather system (low → high complexity)</p>
+  <!-- Section 2: Understanding Complexity (reversed) -->
+  <section class="bg-gray-900 py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Understanding Complexity</h2>
+      <p class="text-gray-300 mb-4">
+        Complexity measures how difficult something is to solve or predict.
+      </p>
+      <p class="text-gray-300 mb-4">
+        In computer science: Resources (time, memory) needed to solve problems, expressed in Big-O notation.
+      </p>
+      <p class="text-gray-300 mb-4">
+        In systems science: Complexity grows when many parts interact unpredictably (e.g., weather, biology).
+      </p>
+      <p class="text-gray-300 font-semibold">Graphic Idea: Simple pendulum → Weather system (low → high complexity)</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+      <span class="text-gray-300">[Graphic Placeholder]</span>
+    </div>
   </section>
 
-  <!-- Section 3: Why Complexity Matters -->
-  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Why Complexity Matters in Quantum Computing</h2>
-    <p class="text-gray-300 mb-6 max-w-4xl mx-auto text-center">
-      Classical computers struggle with exponential complexity (like simulating molecules). Quantum computing can shift complexity boundaries, making the impossible solvable.
-    </p>
-    <ul class="list-disc list-inside text-gray-300 max-w-4xl mx-auto space-y-2">
-      <li>Shor’s Algorithm: makes factoring efficient.</li>
-      <li>Grover’s Algorithm: accelerates searching.</li>
-      <li>Quantum simulations: model chemistry and biology.</li>
-    </ul>
-    <p class="text-gray-300 text-center mt-4 font-semibold">Tagline: Quantum doesn’t replace classical computing — it extends what’s possible.</p>
+  <!-- Section 3: Why Complexity Matters (normal) -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Why Complexity Matters in Quantum Computing</h2>
+      <p class="text-gray-300 mb-4">Classical computers struggle with exponential complexity (like simulating molecules).</p>
+      <p class="text-gray-300 mb-4">Quantum computing can shift complexity boundaries, making the impossible solvable.</p>
+      <ul class="list-disc list-inside text-gray-300 space-y-2">
+        <li>Shor’s Algorithm: Efficient factoring</li>
+        <li>Grover’s Algorithm: Accelerates searching</li>
+        <li>Quantum simulations: Model chemistry and biology</li>
+      </ul>
+      <p class="text-gray-300 font-semibold mt-2">Tagline: Quantum doesn’t replace classical computing — it extends what’s possible.</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+      <span class="text-gray-300">[Graphic Placeholder]</span>
+    </div>
   </section>
 
-  <!-- Section 4: What We’re Doing -->
-  <section class="bg-gray-900 py-20 px-4 fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Harnessing Quantum Entanglement for Health</h2>
-    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
-      Diseases and drugs trigger microenvironment deviations that alter chemical signaling pathways and reshape cellular responses. We apply quantum entanglement to model and process these deviations, offering new insights into disease pathology and drug metabolism.
-    </p>
+  <!-- Section 4: What We’re Doing (reversed) -->
+  <section class="bg-gray-900 py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Harnessing Quantum Entanglement for Health</h2>
+      <p class="text-gray-300 mb-4">
+        Diseases and drugs trigger microenvironment deviations in the body, altering chemical signaling pathways and reshaping cellular responses.
+      </p>
+      <p class="text-gray-300 mb-4">
+        We apply quantum entanglement to model and process these deviations, offering new insights into disease pathology and drug metabolism.
+      </p>
+      <p class="text-gray-300 font-semibold mt-2">
+        Our Application — Living the Quantum Dream
+      </p>
+      <p class="text-gray-300 mb-2">
+        We solve intractable problems: modeling complex systems, simulating chemistry and biology at scale, and unlocking predictive insights that change how we act.
+      </p>
+      <p class="text-gray-300 mb-2">
+        Using quantum entanglement, we process the entangled, nonlinear interactions of disease and drug-induced microenvironment deviations.
+      </p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+      <span class="text-gray-300">[Graphic Placeholder]</span>
+    </div>
   </section>
 
-  <!-- Section 5: Our Application -->
-  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Our Application Is the Quantum Dream — Realized Today</h2>
-    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
-      Our platform already embodies the dream of quantum computing: modeling complex systems, simulating biology at scale, and processing entangled, nonlinear interactions of disease and drug-induced microenvironment deviations.
-    </p>
-    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
-      We pioneer applications now, demonstrating the quantum promise in practice for medicine — while others wait for hardware to catch up.
-    </p>
+  <!-- Include Sections 5–8 and CTA as previously prepared -->
+  <!-- Section 5: The Future of Quantum Computing & Our Work (normal) -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">The Future of Quantum Computing & Our Work</h2>
+      <p class="text-gray-300 mb-4">
+        Today: Modeling disease and drug interactions through quantum-inspired methods and entanglement-based frameworks.
+      </p>
+      <p class="text-gray-300 mb-4">
+        Tomorrow: Personalized medicine, faster drug development, and deeper understanding of complex diseases as next-gen quantum hardware becomes available.
+      </p>
+      <p class="text-gray-300 font-semibold mt-2">
+        Vision Statement: We stand at the intersection of quantum innovation and human biology — building tools today that will power the healthcare of tomorrow.
+      </p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+      <span class="text-gray-300">[Graphic Placeholder]</span>
+    </div>
   </section>
 
-  <!-- Section 6: Future of Quantum Computing & Our Work -->
-  <section class="bg-gray-900 py-20 px-4 fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">The Future of Quantum Computing & Our Work</h2>
-    <ul class="list-disc list-inside text-gray-300 max-w-4xl mx-auto space-y-2">
-      <li>Simulating biology beyond classical limits.</li>
-      <li>Driving breakthroughs in medicine, materials, and AI.</li>
-      <li>Today: modeling disease and drug interactions through quantum-inspired methods.</li>
-      <li>Tomorrow: personalized medicine, faster drug development, and deeper understanding of complex diseases as next-gen hardware arrives.</li>
-    </ul>
+  <!-- Section 6: Applications (reversed) -->
+  <section class="bg-gray-900 py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Applications</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+        <li><strong>Drug Discovery:</strong> Simulating molecular interactions and predicting metabolism/side effects.</li>
+        <li><strong>Disease Research:</strong> Understanding cancer, autoimmune, and neurodegenerative conditions as dynamic systems.</li>
+        <li><strong>Personalized Medicine:</strong> Tailored therapies based on individual signaling patterns and microenvironment signatures.</li>
+        <li><strong>Healthcare Innovation:</strong> Faster, more predictive models for treatment outcomes and clinical decision support.</li>
+      </ul>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+      <span class="text-gray-300">[Graphic Placeholder]</span>
+    </div>
   </section>
 
-  <!-- Section 7: Applications -->
-  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Applications</h2>
-    <ul class="list-disc list-inside text-gray-300 max-w-4xl mx-auto space-y-2">
-      <li>Drug Discovery: Simulating molecular interactions and predicting metabolism/side effects.</li>
-      <li>Disease Research: Understanding cancer, autoimmune, and neurodegenerative conditions as dynamic systems.</li>
-      <li>Personalized Medicine: Tailored therapies based on signaling patterns and microenvironment signatures.</li>
-      <li>Healthcare Innovation: Faster, more predictive models for treatment outcomes and clinical decision support.</li>
-    </ul>
+  <!-- Section 7: Current Limits (normal) -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Current Limits</h2>
+      <p class="text-gray-300 mb-4">
+        Quantum hardware is still evolving: error-prone and limited in qubit counts.
+      </p>
+      <p class="text-gray-300 mb-4">
+        Positive framing: Our work pioneers applications early, preparing and proving the frameworks that next-generation quantum breakthroughs will execute at scale.
+      </p>
+      <p class="text-gray-300 font-semibold mt-2">
+        Message: We bridge today’s possibilities with tomorrow’s quantum power — demonstrating value now and readiness for the future.
+      </p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+      <span class="text-gray-300">[Graphic Placeholder]</span>
+    </div>
   </section>
 
-  <!-- Section 8: Current Limits -->
-  <section class="bg-gray-900 py-20 px-4 fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white text-center">Current Limits</h2>
-    <p class="text-gray-300 mb-4 max-w-4xl mx-auto text-center">
-      Quantum hardware is still evolving (error-prone, small qubit counts). Our work pioneers early applications, preparing frameworks for next-generation breakthroughs while demonstrating value today.
-    </p>
-  </section>
-
-  <!-- CTA / Closing Section -->
-  <section id="cta" class="py-20 px-4 max-w-6xl mx-auto text-center fade-in">
-    <h2 class="text-4xl font-bold mb-6">The Future of Medicine is Quantum</h2>
-    <p class="text-gray-300 mb-6 max-w-4xl mx-auto">
-      Join us as we redefine how disease and drugs are understood, predicted, and treated.
-    </p>
-    <a href="contact.html" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">Get Started</a>
+  <!-- Closing CTA Section (reversed) -->
+  <section class="bg-gray-900 py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12 md:flex-row-reverse">
+    <div class="md:w-1/2 text-center md:text-left">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">The Future of Medicine is Quantum</h2>
+      <p class="text-gray-300 mb-6">
+        Join us as we redefine how disease and drugs are understood, predicted, and treated.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+        <a href="#learn-more" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-500 transition">Learn More</a>
+        <a href="mailto:support@aecion.com" class="px-6 py-3 border border-white font-semibold rounded-md hover:bg-gray-800 transition">Contact Us</a>
+      </div>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+      <span class="text-gray-300">[Graphic Placeholder]</span>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -187,16 +231,12 @@
   </footer>
 
   <script>
-    // Scroll fade-in using Intersection Observer
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
-      });
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
@@ -204,7 +244,6 @@
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
       menuToggle.classList.toggle('open', menuOpen);
-
       if (menuOpen) {
         mobileMenu.classList.add('open');
         mobileMenu.style.display = 'block';
@@ -218,12 +257,9 @@
       }
     });
 
-    // Highlight current page
     const currentPage = window.location.pathname.split("/").pop() || 'index.html';
     document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('font-semibold', 'underline');
-      }
+      if (link.getAttribute('href') === currentPage) { link.classList.add('font-semibold', 'underline'); }
     });
   </script>
 
