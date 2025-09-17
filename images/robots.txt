@@ -1,0 +1,31 @@
+# robots.txt for AECION – SEO-optimized
+
+User-agent: *
+
+# Block private, admin, or staging directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /backup/
+Disallow: /dev/
+Disallow: /staging/
+
+# Block duplicate content or low-value URLs
+Disallow: /*?*             # Prevent URLs with query strings
+Disallow: /*.pdf$          # Optional: block PDF files
+Disallow: /*.doc$          # Optional: block DOC files
+
+# Explicitly allow main pages
+Allow: /
+Allow: /technology
+Allow: /case-study
+Allow: /impact
+Allow: /partner
+Allow: /our-quantum-application
+
+# Sitemap
+Sitemap: https://www.aecion.com/sitemap.xml
+
+# Crawl-delay for non-Google crawlers
+Crawl-delay: 5

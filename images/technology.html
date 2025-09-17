@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AECION | How Our Quantum Application Works</title>
+  <meta name="description" content="Leveraging quantum principles to model disease and drug interactions at unprecedented scale.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+      <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
+      <nav id="desktop-menu" class="hidden sm:flex space-x-4 sm:space-x-6">
+        <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+        <a href="technology.html" class="font-semibold underline">Technology</a>
+        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
+        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
+      </nav>
+      <div class="sm:hidden">
+        <button id="menu-toggle" aria-label="Toggle navigation menu"
+          class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
+      <nav class="flex flex-col px-4 py-4 space-y-2">
+        <a href="index.html" class="hover:text-gray-300 transition">Home</a>
+        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
+        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-black via-gray-900 to-black">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">The Science Behind Our Quantum Health Platform</h1>
+    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
+      Leveraging quantum principles to model disease and drug interactions at unprecedented scale.
+    </p>
+    <a href="#learn-how" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-500 transition fade-in" style="animation-delay:0.6s;">Learn How It Works</a>
+  </section>
+
+  <!-- Section 1: Core Principles -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Core Principles</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+        <li><strong>Quantum Entanglement:</strong> Process complex biological interactions simultaneously using entangled qubits.</li>
+        <li><strong>Superposition:</strong> Model multiple possible disease and drug pathways at once.</li>
+        <li><strong>Microenvironment Dynamics:</strong> Track how local cellular deviations influence chemical signaling.</li>
+      </ul>
+      <p class="text-gray-300 font-semibold">Visual Idea: Diagram showing entanglement and signaling pathways</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0">
+      <img src="technology1.png" alt="Core Principles Graphic" class="rounded-lg object-contain h-64 w-full">
+    </div>
+  </section>
+
+  <!-- Section 2: Our Approach (reversed) -->
+  <section class="bg-gray-900 py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">From Quantum Theory to Biomedical Insight</h2>
+      <ul class="list-decimal list-inside text-gray-300 space-y-2 mb-4">
+        <li><strong>Data Capture:</strong> Patient-level data, cellular observations, chemical signals.</li>
+        <li><strong>Microenvironment Modeling:</strong> Represent how drugs or disease perturb cellular environments.</li>
+        <li><strong>Quantum-Inspired Processing:</strong> Algorithms emulate entanglement and parallel processing to explore all outcomes.</li>
+        <li><strong>Insight Generation:</strong> Predict disease progression, drug efficacy, and signaling interactions.</li>
+      </ul>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0">
+      <img src="technology2.png" alt="Our Approach Graphic" class="rounded-lg object-contain h-64 w-full">
+    </div>
+  </section>
+
+  <!-- Section 3: Quantum Dream Realized -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Doing What Quantum Computers Dream Of</h2>
+      <p class="text-gray-300 mb-4">
+        While classical computers struggle with exponentially complex biological interactions, our platform already processes these entangled states.
+      </p>
+      <p class="text-gray-300 mb-4">
+        We pioneer applications that future quantum hardware will scale — translating quantum promise into actionable health insights today.
+      </p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0">
+      <img src="technology3.png" alt="Quantum Dream Graphic" class="rounded-lg object-contain h-64 w-full">
+    </div>
+  </section>
+
+  <!-- Section 4: Key Features (reversed) -->
+  <section class="bg-gray-900 py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Key Features</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+        <li>Simulate Disease Pathology: Map how diseases alter cellular and chemical microenvironments.</li>
+        <li>Model Drug Metabolism: Predict metabolic pathways and drug interactions.</li>
+        <li>Predictive Signaling Analysis: Understand ripple effects of chemical signaling deviations.</li>
+        <li>Scalable Quantum-Inspired Architecture: Ready for next-gen quantum hardware.</li>
+      </ul>
+      <p class="text-gray-300 font-semibold">Visual Idea: Interactive schematic showing drug → microenvironment → signaling → outcome</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0">
+      <img src="technology4.png" alt="Key Features Graphic" class="rounded-lg object-contain h-64 w-full">
+    </div>
+  </section>
+
+  <!-- Section 5: Benefits -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Benefits</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+        <li>For Researchers: Explore complex disease models today.</li>
+        <li>For Pharma: Accelerate drug discovery and predict side effects.</li>
+        <li>For Patients: Enable personalized precision medicine.</li>
+      </ul>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0">
+      <img src="technology5.png" alt="Benefits Graphic" class="rounded-lg object-contain h-64 w-full">
+    </div>
+  </section>
+
+  <!-- Section 6: Roadmap / Next-Gen Vision (reversed) -->
+  <section class="bg-gray-900 py-20 px-4 max-w-6xl mx-auto fade-in md:flex md:items-center md:justify-between md:gap-12 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Roadmap / Next-Gen Vision</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-2 mb-4">
+        <li>Short-Term: Expand quantum-inspired simulations and modeling accuracy.</li>
+        <li>Medium-Term: Hybrid systems combining classical and early quantum hardware.</li>
+        <li>Long-Term: Full deployment on next-gen quantum computers for real-time predictive modeling.</li>
+      </ul>
+      <p class="text-gray-300 font-semibold">Visual Idea: Timeline showing Today → Hybrid → Next-Gen Quantum</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0">
+      <img src="technology6.png" alt="Roadmap Graphic" class="rounded-lg object-contain h-64 w-full">
+    </div>
+  </section>
+
+  <!-- Closing / CTA Section -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">The Technology Powering the Future of Medicine</h2>
+    <p class="text-gray-300 mb-6">We’re transforming complex biology into actionable insight using quantum principles.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#applications" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-500 transition">Explore Applications</a>
+      <a href="mailto:support@aecion.com" class="px-6 py-3 border border-white font-semibold rounded-md hover:bg-gray-800 transition">Contact Our Team</a>
+      <a href="#join" class="px-6 py-3 bg-green-600 text-white font-semibold rounded-md hover:bg-green-500 transition">Join the Quantum Health Revolution</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center fade-in">
+    <div class="mb-4">
+      <a href="index.html" class="hover:text-white mx-2 transition">About Us</a> |
+      <a href="technology.html" class="hover:text-white mx-2 transition">Technology</a> |
+      <a href="quantum-application.html" class="hover:text-white mx-2 transition">Quantum Application</a> |
+      <a href="case-study.html" class="hover:text-white mx-2 transition">Case Study</a> |
+      <a href="impact.html" class="hover:text-white mx-2 transition">Impact</a>
+    </div>
+    <div class="mb-4">
+      <span>Phone: 123-456-7890 | Email: 
+        <a href="mailto:support@aecion.com" class="hover:text-white transition">support@aecion.com</a> | 
+        Address: 123 Quantum Way, Tech City
+      </span>
+    </div>
+    <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+      }
+    });
+
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) { link.classList.add('font-semibold', 'underline'); }
+    });
+  </script>
+
+</body>
+</html>
