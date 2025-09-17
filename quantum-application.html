@@ -6,12 +6,34 @@
   <title>AECION | Our Quantum Application</title>
   <meta name="description" content="Observe biology in real time at the quantum level — from molecules to entire human systems.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html { scroll-behavior: smooth; }
 
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Mobile menu hidden state */
+    #mobile-menu {
+      display: none;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    #mobile-menu.open {
+      display: block;
+    }
+
+    /* Hamburger → X animation */
+    #menu-toggle.open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    #menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle.open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -34,14 +56,17 @@
 
       <!-- Mobile Menu Button -->
       <div class="sm:hidden">
-        <button id="menu-toggle" aria-label="Toggle navigation menu" class="p-2 rounded-md border border-gray-500">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="menu-toggle" aria-label="Toggle navigation menu"
+          class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700 overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-out">
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
@@ -113,22 +138,15 @@
         Address: 123 Quantum Way, Tech City
       </span>
     </div>
-    <div class="mb-4 flex justify-center gap-4 text-gray-500">
-      <a href="#"><i data-lucide="linkedin" class="w-6 h-6 hover:text-white transition"></i></a>
-      <a href="#"><i data-lucide="twitter" class="w-6 h-6 hover:text-white transition"></i></a>
-      <a href="#"><i data-lucide="github" class="w-6 h-6 hover:text-white transition"></i></a>
-    </div>
     <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
   <script>
-    lucide.replace();
-
     // Scroll fade-in using Intersection Observer
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.style.animationPlayState = 'running'; }
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
       });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
@@ -140,25 +158,28 @@
 
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
-      if(menuOpen){
+      menuToggle.classList.toggle('open', menuOpen);
+
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
         mobileMenu.style.opacity = '1';
-        menuToggle.querySelector('i').setAttribute('data-lucide','x');
       } else {
+        mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
-        menuToggle.querySelector('i').setAttribute('data-lucide','menu');
+        setTimeout(() => {
+          if (!menuOpen) mobileMenu.style.display = 'none';
+        }, 300);
       }
-      lucide.replace();
     });
 
     // Highlight current page
     const currentPage = window.location.pathname.split("/").pop() || 'index.html';
     document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-      if(link.getAttribute('href') === currentPage){
-        link.classList.add('font-semibold','underline');
-      } else {
-        link.classList.remove('font-semibold','underline');
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('font-semibold', 'underline');
       }
     });
   </script>

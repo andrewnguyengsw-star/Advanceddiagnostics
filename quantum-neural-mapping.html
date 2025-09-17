@@ -15,13 +15,14 @@
   <meta property="og:image" content="https://www.aecion.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- TailwindCSS & Lucide Icons -->
+  <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Styles -->
   <style>
     html { scroll-behavior: smooth; }
+
+    /* Fade-in animations */
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
@@ -36,13 +37,38 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* Mobile menu smooth transition */
+    /* Mobile menu hidden state */
     #mobile-menu {
+      display: none;
       max-height: 0;
       overflow: hidden;
       opacity: 0;
       transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
     }
+
+    /* Hamburger → X animation */
+    #menu-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #555;
+      border-radius: 0.25rem;
+      position: relative;
+    }
+    #menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      margin: 4px 0;
+      transition: all 0.3s ease-in-out;
+    }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -51,7 +77,9 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
-      <nav class="hidden sm:flex space-x-6">
+
+      <!-- Desktop Menu -->
+      <nav id="desktop-menu" class="hidden sm:flex space-x-6">
         <a href="index.html" class="hover:text-gray-300">Home</a>
         <a href="technology.html" class="hover:text-gray-300">Technology</a>
         <a href="quantum-application.html" class="hover:text-gray-300">Quantum Application</a>
@@ -60,9 +88,13 @@
         <a href="impact.html" class="hover:text-gray-300">Impact</a>
         <a href="#cta" class="hover:text-gray-300">Partner</a>
       </nav>
+
+      <!-- Mobile Menu Button -->
       <div class="sm:hidden">
-        <button id="menu-toggle" class="p-2 rounded-md border border-gray-500">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="menu-toggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </div>
@@ -118,8 +150,6 @@
 
   <!-- Main Content: Numbered Sections -->
   <main class="max-w-6xl mx-auto px-4 py-20 space-y-16">
-
-    <!-- 1. Anti-Jo-1 Autoantibody Activation -->
     <section class="fade-in" style="animation-delay:0.2s;">
       <h2 class="text-3xl sm:text-4xl font-bold mb-6">1. Anti-Jo-1 Autoantibody Activation</h2>
       <ul class="list-disc list-inside text-gray-300 space-y-2">
@@ -129,7 +159,6 @@
       </ul>
     </section>
 
-    <!-- 2. Peripheral and Visceral Neural Sensing -->
     <section class="fade-in" style="animation-delay:0.4s;">
       <h2 class="text-3xl sm:text-4xl font-bold mb-6">2. Peripheral and Visceral Neural Sensing</h2>
       <ul class="list-disc list-inside text-gray-300 space-y-2">
@@ -139,7 +168,6 @@
       </ul>
     </section>
 
-    <!-- 3. Central Neural Integration -->
     <section class="fade-in" style="animation-delay:0.6s;">
       <h2 class="text-3xl sm:text-4xl font-bold mb-6">3. Central Neural Integration</h2>
       <p class="text-gray-300 mb-4">
@@ -152,7 +180,6 @@
       </ul>
     </section>
 
-    <!-- 4. Systemic Manifestations -->
     <section class="fade-in" style="animation-delay:0.8s;">
       <h2 class="text-3xl sm:text-4xl font-bold mb-6">4. Systemic Manifestations Inferred via Quantum Neural Mapping</h2>
       <ul class="list-disc list-inside text-gray-300 space-y-2">
@@ -163,14 +190,12 @@
       </ul>
     </section>
 
-    <!-- 5. Feedback and Amplification Loops -->
     <section class="fade-in" style="animation-delay:1s;">
       <h2 class="text-3xl sm:text-4xl font-bold mb-6">5. Feedback and Amplification Loops</h2>
       <p class="text-gray-300">
         Peripheral inflammation drives CNS integration, which can modulate autonomic outputs affecting the lymphatic system, GI function, and systemic immune responses. GERD and other GI disturbances act both as targets and amplifiers of systemic inflammation. Fatigue, pain, and immune dysregulation are interconnected through this neuro-immune-lymphatic feedback loop.
       </p>
     </section>
-
   </main>
 
   <!-- Footer -->
@@ -190,17 +215,15 @@
       </span>
     </div>
     <div class="mb-4 flex justify-center gap-4 text-gray-500">
-      <a href="#"><i data-lucide="linkedin" class="w-6 h-6 hover:text-white transition"></i></a>
-      <a href="#"><i data-lucide="twitter" class="w-6 h-6 hover:text-white transition"></i></a>
-      <a href="#"><i data-lucide="github" class="w-6 h-6 hover:text-white transition"></i></a>
+      <a href="#"><i class="w-6 h-6 hover:text-white transition">LinkedIn</i></a>
+      <a href="#"><i class="w-6 h-6 hover:text-white transition">Twitter</i></a>
+      <a href="#"><i class="w-6 h-6 hover:text-white transition">GitHub</i></a>
     </div>
     <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
   <!-- Scripts -->
   <script>
-    lucide.replace();
-
     // Fade-in animations
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
@@ -213,20 +236,17 @@
     // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    let menuOpen = false;
-
     menuToggle.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      if(menuOpen){
-        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-        mobileMenu.style.opacity = '1';
-        menuToggle.querySelector('i').setAttribute('data-lucide','x');
-      } else {
+      menuToggle.classList.toggle('open');
+      if(mobileMenu.style.display === 'block'){
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
-        menuToggle.querySelector('i').setAttribute('data-lucide','menu');
+        setTimeout(() => mobileMenu.style.display = 'none', 300);
+      } else {
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobile.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
       }
-      lucide.replace();
     });
   </script>
 

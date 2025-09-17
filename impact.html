@@ -53,7 +53,7 @@
         <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
         <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
-        <a href="impact.html" class="font-semibold underline">Impact</a>
+        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
       </nav>
 
@@ -73,7 +73,7 @@
         <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
         <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
-        <a href="impact.html" class="font-semibold underline">Impact</a>
+        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
       </nav>
     </div>
@@ -198,6 +198,15 @@
         menuToggle.querySelector('i').setAttribute('data-lucide','menu');
       }
       lucide.replace();
+    });
+
+    // Highlight current page
+    const page = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('header nav a').forEach(link => {
+      if(link.getAttribute('href') === page) link.classList.add('font-semibold','underline');
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      if(link.getAttribute('href') === page) link.classList.add('font-semibold','underline');
     });
   </script>
 

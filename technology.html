@@ -6,7 +6,6 @@
   <title>Technology – AECION</title>
   <meta name="description" content="Discover how AECION's quantum-biophysical system maps biology in real time using antibodies, entangled photons, and digital twins.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     html { scroll-behavior: smooth; }
 
@@ -15,12 +14,31 @@
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 1s forwards;
+      animation-play-state: paused;
     }
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile menu smooth transition */
+    #mobile-menu {
+      display: none;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    #mobile-menu.open { display: block; }
+
+    /* Hamburger → X animation */
+    #menu-toggle.open span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    #menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-toggle.open span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
     }
   </style>
 </head>
@@ -44,14 +62,16 @@
 
       <!-- Mobile Menu Button -->
       <div class="sm:hidden">
-        <button id="menu-toggle" aria-label="Toggle navigation menu" class="p-2 rounded-md border border-gray-500">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="menu-toggle" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500 bg-black">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
         </button>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700 overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-out">
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
@@ -78,7 +98,7 @@
 
     <div class="flex flex-col md:flex-row items-center gap-6 fade-in">
       <div class="flex-shrink-0 bg-gray-900 p-6 rounded-2xl shadow-lg">
-        <i data-lucide="activity" class="w-12 h-12 text-blue-400"></i>
+        <span class="text-4xl text-blue-400">⚡</span>
       </div>
       <div>
         <h3 class="text-2xl font-semibold mb-2">Step 1 – Biological Trigger</h3>
@@ -88,7 +108,7 @@
 
     <div class="flex flex-col md:flex-row items-center gap-6 fade-in">
       <div class="flex-shrink-0 bg-gray-900 p-6 rounded-2xl shadow-lg">
-        <i data-lucide="zap" class="w-12 h-12 text-purple-400"></i>
+        <span class="text-4xl text-purple-400">✨</span>
       </div>
       <div>
         <h3 class="text-2xl font-semibold mb-2">Step 2 – Quantum Coupling</h3>
@@ -98,7 +118,7 @@
 
     <div class="flex flex-col md:flex-row items-center gap-6 fade-in">
       <div class="flex-shrink-0 bg-gray-900 p-6 rounded-2xl shadow-lg">
-        <i data-lucide="link" class="w-12 h-12 text-green-400"></i>
+        <span class="text-4xl text-green-400">🔗</span>
       </div>
       <div>
         <h3 class="text-2xl font-semibold mb-2">Step 3 – Entanglement Transfer</h3>
@@ -108,7 +128,7 @@
 
     <div class="flex flex-col md:flex-row items-center gap-6 fade-in">
       <div class="flex-shrink-0 bg-gray-900 p-6 rounded-2xl shadow-lg">
-        <i data-lucide="monitor" class="w-12 h-12 text-yellow-400"></i>
+        <span class="text-4xl text-yellow-400">🖥️</span>
       </div>
       <div>
         <h3 class="text-2xl font-semibold mb-2">Step 4 – Digital Twin Readout</h3>
@@ -122,17 +142,17 @@
     <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Core Components</h2>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
-        <i data-lucide="dna" class="w-10 h-10 text-blue-400 mx-auto mb-4"></i>
+        <span class="text-3xl text-blue-400">🧬</span>
         <h3 class="text-2xl font-semibold mb-2">Biological Sensor</h3>
         <p class="text-gray-300">Autoantibodies trigger measurable neural events.</p>
       </div>
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
-        <i data-lucide="disc" class="w-10 h-10 text-purple-400 mx-auto mb-4"></i>
+        <span class="text-3xl text-purple-400">🔮</span>
         <h3 class="text-2xl font-semibold mb-2">Entangled Qubits</h3>
         <p class="text-gray-300">Signal and idler photons instantly share state information.</p>
       </div>
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
-        <i data-lucide="server" class="w-10 h-10 text-green-400 mx-auto mb-4"></i>
+        <span class="text-3xl text-green-400">🖥️</span>
         <h3 class="text-2xl font-semibold mb-2">Digital Twin</h3>
         <p class="text-gray-300">Continuously updated virtual model mirrors biology in real time.</p>
       </div>
@@ -151,30 +171,12 @@
   </footer>
 
   <script>
-    lucide.replace();
-
-    // Scroll fade-in using Intersection Observer
+    // Scroll fade-in
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.style.animationPlayState = 'running';
-        }
-      });
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
-
-    // Smooth scroll for in-page anchors
-    const headerHeight = document.querySelector('header').offsetHeight;
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          window.scrollTo({ top: target.offsetTop - headerHeight, behavior: 'smooth' });
-        }
-      });
-    });
 
     // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
@@ -183,16 +185,18 @@
 
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
-      if(menuOpen){
+      menuToggle.classList.toggle('open', menuOpen);
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
         mobileMenu.style.opacity = '1';
-        menuToggle.querySelector('i').setAttribute('data-lucide','x');
       } else {
+        mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
-        menuToggle.querySelector('i').setAttribute('data-lucide','menu');
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
-      lucide.replace();
     });
 
     // Highlight current page
@@ -200,8 +204,6 @@
     document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
       if(link.getAttribute('href') === currentPage){
         link.classList.add('font-semibold','underline');
-      } else {
-        link.classList.remove('font-semibold','underline');
       }
     });
   </script>
