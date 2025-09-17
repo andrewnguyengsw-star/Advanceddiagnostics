@@ -78,10 +78,14 @@
 
     /* Mobile menu smooth transition */
     #mobile-menu {
+      display: none;
       max-height: 0;
       overflow: hidden;
       opacity: 0;
       transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    #mobile-menu.open {
+      display: block;
     }
   </style>
 </head>
@@ -105,7 +109,7 @@
 
       <!-- Mobile Menu Button -->
       <div class="sm:hidden">
-        <button id="menu-toggle" class="p-2 rounded-md border border-gray-500">
+        <button id="menu-toggle" class="p-2 rounded-md border border-gray-500 bg-black z-50">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
@@ -205,13 +209,13 @@
   </footer>
 
   <script>
-    lucide.replace();
-
     // Fade-in animations
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.style.animationPlayState = 'running'; }
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+        }
       });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
@@ -224,15 +228,22 @@
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
 
-      if(menuOpen){
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
         mobileMenu.style.opacity = '1';
-        menuToggle.querySelector('i').setAttribute('data-lucide','x');
+        menuToggle.querySelector('svg').setAttribute('data-lucide', 'x');
       } else {
+        mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
-        menuToggle.querySelector('i').setAttribute('data-lucide','menu');
+        setTimeout(() => {
+          if (!menuOpen) mobileMenu.style.display = 'none';
+        }, 300);
+        menuToggle.querySelector('svg').setAttribute('data-lucide', 'menu');
       }
+
       lucide.replace();
     });
 
@@ -241,12 +252,15 @@
     const currentPage = window.location.pathname.split("/").pop() || 'index.html';
     mobileLinks.forEach(link => {
       const linkPath = link.getAttribute('href');
-      if(linkPath === currentPage){
-        link.classList.add('font-semibold','underline');
+      if (linkPath === currentPage) {
+        link.classList.add('font-semibold', 'underline');
       } else {
-        link.classList.remove('font-semibold','underline');
+        link.classList.remove('font-semibold', 'underline');
       }
     });
+
+    // Run lucide.replace AFTER listeners are attached
+    lucide.replace();
   </script>
 
 </body>
