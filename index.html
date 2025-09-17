@@ -1,173 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AECION | Redefining Health at the Quantum Level</title>
   <meta name="description" content="Observe disease at its source. AECION uses quantum sensing to create a dynamic, living map of human biology.">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.aecion.com/" />
-
-  <!-- Open Graph / Social Sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.aecion.com/">
-  <meta property="og:title" content="AECION | Redefining Health at the Quantum Level">
-  <meta property="og:description" content="Observe disease at its source. AECION uses quantum sensing to create a dynamic, living map of human biology.">
-  <meta property="og:image" content="https://www.aecion.com/og-image.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AECION | Redefining Health at the Quantum Level">
-  <meta name="twitter:description" content="Observe disease at its source. AECION uses quantum sensing to create a dynamic, living map of human biology.">
-  <meta name="twitter:image" content="https://www.aecion.com/twitter-image.png">
-
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-  <!-- Robots Meta Tag -->
-  <meta name="robots" content="index, follow">
-
-  <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
-    /* Mobile menu smooth transition */
-    #mobile-menu {
-      display: none;
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    }
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
     #mobile-menu.open { display: block; }
-
-    /* Hamburger → X animation */
-    #menu-toggle.open span:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .glass-btn { 
+      background: rgba(255,255,255,0.1); 
+      backdrop-filter: blur(8px); 
+      border: 1px solid rgba(255,255,255,0.2); 
+      transition: all 0.3s ease; 
     }
-    #menu-toggle.open span:nth-child(2) {
-      opacity: 0;
+    .glass-btn:hover { 
+      background: rgba(255,255,255,0.2); 
+      transform: translateY(-2px) scale(1.02); 
     }
-    #menu-toggle.open span:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
+    .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
   </style>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white">
 
   <!-- Navigation -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-      <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
-
-      <!-- Desktop Menu -->
-      <nav class="hidden sm:flex space-x-4 sm:space-x-6">
-        <a href="index.html" class="font-semibold underline">Home</a>
-        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
-        <a href="#cta" class="hover:text-gray-300 transition">Research</a>
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
+      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
       </nav>
-
-      <!-- Mobile Menu Button -->
       <div class="sm:hidden">
-        <button id="menu-toggle" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500 bg-black">
+        <button id="menu-toggle" aria-label="Toggle navigation menu"
+          class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
-        <a href="index.html" class="hover:text-gray-300 transition">Home</a>
-        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
-        <a href="#cta" class="hover:text-gray-300 transition">Research</a>
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 bg-gradient-to-b from-black via-gray-900 to-black">
-    <div class="w-full h-64 sm:h-96 bg-gray-800 rounded-xl mb-8 flex justify-center items-center fade-in">
-      <p class="text-gray-400">[Animated 3D Digital Twin Video Placeholder]</p>
-    </div>
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">The Digital Twin of Health</h1>
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in" style="animation-delay:0.2s;">The Science Behind Our Quantum Health Platform</h1>
     <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
       Observe disease at its source. Our platform uses quantum sensing to create a dynamic, living map of human biology.
     </p>
-    <div class="flex flex-col sm:flex-row gap-4 fade-in" style="animation-delay:0.6s;">
-      <a href="technology.html" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">Discover Our Technology</a>
-      <a href="quantum-application.html" class="border border-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800 transition">Explore Our Quantum Platform</a>
+    <a href="#core-principles" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in" style="animation-delay:0.6s;">Learn How It Works</a>
+  </section>
+
+  <!-- Core Principles -->
+  <section id="core-principles" class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Core Principles</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-3 mb-4">
+        <li><strong>Quantum Entanglement:</strong> Process complex biological interactions simultaneously using entangled qubits.</li>
+        <li><strong>Superposition:</strong> Model multiple disease and drug pathways simultaneously.</li>
+        <li><strong>Microenvironment Dynamics:</strong> Track cellular deviations influencing chemical signaling.</li>
+      </ul>
+      <p class="text-gray-300 font-semibold">Visual Idea: Diagram showing entanglement and signaling pathways</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0">
+      <img src="technology1.png" alt="Core Principles Graphic" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-64 object-cover">
     </div>
   </section>
 
-  <!-- Overview Section -->
-  <section class="py-20 px-4 max-w-6xl mx-auto text-center fade-in" id="vision">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6">From Molecules to Medicine</h2>
-    <p class="text-gray-300 mb-4">We bridge molecular biology and clinical insights using entangled qubits as biological sensors. For the first time, we can track the precise location and activity of biomarkers in the body.</p>
-    <p class="text-gray-300">This dynamic map allows unprecedented understanding of disease progression, guiding precise interventions.</p>
-  </section>
+  <div class="section-divider"></div>
 
-  <!-- How It Works Section -->
-  <section class="bg-gray-900 py-20 px-4 fade-in" id="technology">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">How It Works</h2>
-    <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
-        <h3 class="text-2xl font-semibold mb-2">Quantum Entanglement</h3>
-        <p class="text-gray-300">Biomarkers are tagged with entangled qubits, allowing one to sense biological events while the other is monitored remotely.</p>
-      </div>
-      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
-        <h3 class="text-2xl font-semibold mb-2">Real-Time Interaction</h3>
-        <p class="text-gray-300">Biological events, like antibody binding, instantly affect the quantum state of the probe, capturing activity in real time.</p>
-      </div>
-      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition">
-        <h3 class="text-2xl font-semibold mb-2">Instantaneous Mapping</h3>
-        <p class="text-gray-300">Entanglement ensures changes are mirrored to the monitoring qubit, creating a precise map of biological activity.</p>
-      </div>
+  <!-- Approach -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">From Quantum Theory to Biomedical Insight</h2>
+      <ul class="list-decimal list-inside text-gray-300 space-y-3 mb-4">
+        <li><strong>Data Capture:</strong> Patient-level observations, chemical signals.</li>
+        <li><strong>Microenvironment Modeling:</strong> Represent drug/disease perturbations.</li>
+        <li><strong>Quantum-Inspired Processing:</strong> Algorithms emulate entanglement & parallelism.</li>
+        <li><strong>Insight Generation:</strong> Predict disease progression & drug efficacy.</li>
+      </ul>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0">
+      <img src="technology2.png" alt="Our Approach Graphic" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-64 object-cover">
     </div>
   </section>
 
-  <!-- Quantum Application Teaser Section -->
-  <section class="py-20 px-4 max-w-6xl mx-auto text-center fade-in" id="quantum-app">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6">Our Quantum Application</h2>
-    <p class="text-gray-300 mb-6 max-w-3xl mx-auto">
-      Explore the full power of our quantum biosensing platform. Using entanglement and quantum probes, we can observe biology as it happens — from molecules to entire human systems. This enables real-time mapping of disease, drug interactions, and human biology at a level no classical system can achieve.
-    </p>
-    <a href="quantum-application.html" class="bg-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-blue-500 transition">
-      Learn More About Our Quantum Platform
-    </a>
+  <div class="section-divider"></div>
+
+  <!-- Features -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Key Features</h2>
+      <ul class="list-disc list-inside text-gray-300 space-y-3 mb-4">
+        <li>Simulate Disease Pathology</li>
+        <li>Model Drug Metabolism</li>
+        <li>Predictive Signaling Analysis</li>
+        <li>Scalable Quantum-Inspired Architecture</li>
+      </ul>
+      <p class="text-gray-300 font-semibold">Visual Idea: Interactive schematic showing drug → microenvironment → signaling → outcome</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0">
+      <img src="technology4.png" alt="Key Features Graphic" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-64 object-cover">
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CTA Section -->
+  <section id="cta" class="py-20 px-6 max-w-6xl mx-auto text-center fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">The Technology Powering the Future of Medicine</h2>
+    <p class="text-gray-300 mb-6">We transform complex biology into actionable insights using quantum principles.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="research.html" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Explore Research</a>
+      <a href="mailto:support@aecion.com" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Contact Our Team</a>
+      <a href="#join" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Join the Quantum Health Revolution</a>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center fade-in">
+  <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
     <div class="mb-4">
-      <a href="index.html" class="hover:text-white mx-2 transition">About Us</a> |
-      <a href="technology.html" class="hover:text-white mx-2 transition">Technology</a> |
-      <a href="quantum-application.html" class="hover:text-white mx-2 transition">Quantum Application</a> |
-      <a href="quantum-neural-mapping.html" class="hover:text-white mx-2 transition">Quantum Neural Mapping</a> |
-      <a href="case-study.html" class="hover:text-white mx-2 transition">Case Study</a> |
-      <a href="impact.html" class="hover:text-white mx-2 transition">Impact</a>
+      <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
+      <a href="technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
+      <a href="quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Application</a> |
+      <a href="case-study.html" class="hover:text-cyan-400 mx-2 transition">Case Study</a> |
+      <a href="impact.html" class="hover:text-cyan-400 mx-2 transition">Impact</a> |
+      <a href="research.html" class="hover:text-cyan-400 mx-2 transition">Research</a>
     </div>
     <div class="mb-4">
-      <span>Phone: 123-456-7890 | Email:
-        <a href="mailto:support@aecion.com" class="hover:text-white transition">support@aecion.com</a> |
+      <span>Phone: 123-456-7890 | Email: 
+        <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | 
         Address: 123 Quantum Way, Tech City
       </span>
     </div>
@@ -175,16 +162,12 @@
   </footer>
 
   <script>
-    // Fade-in animations
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
-      });
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
@@ -192,7 +175,6 @@
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
       menuToggle.classList.toggle('open', menuOpen);
-
       if (menuOpen) {
         mobileMenu.classList.add('open');
         mobileMenu.style.display = 'block';
@@ -204,6 +186,11 @@
         mobileMenu.style.opacity = '0';
         setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
+    });
+
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) { link.classList.add('font-semibold', 'underline'); }
     });
   </script>
 
