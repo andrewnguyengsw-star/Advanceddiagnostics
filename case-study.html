@@ -31,32 +31,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
+    body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-    #mobile-menu { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease, opacity 0.3s ease; }
-
-    /* Glass Gradient Divider */
-    .glass-divider {
-      height: 3px;
-      margin: 4rem 0;
-      background: linear-gradient(90deg, rgba(0,255,255,0.6), rgba(128,0,255,0.6));
-      backdrop-filter: blur(6px);
-      border-radius: 2px;
-    }
-
-    .glass-btn { 
-      background: rgba(255,255,255,0.1); 
-      backdrop-filter: blur(8px); 
-      border: 1px solid rgba(255,255,255,0.2); 
-      transition: all 0.3s ease; 
-    }
-    .glass-btn:hover { 
-      background: rgba(255,255,255,0.2); 
-      transform: translateY(-2px) scale(1.02); 
-    }
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .glassy-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 5rem 0; border-radius: 4px; }
   </style>
 </head>
 <body>
@@ -72,10 +59,11 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition font-semibold underline">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="#cta" class="hover:text-cyan-400 transition">Partner</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
       </nav>
       <div class="sm:hidden">
-        <button id="menu-toggle" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+        <button id="menu-toggle" aria-label="Toggle navigation menu"
+          class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
@@ -90,7 +78,7 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition font-semibold underline">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="#cta" class="hover:text-cyan-400 transition">Partner</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
       </nav>
     </div>
   </header>
@@ -98,16 +86,16 @@
   <!-- Hero Section -->
   <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 fade-in">
     <h1 class="text-5xl md:text-6xl font-bold mb-4">Quantum-Enabled Autoantibody Mapping</h1>
-    <p class="text-lg md:text-2xl mb-8 text-gray-300">
+    <p class="text-lg md:text-2xl mb-8 text-gray-300 max-w-3xl">
       Real-time, multi-organ mechanistic insights through a digital twin powered by quantum entanglement and coherence.
     </p>
     <div class="flex flex-col md:flex-row gap-4 mb-4">
-      <a href="index.html" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Return to Homepage</a>
-      <a href="mailto:support@aecion.com" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Email Support</a>
+      <a href="index.html" class="border border-white px-6 py-3 font-semibold hover:bg-gray-800 rounded-md">Return to Homepage</a>
+      <a href="mailto:support@aecion.com" class="bg-blue-600 text-white px-6 py-3 font-semibold hover:bg-blue-500 rounded-md">Email Support</a>
     </div>
   </section>
 
-  <div class="glass-divider fade-in" data-delay="0s"></div>
+  <div class="glassy-divider"></div>
 
   <!-- Overview Section -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
@@ -121,7 +109,7 @@
     </p>
   </section>
 
-  <div class="glass-divider fade-in" data-delay="0s"></div>
+  <div class="glassy-divider"></div>
 
   <!-- Challenge of Scale Section -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
@@ -141,12 +129,12 @@
         </p>
       </div>
       <div class="flex justify-center">
-        <img src="casestudy1.png" alt="Case Study Visualization" class="w-full h-auto max-h-96 object-contain rounded-2xl">
+        <img src="casestudy1.png" alt="Case Study Visualization" class="w-full h-auto max-h-96 object-contain rounded-2xl fade-in">
       </div>
     </div>
   </section>
 
-  <div class="glass-divider fade-in" data-delay="0s"></div>
+  <div class="glassy-divider"></div>
 
   <!-- Quantum Principles Section -->
   <section class="bg-gray-900 py-20 px-6 fade-in">
@@ -167,7 +155,7 @@
     </div>
   </section>
 
-  <div class="glass-divider fade-in" data-delay="0s"></div>
+  <div class="glassy-divider"></div>
 
   <!-- Mechanistic Cascade Section -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
@@ -175,9 +163,11 @@
     <div class="grid md:grid-cols-2 gap-8">
       <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in">
         <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Clinical Phenotyping & Autoantibody Profiling</h3>
-        <p class="text-gray-300">Multi-modal integration of symptoms, organ-specific manifestations, and anti–Jo-1 presence enables stratification of antisynthetase phenotypes and precise disease trajectory mapping.</p>
+        <p class="text-gray-300">
+          Multi-modal integration of symptoms, organ-specific manifestations, and anti–Jo-1 presence enables stratification of antisynthetase phenotypes and precise disease trajectory mapping.
+        </p>
       </div>
-      <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in">
+      <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in" style="animation-delay:0.2s">
         <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Tissue & Organ Systems</h3>
         <ul class="list-disc list-inside text-gray-300 space-y-2">
           <li>Muscle → Myositis, fiber necrosis</li>
@@ -192,12 +182,14 @@
     </div>
   </section>
 
-  <div class="glass-divider fade-in" data-delay="0s"></div>
+  <div class="glassy-divider"></div>
 
   <!-- Neural-to-Clinical Translation Section -->
   <section class="bg-gray-900 py-20 px-6 fade-in">
     <h2 class="text-4xl font-bold mb-8 text-cyan-400 text-center">Translating Neural Impulses to Clinical Presentation</h2>
-    <p class="text-gray-300 text-center mb-12 max-w-4xl mx-auto">Beyond autoantibody mapping, our quantum-entangled platform captures neural impulses and converts them into clinically meaningful signals, revealing behavioral, cognitive, and physiological outcomes in real time.</p>
+    <p class="text-gray-300 text-center mb-12 max-w-4xl mx-auto">
+      Beyond autoantibody mapping, our quantum-entangled platform captures neural impulses and converts them into clinically meaningful signals, revealing behavioral, cognitive, and physiological outcomes in real time.
+    </p>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
         <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Neural Signal Detection</h3>
@@ -214,43 +206,58 @@
     </div>
   </section>
 
-  <div class="glass-divider fade-in" data-delay="0s"></div>
+  <div class="glassy-divider"></div>
 
   <!-- Footer -->
   <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
     <p class="text-gray-300 mb-4">All case study simulations and mappings are powered by our proprietary quantum-digital twin platform.</p>
     <p class="text-gray-500 mb-4">Email us directly: <a href="mailto:support@aecion.com" class="hover:text-cyan-400">support@aecion.com</a></p>
-    <div class="mb-4">
-      <a href="index.html" class="hover:text-cyan-400 mx-2 transition">Home</a> |
-      <a href="technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
-      <a href="quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Application</a> |
-      <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 mx-2 transition">Quantum Neural Mapping</a> |
-      <a href="case-study.html" class="hover:text-cyan-400 mx-2 transition font-semibold underline">Case Study</a> |
-      <a href="impact.html" class="hover:text-cyan-400 mx-2 transition">Impact</a>
+    <div class="flex flex-wrap justify-center gap-2 mb-4">
+      <a href="index.html" class="hover:text-cyan-400 transition">Home</a> |
+      <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a> |
+      <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a> |
+      <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a> |
+      <a href="case-study.html" class="hover:text-cyan-400 transition font-semibold underline">Case Study</a> |
+      <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a> |
+      <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
     </div>
   </footer>
 
   <script>
-    lucide.replace();
+    // Fade-in observer
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.style.animationPlayState='running'; } });
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState='running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
       if(menuOpen){
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
         mobileMenu.style.opacity = '1';
       } else {
+        mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
     });
+
+    // Highlight current page
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) { link.classList.add('font-semibold', 'underline'); }
+    });
+
+    lucide.replace();
   </script>
 
 </body>
