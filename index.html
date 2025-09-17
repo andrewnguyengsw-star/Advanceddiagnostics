@@ -76,7 +76,7 @@
         <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
         <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
-        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
+        <a href="#cta" class="hover:text-gray-300 transition">Research</a>
       </nav>
 
       <!-- Mobile Menu Button -->
@@ -98,7 +98,7 @@
         <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
         <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
-        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
+        <a href="#cta" class="hover:text-gray-300 transition">Research</a>
       </nav>
     </div>
   </header>
@@ -203,15 +203,6 @@
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
         setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
-      }
-    });
-
-    // Highlight current page in mobile menu
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
-    mobileLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
-        link.classList.add('font-semibold', 'underline');
       }
     });
   </script>
