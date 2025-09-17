@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Impact – AECION</title>
@@ -26,55 +25,59 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-  <!-- TailwindCSS & Lucide Icons -->
+  <!-- TailwindCSS & Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <style>
     html { scroll-behavior: smooth; }
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    #mobile-menu { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease, opacity 0.3s ease; }
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; }
+
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
+    .glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
   </style>
 </head>
-<body class="bg-black text-white font-sans">
+<body>
 
-  <!-- Navigation -->
+  <!-- Navigation (Copied from Index Page) -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-      <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
-
-      <!-- Desktop Menu -->
-      <nav class="hidden sm:flex space-x-4 sm:space-x-6">
-        <a href="index.html" class="hover:text-gray-300 transition">Home</a>
-        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
-        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
+      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
       </nav>
-
-      <!-- Mobile Menu Button -->
       <div class="sm:hidden">
-        <button id="menu-toggle" class="p-2 rounded-md border border-gray-500">
-          <i data-lucide="menu" class="w-6 h-6"></i>
+        <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
-        <a href="index.html" class="hover:text-gray-300 transition">Home</a>
-        <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-gray-300 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-gray-300 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-gray-300 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
-        <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
       </nav>
     </div>
   </header>
@@ -85,26 +88,19 @@
     <p class="text-lg md:text-xl text-gray-300 max-w-3xl mb-6">
       Discover how AECION transforms diagnostics and therapy across humans, animals, and plants with real-time quantum-biophysical insights.
     </p>
-    <a href="index.html" class="bg-white text-black px-6 py-3 font-semibold hover:bg-gray-200 rounded-md transition">Back to Overview</a>
+    <a href="index.html" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Back to Overview</a>
   </section>
 
-  <!-- Main Impact Content with Zig-Zag Layout -->
+  <!-- Main Impact Content (Same as Your Original Page) -->
   <section class="py-20 max-w-6xl mx-auto space-y-16">
-
-    <!-- Quantum Diagnostic Platform (Text Left, Image Right) -->
+    <!-- Quantum Diagnostic Platform -->
     <div class="bg-gray-900 p-12 rounded-2xl fade-in">
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h2 class="text-3xl font-bold mb-6">Quantum Diagnostic Platform</h2>
-          <p class="text-gray-300 mb-4">
-            Our quantum diagnostic platform can analyze any disease in real time, creating a spatiotemporal map of how it spreads and interacts across the body.
-          </p>
-          <p class="text-gray-300 mb-4">
-            By tracing the neural involvement of any condition, the platform enables biomarker discovery and the identification of precise intervention points.
-          </p>
-          <p class="text-gray-300">
-            Unlike conventional approaches, it is not limited to pre-existing biomarkers; every point along the spatiotemporal map represents a potential new biomarker, providing a complete and dynamic view of disease pathology.
-          </p>
+          <p class="text-gray-300 mb-4">Our quantum diagnostic platform can analyze any disease in real time, creating a spatiotemporal map of how it spreads and interacts across the body.</p>
+          <p class="text-gray-300 mb-4">By tracing the neural involvement of any condition, the platform enables biomarker discovery and the identification of precise intervention points.</p>
+          <p class="text-gray-300">Unlike conventional approaches, it is not limited to pre-existing biomarkers; every point along the spatiotemporal map represents a potential new biomarker, providing a complete and dynamic view of disease pathology.</p>
         </div>
         <div class="flex justify-center">
           <div class="w-full h-64 bg-gray-800 rounded-2xl flex items-center justify-center text-gray-500">
@@ -114,14 +110,12 @@
       </div>
     </div>
 
-    <!-- Plants (Text Right, Image Left) -->
+    <!-- Plants -->
     <div class="bg-gray-800 p-12 rounded-2xl fade-in">
       <div class="grid md:grid-cols-2 gap-8 items-center md:flex-row-reverse">
         <div>
           <h2 class="text-3xl font-bold mb-6">Plants</h2>
-          <p class="text-gray-300">
-            The platform can analyze any plant and determine its medicinal properties in under 24 hours, enabling rapid evaluation of therapeutic potential.
-          </p>
+          <p class="text-gray-300">The platform can analyze any plant and determine its medicinal properties in under 24 hours, enabling rapid evaluation of therapeutic potential.</p>
         </div>
         <div class="flex justify-center">
           <div class="w-full h-64 bg-gray-700 rounded-2xl flex items-center justify-center text-gray-500">
@@ -131,17 +125,13 @@
       </div>
     </div>
 
-    <!-- Pharmaceuticals (Text Left, Image Right) -->
+    <!-- Pharmaceuticals -->
     <div class="bg-gray-900 p-12 rounded-2xl fade-in">
       <div class="grid md:grid-cols-2 gap-8 items-center">
         <div>
           <h2 class="text-3xl font-bold mb-6">Pharmaceuticals</h2>
-          <p class="text-gray-300 mb-4">
-            It can trace the spatiotemporal metabolism of any drug within the body and identify potential side effects, reducing reliance on costly clinical trials.
-          </p>
-          <p class="text-gray-300">
-            With quantum calculations completed in less than a day, the platform allows early identification of effective and ineffective candidates, minimizing clinical trial losses and accelerating drug development.
-          </p>
+          <p class="text-gray-300 mb-4">It can trace the spatiotemporal metabolism of any drug within the body and identify potential side effects, reducing reliance on costly clinical trials.</p>
+          <p class="text-gray-300">With quantum calculations completed in less than a day, the platform allows early identification of effective and ineffective candidates, minimizing clinical trial losses and accelerating drug development.</p>
         </div>
         <div class="flex justify-center">
           <div class="w-full h-64 bg-gray-800 rounded-2xl flex items-center justify-center text-gray-500">
@@ -150,7 +140,6 @@
         </div>
       </div>
     </div>
-
   </section>
 
   <!-- Footer -->
@@ -170,45 +159,36 @@
 
   <!-- Scripts -->
   <script>
-    lucide.replace();
-
-    // Fade-in animation
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.style.animationPlayState='running'; }
-      });
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState='running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
 
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
       if(menuOpen){
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
         mobileMenu.style.opacity = '1';
-        menuToggle.querySelector('i').setAttribute('data-lucide','x');
       } else {
+        mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
-        menuToggle.querySelector('i').setAttribute('data-lucide','menu');
+        setTimeout(() => { if(!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
-      lucide.replace();
     });
 
-    // Highlight current page
-    const page = window.location.pathname.split("/").pop() || 'index.html';
-    document.querySelectorAll('header nav a').forEach(link => {
-      if(link.getAttribute('href') === page) link.classList.add('font-semibold','underline');
-    });
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      if(link.getAttribute('href') === page) link.classList.add('font-semibold','underline');
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if(link.getAttribute('href') === currentPage) link.classList.add('font-semibold','underline');
     });
   </script>
-
 </body>
 </html>
