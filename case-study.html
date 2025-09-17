@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Primary Meta Tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case Study – AECION</title>
@@ -10,14 +9,12 @@
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.aecion.com/case-study" />
 
-  <!-- Open Graph / Social Sharing -->
+  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.aecion.com/case-study">
   <meta property="og:title" content="Case Study – AECION">
   <meta property="og:description" content="Explore AECION's quantum-digital twin platform in action, mapping autoantibody dynamics and multi-organ interactions in real time.">
   <meta property="og:image" content="https://www.aecion.com/case-study-og.png">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Case Study – AECION">
   <meta name="twitter:description" content="Explore AECION's quantum-digital twin platform in action, mapping autoantibody dynamics and multi-organ interactions in real time.">
@@ -30,39 +27,7 @@
   <!-- Robots Meta Tag -->
   <meta name="robots" content="index, follow">
 
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AECION",
-    "url": "https://www.aecion.com",
-    "logo": "https://www.aecion.com/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/company/aecion",
-      "https://twitter.com/aecion",
-      "https://www.facebook.com/aecion"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-123-456-7890",
-      "contactType": "Customer Support",
-      "email": "support@aecion.com"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "url": "https://www.aecion.com/case-study",
-    "name": "Case Study – AECION",
-    "description": "Explore AECION's quantum-digital twin platform in action, mapping autoantibody dynamics and multi-organ interactions in real time."
-  }
-  </script>
-
-  <!-- TailwindCSS and Lucide -->
+  <!-- TailwindCSS & Lucide -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -70,13 +35,7 @@
     html { scroll-behavior: smooth; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
-    #mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-    }
+    #mobile-menu { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease, opacity 0.3s ease; }
   </style>
 </head>
 <body class="bg-black text-white font-sans">
@@ -85,8 +44,6 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-gray-300 transition">AECION</a>
-
-      <!-- Desktop Menu -->
       <nav class="hidden sm:flex space-x-4 sm:space-x-6">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
         <a href="technology.html" class="hover:text-gray-300 transition">Technology</a>
@@ -96,16 +53,12 @@
         <a href="impact.html" class="hover:text-gray-300 transition">Impact</a>
         <a href="#cta" class="hover:text-gray-300 transition">Partner</a>
       </nav>
-
-      <!-- Mobile Menu Button -->
       <div class="sm:hidden">
         <button id="menu-toggle" class="p-2 rounded-md border border-gray-500">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
       </div>
     </div>
-
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-gray-300 transition">Home</a>
@@ -120,7 +73,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 fade-in" id="overview">
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 fade-in">
     <h1 class="text-5xl md:text-6xl font-bold mb-4">Quantum-Enabled Autoantibody Mapping</h1>
     <p class="text-lg md:text-2xl mb-8 text-gray-300">
       Real-time, multi-organ mechanistic insights through a digital twin powered by quantum entanglement and coherence.
@@ -143,7 +96,7 @@
     </p>
   </section>
 
-  <!-- Challenge of Scale Section (with enhanced image) -->
+  <!-- Challenge of Scale Section -->
   <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
     <h2 class="text-4xl font-bold mb-12 text-white text-center">Challenge of Scale: Capturing the Anti-Jo-1 Antigen</h2>
     <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -160,14 +113,90 @@
           Our application overcomes this by using quantum sensing and entanglement rather than brute-force simulation — extracting real-world, real-time data directly from the biological system.
         </p>
       </div>
-      <div class="flex justify-center items-center">
+      <div class="flex justify-center">
         <img src="casestudy1.png" alt="Case Study Visualization"
-             class="w-full max-w-full h-auto object-contain rounded-2xl shadow-2xl border border-gray-700">
+             class="w-full h-auto max-h-96 object-contain rounded-2xl">
       </div>
     </div>
   </section>
 
-  <!-- (Remaining sections stay unchanged) -->
+  <!-- Quantum Principles Section -->
+  <section class="bg-gray-900 py-20 px-4 fade-in">
+    <h2 class="text-4xl font-bold mb-12 text-white text-center">Quantum Principles & Digital Twin Mapping</h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
+        <h3 class="text-2xl font-semibold mb-4">Quantum Entanglement</h3>
+        <p class="text-gray-300">
+          Preserves correlations of molecular and cellular signals across tissues in real-time, enabling precise multi-organ mapping.
+        </p>
+      </div>
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.2s">
+        <h3 class="text-2xl font-semibold mb-4">Quantum Coherence</h3>
+        <p class="text-gray-300">
+          Maintains the flow of information between immune, muscular, pulmonary, GI, and neural systems to model full disease dynamics.
+        </p>
+      </div>
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.4s">
+        <h3 class="text-2xl font-semibold mb-4">Digital Twin Simulation</h3>
+        <p class="text-gray-300">
+          Constructs a virtual replica of patient physiology, simulating autoantibody cascades and downstream organ-specific effects in seconds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mechanistic Cascade Section -->
+  <section class="py-20 px-4 max-w-6xl mx-auto fade-in">
+    <h2 class="text-4xl font-bold mb-12 text-white text-center">Mechanistic Cascade of Anti–Jo-1</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in">
+        <h3 class="text-2xl font-semibold mb-4">Clinical Phenotyping & Autoantibody Profiling</h3>
+        <p class="text-gray-300">
+          Multi-modal integration of symptoms, organ-specific manifestations, and anti–Jo-1 presence enables stratification of antisynthetase phenotypes and precise disease trajectory mapping.
+        </p>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-2xl hover:scale-105 transform transition fade-in" style="animation-delay:0.2s">
+        <h3 class="text-2xl font-semibold mb-4">Tissue & Organ Systems</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-2">
+          <li>Muscle → Myositis, fiber necrosis</li>
+          <li>Lung → Interstitial lung disease</li>
+          <li>Gastrointestinal → TNF-α-mediated GERD</li>
+          <li>Esophagus → Sphincter dysfunction</li>
+          <li>Skin → SRC-driven dermal inflammation</li>
+          <li>Joints → Polyarthritis</li>
+          <li>Neurological → Connectomic misalignment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neural-to-Clinical Translation Section -->
+  <section class="bg-gray-900 py-20 px-4 fade-in">
+    <h2 class="text-4xl font-bold mb-8 text-white text-center">Translating Neural Impulses to Clinical Presentation</h2>
+    <p class="text-gray-300 text-center mb-12 max-w-4xl mx-auto">
+      Beyond autoantibody mapping, our quantum-entangled platform captures neural impulses and converts them into clinically meaningful signals, revealing behavioral, cognitive, and physiological outcomes in real time.
+    </p>
+    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in">
+        <h3 class="text-2xl font-semibold mb-4">Neural Signal Detection</h3>
+        <p class="text-gray-300">
+          Quantum probes sense minuscule neural fluctuations across the central and peripheral nervous system.
+        </p>
+      </div>
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.2s">
+        <h3 class="text-2xl font-semibold mb-4">Entanglement Mapping</h3>
+        <p class="text-gray-300">
+          Entangled probes correlate activity across distributed neural regions, creating a synchronized map of impulses in real time.
+        </p>
+      </div>
+      <div class="bg-black border border-gray-700 p-6 rounded-2xl text-center hover:scale-105 transform transition fade-in" style="animation-delay:0.4s">
+        <h3 class="text-2xl font-semibold mb-4">Clinical Translation</h3>
+        <p class="text-gray-300">
+          Neural activity patterns are converted into predictive clinical readouts, revealing early disease markers, cognitive states, and behavioral tendencies.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="bg-black border-t border-gray-700 py-12 px-4 text-center fade-in">
@@ -187,21 +216,15 @@
 
   <script>
     lucide.replace();
-
-    // Fade-in animation
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){ entry.target.style.animationPlayState='running'; }
-      });
+      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.style.animationPlayState='running'; } });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
-
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
       if(menuOpen){
@@ -216,6 +239,5 @@
       lucide.replace();
     });
   </script>
-
 </body>
 </html>
