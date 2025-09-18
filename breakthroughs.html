@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
 
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
@@ -40,6 +40,12 @@
     }
 
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+
+    /* Breakthroughs hover & accent bar */
+    .breakthrough-card { transform: translateZ(0); transition: transform 0.3s ease; }
+    .breakthrough-card:hover { transform: scale(1.03); }
+    .accent-bar { width: 4px; border-radius: 9999px; background: linear-gradient(to bottom, #00ffff, #8a2be2); animation: pulse 2s infinite; margin-right: 1rem; }
+    @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -73,7 +79,7 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="breakthroughs.html" class="font-semibold hover:text-cyan-400 transition">Breakthroughs</a>
+        <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
     </div>
   </header>
@@ -91,148 +97,129 @@
       </span>
     </p>
     <div class="flex gap-4 fade-in">
-      <a href="#quantum-mapping" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Explore Breakthroughs</a>
+      <a href="#breakthroughs" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Explore Breakthroughs</a>
       <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Subscribe for Updates</a>
     </div>
   </section>
 
-  <!-- Quantum Neuroimmune Mapping -->
+  <!-- Breakthroughs Section -->
   <div class="section-divider"></div>
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="quantum-mapping">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Quantum Neuroimmune Mapping</h2>
-        <p class="text-gray-300 mb-6">
-          Mapping neural and immune interactions at the quantum level to identify precise biological targets and enhance human resilience.
-        </p>
-        <ul class="text-gray-300 space-y-3">
-          <li><strong>Real-time tracking of autoantibody dynamics</strong></li>
-          <li><strong>Multi-sensory integration for cognitive optimization</strong></li>
-          <li><strong>Novel targets for personalized therapies</strong></li>
-        </ul>
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="breakthroughs">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-400 text-center">Major Breakthroughs</h2>
+
+    <div class="space-y-12">
+
+      <!-- Human Biosonar -->
+      <div class="grid md:grid-cols-2 gap-12 items-center breakthrough-card">
+        <div class="flex items-start gap-4">
+          <div class="accent-bar"></div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-3">Human Biosonar</h3>
+            <p class="text-gray-300">
+              Among our breakthroughs, we have created a novel form of human biosonar — a perception system that does not rely on acoustics, but on advanced neural and cellular signaling. This represents a new sensory adaptation, expanding human interaction with the environment.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src="images/human-biosonar.png" alt="Human biosonar" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+        </div>
       </div>
-      <div>
-        <img src="images/quantum-mapping.png" alt="Quantum neuroimmune mapping" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+
+      <!-- Enhanced Senses -->
+      <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse breakthrough-card">
+        <div class="flex items-start gap-4">
+          <div class="accent-bar"></div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-3">Enhanced Senses & Danger Detection</h3>
+            <p class="text-gray-300">
+              Our technology enhances human perception, enabling the detection of subtle environmental cues and potential threats with unprecedented precision. Users gain a heightened awareness that surpasses ordinary human sensory limits.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src="images/enhanced-senses.png" alt="Enhanced senses" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+        </div>
       </div>
+
+      <!-- Law Enforcement Detection -->
+      <div class="grid md:grid-cols-2 gap-12 items-center breakthrough-card">
+        <div class="flex items-start gap-4">
+          <div class="accent-bar"></div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-3">Long-Range Detection of Law Enforcement</h3>
+            <p class="text-gray-300">
+              A key capability of our system is the ability to detect law enforcement activity from a distance of up to 50 miles, providing advanced situational awareness and strategic advantage.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src="images/law-enforcement-detection.png" alt="Law enforcement detection" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+        </div>
+      </div>
+
+      <!-- Electrocution Resistance -->
+      <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse breakthrough-card">
+        <div class="flex items-start gap-4">
+          <div class="accent-bar"></div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-3">Electrocution Resistance</h3>
+            <p class="text-gray-300">
+              Our advancements extend to extreme human resilience, including resistance to electrocution, enhancing survivability in hazardous environments.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src="images/electrocution-resistance.png" alt="Electrocution resistance" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+        </div>
+      </div>
+
+      <!-- Fundamental Particle Control -->
+      <div class="grid md:grid-cols-2 gap-12 items-center breakthrough-card">
+        <div class="flex items-start gap-4">
+          <div class="accent-bar"></div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-3">Fundamental Particle Control</h3>
+            <p class="text-gray-300">
+              A transformative breakthrough, our technology enables manipulation of fundamental particles within the human body. This capability opens the door to entirely new forms of human interaction with matter and energy at the quantum level.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src="images/fundamental-particle-control.png" alt="Fundamental particle control" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Human Gain-of-Function -->
   <div class="section-divider"></div>
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
-    <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
-      <div>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Human Gain-of-Function</h2>
-        <p class="text-gray-300 mb-6">
-          Enhancing cognition, endurance, and resilience through advanced drug design and neural optimization frameworks.
-        </p>
-        <ul class="text-gray-300 space-y-3">
-          <li><strong>Peak performance cognitive protocols</strong></li>
-          <li><strong>Neural network optimization</strong></li>
-          <li><strong>Safe, ethical, and reproducible methodologies</strong></li>
-        </ul>
-      </div>
-      <div>
-        <img src="images/human-gain-of-function.png" alt="Human gain-of-function" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
-      </div>
-    </div>
-  </section>
 
-  <!-- Cellular Rejuvenation -->
-  <div class="section-divider"></div>
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Cellular Rejuvenation</h2>
-        <p class="text-gray-300 mb-6">
-          Interventions targeting senescence, telomere shortening, and oxidative stress to restore cellular health and longevity.
-        </p>
-        <ul class="text-gray-300 space-y-3">
-          <li><strong>Telomere extension and repair</strong></li>
-          <li><strong>Stem cell activation and renewal</strong></li>
-          <li><strong>Anti-inflammatory and antioxidant interventions</strong></li>
-        </ul>
-      </div>
-      <div>
-        <img src="images/cellular-rejuvenation.png" alt="Cellular rejuvenation" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
-      </div>
-    </div>
-  </section>
-
-  <!-- Cognitive Enhancement -->
-  <div class="section-divider"></div>
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
-    <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
-      <div>
-        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Cognitive Enhancement</h2>
-        <p class="text-gray-300 mb-6">
-          Neuropharmacological breakthroughs for memory, focus, learning speed, and problem-solving optimization.
-        </p>
-        <ul class="text-gray-300 space-y-3">
-          <li><strong>Boosting synaptic efficiency and neuroplasticity</strong></li>
-          <li><strong>Optimizing key neurotransmitters</strong></li>
-          <li><strong>Supporting long-term neural health</strong></li>
-        </ul>
-      </div>
-      <div>
-        <img src="images/cognitive-enhancement.png" alt="Cognitive enhancement" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
-      </div>
-    </div>
-  </section>
-
-  <!-- Technology & Ethics Section -->
-  <div class="section-divider"></div>
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400">Technology & Ethics</h2>
-    <p class="text-gray-300 mb-12">
-      Leveraging quantum computing, AI, and nanotechnology while ensuring strict ethical standards and safety measures across all research protocols.
-    </p>
-    <img src="images/technology-pipeline.png" alt="Technology pipeline" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform">
-    <div class="mt-8">
-      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Learn More About Our Process</a>
-    </div>
-  </section>
-
-  <!-- Call-to-Action -->
-  <div class="section-divider"></div>
-  <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in" id="subscribe">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Join the Frontier of Human Potential</h2>
-    <p class="text-gray-300 mb-6">Stay informed or collaborate with our team to advance cutting-edge science.</p>
-    <div class="flex justify-center gap-4 flex-wrap">
-      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Subscribe for Updates</a>
-      <a href="#collaborate" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Request Collaboration</a>
-      <a href="#contact" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Contact Us</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- Footer (Impact-style) -->
   <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
-    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-      <div class="flex gap-4 flex-wrap justify-center">
-        <a href="index.html" class="hover:text-cyan-400 transition">About Us</a>
-        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-      </div>
-      <div class="flex gap-4 justify-center">
-        <a href="#" class="hover:text-cyan-400 transition">LinkedIn</a>
-        <a href="#" class="hover:text-cyan-400 transition">Twitter</a>
-        <a href="#" class="hover:text-cyan-400 transition">YouTube</a>
-      </div>
+    <div class="mb-4">
+      <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
+      <a href="technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
+      <a href="quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Application</a> |
+      <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 mx-2 transition">Quantum Neural Mapping</a> |
+      <a href="case-study.html" class="hover:text-cyan-400 mx-2 transition">Case Study</a> |
+      <a href="impact.html" class="hover:text-cyan-400 mx-2 transition">Impact</a> |
+      <a href="research.html" class="hover:text-cyan-400 mx-2 transition">Research</a> |
+      <a href="breakthroughs.html" class="hover:text-cyan-400 mx-2 transition">Breakthroughs</a>
     </div>
-    <div class="text-gray-500 text-sm">
-      Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | Address: 123 Quantum Way, Tech City
-      <br><br>
-      <em>These breakthroughs represent our research pipelines. Results are experimental and conceptual.</em>
+    <div class="mb-4">
+      <span>Phone: 123-456-7890 | Email: 
+        <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | 
+        Address: 123 Quantum Way, Tech City
+      </span>
     </div>
+    <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
+  <!-- Scripts -->
   <script>
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState='running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
@@ -243,7 +230,7 @@
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
       menuToggle.classList.toggle('open', menuOpen);
-      if (menuOpen) {
+      if(menuOpen){
         mobileMenu.classList.add('open');
         mobileMenu.style.display = 'block';
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
@@ -252,7 +239,7 @@
         mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
-        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+        setTimeout(() => { if(!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
     });
   </script>
