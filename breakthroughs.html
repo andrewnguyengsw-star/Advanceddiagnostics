@@ -12,15 +12,18 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
 
+    /* Fade-in animation */
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
+    /* Gradient text */
     .gradient-text {
       background: linear-gradient(90deg, #00ffff, #8a2be2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
+    /* Mobile menu */
     #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
     #mobile-menu.open { display: block; }
 
@@ -28,6 +31,7 @@
     #menu-toggle.open span:nth-child(2) { opacity: 0; }
     #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+    /* Glassy buttons */
     .glass-btn { 
       background: rgba(255,255,255,0.1); 
       backdrop-filter: blur(8px); 
@@ -39,10 +43,12 @@
       transform: translateY(-2px) scale(1.02); 
     }
 
+    /* Section dividers */
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
 
-    .breakthrough-card { transform: translateZ(0); transition: transform 0.3s ease; }
-    .breakthrough-card:hover { transform: scale(1.03); }
+    /* Breakthrough cards */
+    .breakthrough-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); padding: 2rem; border-radius: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .breakthrough-card:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(0,255,255,0.4); }
     .accent-bar { width: 4px; border-radius: 9999px; background: linear-gradient(to bottom, #00ffff, #8a2be2); animation: pulse 2s infinite; margin-right: 1rem; }
     @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
   </style>
@@ -53,17 +59,18 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
-      <nav class="hidden sm:flex space-x-6">
+      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
         <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
         <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
         <a href="breakthroughs.html" class="font-semibold underline hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
       <div class="sm:hidden">
-        <button id="menu-toggle" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500 bg-black" aria-label="Toggle navigation menu">
+        <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
@@ -78,7 +85,8 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
+        <a href="breakthroughs.html" class="hover:text-cyan-400 transition font-semibold underline">Breakthroughs</a>
       </nav>
     </div>
   </header>
@@ -107,7 +115,6 @@
     <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-400 text-center">Major Breakthroughs</h2>
 
     <div class="space-y-12">
-
       <!-- Human Biosonar -->
       <div class="grid md:grid-cols-2 gap-12 items-center breakthrough-card">
         <div class="flex items-start gap-4">
@@ -131,7 +138,7 @@
           <div>
             <h3 class="text-2xl font-semibold mb-3">Enhanced Senses</h3>
             <p class="text-gray-300">
-              Our research advances human perception beyond baseline biological limits — sharpening sight, sound, proprioception, and introducing <strong>Praetor Sense</strong>: an evolved ability to detect the presence of law enforcement and military personnel (local police, state troopers, FBI, Interpol, DHS, and active military units) through undiscovered sensory streams. This evolutionary adaptation provides pre-conscious recognition of authority figures, enhancing human situational awareness.
+              Our research advances human perception beyond baseline biological limits — sharpening sight, sound, proprioception, and introducing <strong>Praetor Sense</strong>: an evolved ability to detect the presence of law enforcement and military personnel through undiscovered sensory streams.
             </p>
           </div>
         </div>
@@ -147,7 +154,7 @@
           <div>
             <h3 class="text-2xl font-semibold mb-3">Danger Detection</h3>
             <p class="text-gray-300">
-              A dedicated sense designed to detect environmental threats, hostile intent, and imminent danger before it is consciously perceived. This sense operates like a biological early-warning system, giving users a critical advantage in avoiding harm.
+              A dedicated sense designed to detect environmental threats, hostile intent, and imminent danger before it is consciously perceived. This sense operates like a biological early-warning system.
             </p>
           </div>
         </div>
@@ -179,7 +186,7 @@
           <div>
             <h3 class="text-2xl font-semibold mb-3">Fundamental Particle Control</h3>
             <p class="text-gray-300">
-              A transformative breakthrough, our technology enables manipulation of fundamental particles within the human body. This capability opens the door to entirely new forms of human interaction with matter and energy at the quantum level.
+              A transformative breakthrough, our technology enables manipulation of fundamental particles within the human body. This opens the door to entirely new forms of human interaction with matter and energy at the quantum level.
             </p>
           </div>
         </div>
@@ -187,7 +194,6 @@
           <img src="images/fundamental-particle-control.png" alt="Fundamental particle control" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
         </div>
       </div>
-
     </div>
   </section>
 
@@ -238,6 +244,14 @@
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
         setTimeout(() => { if(!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+      }
+    });
+
+    // Highlight current page dynamically
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if(link.getAttribute('href') === currentPage){
+        link.classList.add('font-semibold','underline');
       }
     });
   </script>
