@@ -41,7 +41,6 @@
 
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
 
-    /* Breakthroughs hover & accent bar */
     .breakthrough-card { transform: translateZ(0); transition: transform 0.3s ease; }
     .breakthrough-card:hover { transform: scale(1.03); }
     .accent-bar { width: 4px; border-radius: 9999px; background: linear-gradient(to bottom, #00ffff, #8a2be2); animation: pulse 2s infinite; margin-right: 1rem; }
@@ -130,9 +129,9 @@
         <div class="flex items-start gap-4">
           <div class="accent-bar"></div>
           <div>
-            <h3 class="text-2xl font-semibold mb-3">Enhanced Senses & Danger Detection</h3>
+            <h3 class="text-2xl font-semibold mb-3">Enhanced Senses</h3>
             <p class="text-gray-300">
-              Our technology enhances human perception, enabling the detection of subtle environmental cues and potential threats with unprecedented precision. Users gain a heightened awareness that surpasses ordinary human sensory limits.
+              Our research advances human perception beyond baseline biological limits — sharpening sight, sound, proprioception, and introducing <strong>Praetor Sense</strong>: an evolved ability to detect the presence of law enforcement and military personnel (local police, state troopers, FBI, Interpol, DHS, and active military units) through undiscovered sensory streams. This evolutionary adaptation provides pre-conscious recognition of authority figures, enhancing human situational awareness.
             </p>
           </div>
         </div>
@@ -141,19 +140,19 @@
         </div>
       </div>
 
-      <!-- Law Enforcement Detection -->
+      <!-- Danger Detection -->
       <div class="grid md:grid-cols-2 gap-12 items-center breakthrough-card">
         <div class="flex items-start gap-4">
           <div class="accent-bar"></div>
           <div>
-            <h3 class="text-2xl font-semibold mb-3">Long-Range Detection of Law Enforcement</h3>
+            <h3 class="text-2xl font-semibold mb-3">Danger Detection</h3>
             <p class="text-gray-300">
-              A key capability of our system is the ability to detect law enforcement activity from a distance of up to 50 miles, providing advanced situational awareness and strategic advantage.
+              A dedicated sense designed to detect environmental threats, hostile intent, and imminent danger before it is consciously perceived. This sense operates like a biological early-warning system, giving users a critical advantage in avoiding harm.
             </p>
           </div>
         </div>
         <div>
-          <img src="images/law-enforcement-detection.png" alt="Law enforcement detection" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+          <img src="images/danger-detection.png" alt="Danger detection" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
         </div>
       </div>
 
@@ -194,7 +193,7 @@
 
   <div class="section-divider"></div>
 
-  <!-- Footer (Impact-style) -->
+  <!-- Footer -->
   <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
     <div class="mb-4">
       <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
@@ -215,7 +214,6 @@
     <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
-  <!-- Scripts -->
   <script>
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {

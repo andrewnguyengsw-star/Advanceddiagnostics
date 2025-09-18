@@ -23,7 +23,7 @@
       to { opacity: 1; transform: translateY(0); } 
     }
 
-    /* Gradient text for hero subheading */
+    /* Gradient text */
     .gradient-text {
       background: linear-gradient(90deg, #00ffff, #8a2be2);
       -webkit-background-clip: text;
@@ -70,18 +70,18 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
-      <nav class="hidden sm:flex space-x-6">
+      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
         <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
         <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="research.html" class="font-semibold underline hover:text-cyan-400 transition">Research</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
+        <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
-
       <div class="sm:hidden">
-        <button id="menu-toggle" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500 bg-black" aria-label="Toggle navigation menu">
+        <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
@@ -97,7 +97,8 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="research.html" class="font-semibold hover:text-cyan-400 transition">Research</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
+        <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
     </div>
   </header>
@@ -115,14 +116,14 @@
       </span>
     </p>
     <div class="flex gap-4 fade-in">
-      <a href="#serums" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Learn About Our Serums & Drugs</a>
-      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Subscribe for Updates</a>
+      <a href="#serums" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Learn About Our Serums & Drugs</a>
+      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Subscribe for Updates</a>
     </div>
   </section>
 
   <!-- Science Section -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="science">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">The Biology of Aging, Performance, and Cognition</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center text-cyan-400">The Biology of Aging, Performance, and Cognition</h2>
     <div class="grid md:grid-cols-3 gap-12">
       <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
         <h3 class="font-semibold text-xl mb-2 text-cyan-400">Aging</h3>
@@ -155,7 +156,7 @@
           <li><strong>Stem cell rejuvenation</strong></li>
           <li><strong>Anti-inflammatory and antioxidant properties</strong></li>
         </ul>
-        <a href="#reverse-aging-research" class="glass-btn mt-6 inline-block px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Explore Anti-Aging Research</a>
+        <a href="#reverse-aging-research" class="glass-btn mt-6 inline-block px-6 py-3 rounded-xl font-semibold text-white">Explore Anti-Aging Research</a>
       </div>
       <div>
         <img src="images/reverse-aging-serum.png" alt="Cellular rejuvenation" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
@@ -177,7 +178,7 @@
           <li><strong>Metabolic acceleration: improved endurance, oxygen utilization, energy efficiency</strong></li>
           <li><strong>Resilience & recovery: reduced inflammation, accelerated repair, increased resistance to fatigue and injury</strong></li>
         </ul>
-        <a href="#super-soldier-research" class="glass-btn mt-6 inline-block px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Discover Super Soldier Research</a>
+        <a href="#super-soldier-research" class="glass-btn mt-6 inline-block px-6 py-3 rounded-xl font-semibold text-white">Discover Super Soldier Research</a>
       </div>
       <div>
         <img src="images/super-soldier-serum.png" alt="Performance chart" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
@@ -199,7 +200,7 @@
           <li><strong>Enhances oxygen and glucose utilization in the brain</strong></li>
           <li><strong>Supports long-term neural health and resilience</strong></li>
         </ul>
-        <a href="#cognitive-research" class="glass-btn mt-6 inline-block px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Explore Cognitive Enhancement Research</a>
+        <a href="#cognitive-research" class="glass-btn mt-6 inline-block px-6 py-3 rounded-xl font-semibold text-white">Explore Cognitive Enhancement Research</a>
       </div>
       <div>
         <img src="images/cognitive-drug.png" alt="Brain connectivity diagram" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
@@ -217,7 +218,7 @@
       <img src="images/technology-pipeline.png" alt="Research to delivery pipeline" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform">
     </div>
     <div class="mt-8 text-center">
-      <a href="#technology" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">See Our Technology in Action</a>
+      <a href="#technology" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">See Our Technology in Action</a>
     </div>
   </section>
 
@@ -232,7 +233,7 @@
       <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Risk mitigation strategies and ethical considerations</div>
     </div>
     <div class="mt-8 text-center">
-      <a href="#safety" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Learn About Our Safety Measures</a>
+      <a href="#safety" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Learn About Our Safety Measures</a>
     </div>
   </section>
 
@@ -243,40 +244,35 @@
     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Join the Future of Human Potential</h2>
     <p class="text-gray-300 mb-6">Stay informed or collaborate with our research team.</p>
     <div class="flex justify-center gap-4 flex-wrap">
-      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Subscribe for Updates</a>
-      <a href="#collaborate" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Request Collaboration</a>
-      <a href="#contact" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Contact Us</a>
+      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Subscribe for Updates</a>
+      <a href="#collaborate" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Request Collaboration</a>
+      <a href="#contact" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Contact Us</a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
-    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-      <div class="flex gap-4 flex-wrap justify-center">
-        <a href="index.html" class="hover:text-cyan-400 transition">About Us</a>
-        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-      </div>
-      <div class="flex gap-4 justify-center">
-        <a href="#" class="hover:text-cyan-400 transition">LinkedIn</a>
-        <a href="#" class="hover:text-cyan-400 transition">Twitter</a>
-        <a href="#" class="hover:text-cyan-400 transition">YouTube</a>
-      </div>
+    <div class="mb-4">
+      <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
+      <a href="technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
+      <a href="quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Application</a> |
+      <a href="case-study.html" class="hover:text-cyan-400 mx-2 transition">Case Study</a> |
+      <a href="impact.html" class="hover:text-cyan-400 mx-2 transition">Impact</a> |
+      <a href="research.html" class="hover:text-cyan-400 mx-2 transition">Research</a> |
+      <a href="breakthroughs.html" class="hover:text-cyan-400 mx-2 transition">Breakthroughs</a>
     </div>
-    <div class="text-gray-500 text-sm">
-      Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | Address: 123 Quantum Way, Tech City
-      <br><br>
-      <em>The serums and drugs presented on this page represent our research pipelines. These compounds are experimental and under investigation. Effects may vary. References to fictional serums or compounds are for conceptual framing only.</em>
+    <div class="mb-4">
+      <span>Phone: 123-456-7890 | Email: 
+        <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | 
+        Address: 123 Quantum Way, Tech City
+      </span>
     </div>
+    <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
   <script>
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
@@ -297,6 +293,14 @@
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
         setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+      }
+    });
+
+    // Highlight current page
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if(link.getAttribute('href') === currentPage) {
+        link.classList.add('font-semibold','underline');
       }
     });
   </script>
