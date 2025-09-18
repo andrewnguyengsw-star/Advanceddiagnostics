@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AECION | Breakthroughs</title>
+  <meta name="description" content="Explore AECION's major scientific breakthroughs in human performance, cellular rejuvenation, and cognitive enhancement.">
+  <link rel="canonical" href="https://www.aecion.com/breakthroughs.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #00ffff, #8a2be2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; }
+
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .glass-btn { 
+      background: rgba(255,255,255,0.1); 
+      backdrop-filter: blur(8px); 
+      border: 1px solid rgba(255,255,255,0.2); 
+      transition: all 0.3s ease; 
+    }
+    .glass-btn:hover { 
+      background: rgba(255,255,255,0.2); 
+      transform: translateY(-2px) scale(1.02); 
+    }
+
+    .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
+      <nav class="hidden sm:flex space-x-6">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="breakthroughs.html" class="font-semibold underline hover:text-cyan-400 transition">Breakthroughs</a>
+      </nav>
+      <div class="sm:hidden">
+        <button id="menu-toggle" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500 bg-black" aria-label="Toggle navigation menu">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
+      <nav class="flex flex-col px-4 py-4 space-y-2">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="breakthroughs.html" class="font-semibold hover:text-cyan-400 transition">Breakthroughs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Pioneering Human Evolutionary Breakthroughs</h1>
+    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-4 fade-in">
+      Unlocking the next frontier in human potential through advanced quantum-informed science.
+    </p>
+    <p class="text-md sm:text-lg md:text-xl max-w-3xl mb-8 fade-in font-semibold leading-relaxed text-center">
+      <span class="font-bold gradient-text">Our Major Breakthroughs</span><br>
+      <span class="text-gray-300">
+        From cellular rejuvenation to cognitive augmentation, AECION integrates quantum sensing, AI-driven drug design, and neural optimization to redefine human capability while ensuring ethical rigor.
+      </span>
+    </p>
+    <div class="flex gap-4 fade-in">
+      <a href="#quantum-mapping" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Explore Breakthroughs</a>
+      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Subscribe for Updates</a>
+    </div>
+  </section>
+
+  <!-- Quantum Neuroimmune Mapping -->
+  <div class="section-divider"></div>
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="quantum-mapping">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Quantum Neuroimmune Mapping</h2>
+        <p class="text-gray-300 mb-6">
+          Mapping neural and immune interactions at the quantum level to identify precise biological targets and enhance human resilience.
+        </p>
+        <ul class="text-gray-300 space-y-3">
+          <li><strong>Real-time tracking of autoantibody dynamics</strong></li>
+          <li><strong>Multi-sensory integration for cognitive optimization</strong></li>
+          <li><strong>Novel targets for personalized therapies</strong></li>
+        </ul>
+      </div>
+      <div>
+        <img src="images/quantum-mapping.png" alt="Quantum neuroimmune mapping" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+      </div>
+    </div>
+  </section>
+
+  <!-- Human Gain-of-Function -->
+  <div class="section-divider"></div>
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Human Gain-of-Function</h2>
+        <p class="text-gray-300 mb-6">
+          Enhancing cognition, endurance, and resilience through advanced drug design and neural optimization frameworks.
+        </p>
+        <ul class="text-gray-300 space-y-3">
+          <li><strong>Peak performance cognitive protocols</strong></li>
+          <li><strong>Neural network optimization</strong></li>
+          <li><strong>Safe, ethical, and reproducible methodologies</strong></li>
+        </ul>
+      </div>
+      <div>
+        <img src="images/human-gain-of-function.png" alt="Human gain-of-function" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+      </div>
+    </div>
+  </section>
+
+  <!-- Cellular Rejuvenation -->
+  <div class="section-divider"></div>
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Cellular Rejuvenation</h2>
+        <p class="text-gray-300 mb-6">
+          Interventions targeting senescence, telomere shortening, and oxidative stress to restore cellular health and longevity.
+        </p>
+        <ul class="text-gray-300 space-y-3">
+          <li><strong>Telomere extension and repair</strong></li>
+          <li><strong>Stem cell activation and renewal</strong></li>
+          <li><strong>Anti-inflammatory and antioxidant interventions</strong></li>
+        </ul>
+      </div>
+      <div>
+        <img src="images/cellular-rejuvenation.png" alt="Cellular rejuvenation" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+      </div>
+    </div>
+  </section>
+
+  <!-- Cognitive Enhancement -->
+  <div class="section-divider"></div>
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Cognitive Enhancement</h2>
+        <p class="text-gray-300 mb-6">
+          Neuropharmacological breakthroughs for memory, focus, learning speed, and problem-solving optimization.
+        </p>
+        <ul class="text-gray-300 space-y-3">
+          <li><strong>Boosting synaptic efficiency and neuroplasticity</strong></li>
+          <li><strong>Optimizing key neurotransmitters</strong></li>
+          <li><strong>Supporting long-term neural health</strong></li>
+        </ul>
+      </div>
+      <div>
+        <img src="images/cognitive-enhancement.png" alt="Cognitive enhancement" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology & Ethics Section -->
+  <div class="section-divider"></div>
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400">Technology & Ethics</h2>
+    <p class="text-gray-300 mb-12">
+      Leveraging quantum computing, AI, and nanotechnology while ensuring strict ethical standards and safety measures across all research protocols.
+    </p>
+    <img src="images/technology-pipeline.png" alt="Technology pipeline" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform">
+    <div class="mt-8">
+      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Learn More About Our Process</a>
+    </div>
+  </section>
+
+  <!-- Call-to-Action -->
+  <div class="section-divider"></div>
+  <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in" id="subscribe">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Join the Frontier of Human Potential</h2>
+    <p class="text-gray-300 mb-6">Stay informed or collaborate with our team to advance cutting-edge science.</p>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Subscribe for Updates</a>
+      <a href="#collaborate" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Request Collaboration</a>
+      <a href="#contact" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+      <div class="flex gap-4 flex-wrap justify-center">
+        <a href="index.html" class="hover:text-cyan-400 transition">About Us</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+      </div>
+      <div class="flex gap-4 justify-center">
+        <a href="#" class="hover:text-cyan-400 transition">LinkedIn</a>
+        <a href="#" class="hover:text-cyan-400 transition">Twitter</a>
+        <a href="#" class="hover:text-cyan-400 transition">YouTube</a>
+      </div>
+    </div>
+    <div class="text-gray-500 text-sm">
+      Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | Address: 123 Quantum Way, Tech City
+      <br><br>
+      <em>These breakthroughs represent our research pipelines. Results are experimental and conceptual.</em>
+    </div>
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+      }
+    });
+  </script>
+
+</body>
+</html>
