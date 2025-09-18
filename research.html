@@ -11,34 +11,38 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
-
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
     .gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
+    .dropdown { position: relative; }
+    .dropdown-content {
+      display: block; position: absolute; top: 100%; left: 0;
+      background-color: rgba(20, 20, 20, 0.95);
+      min-width: 220px; border-radius: 0.5rem; overflow: hidden; z-index: 50;
+      opacity: 0; transform: translateY(-10px); pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #ffffff; }
+    .dropdown-content a:hover { color: #00ffff; background-color: rgba(255,255,255,0.1); }
+    .dropdown:hover .dropdown-content,
+    .dropdown.open .dropdown-content {
+      opacity: 1; transform: translateY(0); pointer-events: auto;
+    }
+    a:focus, button:focus { outline: 2px solid #00ffff; outline-offset: 4px; border-radius: 0.375rem; }
+    body:not(.user-is-tabbing) a:focus, body:not(.user-is-tabbing) button:focus { outline: none; }
     #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
     #mobile-menu.open { display: block; }
-
     #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     #menu-toggle.open span:nth-child(2) { opacity: 0; }
     #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
     .glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
     .glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
-
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
-
-    .dropdown { position: relative; }
-    .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: rgba(20, 20, 20, 0.95); min-width: 220px; border-radius: 0.5rem; overflow: hidden; z-index: 50; }
-    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #ffffff; }
-    .dropdown-content a:hover { color: #00ffff; background-color: rgba(255,255,255,0.1); }
-    .dropdown:hover .dropdown-content { display: block; }
   </style>
 </head>
 <body class="bg-black text-white">
 
-  <!-- Navigation -->
+  <!-- Header / Navigation -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
@@ -50,7 +54,7 @@
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
         <div class="dropdown">
-          <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
+          <button class="hover:text-cyan-400 transition">Research</button>
           <div class="dropdown-content">
             <a href="#cognitive-research">Cognitive Enhancement</a>
             <a href="#reverse-aging-research">Reverse-Aging Serum</a>
@@ -61,9 +65,9 @@
       </nav>
       <div class="sm:hidden">
         <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform"></span>
         </button>
       </div>
     </div>
@@ -97,22 +101,20 @@
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Unlock the Future of Human Potential</h1>
-    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-4 fade-in">
-      Pioneering research in cellular rejuvenation, human performance, and cognitive enhancement.
-    </p>
+    <p class="text-lg text-gray-300 max-w-3xl mb-4 fade-in">Pioneering research in cellular rejuvenation, human performance, and cognitive enhancement.</p>
     <p class="text-md sm:text-lg md:text-xl max-w-3xl mb-8 fade-in font-semibold leading-relaxed text-center">
-      <span class="font-bold gradient-text">Human Gain-of-Function: Evolving Human Potential</span><br>
+      <span class="font-bold gradient-text">Human Gain-of-Function</span><br>
       <span class="text-gray-300">
-        Our research explores the mechanisms underlying peak human performance, leveraging quantum-informed drug design and biological optimization. Every effort converges on a singular mission: to transform cutting-edge discoveries into actionable human gain-of-function, heralding the emergence of novel human capabilities.
+        Our research explores the mechanisms underlying peak human performance, leveraging quantum-informed drug design and biological optimization.
       </span>
     </p>
     <div class="flex gap-4 fade-in">
-      <a href="#serums" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Learn About Our Serums & Drugs</a>
+      <a href="#serums" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Learn About Our Serums</a>
       <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Subscribe for Updates</a>
     </div>
   </section>
 
-  <!-- Serums Sections (Reverse-Aging, Super Soldier, Cognitive) -->
+  <!-- Reverse Aging Section -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="reverse-aging-research">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
@@ -132,6 +134,7 @@
 
   <div class="section-divider"></div>
 
+  <!-- Super Soldier Section -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="super-soldier-research">
     <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
       <div>
@@ -152,6 +155,7 @@
 
   <div class="section-divider"></div>
 
+  <!-- Cognitive Enhancement -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="cognitive-research">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
@@ -172,12 +176,10 @@
 
   <div class="section-divider"></div>
 
-  <!-- Cutting-Edge Science Section -->
+  <!-- Cutting Edge Science -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="cutting-edge">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-cyan-400">Cutting-Edge Science Behind Our Serums & Drugs</h2>
-    <p class="text-gray-300 text-center mb-6">
-      Leveraging quantum computing, AI-driven drug design, and nanotechnology for precise molecular intervention and delivery.
-    </p>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-cyan-400">Cutting-Edge Science</h2>
+    <p class="text-gray-300 text-center mb-6">Leveraging quantum computing, AI-driven drug design, and nanotechnology for precise molecular intervention and delivery.</p>
     <div class="text-center">
       <img src="images/technology-pipeline.png" alt="Research pipeline" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform">
     </div>
@@ -188,34 +190,28 @@
 
   <div class="section-divider"></div>
 
-  <!-- Responsible Research Section -->
+  <!-- Responsible Research -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="responsible-research">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-cyan-400">Responsible Research and Safety Measures</h2>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-cyan-400">Responsible Research & Safety</h2>
     <div class="grid md:grid-cols-3 gap-8 text-gray-300 text-left">
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Regulatory compliance and testing protocols</div>
+      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Regulatory compliance & testing protocols</div>
       <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Long-term monitoring of effects</div>
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Risk mitigation strategies and ethical considerations</div>
-    </div>
-    <div class="mt-8 text-center">
-      <a href="#safety" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Learn About Our Safety Measures</a>
+      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Ethical oversight & risk mitigation</div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Join the Future Section -->
+  <!-- Join the Future -->
   <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in" id="subscribe">
     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Join the Future of Human Potential</h2>
     <p class="text-gray-300 mb-6">Stay informed or collaborate with our research team.</p>
     <div class="flex justify-center gap-4 flex-wrap">
-      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Subscribe for Updates</a>
+      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Subscribe</a>
       <a href="#collaborate" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Collaborate With Us</a>
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
-  <!-- Footer -->
   <footer class="bg-black bg-opacity-90 py-12 text-gray-400 text-sm text-center">
     <div class="max-w-7xl mx-auto px-6 space-y-4">
       <div>&copy; 2025 AECION. All rights reserved.</div>
@@ -228,53 +224,49 @@
   </footer>
 
   <script>
+    // Fade-in animation
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
       menuToggle.classList.toggle('open', menuOpen);
-      if(menuOpen){
+      if (menuOpen) {
         mobileMenu.classList.add('open');
         mobileMenu.style.display = 'block';
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
         mobileMenu.style.opacity = '1';
       } else {
-        mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
         setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
     });
 
+    // Mobile submenu toggle
     const mobileResearchToggle = document.getElementById('mobile-research-toggle');
     const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
     mobileResearchToggle.addEventListener('click', () => {
-      const expanded = mobileResearchSubmenu.style.maxHeight && mobileResearchSubmenu.style.maxHeight !== "0px";
-      if(expanded){
-        mobileResearchSubmenu.style.maxHeight = "0";
-        mobileResearchSubmenu.style.opacity = "0";
-        mobileResearchToggle.querySelector('svg').classList.remove('rotate-180');
-      } else {
-        mobileResearchSubmenu.style.maxHeight = mobileResearchSubmenu.scrollHeight + "px";
-        mobileResearchSubmenu.style.opacity = "1";
-        mobileResearchToggle.querySelector('svg').classList.add('rotate-180');
-      }
+      const isOpen = mobileResearchSubmenu.style.maxHeight !== '0px';
+      mobileResearchSubmenu.style.maxHeight = isOpen ? '0px' : mobileResearchSubmenu.scrollHeight + 'px';
+      mobileResearchToggle.querySelector('svg').classList.toggle('rotate-180', !isOpen);
     });
 
-    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
-    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-      if(link.getAttribute('href') === currentPage){
-        link.classList.add('font-semibold','underline');
+    // Accessible keyboard focus
+    function handleFirstTab(e) {
+      if (e.key === 'Tab') {
+        document.body.classList.add('user-is-tabbing');
+        window.removeEventListener('keydown', handleFirstTab);
       }
-    });
+    }
+    window.addEventListener('keydown', handleFirstTab);
   </script>
-
 </body>
 </html>

@@ -37,9 +37,23 @@
     .subnav a:hover { color: #00ffff; }
     .subnav a.active { font-weight: 600; text-decoration: underline; color: #8a2be2; }
 
-    /* Desktop dropdown */
-    .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
-    .dropdown-menu { position: absolute; top: 100%; left: 0; background: black; border: 1px solid #444; border-radius: 0.5rem; width: 14rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 50; }
+    .dropdown-menu { 
+      opacity: 0; 
+      pointer-events: none; 
+      transition: opacity 0.3s ease; 
+      position: absolute; 
+      top: 100%; 
+      left: 0; 
+      background: black; 
+      border: 1px solid #444; 
+      border-radius: 0.5rem; 
+      width: 14rem; 
+      z-index: 50;
+    }
+    .dropdown.open .dropdown-menu { 
+      opacity: 1; 
+      pointer-events: auto; 
+    }
     .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: white; transition: background 0.3s; }
     .dropdown-menu a:hover { background: #111; }
   </style>
@@ -62,7 +76,7 @@
         <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
 
         <!-- Breakthroughs dropdown -->
-        <div class="dropdown relative">
+        <div class="dropdown relative" id="desktop-breakthroughs">
           <button class="hover:text-cyan-400 transition font-semibold underline">Breakthroughs</button>
           <div class="dropdown-menu">
             <a href="human-biosonar.html">Human Biosonar</a>
@@ -121,15 +135,13 @@
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Pioneering Human Evolutionary Breakthroughs</h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Breakthroughs in Human Performance</h1>
     <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-4 fade-in">
-      Unlocking the next frontier in human potential through advanced quantum-informed science.
+      Discover cellular rejuvenation, cognitive enhancement, and super soldier programs developed at AECION.
     </p>
     <p class="text-md sm:text-lg md:text-xl max-w-3xl mb-8 fade-in font-semibold leading-relaxed text-center">
-      <span class="font-bold gradient-text">Our Major Breakthroughs</span><br>
-      <span class="text-gray-300">
-        From cellular rejuvenation to cognitive augmentation, AECION integrates quantum sensing, AI-driven drug design, and neural optimization to redefine human capability while ensuring ethical rigor.
-      </span>
+      <span class="font-bold gradient-text">Pioneering Innovation</span><br>
+      Each breakthrough represents a leap forward in human gain-of-function, informed by quantum biology and advanced molecular engineering.
     </p>
     <div class="flex gap-4 fade-in">
       <a href="#breakthroughs" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Explore Breakthroughs</a>
@@ -239,68 +251,37 @@
         mobileMenu.classList.add('open');
         mobileMenu.style.display = 'block';
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-        mobileMenu.style.opacity = '1';
+        mobileMenu.style.opacity = 1;
       } else {
-        mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
-        mobileMenu.style.opacity = '0';
-        setTimeout(() => { if(!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+        mobileMenu.style.opacity = 0;
+        setTimeout(()=>mobileMenu.classList.remove('open'), 300);
       }
     });
 
-    // Mobile breakthroughs submenu toggle
-    const breakthroughsToggle = document.getElementById('mobile-breakthroughs-toggle');
-    const breakthroughsSubmenu = document.getElementById('mobile-breakthroughs-submenu');
-    const breakthroughsIcon = document.getElementById('mobile-breakthroughs-icon');
-    let breakthroughsOpen = false;
+    // Mobile breakthroughs submenu
+    const mobileSubToggle = document.getElementById('mobile-breakthroughs-toggle');
+    const mobileSubMenu = document.getElementById('mobile-breakthroughs-submenu');
+    const mobileSubIcon = document.getElementById('mobile-breakthroughs-icon');
+    let subOpen = false;
 
-    breakthroughsToggle.addEventListener('click', () => {
-      breakthroughsOpen = !breakthroughsOpen;
-      if (breakthroughsOpen) {
-        breakthroughsSubmenu.style.maxHeight = breakthroughsSubmenu.scrollHeight + 'px';
-        breakthroughsIcon.textContent = '−';
+    mobileSubToggle.addEventListener('click', () => {
+      subOpen = !subOpen;
+      if(subOpen){
+        mobileSubMenu.style.maxHeight = mobileSubMenu.scrollHeight + 'px';
+        mobileSubMenu.style.opacity = 1;
+        mobileSubIcon.textContent = '−';
       } else {
-        breakthroughsSubmenu.style.maxHeight = '0';
-        breakthroughsIcon.textContent = '+';
+        mobileSubMenu.style.maxHeight = '0';
+        mobileSubMenu.style.opacity = 0;
+        mobileSubIcon.textContent = '+';
       }
     });
 
-    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
-
-    // Highlight mobile submenu
-    const submenuLinks = breakthroughsSubmenu.querySelectorAll('a');
-    submenuLinks.forEach(link => {
-      if(link.getAttribute('href') === currentPage){
-        link.classList.add('font-semibold','underline');
-        breakthroughsSubmenu.style.maxHeight = breakthroughsSubmenu.scrollHeight + 'px';
-        breakthroughsIcon.textContent = '−';
-        breakthroughsOpen = true;
-      }
-    });
-
-    // Desktop subnav highlight + smooth scroll
-    const subnavLinks = document.querySelectorAll('.subnav a');
-    subnavLinks.forEach(link => {
-      const linkPage = link.getAttribute('href').split("/").pop();
-      if(linkPage === currentPage){
-        link.classList.add('active');
-      }
-      link.addEventListener('click', (e) => {
-        if(linkPage === currentPage){
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Highlight desktop dropdown links
-    const desktopDropdownLinks = document.querySelectorAll('.dropdown-menu a');
-    desktopDropdownLinks.forEach(link => {
-      const linkPage = link.getAttribute('href').split("/").pop();
-      if(linkPage === currentPage){
-        link.classList.add('font-semibold','underline');
-      }
-    });
+    // Desktop dropdown
+    const desktopDropdown = document.getElementById('desktop-breakthroughs');
+    desktopDropdown.addEventListener('mouseenter', ()=>desktopDropdown.classList.add('open'));
+    desktopDropdown.addEventListener('mouseleave', ()=>desktopDropdown.classList.remove('open'));
   </script>
 </body>
 </html>
