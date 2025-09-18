@@ -11,49 +11,25 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
-
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
     .gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
     #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
     #mobile-menu.open { display: block; }
-
     #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     #menu-toggle.open span:nth-child(2) { opacity: 0; }
     #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
     .glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
     .glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
-
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
-
     .breakthrough-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); padding: 2rem; border-radius: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .breakthrough-card:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(0,255,255,0.4); }
-
     .subnav { position: sticky; top: 20px; background: rgba(0,0,0,0.8); z-index: 40; padding: 0.75rem 0; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.95rem; flex-wrap: wrap; }
     .subnav a { transition: all 0.3s; }
     .subnav a:hover { color: #00ffff; }
     .subnav a.active { font-weight: 600; text-decoration: underline; color: #8a2be2; }
-
-    .dropdown-menu { 
-      opacity: 0; 
-      pointer-events: none; 
-      transition: opacity 0.3s ease; 
-      position: absolute; 
-      top: 100%; 
-      left: 0; 
-      background: black; 
-      border: 1px solid #444; 
-      border-radius: 0.5rem; 
-      width: 14rem; 
-      z-index: 50;
-    }
-    .dropdown.open .dropdown-menu { 
-      opacity: 1; 
-      pointer-events: auto; 
-    }
+    .dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: black; border: 1px solid #444; border-radius: 0.5rem; width: 14rem; z-index: 50; }
+    .dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
     .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: white; transition: background 0.3s; }
     .dropdown-menu a:hover { background: #111; }
   </style>
@@ -87,6 +63,9 @@
             <a href="energetic-field-resonance.html">EFR</a>
             <a href="neuroception.html">Neuroception</a>
             <a href="sanguivigilance.html">Sanguivigilance</a>
+            <a href="exosight.html">ExoSight™</a>
+            <a href="project-lucid.html">Project LUCID™</a>
+            <a href="project-vigor.html">Project VIGOR™</a>
           </div>
         </div>
       </nav>
@@ -128,6 +107,9 @@
           <a href="energetic-field-resonance.html" class="hover:text-cyan-400 transition text-sm">EFR</a>
           <a href="neuroception.html" class="hover:text-cyan-400 transition text-sm">Neuroception</a>
           <a href="sanguivigilance.html" class="hover:text-cyan-400 transition text-sm">Sanguivigilance</a>
+          <a href="exosight.html" class="hover:text-cyan-400 transition text-sm">ExoSight™</a>
+          <a href="project-lucid.html" class="hover:text-cyan-400 transition text-sm">Project LUCID™</a>
+          <a href="project-vigor.html" class="hover:text-cyan-400 transition text-sm">Project VIGOR™</a>
         </div>
       </nav>
     </div>
@@ -159,6 +141,9 @@
     <a href="energetic-field-resonance.html">EFR</a>
     <a href="neuroception.html">Neuroception</a>
     <a href="sanguivigilance.html">Sanguivigilance</a>
+    <a href="exosight.html">ExoSight™</a>
+    <a href="project-lucid.html">Project LUCID™</a>
+    <a href="project-vigor.html">Project VIGOR™</a>
   </div>
 
   <!-- Breakthroughs Grid -->
@@ -204,6 +189,21 @@
         <p class="text-gray-300 mb-4">Sensing blood presence, flow, and characteristics in other organisms.</p>
         <a href="sanguivigilance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">ExoSight™</h3>
+        <p class="text-gray-300 mb-4">Acquires visual and cognitive information beyond line of sight, extending sensory range to remote environments with high-resolution detail.</p>
+        <a href="exosight.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
+      </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Project LUCID™</h3>
+        <p class="text-gray-300 mb-4">Perceives and interprets visual input of another individual in real time, effectively “seeing through their eyes” with near-perfect fidelity.</p>
+        <a href="project-lucid.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
+      </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Project VIGOR™</h3>
+        <p class="text-gray-300 mb-4">Enhances metabolic adaptation for rapid recovery, increased endurance, and sustained peak performance via optimized mitochondrial efficiency, lactate clearance, and neuro-muscular coordination.</p>
+        <a href="project-vigor.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
+      </div>
     </div>
   </section>
 
@@ -232,14 +232,12 @@
 
   <!-- Scripts -->
   <script>
-    // Fade-in observer
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState='running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
@@ -259,7 +257,6 @@
       }
     });
 
-    // Mobile breakthroughs submenu
     const mobileSubToggle = document.getElementById('mobile-breakthroughs-toggle');
     const mobileSubMenu = document.getElementById('mobile-breakthroughs-submenu');
     const mobileSubIcon = document.getElementById('mobile-breakthroughs-icon');
@@ -278,7 +275,6 @@
       }
     });
 
-    // Desktop dropdown
     const desktopDropdown = document.getElementById('desktop-breakthroughs');
     desktopDropdown.addEventListener('mouseenter', ()=>desktopDropdown.classList.add('open'));
     desktopDropdown.addEventListener('mouseleave', ()=>desktopDropdown.classList.remove('open'));
