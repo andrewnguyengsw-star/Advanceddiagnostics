@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
 
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
@@ -29,7 +29,6 @@
 
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
 
-    /* Desktop dropdown */
     .dropdown { position: relative; }
     .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background-color: rgba(20, 20, 20, 0.95); min-width: 220px; border-radius: 0.5rem; overflow: hidden; z-index: 50; }
     .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #ffffff; }
@@ -43,7 +42,6 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
-      <!-- Desktop Menu -->
       <nav class="hidden sm:flex space-x-6" id="desktop-menu">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
         <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
@@ -51,20 +49,16 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-
-        <!-- Research Dropdown Desktop -->
         <div class="dropdown">
           <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
           <div class="dropdown-content">
-            <a href="cognitive-enhancement.html">Cognitive Enhancement</a>
-            <a href="reverse-aging.html">Reverse-Aging Serum</a>
-            <a href="super-soldier.html">Super Soldier Serum</a>
+            <a href="#cognitive-research">Cognitive Enhancement</a>
+            <a href="#reverse-aging-research">Reverse-Aging Serum</a>
+            <a href="#super-soldier-research">Super Soldier Serum</a>
           </div>
         </div>
-
         <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
-      <!-- Mobile Menu Toggle -->
       <div class="sm:hidden">
         <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
@@ -74,7 +68,6 @@
       </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
@@ -83,8 +76,6 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-
-        <!-- Mobile Research Dropdown -->
         <div class="flex flex-col">
           <button id="mobile-research-toggle" class="flex justify-between items-center w-full text-left px-2 py-2 hover:text-cyan-400 transition">
             Research
@@ -93,12 +84,11 @@
             </svg>
           </button>
           <div id="mobile-research-submenu" class="flex flex-col pl-4 mt-1 max-h-0 overflow-hidden transition-all duration-300">
-            <a href="cognitive-enhancement.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Cognitive Enhancement</a>
-            <a href="reverse-aging.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Reverse-Aging Serum</a>
-            <a href="super-soldier.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Super Soldier Serum</a>
+            <a href="#cognitive-research" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Cognitive Enhancement</a>
+            <a href="#reverse-aging-research" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Reverse-Aging Serum</a>
+            <a href="#super-soldier-research" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Super Soldier Serum</a>
           </div>
         </div>
-
         <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
     </div>
@@ -122,32 +112,8 @@
     </div>
   </section>
 
-  <!-- Science Section -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="science">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center text-cyan-400">The Biology of Aging, Performance, and Cognition</h2>
-    <div class="grid md:grid-cols-3 gap-12">
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-        <h3 class="font-semibold text-xl mb-2 text-cyan-400">Aging</h3>
-        <p>Cellular senescence, telomere shortening, oxidative stress</p>
-      </div>
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-        <h3 class="font-semibold text-xl mb-2 text-cyan-400">Performance</h3>
-        <p>Muscle regeneration, neural efficiency, endurance</p>
-      </div>
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-        <h3 class="font-semibold text-xl mb-2 text-cyan-400">Cognition</h3>
-        <p>Neuroplasticity, synaptic efficiency, memory, and focus</p>
-      </div>
-    </div>
-    <div class="mt-12 text-center">
-      <img src="images/aging-vs-enhanced-cells.png" alt="Cells and neural networks comparison" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform">
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- Reverse-Aging Serum -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="serums">
+  <!-- Serums Sections (Reverse-Aging, Super Soldier, Cognitive) -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="reverse-aging-research">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
         <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Reverse-Aging Serum</h2>
@@ -157,7 +123,6 @@
           <li><strong>Stem cell rejuvenation</strong></li>
           <li><strong>Anti-inflammatory and antioxidant properties</strong></li>
         </ul>
-        <a href="#reverse-aging-research" class="glass-btn mt-6 inline-block px-6 py-3 rounded-xl font-semibold text-white">Explore Anti-Aging Research</a>
       </div>
       <div>
         <img src="images/reverse-aging-serum.png" alt="Cellular rejuvenation" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
@@ -167,19 +132,17 @@
 
   <div class="section-divider"></div>
 
-  <!-- Super Soldier Serum -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="super-soldier-research">
     <div class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
       <div>
         <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Super Soldier Serum</h2>
-        <p class="text-gray-300 mb-6">Modeled after Captain America’s Super Soldier Serum and Vought’s Compound V, designed to push human capabilities beyond natural limits.</p>
+        <p class="text-gray-300 mb-6">Modeled to push human capabilities beyond natural limits.</p>
         <ul class="text-gray-300 space-y-3">
-          <li><strong>Muscle & skeletal enhancement: increased strength, hypertrophy, rapid regeneration</strong></li>
-          <li><strong>Neural optimization: faster reaction times, enhanced cognition</strong></li>
-          <li><strong>Metabolic acceleration: improved endurance, oxygen utilization, energy efficiency</strong></li>
-          <li><strong>Resilience & recovery: reduced inflammation, accelerated repair, increased resistance to fatigue and injury</strong></li>
+          <li><strong>Muscle & skeletal enhancement</strong></li>
+          <li><strong>Neural optimization</strong></li>
+          <li><strong>Metabolic acceleration</strong></li>
+          <li><strong>Resilience & recovery</strong></li>
         </ul>
-        <a href="#super-soldier-research" class="glass-btn mt-6 inline-block px-6 py-3 rounded-xl font-semibold text-white">Discover Super Soldier Research</a>
       </div>
       <div>
         <img src="images/super-soldier-serum.png" alt="Performance chart" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
@@ -189,19 +152,17 @@
 
   <div class="section-divider"></div>
 
-  <!-- Cognitive Enhancement Drug -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="cognitive-research">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
         <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-cyan-400">Cognitive Enhancement Drug</h2>
-        <p class="text-gray-300 mb-6">Advanced neuropharmacology designed to improve memory, focus, learning speed, and problem-solving abilities.</p>
+        <p class="text-gray-300 mb-6">Advanced neuropharmacology to improve memory, focus, and problem-solving abilities.</p>
         <ul class="text-gray-300 space-y-3">
           <li><strong>Boosts synaptic efficiency and neuroplasticity</strong></li>
-          <li><strong>Increases production of key neurotransmitters: dopamine, acetylcholine, glutamate</strong></li>
-          <li><strong>Enhances oxygen and glucose utilization in the brain</strong></li>
-          <li><strong>Supports long-term neural health and resilience</strong></li>
+          <li><strong>Enhances neurotransmitter production</strong></li>
+          <li><strong>Improves oxygen and glucose utilization</strong></li>
+          <li><strong>Supports long-term neural health</strong></li>
         </ul>
-        <a href="#cognitive-research" class="glass-btn mt-6 inline-block px-6 py-3 rounded-xl font-semibold text-white">Explore Cognitive Enhancement Research</a>
       </div>
       <div>
         <img src="images/cognitive-drug.png" alt="Brain connectivity diagram" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
@@ -211,22 +172,24 @@
 
   <div class="section-divider"></div>
 
-  <!-- Technology & Innovation -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-cyan-400">Cutting-Edge Science Behind Our Serums & Drugs</h2>
-    <p class="text-gray-300 text-center mb-12">Leveraging quantum computing, AI-driven drug design, and nanotechnology for precise molecular intervention and delivery.</p>
+  <!-- Cutting-Edge Science Section -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="cutting-edge">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center text-cyan-400">Cutting-Edge Science Behind Our Serums & Drugs</h2>
+    <p class="text-gray-300 text-center mb-6">
+      Leveraging quantum computing, AI-driven drug design, and nanotechnology for precise molecular intervention and delivery.
+    </p>
     <div class="text-center">
-      <img src="images/technology-pipeline.png" alt="Research to delivery pipeline" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform">
+      <img src="images/technology-pipeline.png" alt="Research pipeline" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform">
     </div>
-    <div class="mt-8 text-center">
+    <div class="mt-6 text-center">
       <a href="#technology" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">See Our Technology in Action</a>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Ethics & Safety -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
+  <!-- Responsible Research Section -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="responsible-research">
     <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-cyan-400">Responsible Research and Safety Measures</h2>
     <div class="grid md:grid-cols-3 gap-8 text-gray-300 text-left">
       <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Regulatory compliance and testing protocols</div>
@@ -240,7 +203,7 @@
 
   <div class="section-divider"></div>
 
-  <!-- Call-to-Action -->
+  <!-- Join the Future Section -->
   <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in" id="subscribe">
     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Join the Future of Human Potential</h2>
     <p class="text-gray-300 mb-6">Stay informed or collaborate with our research team.</p>
@@ -255,9 +218,7 @@
   <!-- Footer -->
   <footer class="bg-black bg-opacity-90 py-12 text-gray-400 text-sm text-center">
     <div class="max-w-7xl mx-auto px-6 space-y-4">
-      <div>
-        &copy; 2025 AECION. All rights reserved.
-      </div>
+      <div>&copy; 2025 AECION. All rights reserved.</div>
       <div class="flex justify-center space-x-6">
         <a href="privacy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
         <a href="terms.html" class="hover:text-cyan-400 transition">Terms of Service</a>
@@ -267,14 +228,12 @@
   </footer>
 
   <script>
-    // Fade-in sections
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
@@ -294,7 +253,6 @@
       }
     });
 
-    // Mobile Research Dropdown
     const mobileResearchToggle = document.getElementById('mobile-research-toggle');
     const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
     mobileResearchToggle.addEventListener('click', () => {
@@ -310,7 +268,6 @@
       }
     });
 
-    // Highlight current page
     const currentPage = window.location.pathname.split("/").pop() || 'index.html';
     document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
       if(link.getAttribute('href') === currentPage){
