@@ -31,10 +31,7 @@
 
     .breakthrough-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); padding: 2rem; border-radius: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .breakthrough-card:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(0,255,255,0.4); }
-    .accent-bar { width: 4px; border-radius: 9999px; background: linear-gradient(to bottom, #00ffff, #8a2be2); animation: pulse 2s infinite; margin-right: 1rem; }
-    @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
 
-    /* Subnavigation */
     .subnav { position: sticky; top: 20px; background: rgba(0,0,0,0.8); z-index: 40; padding: 0.75rem 0; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.95rem; flex-wrap: wrap; }
     .subnav a { transition: all 0.3s; }
     .subnav a:hover { color: #00ffff; }
@@ -155,7 +152,6 @@
   <!-- Breakthroughs Grid -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="breakthroughs">
     <div class="grid md:grid-cols-2 gap-8">
-      <!-- Repeat all your breakthrough cards as before -->
       <div class="breakthrough-card">
         <h3 class="text-2xl font-semibold mb-3">Human Biosonar</h3>
         <p class="text-gray-300 mb-4">A perception system that uses advanced neural and cellular signaling instead of acoustics.</p>
@@ -252,7 +248,7 @@
       }
     });
 
-    // Mobile breakthroughs submenu toggle + auto-expand active
+    // Mobile breakthroughs submenu toggle
     const breakthroughsToggle = document.getElementById('mobile-breakthroughs-toggle');
     const breakthroughsSubmenu = document.getElementById('mobile-breakthroughs-submenu');
     const breakthroughsIcon = document.getElementById('mobile-breakthroughs-icon');
@@ -270,6 +266,8 @@
     });
 
     const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+
+    // Highlight mobile submenu
     const submenuLinks = breakthroughsSubmenu.querySelectorAll('a');
     submenuLinks.forEach(link => {
       if(link.getAttribute('href') === currentPage){
@@ -294,7 +292,15 @@
         }
       });
     });
-  </script>
 
+    // Highlight desktop dropdown links
+    const desktopDropdownLinks = document.querySelectorAll('.dropdown-menu a');
+    desktopDropdownLinks.forEach(link => {
+      const linkPage = link.getAttribute('href').split("/").pop();
+      if(linkPage === currentPage){
+        link.classList.add('font-semibold','underline');
+      }
+    });
+  </script>
 </body>
 </html>
