@@ -70,34 +70,17 @@
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 fade-in">Unlock the Future of Human Potential</h1>
-
-    <p class="text-lg sm:text-xl md:text-2xl max-w-3xl mb-6 fade-in text-gray-300 leading-relaxed">
-      Pioneering research in <span class="font-bold gradient-text">cellular rejuvenation</span>, 
-      <span class="font-bold gradient-text">human performance</span>, and 
-      <span class="font-bold gradient-text">cognitive enhancement</span>.
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Unlock the Future of Human Potential</h1>
+    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-4 fade-in">
+      Pioneering research in cellular rejuvenation, human performance, and cognitive enhancement.
     </p>
-
-    <p class="text-md sm:text-lg md:text-xl max-w-3xl mb-8 fade-in font-semibold leading-relaxed text-center text-gray-300">
-      <span class="font-bold gradient-text">Human Gain-of-Function: Evolving Human Potential</span><br><br>
-
-      Our research explores the mechanisms underlying peak human performance, leveraging 
-      <span class="font-bold gradient-text">quantum-informed drug design</span> and 
-      <span class="font-bold gradient-text">biological optimization</span>.<br><br>
-
-      This conceptual framework represents the next evolution of human capability — enhancing 
-      <span class="font-bold gradient-text">cognition</span>, 
-      <span class="font-bold gradient-text">endurance</span>, and 
-      <span class="font-bold gradient-text">resilience</span> — all while adhering to the highest ethical and safety standards.<br><br>
-
-      Every effort converges on a singular mission: to transform cutting-edge discoveries into 
-      <span class="font-bold gradient-text">actionable human gain-of-function</span>, heralding the emergence of 
-      <span class="font-bold gradient-text">novel human capabilities</span>.<br><br>
-
-      By decoding, understanding, and harnessing the fundamental mechanisms of biology, we aim to unlock unprecedented potential, elevate human performance, and redefine the boundaries of human resilience and possibility.
+    <p class="text-md sm:text-lg md:text-xl max-w-3xl mb-8 fade-in font-semibold leading-relaxed text-center">
+      <span class="font-bold gradient-text">Human Gain-of-Function: Evolving Human Potential</span><br>
+      <span class="text-gray-300">
+        Our research explores the mechanisms underlying peak human performance, leveraging quantum-informed drug design and biological optimization. This conceptual framework represents the next evolution of human capability — enhancing cognition, endurance, and resilience — all while adhering to the highest ethical and safety standards. Every effort converges on a singular mission: to transform cutting-edge discoveries into actionable human gain-of-function, heralding the emergence of novel human capabilities. By decoding, understanding, and harnessing the fundamental mechanisms of biology, we aim to unlock unprecedented potential, elevate human performance, and redefine the boundaries of human resilience and possibility.
+      </span>
     </p>
-
-    <div class="flex gap-4 fade-in mt-4 flex-wrap justify-center">
+    <div class="flex gap-4 fade-in">
       <a href="#serums" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Learn About Our Serums & Drugs</a>
       <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Subscribe for Updates</a>
     </div>
@@ -232,6 +215,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
     <div class="mb-4">
       <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
@@ -251,6 +235,7 @@
     <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
+  <!-- Scripts -->
   <script>
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
@@ -265,4 +250,27 @@
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
       menuToggle.classList.toggle('open', menuOpen);
-      if (menu
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+      }
+    });
+
+    // Highlight current page
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if(link.getAttribute('href') === currentPage) {
+        link.classList.add('font-semibold','underline');
+      }
+    });
+  </script>
+
+</body>
+</html>
