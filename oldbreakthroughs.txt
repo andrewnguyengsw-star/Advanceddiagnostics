@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AECION | Breakthroughs</title>
+  <meta name="description" content="Explore AECION's major scientific breakthroughs in human performance, cellular rejuvenation, and cognitive enhancement.">
+  <link rel="canonical" href="https://www.aecion.com/breakthroughs.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
+
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #00ffff, #8a2be2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; }
+
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .glass-btn { 
+      background: rgba(255,255,255,0.1); 
+      backdrop-filter: blur(8px); 
+      border: 1px solid rgba(255,255,255,0.2); 
+      transition: all 0.3s ease; 
+    }
+    .glass-btn:hover { 
+      background: rgba(255,255,255,0.2); 
+      transform: translateY(-2px) scale(1.02); 
+    }
+
+    .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+
+    .breakthrough-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); padding: 2rem; border-radius: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .breakthrough-card:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(0,255,255,0.4); }
+    .accent-bar { width: 4px; border-radius: 9999px; background: linear-gradient(to bottom, #00ffff, #8a2be2); animation: pulse 2s infinite; margin-right: 1rem; }
+    @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
+      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
+        <a href="breakthroughs.html" class="font-semibold underline hover:text-cyan-400 transition">Breakthroughs</a>
+      </nav>
+      <div class="sm:hidden">
+        <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
+      <nav class="flex flex-col px-4 py-4 space-y-2">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
+        <a href="breakthroughs.html" class="hover:text-cyan-400 transition font-semibold underline">Breakthroughs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Pioneering Human Evolutionary Breakthroughs</h1>
+    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-4 fade-in">
+      Unlocking the next frontier in human potential through advanced quantum-informed science.
+    </p>
+    <p class="text-md sm:text-lg md:text-xl max-w-3xl mb-8 fade-in font-semibold leading-relaxed text-center">
+      <span class="font-bold gradient-text">Our Major Breakthroughs</span><br>
+      <span class="text-gray-300">
+        From cellular rejuvenation to cognitive augmentation, AECION integrates quantum sensing, AI-driven drug design, and neural optimization to redefine human capability while ensuring ethical rigor.
+      </span>
+    </p>
+    <div class="flex gap-4 fade-in">
+      <a href="#breakthroughs" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Explore Breakthroughs</a>
+      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Subscribe for Updates</a>
+    </div>
+  </section>
+
+  <!-- Breakthroughs Section -->
+  <div class="section-divider"></div>
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="breakthroughs">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-400 text-center">Major Breakthroughs</h2>
+
+    <div class="space-y-16">
+
+      <!-- Human Biosonar -->
+      <div class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
+        <div class="md:w-7/12 flex flex-col gap-4">
+          <div class="flex items-start gap-4">
+            <div class="accent-bar"></div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-3">Human Biosonar</h3>
+              <p class="text-gray-300">
+                Among our breakthroughs, we have created a novel form of human biosonar — a perception system that does not rely on acoustics, but on advanced neural and cellular signaling. This represents a new sensory adaptation, expanding human interaction with the environment.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-5/12">
+          <img src="images/human-biosonar.png" alt="Human biosonar" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-4">
+        </div>
+      </div>
+
+      <!-- Enhanced Senses -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
+        <div class="md:w-7/12 flex flex-col gap-4">
+          <div class="flex items-start gap-4">
+            <div class="accent-bar"></div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-3">Enhanced Senses</h3>
+              <p class="text-gray-300">
+                Our research advances human perception beyond baseline biological limits — sharpening sight, sound, proprioception, and introducing Praetor Sense: an evolved ability to detect the presence of law enforcement and military personnel through undiscovered sensory streams.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-5/12">
+          <img src="images/enhanced-senses.png" alt="Enhanced senses" class="rounded-2xl shadow-xl hover:scale-105 transition-transform translate-y-4">
+        </div>
+      </div>
+
+      <!-- Danger Detection -->
+      <div class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
+        <div class="md:w-7/12 flex flex-col gap-4">
+          <div class="flex items-start gap-4">
+            <div class="accent-bar"></div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-3">Danger Detection</h3>
+              <p class="text-gray-300">
+                A dedicated sense designed to detect environmental threats, hostile intent, and imminent danger before it is consciously perceived. This sense operates like a biological early-warning system.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-5/12">
+          <img src="images/danger-detection.png" alt="Danger detection" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-2">
+        </div>
+      </div>
+
+      <!-- Electrocution Resistance -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
+        <div class="md:w-7/12 flex flex-col gap-4">
+          <div class="flex items-start gap-4">
+            <div class="accent-bar"></div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-3">Electrocution Resistance</h3>
+              <p class="text-gray-300">
+                Our advancements extend to extreme human resilience, including resistance to electrocution, enhancing survivability in hazardous environments.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-5/12">
+          <img src="images/electrocution-resistance.png" alt="Electrocution resistance" class="rounded-2xl shadow-xl hover:scale-105 transition-transform translate-y-2">
+        </div>
+      </div>
+
+      <!-- Fundamental Particle Control -->
+      <div class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
+        <div class="md:w-7/12 flex flex-col gap-4">
+          <div class="flex items-start gap-4">
+            <div class="accent-bar"></div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-3">Fundamental Particle Control</h3>
+              <p class="text-gray-300">
+                A transformative breakthrough, our technology enables manipulation of fundamental particles within the human body. This opens the door to entirely new forms of human interaction with matter and energy at the quantum level.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-5/12">
+          <img src="images/fundamental-particle-control.png" alt="Fundamental particle control" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-3">
+        </div>
+      </div>
+
+      <!-- Energetic Field Resonance (EFR) -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
+        <div class="md:w-7/12 flex flex-col gap-4">
+          <div class="flex items-start gap-4">
+            <div class="accent-bar"></div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-3">Energetic Field Resonance (EFR)</h3>
+              <p class="text-gray-300">
+                AECION has characterized a novel human capability that allows individuals to detect and interpret energy transformations in the environment remotely. 
+                This function integrates neural circuits with subtle bioelectromagnetic and quantum processes, acting as a real-time biological sensor for shifts in energy patterns, matter interactions, and environmental dynamics. 
+                EFR extends human perception beyond conventional sensory modalities, providing a new frontier for environmental awareness and interaction.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-5/12">
+          <img src="images/energetic-field-resonance.png" alt="Energetic Field Resonance" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-3">
+        </div>
+      </div>
+
+      <!-- Neuroception -->
+      <div class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
+        <div class="md:w-7/12 flex flex-col gap-4">
+          <div class="flex items-start gap-4">
+            <div class="accent-bar"></div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-3">Neuroception</h3>
+              <p class="text-gray-300">
+                A novel human sensory adaptation enabling the detection of neural impulses and their transduced activity in other organisms. By integrating enhanced neural networks with bioelectromagnetic and quantum sensing pathways, Neuroception provides real-time awareness of nervous system states, enabling unprecedented insight into cognition, behavior, and organismal responses.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-5/12">
+          <img src="images/neuroception.png" alt="Neuroception" class="rounded-2xl shadow-xl hover:scale-105 transition-transform translate-y-2">
+        </div>
+      </div>
+
+      <!-- Sanguivigilance -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
+        <div class="md:w-7/12 flex flex-col gap-4">
+          <div class="flex items-start gap-4">
+            <div class="accent-bar"></div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-3">Sanguivigilance</h3>
+              <p class="text-gray-300">
+                A novel sensory adaptation that allows individuals to detect the presence, flow, and characteristics of blood in other organisms. By integrating enhanced neural processing with bioelectromagnetic and chemical signaling pathways, this ability functions as a remote vascular detection system, providing real-time awareness of circulatory activity and insight into physiological states of other living beings.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-5/12">
+          <img src="images/sanguivigilance.png" alt="Sanguivigilance" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-2">
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <div class="section-divider"></div>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
+    <div class="mb-4">
+      <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
+      <a href="technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
+      <a href="quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Application</a> |
+      <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 mx-2 transition">Quantum Neural Mapping</a> |
+      <a href="case-study.html" class="hover:text-cyan-400 mx-2 transition">Case Study</a> |
+      <a href="impact.html" class="hover:text-cyan-400 mx-2 transition">Impact</a> |
+      <a href="research.html" class="hover:text-cyan-400 mx-2 transition">Research</a> |
+      <a href="breakthroughs.html" class="hover:text-cyan-400 mx-2 transition">Breakthroughs</a>
+    </div>
+    <div class="mb-4">
+      <span>Phone: 123-456-7890 | Email: 
+        <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | 
+        Address: 123 Quantum Way, Tech City
+      </span>
+    </div>
+    <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState='running'; });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
+      if(menuOpen){
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => { if(!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+      }
+    });
+
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      if(link.getAttribute('href') === currentPage){
+        link.classList.add('font-semibold','underline');
+      }
+    });
+  </script>
+
+</body>
+</html>

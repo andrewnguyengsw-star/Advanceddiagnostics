@@ -15,11 +15,7 @@
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    .gradient-text {
-      background: linear-gradient(90deg, #00ffff, #8a2be2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    .gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
     #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
     #mobile-menu.open { display: block; }
@@ -28,16 +24,8 @@
     #menu-toggle.open span:nth-child(2) { opacity: 0; }
     #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    .glass-btn { 
-      background: rgba(255,255,255,0.1); 
-      backdrop-filter: blur(8px); 
-      border: 1px solid rgba(255,255,255,0.2); 
-      transition: all 0.3s ease; 
-    }
-    .glass-btn:hover { 
-      background: rgba(255,255,255,0.2); 
-      transform: translateY(-2px) scale(1.02); 
-    }
+    .glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
+    .glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
 
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
 
@@ -77,6 +65,8 @@
         </button>
       </div>
     </div>
+
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
@@ -86,7 +76,24 @@
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
         <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
-        <a href="breakthroughs.html" class="hover:text-cyan-400 transition font-semibold underline">Breakthroughs</a>
+
+        <!-- Breakthroughs toggle -->
+        <button id="mobile-breakthroughs-toggle" class="hover:text-cyan-400 transition flex justify-between items-center w-full text-left">
+          Breakthroughs
+          <span id="mobile-breakthroughs-icon" class="ml-2">+</span>
+        </button>
+
+        <!-- Collapsible submenu -->
+        <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+          <a href="human-biosonar.html" class="hover:text-cyan-400 transition text-sm">Human Biosonar</a>
+          <a href="enhanced-senses.html" class="hover:text-cyan-400 transition text-sm">Enhanced Senses</a>
+          <a href="danger-detection.html" class="hover:text-cyan-400 transition text-sm">Danger Detection</a>
+          <a href="electrocution-resistance.html" class="hover:text-cyan-400 transition text-sm">Electrocution Resistance</a>
+          <a href="fundamental-particle-control.html" class="hover:text-cyan-400 transition text-sm">Particle Control</a>
+          <a href="energetic-field-resonance.html" class="hover:text-cyan-400 transition text-sm">EFR</a>
+          <a href="neuroception.html" class="hover:text-cyan-400 transition text-sm">Neuroception</a>
+          <a href="sanguivigilance.html" class="hover:text-cyan-400 transition text-sm">Sanguivigilance</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -109,169 +116,64 @@
     </div>
   </section>
 
-  <!-- Subnavigation -->
+  <!-- Desktop Subnavigation -->
   <div class="subnav fade-in">
-    <a href="#human-biosonar">Human Biosonar</a>
-    <a href="#enhanced-senses">Enhanced Senses</a>
-    <a href="#danger-detection">Danger Detection</a>
-    <a href="#electrocution-resistance">Electrocution Resistance</a>
-    <a href="#fundamental-particle-control">Particle Control</a>
-    <a href="#energetic-field-resonance">EFR</a>
-    <a href="#neuroception">Neuroception</a>
-    <a href="#sanguivigilance">Sanguivigilance</a>
+    <a href="human-biosonar.html">Human Biosonar</a>
+    <a href="enhanced-senses.html">Enhanced Senses</a>
+    <a href="danger-detection.html">Danger Detection</a>
+    <a href="electrocution-resistance.html">Electrocution Resistance</a>
+    <a href="fundamental-particle-control.html">Particle Control</a>
+    <a href="energetic-field-resonance.html">EFR</a>
+    <a href="neuroception.html">Neuroception</a>
+    <a href="sanguivigilance.html">Sanguivigilance</a>
   </div>
 
-  <!-- Breakthroughs Section -->
-  <div class="section-divider"></div>
+  <!-- Breakthroughs Grid -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="breakthroughs">
-    <div class="space-y-16">
-
-      <!-- Human Biosonar -->
-      <div id="human-biosonar" class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
-        <div class="md:w-7/12 flex flex-col gap-4">
-          <div class="flex items-start gap-4">
-            <div class="accent-bar"></div>
-            <div>
-              <h3 class="text-2xl font-semibold mb-3">Human Biosonar</h3>
-              <p class="text-gray-300">
-                Among our breakthroughs, we have created a novel form of human biosonar — a perception system that does not rely on acoustics, but on advanced neural and cellular signaling. This represents a new sensory adaptation, expanding human interaction with the environment.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="md:w-5/12">
-          <img src="images/human-biosonar.png" alt="Human biosonar" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-4">
-        </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Human Biosonar</h3>
+        <p class="text-gray-300 mb-4">A perception system that uses advanced neural and cellular signaling instead of acoustics.</p>
+        <a href="human-biosonar.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-
-      <!-- Enhanced Senses -->
-      <div id="enhanced-senses" class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
-        <div class="md:w-7/12 flex flex-col gap-4">
-          <div class="flex items-start gap-4">
-            <div class="accent-bar"></div>
-            <div>
-              <h3 class="text-2xl font-semibold mb-3">Enhanced Senses</h3>
-              <p class="text-gray-300">
-                Our research advances human perception beyond baseline biological limits — sharpening sight, sound, proprioception, and introducing Praetor Sense: an evolved ability to detect the presence of law enforcement and military personnel through undiscovered sensory streams.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="md:w-5/12">
-          <img src="images/enhanced-senses.png" alt="Enhanced senses" class="rounded-2xl shadow-xl hover:scale-105 transition-transform translate-y-4">
-        </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Enhanced Senses</h3>
+        <p class="text-gray-300 mb-4">Sharpened sight, sound, proprioception, and Praetor Sense for evolved human perception.</p>
+        <a href="enhanced-senses.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-
-      <!-- Danger Detection -->
-      <div id="danger-detection" class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
-        <div class="md:w-7/12 flex flex-col gap-4">
-          <div class="flex items-start gap-4">
-            <div class="accent-bar"></div>
-            <div>
-              <h3 class="text-2xl font-semibold mb-3">Danger Detection</h3>
-              <p class="text-gray-300">
-                A dedicated sense designed to detect environmental threats, hostile intent, and imminent danger before it is consciously perceived. This sense operates like a biological early-warning system.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="md:w-5/12">
-          <img src="images/danger-detection.png" alt="Danger detection" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-2">
-        </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Danger Detection</h3>
+        <p class="text-gray-300 mb-4">Detects environmental threats and hostile intent before conscious awareness.</p>
+        <a href="danger-detection.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-
-      <!-- Electrocution Resistance -->
-      <div id="electrocution-resistance" class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
-        <div class="md:w-7/12 flex flex-col gap-4">
-          <div class="flex items-start gap-4">
-            <div class="accent-bar"></div>
-            <div>
-              <h3 class="text-2xl font-semibold mb-3">Electrocution Resistance</h3>
-              <p class="text-gray-300">
-                Our advancements extend to extreme human resilience, including resistance to electrocution, enhancing survivability in hazardous environments.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="md:w-5/12">
-          <img src="images/electrocution-resistance.png" alt="Electrocution resistance" class="rounded-2xl shadow-xl hover:scale-105 transition-transform translate-y-2">
-        </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Electrocution Resistance</h3>
+        <p class="text-gray-300 mb-4">Enhances human survivability in extreme environments.</p>
+        <a href="electrocution-resistance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-
-      <!-- Fundamental Particle Control -->
-      <div id="fundamental-particle-control" class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
-        <div class="md:w-7/12 flex flex-col gap-4">
-          <div class="flex items-start gap-4">
-            <div class="accent-bar"></div>
-            <div>
-              <h3 class="text-2xl font-semibold mb-3">Fundamental Particle Control</h3>
-              <p class="text-gray-300">
-                A transformative breakthrough, our technology enables manipulation of fundamental particles within the human body. This opens the door to entirely new forms of human interaction with matter and energy at the quantum level.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="md:w-5/12">
-          <img src="images/fundamental-particle-control.png" alt="Fundamental particle control" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-3">
-        </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Fundamental Particle Control</h3>
+        <p class="text-gray-300 mb-4">Manipulation of fundamental particles within the human body for advanced quantum interactions.</p>
+        <a href="fundamental-particle-control.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-
-      <!-- Energetic Field Resonance -->
-      <div id="energetic-field-resonance" class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
-        <div class="md:w-7/12 flex flex-col gap-4">
-          <div class="flex items-start gap-4">
-            <div class="accent-bar"></div>
-            <div>
-              <h3 class="text-2xl font-semibold mb-3">Energetic Field Resonance (EFR)</h3>
-              <p class="text-gray-300">
-                AECION has characterized a novel human capability that allows individuals to detect and interpret energy transformations in the environment remotely. 
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="md:w-5/12">
-          <img src="images/energetic-field-resonance.png" alt="Energetic Field Resonance" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-3">
-        </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Energetic Field Resonance (EFR)</h3>
+        <p class="text-gray-300 mb-4">Detecting and interpreting energy transformations in the environment remotely.</p>
+        <a href="energetic-field-resonance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-
-      <!-- Neuroception -->
-      <div id="neuroception" class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
-        <div class="md:w-7/12 flex flex-col gap-4">
-          <div class="flex items-start gap-4">
-            <div class="accent-bar"></div>
-            <div>
-              <h3 class="text-2xl font-semibold mb-3">Neuroception</h3>
-              <p class="text-gray-300">
-                A novel human sensory adaptation enabling the detection of neural impulses and their transduced activity in other organisms. By integrating enhanced neural networks with bioelectromagnetic and quantum sensing pathways, Neuroception provides real-time awareness of nervous system states.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="md:w-5/12">
-          <img src="images/neuroception.png" alt="Neuroception" class="rounded-2xl shadow-xl hover:scale-105 transition-transform translate-y-2">
-        </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Neuroception</h3>
+        <p class="text-gray-300 mb-4">Detecting neural impulses and activity in other organisms in real-time.</p>
+        <a href="neuroception.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-
-      <!-- Sanguivigilance -->
-      <div id="sanguivigilance" class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
-        <div class="md:w-7/12 flex flex-col gap-4">
-          <div class="flex items-start gap-4">
-            <div class="accent-bar"></div>
-            <div>
-              <h3 class="text-2xl font-semibold mb-3">Sanguivigilance</h3>
-              <p class="text-gray-300">
-                A novel sensory adaptation that allows individuals to detect the presence, flow, and characteristics of blood in other organisms. It provides real-time awareness of circulatory activity and insight into physiological states.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="md-w-5/12">
-          <img src="images/sanguivigilance.png" alt="Sanguivigilance" class="rounded-2xl shadow-xl hover:scale-105 transition-transform -translate-y-2">
-        </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Sanguivigilance</h3>
+        <p class="text-gray-300 mb-4">Sensing blood presence, flow, and characteristics in other organisms.</p>
+        <a href="sanguivigilance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-
     </div>
   </section>
+
   <div class="section-divider"></div>
 
   <!-- Footer -->
@@ -295,13 +197,16 @@
     <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
+  <!-- Scripts -->
   <script>
+    // Fade-in observer
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState='running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
@@ -322,29 +227,48 @@
       }
     });
 
-    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
-    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-      if(link.getAttribute('href') === currentPage){
-        link.classList.add('font-semibold','underline');
+    // Mobile breakthroughs submenu toggle + auto-expand active
+    const breakthroughsToggle = document.getElementById('mobile-breakthroughs-toggle');
+    const breakthroughsSubmenu = document.getElementById('mobile-breakthroughs-submenu');
+    const breakthroughsIcon = document.getElementById('mobile-breakthroughs-icon');
+    let breakthroughsOpen = false;
+
+    breakthroughsToggle.addEventListener('click', () => {
+      breakthroughsOpen = !breakthroughsOpen;
+      if (breakthroughsOpen) {
+        breakthroughsSubmenu.style.maxHeight = breakthroughsSubmenu.scrollHeight + 'px';
+        breakthroughsIcon.textContent = '−';
+      } else {
+        breakthroughsSubmenu.style.maxHeight = '0';
+        breakthroughsIcon.textContent = '+';
       }
     });
 
-    // Scroll Spy for Subnav
-    const subnavLinks = document.querySelectorAll('.subnav a');
-    const sections = document.querySelectorAll('.breakthrough-card');
+    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    const submenuLinks = breakthroughsSubmenu.querySelectorAll('a');
+    submenuLinks.forEach(link => {
+      if(link.getAttribute('href') === currentPage){
+        link.classList.add('font-semibold','underline');
+        breakthroughsSubmenu.style.maxHeight = breakthroughsSubmenu.scrollHeight + 'px';
+        breakthroughsIcon.textContent = '−';
+        breakthroughsOpen = true;
+      }
+    });
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          subnavLinks.forEach(link => link.classList.remove('active'));
-          const id = entry.target.id;
-          const activeLink = document.querySelector(`.subnav a[href="#${id}"]`);
-          if(activeLink) activeLink.classList.add('active');
+    // Desktop subnav highlight + smooth scroll
+    const subnavLinks = document.querySelectorAll('.subnav a');
+    subnavLinks.forEach(link => {
+      const linkPage = link.getAttribute('href').split("/").pop();
+      if(linkPage === currentPage){
+        link.classList.add('active');
+      }
+      link.addEventListener('click', (e) => {
+        if(linkPage === currentPage){
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       });
-    }, { threshold: 0.5 });
-
-    sections.forEach(section => sectionObserver.observe(section));
+    });
   </script>
 
 </body>
