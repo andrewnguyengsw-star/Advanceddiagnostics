@@ -39,6 +39,12 @@
     .subnav a { transition: all 0.3s; }
     .subnav a:hover { color: #00ffff; }
     .subnav a.active { font-weight: 600; text-decoration: underline; color: #8a2be2; }
+
+    /* Desktop dropdown */
+    .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu { position: absolute; top: 100%; left: 0; background: black; border: 1px solid #444; border-radius: 0.5rem; width: 14rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 50; }
+    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: white; transition: background 0.3s; }
+    .dropdown-menu a:hover { background: #111; }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -47,7 +53,9 @@
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
-      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+
+      <!-- Desktop Menu -->
+      <nav class="hidden sm:flex space-x-6 relative" id="desktop-menu">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
         <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
         <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
@@ -55,8 +63,24 @@
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
         <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
-        <a href="breakthroughs.html" class="font-semibold underline hover:text-cyan-400 transition">Breakthroughs</a>
+
+        <!-- Breakthroughs dropdown -->
+        <div class="dropdown relative">
+          <button class="hover:text-cyan-400 transition font-semibold underline">Breakthroughs</button>
+          <div class="dropdown-menu">
+            <a href="human-biosonar.html">Human Biosonar</a>
+            <a href="enhanced-senses.html">Enhanced Senses</a>
+            <a href="danger-detection.html">Danger Detection</a>
+            <a href="electrocution-resistance.html">Electrocution Resistance</a>
+            <a href="fundamental-particle-control.html">Particle Control</a>
+            <a href="energetic-field-resonance.html">EFR</a>
+            <a href="neuroception.html">Neuroception</a>
+            <a href="sanguivigilance.html">Sanguivigilance</a>
+          </div>
+        </div>
       </nav>
+
+      <!-- Mobile menu toggle -->
       <div class="sm:hidden">
         <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
           <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
@@ -131,6 +155,7 @@
   <!-- Breakthroughs Grid -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="breakthroughs">
     <div class="grid md:grid-cols-2 gap-8">
+      <!-- Repeat all your breakthrough cards as before -->
       <div class="breakthrough-card">
         <h3 class="text-2xl font-semibold mb-3">Human Biosonar</h3>
         <p class="text-gray-300 mb-4">A perception system that uses advanced neural and cellular signaling instead of acoustics.</p>
