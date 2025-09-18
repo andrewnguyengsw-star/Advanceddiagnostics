@@ -116,7 +116,7 @@
 
     <div class="space-y-16">
 
-      <!-- Human Biosonar (left text, right image) -->
+      <!-- Human Biosonar -->
       <div class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
         <div class="md:w-7/12 flex flex-col gap-4">
           <div class="flex items-start gap-4">
@@ -134,7 +134,7 @@
         </div>
       </div>
 
-      <!-- Enhanced Senses (right text, left image) -->
+      <!-- Enhanced Senses -->
       <div class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
         <div class="md:w-7/12 flex flex-col gap-4">
           <div class="flex items-start gap-4">
@@ -142,7 +142,7 @@
             <div>
               <h3 class="text-2xl font-semibold mb-3">Enhanced Senses</h3>
               <p class="text-gray-300">
-                Our research advances human perception beyond baseline biological limits — sharpening sight, sound, proprioception, and introducing <strong>Praetor Sense</strong>: an evolved ability to detect the presence of law enforcement and military personnel through undiscovered sensory streams.
+                Our research advances human perception beyond baseline biological limits — sharpening sight, sound, proprioception, and introducing Praetor Sense: an evolved ability to detect the presence of law enforcement and military personnel through undiscovered sensory streams.
               </p>
             </div>
           </div>
@@ -152,15 +152,15 @@
         </div>
       </div>
 
-      <!-- Danger Detection (left text, right image) -->
+      <!-- Danger & Hazard Detection -->
       <div class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
         <div class="md:w-7/12 flex flex-col gap-4">
           <div class="flex items-start gap-4">
             <div class="accent-bar"></div>
             <div>
-              <h3 class="text-2xl font-semibold mb-3">Danger Detection</h3>
+              <h3 class="text-2xl font-semibold mb-3">Danger & Hazard Detection</h3>
               <p class="text-gray-300">
-                A dedicated sense designed to detect environmental threats, hostile intent, and imminent danger before it is consciously perceived. This sense operates like a biological early-warning system.
+                AECION has characterized a novel human cognitive function: the ability to automatically detect environmental threats and imminent danger before conscious awareness. Acting as a biological early-warning system, this function integrates neural circuits and physiological signals to optimize human survival and response in high-risk situations.
               </p>
             </div>
           </div>
@@ -170,7 +170,7 @@
         </div>
       </div>
 
-      <!-- Electrocution Resistance (right text, left image) -->
+      <!-- Electrocution Resistance -->
       <div class="flex flex-col md:flex-row-reverse items-center gap-8 breakthrough-card">
         <div class="md:w-7/12 flex flex-col gap-4">
           <div class="flex items-start gap-4">
@@ -188,7 +188,7 @@
         </div>
       </div>
 
-      <!-- Fundamental Particle Control (left text, right image) -->
+      <!-- Fundamental Particle Control -->
       <div class="flex flex-col md:flex-row items-center gap-8 breakthrough-card">
         <div class="md:w-7/12 flex flex-col gap-4">
           <div class="flex items-start gap-4">
@@ -258,7 +258,6 @@
       }
     });
 
-    // Highlight current page dynamically
     const currentPage = window.location.pathname.split("/").pop() || 'index.html';
     document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
       if(link.getAttribute('href') === currentPage){
