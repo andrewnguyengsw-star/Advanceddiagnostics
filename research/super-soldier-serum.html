@@ -19,6 +19,19 @@ body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
 .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
+.dropdown { position: relative; }
+.dropdown-content {
+  display: block; position: absolute; top: 100%; left: 0;
+  background-color: rgba(20, 20, 20, 0.95);
+  min-width: 220px; border-radius: 0.5rem; overflow: hidden; z-index: 50;
+  opacity: 0; transform: translateY(-10px); pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.dropdown-content a { display: block; padding: 0.75rem 1rem; color: #ffffff; }
+.dropdown-content a:hover { color: #00ffff; background-color: rgba(255,255,255,0.1); }
+.dropdown:hover .dropdown-content,
+.dropdown.open .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.active-link { color: #00ffff !important; font-weight: 700; }
 </style>
 </head>
 <body>
@@ -39,7 +52,7 @@ a:hover { text-decoration: underline; }
         <div class="dropdown-content">
           <a href="/research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
           <a href="/research/reverse-aging-serum.html">Reverse-Aging Serum</a>
-          <a href="/research/super-soldier-serum.html">Super Soldier Serum</a>
+          <a href="/research/super-soldier-serum.html" class="active-link">Super Soldier Serum</a>
           <a href="/research/black-technology.html">Black Technology</a>
         </div>
       </div>
@@ -53,6 +66,8 @@ a:hover { text-decoration: underline; }
       </button>
     </div>
   </div>
+
+  <!-- Mobile Menu -->
   <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
     <nav class="flex flex-col px-4 py-4 space-y-2">
       <a href="/index.html" class="hover:text-cyan-400 transition">Home</a>
@@ -71,7 +86,7 @@ a:hover { text-decoration: underline; }
         <div id="mobile-research-submenu" class="flex flex-col pl-4 mt-1 max-h-0 overflow-hidden transition-all duration-300">
           <a href="/research/cognitive-enhancement-drug.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Cognitive Enhancement</a>
           <a href="/research/reverse-aging-serum.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Reverse-Aging Serum</a>
-          <a href="/research/super-soldier-serum.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Super Soldier Serum</a>
+          <a href="/research/super-soldier-serum.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition active-link">Super Soldier Serum</a>
           <a href="/research/black-technology.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Black Technology</a>
         </div>
       </div>
@@ -91,6 +106,7 @@ a:hover { text-decoration: underline; }
 
 <div class="section-divider"></div>
 
+<!-- Sections -->
 <section id="section-breakthrough" class="py-20 px-6 max-w-6xl mx-auto fade-in">
   <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">Defining Human Potential</h2>
   <p class="text-gray-300 mb-6 text-center">
