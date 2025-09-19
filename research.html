@@ -25,9 +25,7 @@
     .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #ffffff; }
     .dropdown-content a:hover { color: #00ffff; background-color: rgba(255,255,255,0.1); }
     .dropdown:hover .dropdown-content,
-    .dropdown.open .dropdown-content {
-      opacity: 1; transform: translateY(0); pointer-events: auto;
-    }
+    .dropdown.open .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
     a:focus, button:focus { outline: 2px solid #00ffff; outline-offset: 4px; border-radius: 0.375rem; }
     body:not(.user-is-tabbing) a:focus, body:not(.user-is-tabbing) button:focus { outline: none; }
     #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
@@ -59,6 +57,7 @@
             <a href="#cognitive-research">Cognitive Enhancement</a>
             <a href="#reverse-aging-research">Reverse-Aging Serum</a>
             <a href="#super-soldier-research">Super Soldier Serum</a>
+            <a href="#black-technology">Black Technology</a>
           </div>
         </div>
         <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
@@ -91,6 +90,7 @@
             <a href="#cognitive-research" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Cognitive Enhancement</a>
             <a href="#reverse-aging-research" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Reverse-Aging Serum</a>
             <a href="#super-soldier-research" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Super Soldier Serum</a>
+            <a href="#black-technology" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Black Technology</a>
           </div>
         </div>
         <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
@@ -113,7 +113,6 @@
   <!-- Portfolio Section -->
   <section id="portfolio" class="py-20 px-6 max-w-7xl mx-auto fade-in">
     <h2 class="text-4xl font-bold text-cyan-400 mb-12 text-center">Featured Research Projects</h2>
-
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
       <!-- Reverse-Aging Serum -->
       <div class="group bg-gray-900 bg-opacity-30 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition">
@@ -164,15 +163,54 @@
     </div>
   </section>
 
+  <!-- Black Technology Intro Section -->
+  <section id="black-technology" class="py-20 px-6 bg-black text-white fade-in">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text Column -->
+      <div class="space-y-6">
+        <h2 class="text-4xl sm:text-5xl font-bold gradient-text">
+          Black Technology: Redefining the Limits of Science
+        </h2>
+        <p class="text-gray-300 text-lg">
+          Research and applications so advanced that they challenge and expand the boundaries of contemporary science. 
+          Black Technology represents the frontier where human potential, quantum innovation, and bioengineering converge.
+        </p>
+        <ul class="text-gray-400 list-disc list-inside space-y-1">
+          <li>Quantum-field manipulation beyond current understanding</li>
+          <li>Neural and cognitive augmentation</li>
+          <li>Precision bio-molecular engineering</li>
+          <li>AI-guided experimental systems</li>
+        </ul>
+        <a href="black-technology.html" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black mt-4 inline-block">
+          Learn More
+        </a>
+      </div>
+
+      <!-- Visual Column -->
+      <div class="flex justify-center md:justify-end">
+        <img src="images/black-technology-illustration.png" alt="Black Technology Illustration" class="rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-md">
+      </div>
+    </div>
+  </section>
+
   <div class="section-divider"></div>
 
   <!-- Responsible Research Section -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="responsible-research">
     <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center text-cyan-400">Responsible Research & Safety</h2>
+    <p class="text-gray-300 text-center mb-12">
+      Safety is central to everything we do. Our research follows strict protocols, carefully designed to protect participants and guarantee the responsible development and monitoring of our products.
+    </p>
     <div class="grid md:grid-cols-3 gap-8 text-gray-300 text-left">
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Regulatory compliance & testing protocols</div>
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Long-term monitoring of effects</div>
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">Ethical oversight & risk mitigation</div>
+      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+        Establishing rigorous protocols for all research activities
+      </div>
+      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+        Continuous monitoring of ongoing projects and products
+      </div>
+      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+        Ethical oversight and risk mitigation strategies
+      </div>
     </div>
   </section>
 
@@ -202,14 +240,37 @@
     </div>
   </section>
 
-  <footer class="bg-black bg-opacity-90 py-12 text-gray-400 text-sm text-center">
-    <div class="max-w-7xl mx-auto px-6 space-y-4">
-      <div>&copy; 2025 AECION. All rights reserved.</div>
-      <div class="flex justify-center space-x-6">
+  <div class="section-divider"></div>
+
+  <!-- Footer -->
+  <footer class="bg-black bg-opacity-90 py-12 text-gray-400 text-sm">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <!-- Logo / Copyright -->
+      <div class="text-center md:text-left">
+        <a href="index.html" class="text-xl font-bold text-white hover:text-cyan-400 transition">AECION</a>
+        <p class="mt-1">&copy; 2025 AECION. All rights reserved.</p>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="flex flex-col sm:flex-row gap-6 text-center">
         <a href="privacy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
         <a href="terms.html" class="hover:text-cyan-400 transition">Terms of Service</a>
         <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
       </div>
+
+      <!-- Social Links -->
+      <div class="flex gap-4 justify-center md:justify-end">
+        <a href="https://twitter.com" target="_blank" class="hover:text-cyan-400 transition">Twitter</a>
+        <a href="https://linkedin.com" target="_blank" class="hover:text-cyan-400 transition">LinkedIn</a>
+        <a href="https://github.com" target="_blank" class="hover:text-cyan-400 transition">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="mt-8 text-center">
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">
+        Back to Top
+      </button>
     </div>
   </footer>
 
