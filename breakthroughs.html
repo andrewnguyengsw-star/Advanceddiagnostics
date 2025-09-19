@@ -17,6 +17,8 @@
 
     .gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
+    .active.gradient { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; text-decoration: underline; }
+
     #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
     #mobile-menu.open { display: block; }
 
@@ -35,7 +37,6 @@
     .subnav { position: sticky; top: 20px; background: rgba(0,0,0,0.8); z-index: 40; padding: 0.75rem 0; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.95rem; flex-wrap: wrap; }
     .subnav a { transition: all 0.3s; }
     .subnav a:hover { color: #00ffff; }
-    .subnav a.active { font-weight: 600; text-decoration: underline; color: #8a2be2; }
 
     .dropdown-menu { 
       opacity: 0; 
@@ -91,6 +92,7 @@
             <a href="breakthrough/project-echo.html">Project ECHO™</a>
             <a href="breakthrough/project-lucid.html">Project LUCID™</a>
             <a href="breakthrough/project-vigor.html">Project VIGOR™</a>
+            <a href="breakthrough/project-stormcore.html">Project STORMCORE™</a>
           </div>
         </div>
       </nav>
@@ -136,6 +138,7 @@
           <a href="breakthrough/project-echo.html" class="hover:text-cyan-400 transition text-sm">Project ECHO™</a>
           <a href="breakthrough/project-lucid.html" class="hover:text-cyan-400 transition text-sm">Project LUCID™</a>
           <a href="breakthrough/project-vigor.html" class="hover:text-cyan-400 transition text-sm">Project VIGOR™</a>
+          <a href="breakthrough/project-stormcore.html" class="hover:text-cyan-400 transition text-sm">Project STORMCORE™</a>
         </div>
       </nav>
     </div>
@@ -171,12 +174,13 @@
     <a href="breakthrough/project-echo.html">Project ECHO™</a>
     <a href="breakthrough/project-lucid.html">Project LUCID™</a>
     <a href="breakthrough/project-vigor.html">Project VIGOR™</a>
+    <a href="breakthrough/project-stormcore.html">Project STORMCORE™</a>
   </div>
 
   <!-- Breakthroughs Grid -->
   <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="breakthroughs">
     <div class="grid md:grid-cols-2 gap-8">
-      <!-- All 11 breakthrough cards -->
+      <!-- All 12 breakthrough cards including Stormcore -->
       <div class="breakthrough-card">
         <h3 class="text-2xl font-semibold mb-3">Human Biosonar</h3>
         <p class="text-gray-300 mb-4">A perception system that uses advanced neural and cellular signaling instead of acoustics.</p>
@@ -236,6 +240,11 @@
         <h3 class="text-2xl font-semibold mb-3">Project VIGOR™</h3>
         <p class="text-gray-300 mb-4">A human metabolic adaptation enhancing recovery from physical exertion and sustaining peak performance.</p>
         <a href="breakthrough/project-vigor.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
+      </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-3">Project STORMCORE™</h3>
+        <p class="text-gray-300 mb-4">A serum-induced human phenotype enabling electrocution resistance and bioelectric energy manipulation for tactical, industrial, and medical applications.</p>
+        <a href="breakthrough/project-stormcore.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
     </div>
   </section>
@@ -316,6 +325,14 @@
     const desktopDropdown = document.getElementById('desktop-breakthroughs');
     desktopDropdown.addEventListener('mouseenter', ()=>desktopDropdown.classList.add('open'));
     desktopDropdown.addEventListener('mouseleave', ()=>desktopDropdown.classList.remove('open'));
+
+    // Highlight active link
+    const currentURL = window.location.href;
+    document.querySelectorAll('.subnav a, #desktop-breakthroughs .dropdown-menu a, #mobile-breakthroughs-submenu a').forEach(link => {
+      if(currentURL.includes(link.getAttribute('href'))){
+        link.classList.add('active', 'gradient');
+      }
+    });
   </script>
 </body>
 </html>
