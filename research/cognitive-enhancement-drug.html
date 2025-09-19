@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AECION | Cognitive Enhancement Research</title>
-  <meta name="description" content="Explore AECION's research on cognitive enhancement, mapping spatiotemporal brain dynamics to boost memory, focus, and problem-solving.">
+  <meta name="description" content="Explore AECION's research on cognitive enhancement, mapping spatiotemporal brain dynamics to unlock and replicate high-level human intelligence.">
   <link rel="canonical" href="https://www.aecion.com/cognitive-enhancement-research.html" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,26 +17,13 @@
     .glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
     .glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
-    .dropdown { position: relative; }
-    .dropdown-content {
-      display: block; position: absolute; top: 100%; left: 0;
-      background-color: rgba(20,20,20,0.95); min-width: 220px; border-radius: 0.5rem; overflow: hidden; z-index: 50;
-      opacity: 0; transform: translateY(-10px); pointer-events: none;
-      transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #ffffff; }
-    .dropdown-content a:hover { color: #00ffff; background-color: rgba(255,255,255,0.1); }
-    .dropdown:hover .dropdown-content, .dropdown.open .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
-    #mobile-menu.open { display: block; }
-    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    #menu-toggle.open span:nth-child(2) { opacity: 0; }
-    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    a { text-decoration: none; }
+    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
-  <!-- Header / Navigation -->
+  <!-- Navigation -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
@@ -47,15 +34,7 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <div class="dropdown">
-          <button class="hover:text-cyan-400 transition">Research</button>
-          <div class="dropdown-content">
-            <a href="cognitive-enhancement-research.html">Cognitive Enhancement</a>
-            <a href="reverse-aging-serum.html">Reverse-Aging Serum</a>
-            <a href="super-soldier-serum.html">Super Soldier Serum</a>
-            <a href="black-technology.html">Black Technology</a>
-          </div>
-        </div>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
         <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
       <div class="sm:hidden">
@@ -66,7 +45,6 @@
         </button>
       </div>
     </div>
-
     <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
@@ -75,20 +53,7 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <div class="flex flex-col">
-          <button id="mobile-research-toggle" class="flex justify-between items-center w-full text-left px-2 py-2 hover:text-cyan-400 transition">
-            Research
-            <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div id="mobile-research-submenu" class="flex flex-col pl-4 mt-1 max-h-0 overflow-hidden transition-all duration-300">
-            <a href="cognitive-enhancement-research.html">Cognitive Enhancement</a>
-            <a href="reverse-aging-serum.html">Reverse-Aging Serum</a>
-            <a href="super-soldier-serum.html">Super Soldier Serum</a>
-            <a href="black-technology.html">Black Technology</a>
-          </div>
-        </div>
+        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
         <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
     </div>
@@ -96,63 +61,94 @@
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Cognitive Enhancement Research</h1>
-    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in">
-      Unlocking human potential through quantum-informed neuropharmacology and spatiotemporal brain mapping.
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 fade-in gradient-text">Cognitive Enhancement Research</h1>
+    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mb-6 fade-in">
+      Mapping intelligence at its biological core to unlock next-generation cognitive potential.
     </p>
-    <a href="#research-overview" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white fade-in">Explore Our Research</a>
+    <a href="#section-breakthrough" class="glass-btn px-8 py-4 rounded-xl font-semibold fade-in">
+      Explore Our Discoveries
+    </a>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Research Overview -->
-  <section id="research-overview" class="py-20 px-6 max-w-6xl mx-auto fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400 text-center">Mapping the Brain for Cognitive Optimization</h2>
-    <p class="text-gray-300 text-center mb-12">
-      Our cognitive enhancement platform is powered by insights from our quantum entanglement technology. By analyzing the Stanford-Binet IQ spectrum, we uncovered how subtle differences in task-evoked brain activity correspond to variations in intelligence. We then mapped these patterns across space and time in the brain, revealing how increases in IQ drive specific shifts in neural dynamics. This deep understanding of the brain’s spatiotemporal architecture enables us to develop targeted interventions that enhance cognitive performance at its fundamental biological level.
+  <!-- Section 1: The Breakthrough -->
+  <section id="section-breakthrough" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">Seeing Intelligence in Action</h2>
+    <p class="text-gray-300 mb-6 text-center">
+      Through groundbreaking quantum applications, we uncovered how changes in neuronal substrates and brain activity directly influence IQ. This unprecedented clarity revealed specific brain circuits and activity patterns that differentiate low IQ from high IQ. 
     </p>
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <img src="images/brain-mapping.png" alt="Spatiotemporal brain mapping diagram" class="rounded-2xl shadow-xl hover:scale-105 transition-transform">
-      </div>
-      <div>
-        <h3 class="text-2xl font-semibold mb-4 text-cyan-400">Spatiotemporal Brain Dynamics</h3>
-        <p class="text-gray-300 mb-4">We identified how task-evoked activity differs across IQ levels, providing a framework to enhance memory, focus, and learning capabilities.</p>
-        <p class="text-gray-300 mb-4">This research allows for targeted pharmacological interventions designed to optimize cognitive performance while supporting long-term neural health.</p>
-      </div>
-    </div>
+    <p class="text-gray-300 text-center">
+      Our platform provides the first observable, measurable, and replicable biomarkers of intelligence—paving the way for next-generation cognitive enhancement drugs.
+    </p>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Drug Mechanism Section -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-cyan-400 text-center">Cognitive Enhancement Drug Mechanisms</h2>
-    <div class="grid md:grid-cols-3 gap-12">
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-        <h3 class="font-semibold text-xl mb-2 text-cyan-400">Neuroplasticity</h3>
-        <p>Enhances synaptic efficiency and facilitates learning at accelerated rates.</p>
-      </div>
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-        <h3 class="font-semibold text-xl mb-2 text-cyan-400">Neurotransmitter Regulation</h3>
-        <p>Boosts dopamine, acetylcholine, and glutamate levels for improved memory, focus, and problem-solving.</p>
-      </div>
-      <div class="bg-gray-900 bg-opacity-30 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-        <h3 class="font-semibold text-xl mb-2 text-cyan-400">Metabolic Support</h3>
-        <p>Optimizes oxygen and glucose utilization in the brain to sustain cognitive endurance.</p>
-      </div>
-    </div>
+  <!-- Section 2: The Platform -->
+  <section id="section-platform" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">The Quantum Blueprint of Intelligence</h2>
+    <p class="text-gray-300 mb-6 text-center">
+      Traditional neuroscience provides no framework to fully explain intelligence. Our platform changes that. Using quantum entanglement to decode IQ-linked neural circuits, we established a reproducible map of high-level cognition.
+    </p>
+    <p class="text-gray-300 text-center">
+      These biomarkers serve as a blueprint of genius-level intelligence, opening the door to engineering and cognitive enhancement beyond natural human limits.
+    </p>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Call-to-Action -->
-  <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Engage with Our Research</h2>
-    <p class="text-gray-300 mb-6">Stay updated on breakthroughs, collaborate, or request more detailed information.</p>
+  <!-- Section 3: The Drug -->
+  <section id="section-drug" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">From Biomarkers to Biochemistry</h2>
+    <p class="text-gray-300 mb-6 text-center">
+      With intelligence biomarkers identified, we can now develop biochemical pathways that replicate them. Our cognitive enhancement drug induces neural architectures mirroring the connectivity, efficiency, and creativity of high IQ individuals.
+    </p>
+    <p class="text-gray-300 text-center">
+      This is not a stimulant. This is not incremental. It is the replication of genius through engineered neural circuits.
+    </p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section 4: Capabilities -->
+  <section id="section-capabilities" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">The Enhanced Mind</h2>
+    <ul class="text-gray-400 list-disc list-inside space-y-2 text-center max-w-3xl mx-auto">
+      <li>Accelerated reasoning and abstraction</li>
+      <li>Rapid learning and adaptive problem-solving</li>
+      <li>Advanced creativity through novel neural pathways</li>
+      <li>Heightened pattern recognition and predictive insight</li>
+    </ul>
+    <p class="text-gray-300 mt-6 text-center">
+      Intelligence as a platform—capable of reshaping science, strategy, and human innovation.
+    </p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Section 5: Beyond Science -->
+  <section id="section-beyond" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">No Framework. No Limits.</h2>
+    <p class="text-gray-300 mb-6 text-center">
+      Contemporary neuroscience cannot fully explain the replication of intelligence biomarkers through quantum entanglement. This discovery exists outside the limits of known science, marking a convergence between physics and cognition.
+    </p>
+    <p class="text-gray-300 text-center">
+      Here lies a new frontier—where human intelligence is no longer studied, but created.
+    </p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Closing Section -->
+  <section id="section-closing" class="py-20 px-6 max-w-6xl mx-auto fade-in text-center">
+    <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">From Biomarkers to Superintelligence</h2>
+    <p class="text-gray-300 mb-6">
+      By isolating the brain circuits that define high IQ and transforming them into biochemical pathways, we have opened the door to engineered intelligence. This is more than cognitive enhancement—it is the birth of a new dimension of human potential.
+    </p>
     <div class="flex justify-center gap-4 flex-wrap">
-      <a href="research.html" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Back to Research Overview</a>
-      <a href="#contact" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white">Contact Our Team</a>
+      <a href="research.html" class="glass-btn px-6 py-3 rounded-xl font-semibold">View Research Pipeline</a>
+      <a href="contact.html" class="glass-btn px-6 py-3 rounded-xl font-semibold">Collaborate with Us</a>
     </div>
   </section>
 
@@ -180,39 +176,30 @@
 
   <!-- Scripts -->
   <script>
-    // Fade-in on scroll
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
+
     menuToggle.addEventListener('click', () => {
       menuOpen = !menuOpen;
       menuToggle.classList.toggle('open', menuOpen);
       if (menuOpen) {
         mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
         mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
         mobileMenu.style.opacity = '1';
       } else {
+        mobileMenu.classList.remove('open');
         mobileMenu.style.maxHeight = '0';
         mobileMenu.style.opacity = '0';
-        setTimeout(() => { if (!menuOpen) mobileMenu.classList.remove('open'); }, 300);
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
-    });
-
-    // Mobile research submenu toggle
-    const mobileResearchToggle = document.getElementById('mobile-research-toggle');
-    const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
-    let researchOpen = false;
-    mobileResearchToggle.addEventListener('click', () => {
-      researchOpen = !researchOpen;
-      mobileResearchSubmenu.style.maxHeight = researchOpen ? mobileResearchSubmenu.scrollHeight + 'px' : '0';
-      mobileResearchSubmenu.style.opacity = researchOpen ? '1' : '0';
     });
   </script>
 
