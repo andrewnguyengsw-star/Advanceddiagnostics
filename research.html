@@ -36,6 +36,7 @@
     .glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
     .glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+    .active-link { color: #00ffff !important; font-weight: 700; }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -287,6 +288,15 @@
       }
     }
     window.addEventListener('keydown', handleFirstTab);
+
+    // Highlight active menu item
+    const currentURL = window.location.href;
+    document.querySelectorAll('#desktop-menu a, #desktop-menu .dropdown-content a').forEach(link => {
+      if (currentURL.includes(link.getAttribute('href'))) link.classList.add('active-link');
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      if (currentURL.includes(link.getAttribute('href'))) link.classList.add('active-link');
+    });
   </script>
 
 </body>

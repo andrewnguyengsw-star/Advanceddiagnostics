@@ -36,7 +36,18 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
+
+        <!-- Desktop Research dropdown -->
+        <div class="relative group inline-block">
+          <button class="hover:text-cyan-400 transition font-semibold">Research</button>
+          <div class="absolute hidden group-hover:block bg-black mt-2 py-2 w-64 border border-gray-700 rounded-xl">
+            <a href="cognitive-enhancement-research.html" class="block px-4 py-2 hover:bg-gray-800 transition">Cognitive Enhancement</a>
+            <a href="reverse-aging-serum.html" class="block px-4 py-2 hover:bg-gray-800 transition">Reverse Aging Serum</a>
+            <a href="super-soldier-serum.html" class="block px-4 py-2 hover:bg-gray-800 transition">Super Soldier Serum</a>
+            <a href="black-technology.html" class="block px-4 py-2 hover:bg-gray-800 transition">Black Technology</a>
+          </div>
+        </div>
+
         <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
       <div class="sm:hidden">
@@ -47,6 +58,8 @@
         </button>
       </div>
     </div>
+
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
@@ -55,7 +68,21 @@
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
+
+        <!-- Mobile Research dropdown -->
+        <div class="flex flex-col">
+          <button id="mobile-research-toggle" class="w-full text-left hover:text-cyan-400 transition font-semibold flex justify-between items-center">
+            Research
+            <span class="ml-2">&#9660;</span>
+          </button>
+          <div id="mobile-research-submenu" class="hidden flex flex-col pl-4 mt-2 space-y-1">
+            <a href="cognitive-enhancement-research.html" class="hover:text-cyan-400 transition">Cognitive Enhancement</a>
+            <a href="reverse-aging-serum.html" class="hover:text-cyan-400 transition">Reverse Aging Serum</a>
+            <a href="super-soldier-serum.html" class="hover:text-cyan-400 transition">Super Soldier Serum</a>
+            <a href="black-technology.html" class="hover:text-cyan-400 transition">Black Technology</a>
+          </div>
+        </div>
+
         <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
     </div>
@@ -169,6 +196,13 @@
         mobileMenu.style.opacity = '0';
         setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
       }
+    });
+
+    const mobileResearchToggle = document.getElementById('mobile-research-toggle');
+    const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
+
+    mobileResearchToggle.addEventListener('click', () => {
+      mobileResearchSubmenu.classList.toggle('hidden');
     });
   </script>
 
