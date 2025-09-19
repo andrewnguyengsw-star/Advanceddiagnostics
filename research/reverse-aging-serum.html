@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AECION | Reverse-Aging Serum Research</title>
+<meta name="description" content="Explore AECION's research on reversing aging, mapping biological pathways to rejuvenate human physiology.">
+<link rel="canonical" href="https://www.aecion.com/research/reverse-aging-serum.html" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Same CSS as the cognitive enhancement page */
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+.gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
+.glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
+.section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- Navigation: same as previous with root-relative links -->
+<header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="/index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
+    <nav class="hidden sm:flex space-x-6">
+      <a href="/index.html" class="hover:text-cyan-400 transition">Home</a>
+      <a href="/technology.html" class="hover:text-cyan-400 transition">Technology</a>
+      <a href="/quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+      <a href="/quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+      <a href="/case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+      <a href="/impact.html" class="hover:text-cyan-400 transition">Impact</a>
+      <div class="dropdown">
+        <button class="hover:text-cyan-400 transition">Research</button>
+        <div class="dropdown-content">
+          <a href="/research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
+          <a href="/research/reverse-aging-serum.html">Reverse-Aging Serum</a>
+          <a href="/research/super-soldier-serum.html">Super Soldier Serum</a>
+          <a href="/research/black-technology.html">Black Technology</a>
+        </div>
+      </div>
+      <a href="/breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
+    </nav>
+    <div class="sm:hidden">
+      <button id="menu-toggle" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+        <span class="block w-6 h-0.5 bg-white"></span>
+        <span class="block w-6 h-0.5 bg-white my-1"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+    <nav class="flex flex-col px-4 py-4 space-y-2">
+      <a href="/index.html" class="hover:text-cyan-400 transition">Home</a>
+      <a href="/technology.html" class="hover:text-cyan-400 transition">Technology</a>
+      <a href="/quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+      <a href="/quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+      <a href="/case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+      <a href="/impact.html" class="hover:text-cyan-400 transition">Impact</a>
+      <div class="flex flex-col">
+        <button id="mobile-research-toggle" class="flex justify-between items-center w-full text-left px-2 py-2 hover:text-cyan-400 transition">
+          Research
+          <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div id="mobile-research-submenu" class="flex flex-col pl-4 mt-1 max-h-0 overflow-hidden transition-all duration-300">
+          <a href="/research/cognitive-enhancement-drug.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Cognitive Enhancement</a>
+          <a href="/research/reverse-aging-serum.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Reverse-Aging Serum</a>
+          <a href="/research/super-soldier-serum.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Super Soldier Serum</a>
+          <a href="/research/black-technology.html" class="px-4 py-2 text-gray-300 hover:text-cyan-400 transition">Black Technology</a>
+        </div>
+      </div>
+      <a href="/breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+  <h1 class="text-5xl md:text-6xl font-extrabold mb-6 fade-in gradient-text">Reverse-Aging Serum Research</h1>
+  <p class="text-lg md:text-xl text-gray-300 max-w-3xl mb-6 fade-in">
+    Mapping rejuvenation pathways to extend human healthspan and reverse cellular aging.
+  </p>
+  <a href="#section-breakthrough" class="glass-btn px-8 py-4 rounded-xl font-semibold fade-in">Explore Our Discoveries</a>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="section-breakthrough" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+  <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">Uncovering the Biology of Aging</h2>
+  <p class="text-gray-300 mb-6 text-center">
+    Our research identifies key pathways responsible for cellular senescence, tissue degradation, and systemic decline.
+  </p>
+  <p class="text-gray-300 text-center">
+    We map these pathways to create reproducible biomarkers for human rejuvenation.
+  </p>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="section-platform" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+  <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">The Rejuvenation Platform</h2>
+  <p class="text-gray-300 mb-6 text-center">
+    Using quantum-biophysical mapping, we restore cellular and systemic functions, reversing age-related decline.
+  </p>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="section-drug" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+  <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">From Biomarkers to Biochemistry</h2>
+  <p class="text-gray-300 mb-6 text-center">
+    We develop compounds targeting validated biomarkers of aging to rejuvenate tissues, organs, and neural circuits.
+  </p>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="section-capabilities" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+  <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">Capabilities</h2>
+  <ul class="text-gray-400 list-disc list-inside space-y-2 text-center max-w-3xl mx-auto">
+    <li>Cellular regeneration and tissue repair</li>
+    <li>Enhanced metabolic efficiency</li>
+    <li>Neural rejuvenation and cognitive preservation</li>
+    <li>Immune system optimization</li>
+  </ul>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="section-beyond" class="py-20 px-6 max-w-6xl mx-auto fade-in">
+  <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4 text-center">Beyond Aging</h2>
+  <p class="text-gray-300 mb-6 text-center">
+    Our serum creates measurable reversal of age biomarkers, setting a new standard in longevity science.
+  </p>
+</section>
+
+<div class="section-divider"></div>
+
+<section id="section-closing" class="py-20 px-6 max-w-6xl mx-auto fade-in text-center">
+  <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Redefining Human Longevity</h2>
+  <p class="text-gray-300 mb-6 text-center">
+    By restoring biological pathways, we unlock human rejuvenation at scale.
+  </p>
+  <div class="flex justify-center gap-4 flex-wrap">
+    <a href="/research.html" class="glass-btn px-6 py-3 rounded-xl font-semibold">View Research Pipeline</a>
+    <a href="/contact.html" class="glass-btn px-6 py-3 rounded-xl font-semibold">Collaborate with Us</a>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- Footer: same as previous -->
+<footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
+  <div class="mb-4">
+    <a href="/index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
+    <a href="/technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
+    <a href="/quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Application</a> |
+    <a href="/case-study.html" class="hover:text-cyan-400 mx-2 transition">Case Study</a> |
+    <a href="/impact.html" class="hover:text-cyan-400 mx-2 transition">Impact</a> |
+    <a href="/research.html" class="hover:text-cyan-400 mx-2 transition">Research</a> |
+    <a href="/breakthroughs.html" class="hover:text-cyan-400 mx-2 transition">Breakthroughs</a>
+  </div>
+  <div class="mb-4">
+    <span>Phone: 123-456-7890 | Email: 
+      <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | 
+      Address: 123 Quantum Way, Tech City
+    </span>
+  </div>
+  <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
+</footer>
+
+<script>
+/* Same JS as cognitive enhancement page */
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+}, { threshold: 0.2 });
+fadeEls.forEach(el => observer.observe(el));
+
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+let menuOpen = false;
+menuToggle.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  menuToggle.classList.toggle('open', menuOpen);
+  mobileMenu.style.maxHeight = menuOpen ? mobileMenu.scrollHeight + 'px' : '0';
+  mobileMenu.style.opacity = menuOpen ? '1' : '0';
+});
+
+const mobileResearchToggle = document.getElementById('mobile-research-toggle');
+const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
+mobileResearchToggle.addEventListener('click', () => {
+  const isOpen = mobileResearchSubmenu.style.maxHeight !== '0px';
+  mobileResearchSubmenu.style.maxHeight = isOpen ? '0px' : mobileResearchSubmenu.scrollHeight + 'px';
+  mobileResearchToggle.querySelector('svg').classList.toggle('rotate-180', !isOpen);
+});
+</script>
+
+</body>
+</html>
