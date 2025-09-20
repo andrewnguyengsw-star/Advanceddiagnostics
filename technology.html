@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AECION | How Our Quantum Application Works</title>
-  <meta name="description" content="Leveraging quantum principles to model disease and drug interactions at unprecedented scale.">
+  <title>AECION | Quantum Platform Overview</title>
+  <meta name="description" content="The AECION Quantum Health Platform translates complex biological data into actionable commercial insights.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
     #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
@@ -28,9 +28,11 @@
       transform: translateY(-2px) scale(1.02); 
     }
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+    .capability-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); padding: 1.5rem; border-radius: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .capability-card:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(0,255,255,0.4); }
   </style>
 </head>
-<body class="bg-black text-white">
+<body>
 
   <!-- Navigation -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
@@ -38,8 +40,8 @@
       <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
       <nav class="hidden sm:flex space-x-6" id="desktop-menu">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-        <a href="technology.html" class="font-semibold underline hover:text-cyan-400 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="font-semibold underline hover:text-cyan-400 transition">Quantum Platform</a>
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
@@ -59,7 +61,7 @@
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
         <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Platform</a>
         <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
@@ -71,76 +73,91 @@
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in" style="animation-delay:0.2s;">The Science Behind Our Quantum Health Platform</h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in" style="animation-delay:0.2s;">Our Platform: From Quantum Complexity to Commercial Advantage</h1>
     <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
-      Leveraging quantum principles to model disease and drug interactions at unprecedented scale.
+      The AECION Quantum Health Platform is a scalable, end-to-end solution that translates complex biological data into actionable commercial insights.
     </p>
-    <a href="#learn-how" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in" style="animation-delay:0.6s;">Learn How It Works</a>
+    <a href="#cta" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in" style="animation-delay:0.6s;">Request a Platform Briefing</a>
   </section>
 
-  <!-- Core Principles -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Core Principles</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-3 mb-4">
-        <li><strong>Quantum Entanglement:</strong> Process complex biological interactions simultaneously using entangled qubits.</li>
-        <li><strong>Superposition:</strong> Model multiple disease and drug pathways simultaneously.</li>
-        <li><strong>Microenvironment Dynamics:</strong> Track cellular deviations influencing chemical signaling.</li>
-      </ul>
-      <p class="text-gray-300 font-semibold">Visual Idea: Diagram showing entanglement and signaling pathways</p>
-    </div>
-    <div class="md:w-1/2 mt-8 md:mt-0">
-      <img src="technology1.png" alt="Core Principles Graphic" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-64 object-cover">
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- Approach -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12 md:flex-row-reverse">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">From Quantum Theory to Biomedical Insight</h2>
-      <ul class="list-decimal list-inside text-gray-300 space-y-3 mb-4">
-        <li><strong>Data Capture:</strong> Patient-level observations, chemical signals.</li>
-        <li><strong>Microenvironment Modeling:</strong> Represent drug/disease perturbations.</li>
-        <li><strong>Quantum-Inspired Processing:</strong> Algorithms emulate entanglement & parallelism.</li>
-        <li><strong>Insight Generation:</strong> Predict disease progression & drug efficacy.</li>
-      </ul>
-    </div>
-    <div class="md:w-1/2 mt-8 md:mt-0">
-      <img src="technology2.png" alt="Our Approach Graphic" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-64 object-cover">
+  <!-- Strategic Advantage -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-400">The Foundational Principles Driving Our Platform</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Quantum Entanglement</h3>
+        <p class="text-gray-300"><strong>Our Capability:</strong> Process complex interactions simultaneously using entangled qubits.<br><strong>Your Advantage:</strong> Accelerated analysis, shorter R&D timelines, wider exploration than classical methods.</p>
+      </div>
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Superposition</h3>
+        <p class="text-gray-300"><strong>Our Capability:</strong> Model multiple disease and drug pathways concurrently.<br><strong>Your Advantage:</strong> Identify promising candidates, reduce failures and cost earlier in the pipeline.</p>
+      </div>
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Microenvironment Dynamics</h3>
+        <p class="text-gray-300"><strong>Our Capability:</strong> Track subtle cellular deviations affecting chemical signaling.<br><strong>Your Advantage:</strong> High-resolution predictions, superior targeting, and biomarker discovery.</p>
+      </div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Features -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Key Features</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-3 mb-4">
-        <li>Simulate Disease Pathology</li>
-        <li>Model Drug Metabolism</li>
-        <li>Predictive Signaling Analysis</li>
-        <li>Scalable Quantum-Inspired Architecture</li>
-      </ul>
-      <p class="text-gray-300 font-semibold">Visual Idea: Interactive schematic showing drug → microenvironment → signaling → outcome</p>
-    </div>
-    <div class="md:w-1/2 mt-8 md:mt-0">
-      <img src="technology4.png" alt="Key Features Graphic" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-64 object-cover">
+  <!-- Analytics Workflow -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-400 text-center">From Raw Data to Actionable Intelligence</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">High-Fidelity Data Ingestion</h3>
+        <p class="text-gray-300">Capture and structure complex, multi-modal data including patient-level observations and chemical signals.</p>
+      </div>
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Predictive Biological Modeling</h3>
+        <p class="text-gray-300">Create sophisticated models of the biological microenvironment to simulate drug and disease perturbations.</p>
+      </div>
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Proprietary Quantum Analytics</h3>
+        <p class="text-gray-300">Apply quantum-inspired algorithms to process models at scale and speed beyond classical computation.</p>
+      </div>
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Actionable Intelligence Delivery</h3>
+        <p class="text-gray-300">Provide clear predictive insight into disease progression and drug efficacy for clinical and commercial decision-making.</p>
+      </div>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- CTA Section -->
+  <!-- Platform Capabilities -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-400">A Suite of Tools for Unprecedented Insight</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Simulate Disease Pathology</h3>
+        <p class="text-gray-300">Gain deeper understanding of disease mechanisms and identify novel therapeutic targets.</p>
+      </div>
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Model Drug Metabolism</h3>
+        <p class="text-gray-300">Predict drug behavior to optimize efficacy and safety early in development.</p>
+      </div>
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Predictive Signaling Analysis</h3>
+        <p class="text-gray-300">Analyze signaling pathways to design effective clinical trials and diagnostics.</p>
+      </div>
+      <div class="capability-card">
+        <h3 class="text-xl font-semibold mb-2">Scalable Quantum-Inspired Architecture</h3>
+        <p class="text-gray-300">Built to grow with your research needs, ensuring compounding value over time.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Contact Section -->
   <section id="cta" class="py-20 px-6 max-w-6xl mx-auto text-center fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">The Technology Powering the Future of Medicine</h2>
-    <p class="text-gray-300 mb-6">We transform complex biology into actionable insights using quantum principles.</p>
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Gain Your Competitive Edge</h2>
+    <p class="text-gray-300 mb-6">The future of medicine is being built on quantum technology. Partner with AECION to position your organization at the forefront of the industry.</p>
     <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <a href="#applications" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Explore Applications</a>
-      <a href="mailto:support@aecion.com" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Contact Our Team</a>
-      <a href="#join" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Join the Quantum Health Revolution</a>
+      <a href="mailto:support@aecion.com" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Request a Platform Briefing</a>
+      <a href="partnerships.html" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Explore Partnership Opportunities</a>
     </div>
   </section>
 
@@ -149,7 +166,7 @@
     <div class="mb-4">
       <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
       <a href="technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
-      <a href="quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Application</a> |
+      <a href="quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Platform</a> |
       <a href="case-study.html" class="hover:text-cyan-400 mx-2 transition">Case Study</a> |
       <a href="impact.html" class="hover:text-cyan-400 mx-2 transition">Impact</a> |
       <a href="research.html" class="hover:text-cyan-400 mx-2 transition">Research</a> |
