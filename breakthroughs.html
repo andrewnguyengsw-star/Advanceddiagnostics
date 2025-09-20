@@ -11,50 +11,18 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
-
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
     .gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-    .active.gradient { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; text-decoration: underline; }
-
-    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
-    #mobile-menu.open { display: block; }
-
-    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    #menu-toggle.open span:nth-child(2) { opacity: 0; }
-    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
     .glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
     .glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
-
-    .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
-
     .breakthrough-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); padding: 2rem; border-radius: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .breakthrough-card:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(0,255,255,0.4); }
-
     .subnav { position: sticky; top: 20px; background: rgba(0,0,0,0.8); z-index: 40; padding: 0.75rem 0; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.95rem; flex-wrap: wrap; }
     .subnav a { transition: all 0.3s; }
     .subnav a:hover { color: #00ffff; }
-
-    .dropdown-menu { 
-      opacity: 0; 
-      pointer-events: none; 
-      transition: opacity 0.3s ease; 
-      position: absolute; 
-      top: 100%; 
-      left: 0; 
-      background: black; 
-      border: 1px solid #444; 
-      border-radius: 0.5rem; 
-      width: 14rem; 
-      z-index: 50;
-    }
-    .dropdown.open .dropdown-menu { 
-      opacity: 1; 
-      pointer-events: auto; 
-    }
+    .dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: black; border: 1px solid #444; border-radius: 0.5rem; width: 14rem; z-index: 50; }
+    .dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
     .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: white; transition: background 0.3s; }
     .dropdown-menu a:hover { background: #111; }
   </style>
@@ -80,20 +48,23 @@
         <div class="dropdown relative" id="desktop-breakthroughs">
           <button class="hover:text-cyan-400 transition font-semibold underline">Breakthroughs</button>
           <div class="dropdown-menu">
-            <a href="breakthrough/project-synapse.html">Project Synapse</a>
-            <a href="breakthrough/human-biosonar.html">Human Biosonar</a>
-            <a href="breakthrough/enhanced-senses.html">Enhanced Senses</a>
-            <a href="breakthrough/danger-detection.html">Danger Detection</a>
-            <a href="breakthrough/electrocution-resistance.html">Electrocution Resistance</a>
-            <a href="breakthrough/fundamental-particle-control.html">Particle Control</a>
-            <a href="breakthrough/energetic-field-resonance.html">EFR</a>
-            <a href="breakthrough/neuroception.html">Neuroception</a>
-            <a href="breakthrough/sanguivigilance.html">Sanguivigilance</a>
-            <a href="breakthrough/exosight.html">ExoSight™</a>
-            <a href="breakthrough/project-echo.html">Project ECHO™</a>
-            <a href="breakthrough/project-lucid.html">Project LUCID™</a>
-            <a href="breakthrough/project-vigor.html">Project VIGOR™</a>
-            <a href="breakthrough/project-stormcore.html">Project STORMCORE™</a>
+            <a href="#project-atlas">Project Atlas™</a>
+            <a href="#project-sentinel">Project Sentinel™</a>
+            <a href="#project-remote-neural-interface">Project Remote Neural Interface™</a>
+            <a href="#project-synapse">Project Synapse</a>
+            <a href="#human-biosonar">Human Biosonar</a>
+            <a href="#enhanced-senses">Enhanced Senses</a>
+            <a href="#danger-detection">Danger Detection</a>
+            <a href="#electrocution-resistance">Electrocution Resistance</a>
+            <a href="#particle-control">Particle Control</a>
+            <a href="#efr">EFR</a>
+            <a href="#neuroception">Neuroception</a>
+            <a href="#sanguivigilance">Sanguivigilance</a>
+            <a href="#exosight">ExoSight™</a>
+            <a href="#project-echo">Project ECHO™</a>
+            <a href="#project-lucid">Project LUCID™</a>
+            <a href="#project-vigor">Project VIGOR™</a>
+            <a href="#project-stormcore">Project STORMCORE™</a>
           </div>
         </div>
       </nav>
@@ -119,28 +90,28 @@
         <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
         <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
 
-        <!-- Breakthroughs toggle -->
         <button id="mobile-breakthroughs-toggle" class="hover:text-cyan-400 transition flex justify-between items-center w-full text-left">
           Breakthroughs
           <span id="mobile-breakthroughs-icon" class="ml-2">+</span>
         </button>
-
-        <!-- Collapsible submenu -->
         <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
-          <a href="breakthrough/project-synapse.html" class="hover:text-cyan-400 transition text-sm">Project Synapse</a>
-          <a href="breakthrough/human-biosonar.html" class="hover:text-cyan-400 transition text-sm">Human Biosonar</a>
-          <a href="breakthrough/enhanced-senses.html" class="hover:text-cyan-400 transition text-sm">Enhanced Senses</a>
-          <a href="breakthrough/danger-detection.html" class="hover:text-cyan-400 transition text-sm">Danger Detection</a>
-          <a href="breakthrough/electrocution-resistance.html" class="hover:text-cyan-400 transition text-sm">Electrocution Resistance</a>
-          <a href="breakthrough/fundamental-particle-control.html" class="hover:text-cyan-400 transition text-sm">Particle Control</a>
-          <a href="breakthrough/energetic-field-resonance.html" class="hover:text-cyan-400 transition text-sm">EFR</a>
-          <a href="breakthrough/neuroception.html" class="hover:text-cyan-400 transition text-sm">Neuroception</a>
-          <a href="breakthrough/sanguivigilance.html" class="hover:text-cyan-400 transition text-sm">Sanguivigilance</a>
-          <a href="breakthrough/exosight.html" class="hover:text-cyan-400 transition text-sm">ExoSight™</a>
-          <a href="breakthrough/project-echo.html" class="hover:text-cyan-400 transition text-sm">Project ECHO™</a>
-          <a href="breakthrough/project-lucid.html" class="hover:text-cyan-400 transition text-sm">Project LUCID™</a>
-          <a href="breakthrough/project-vigor.html" class="hover:text-cyan-400 transition text-sm">Project VIGOR™</a>
-          <a href="breakthrough/project-stormcore.html" class="hover:text-cyan-400 transition text-sm">Project STORMCORE™</a>
+          <a href="#project-atlas" class="hover:text-cyan-400 transition text-sm">Project Atlas™</a>
+          <a href="#project-sentinel" class="hover:text-cyan-400 transition text-sm">Project Sentinel™</a>
+          <a href="#project-remote-neural-interface" class="hover:text-cyan-400 transition text-sm">Project Remote Neural Interface™</a>
+          <a href="#project-synapse" class="hover:text-cyan-400 transition text-sm">Project Synapse</a>
+          <a href="#human-biosonar" class="hover:text-cyan-400 transition text-sm">Human Biosonar</a>
+          <a href="#enhanced-senses" class="hover:text-cyan-400 transition text-sm">Enhanced Senses</a>
+          <a href="#danger-detection" class="hover:text-cyan-400 transition text-sm">Danger Detection</a>
+          <a href="#electrocution-resistance" class="hover:text-cyan-400 transition text-sm">Electrocution Resistance</a>
+          <a href="#particle-control" class="hover:text-cyan-400 transition text-sm">Particle Control</a>
+          <a href="#efr" class="hover:text-cyan-400 transition text-sm">EFR</a>
+          <a href="#neuroception" class="hover:text-cyan-400 transition text-sm">Neuroception</a>
+          <a href="#sanguivigilance" class="hover:text-cyan-400 transition text-sm">Sanguivigilance</a>
+          <a href="#exosight" class="hover:text-cyan-400 transition text-sm">ExoSight™</a>
+          <a href="#project-echo" class="hover:text-cyan-400 transition text-sm">Project ECHO™</a>
+          <a href="#project-lucid" class="hover:text-cyan-400 transition text-sm">Project LUCID™</a>
+          <a href="#project-vigor" class="hover:text-cyan-400 transition text-sm">Project VIGOR™</a>
+          <a href="#project-stormcore" class="hover:text-cyan-400 transition text-sm">Project STORMCORE™</a>
         </div>
       </nav>
     </div>
@@ -152,147 +123,151 @@
     <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-4 fade-in">
       Discover cellular rejuvenation, cognitive enhancement, and super soldier programs developed at AECION.
     </p>
-    <p class="text-md sm:text-lg md:text-xl max-w-3xl mb-8 fade-in font-semibold leading-relaxed text-center">
-      <span class="font-bold gradient-text">Pioneering Innovation</span><br>
-      Each breakthrough represents a leap forward in human gain-of-function, informed by quantum biology and advanced molecular engineering.
-    </p>
-    <div class="flex gap-4 fade-in">
-      <a href="#breakthroughs" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Explore Breakthroughs</a>
-      <a href="#subscribe" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Subscribe for Updates</a>
-    </div>
   </section>
 
-  <!-- Desktop Subnavigation -->
+  <!-- Subnavigation -->
   <div class="subnav fade-in">
-    <a href="breakthrough/project-synapse.html">Project Synapse</a>
-    <a href="breakthrough/human-biosonar.html">Human Biosonar</a>
-    <a href="breakthrough/enhanced-senses.html">Enhanced Senses</a>
-    <a href="breakthrough/danger-detection.html">Danger Detection</a>
-    <a href="breakthrough/electrocution-resistance.html">Electrocution Resistance</a>
-    <a href="breakthrough/fundamental-particle-control.html">Particle Control</a>
-    <a href="breakthrough/energetic-field-resonance.html">EFR</a>
-    <a href="breakthrough/neuroception.html">Neuroception</a>
-    <a href="breakthrough/sanguivigilance.html">Sanguivigilance</a>
-    <a href="breakthrough/exosight.html">ExoSight™</a>
-    <a href="breakthrough/project-echo.html">Project ECHO™</a>
-    <a href="breakthrough/project-lucid.html">Project LUCID™</a>
-    <a href="breakthrough/project-vigor.html">Project VIGOR™</a>
-    <a href="breakthrough/project-stormcore.html">Project STORMCORE™</a>
+    <a href="#project-atlas">Project Atlas™</a>
+    <a href="#project-sentinel">Project Sentinel™</a>
+    <a href="#project-remote-neural-interface">Project Remote Neural Interface™</a>
+    <a href="#project-synapse">Project Synapse</a>
+    <a href="#human-biosonar">Human Biosonar</a>
+    <a href="#enhanced-senses">Enhanced Senses</a>
+    <a href="#danger-detection">Danger Detection</a>
+    <a href="#electrocution-resistance">Electrocution Resistance</a>
+    <a href="#particle-control">Particle Control</a>
+    <a href="#efr">EFR</a>
+    <a href="#neuroception">Neuroception</a>
+    <a href="#sanguivigilance">Sanguivigilance</a>
+    <a href="#exosight">ExoSight™</a>
+    <a href="#project-echo">Project ECHO™</a>
+    <a href="#project-lucid">Project LUCID™</a>
+    <a href="#project-vigor">Project VIGOR™</a>
+    <a href="#project-stormcore">Project STORMCORE™</a>
   </div>
 
   <!-- Breakthroughs Grid -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in" id="breakthroughs">
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="breakthrough-card">
+  <section class="py-20 px-6 max-w-7xl mx-auto fade-in" id="breakthroughs">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- All 18 breakthrough cards -->
+      <div class="breakthrough-card" id="project-atlas">
+        <h3 class="text-2xl font-semibold mb-3">Project Atlas™</h3>
+        <p class="text-gray-300 mb-4">Tactis™ allows humans to extract data, numbers, and images from objects via touch.</p>
+        <a href="breakthrough/project-atlas.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
+      </div>
+      <div class="breakthrough-card" id="project-sentinel">
+        <h3 class="text-2xl font-semibold mb-3">Project Sentinel™</h3>
+        <p class="text-gray-300 mb-4">QuorumSense™ enables humans to sense and manipulate microbial collectives.</p>
+        <a href="breakthrough/project-sentinel.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
+      </div>
+      <div class="breakthrough-card" id="project-remote-neural-interface">
+        <h3 class="text-2xl font-semibold mb-3">Project Remote Neural Interface™</h3>
+        <p class="text-gray-300 mb-4">NeuroWeave™ integrates the human brain with digital networks and online information.</p>
+        <a href="breakthrough/project-remote-neural-interface.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
+      </div>
+      <div class="breakthrough-card" id="project-synapse">
         <h3 class="text-2xl font-semibold mb-3">Project Synapse</h3>
-        <p class="text-gray-300 mb-4">Reshaping and mastering central and peripheral neural networks for ultimate human performance.</p>
+        <p class="text-gray-300 mb-4">Reshaping central and peripheral neural networks for ultimate human performance.</p>
         <a href="breakthrough/project-synapse.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="human-biosonar">
         <h3 class="text-2xl font-semibold mb-3">Human Biosonar</h3>
-        <p class="text-gray-300 mb-4">A perception system that uses advanced neural and cellular signaling instead of acoustics.</p>
+        <p class="text-gray-300 mb-4">Advanced perception using neural and cellular signaling instead of acoustics.</p>
         <a href="breakthrough/human-biosonar.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="enhanced-senses">
         <h3 class="text-2xl font-semibold mb-3">Enhanced Senses</h3>
-        <p class="text-gray-300 mb-4">Sharpened sight, sound, proprioception, and Praetor Sense for evolved human perception.</p>
+        <p class="text-gray-300 mb-4">Sharpened sight, sound, proprioception, and Praetor Sense for evolved perception.</p>
         <a href="breakthrough/enhanced-senses.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="danger-detection">
         <h3 class="text-2xl font-semibold mb-3">Danger Detection</h3>
         <p class="text-gray-300 mb-4">Detects environmental threats and hostile intent before conscious awareness.</p>
         <a href="breakthrough/danger-detection.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="electrocution-resistance">
         <h3 class="text-2xl font-semibold mb-3">Electrocution Resistance</h3>
         <p class="text-gray-300 mb-4">Enhances human survivability in extreme environments.</p>
         <a href="breakthrough/electrocution-resistance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="particle-control">
         <h3 class="text-2xl font-semibold mb-3">Fundamental Particle Control</h3>
-        <p class="text-gray-300 mb-4">Manipulation of fundamental particles within the human body for advanced quantum interactions.</p>
+        <p class="text-gray-300 mb-4">Manipulation of fundamental particles for advanced quantum interactions.</p>
         <a href="breakthrough/fundamental-particle-control.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="efr">
         <h3 class="text-2xl font-semibold mb-3">Energetic Field Resonance (EFR)</h3>
-        <p class="text-gray-300 mb-4">Detecting and interpreting energy transformations in the environment remotely.</p>
+        <p class="text-gray-300 mb-4">Detecting and interpreting energy transformations remotely.</p>
         <a href="breakthrough/energetic-field-resonance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="neuroception">
         <h3 class="text-2xl font-semibold mb-3">Neuroception</h3>
         <p class="text-gray-300 mb-4">Detecting neural impulses and activity in other organisms in real-time.</p>
         <a href="breakthrough/neuroception.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="sanguivigilance">
         <h3 class="text-2xl font-semibold mb-3">Sanguivigilance</h3>
-        <p class="text-gray-300 mb-4">Advanced monitoring of blood-borne signals and immune system dynamics.</p>
+        <p class="text-gray-300 mb-4">Monitoring blood-borne signals to detect physiological and emotional states.</p>
         <a href="breakthrough/sanguivigilance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="exosight">
         <h3 class="text-2xl font-semibold mb-3">ExoSight™</h3>
-        <p class="text-gray-300 mb-4">Superhuman vision system capable of multi-spectral and augmented reality perception.</p>
+        <p class="text-gray-300 mb-4">Optical augmentation allowing perception of non-visible spectra.</p>
         <a href="breakthrough/exosight.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="project-echo">
         <h3 class="text-2xl font-semibold mb-3">Project ECHO™</h3>
-        <p class="text-gray-300 mb-4">High-fidelity echolocation-like perception via advanced neural pathways.</p>
+        <p class="text-gray-300 mb-4">Remote neural interfacing and telepresence via quantum signals.</p>
         <a href="breakthrough/project-echo.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="project-lucid">
         <h3 class="text-2xl font-semibold mb-3">Project LUCID™</h3>
-        <p class="text-gray-300 mb-4">Fully mapped cognitive enhancement for lucid decision-making under extreme conditions.</p>
+        <p class="text-gray-300 mb-4">Augmented cognition for rapid learning, memory expansion, and creative problem-solving.</p>
         <a href="breakthrough/project-lucid.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="project-vigor">
         <h3 class="text-2xl font-semibold mb-3">Project VIGOR™</h3>
-        <p class="text-gray-300 mb-4">Maximizes physical and mental endurance using advanced bioengineering techniques.</p>
+        <p class="text-gray-300 mb-4">Enhanced physical resilience, endurance, and tissue regeneration protocols.</p>
         <a href="breakthrough/project-vigor.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card" id="project-stormcore">
         <h3 class="text-2xl font-semibold mb-3">Project STORMCORE™</h3>
-        <p class="text-gray-300 mb-4">Harnesses electromagnetic fields for enhanced cellular energy and performance.</p>
+        <p class="text-gray-300 mb-4">Integrated neurobiological systems enabling multi-sensory synchronization and advanced cognition.</p>
         <a href="breakthrough/project-stormcore.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
     </div>
   </section>
 
   <!-- Subscribe Section -->
-  <section id="subscribe" class="py-20 px-6 bg-gray-900 text-center fade-in">
-    <h2 class="text-3xl font-extrabold mb-6 gradient-text">Stay Updated on Our Breakthroughs</h2>
-    <p class="text-gray-300 max-w-2xl mx-auto mb-6">
-      Subscribe to receive exclusive updates on AECION’s cutting-edge research, human performance programs, and revolutionary technologies.
-    </p>
+  <section class="py-16 bg-gray-900 text-center fade-in">
+    <h2 class="text-3xl font-bold mb-4">Join the Future of Human Performance</h2>
+    <p class="text-gray-300 mb-6">Subscribe to our newsletter for updates on breakthroughs and research.</p>
     <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-      <input type="email" placeholder="Your email address" class="px-4 py-3 rounded-xl flex-1 text-black focus:outline-none" required>
-      <button type="submit" class="glass-btn px-6 py-3 rounded-xl font-semibold text-white hover:text-black">Subscribe</button>
+      <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg text-black" required>
+      <button type="submit" class="bg-cyan-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition">Subscribe</button>
     </form>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black border-t border-gray-700 py-8 px-6 text-gray-400 text-center fade-in">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <p>&copy; 2025 AECION. All rights reserved.</p>
-      <div class="flex gap-6">
-        <a href="privacy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
-        <a href="terms.html" class="hover:text-cyan-400 transition">Terms of Service</a>
-        <a href="contact.html" class="hover:text-cyan-400 transition">Contact</a>
-      </div>
+  <footer class="py-12 bg-black border-t border-gray-800 text-center text-gray-400 fade-in">
+    <p>&copy; 2025 AECION. All rights reserved.</p>
+    <div class="mt-4 flex justify-center gap-6">
+      <a href="#" class="hover:text-cyan-400 transition">Twitter</a>
+      <a href="#" class="hover:text-cyan-400 transition">LinkedIn</a>
+      <a href="#" class="hover:text-cyan-400 transition">GitHub</a>
     </div>
   </footer>
 
   <script>
-    // Fade-in animations
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll('.fade-in').forEach((el, i) => {
         setTimeout(() => el.style.animationPlayState = 'running', i * 150);
       });
 
-      // Desktop dropdown
       const dropdown = document.getElementById('desktop-breakthroughs');
       dropdown.addEventListener('mouseenter', () => dropdown.classList.add('open'));
       dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('open'));
 
-      // Mobile toggle
       const menuToggle = document.getElementById('menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
       menuToggle.addEventListener('click', () => {
@@ -300,7 +275,6 @@
         mobileMenu.classList.toggle('open');
       });
 
-      // Mobile breakthroughs submenu
       const submenuToggle = document.getElementById('mobile-breakthroughs-toggle');
       const submenu = document.getElementById('mobile-breakthroughs-submenu');
       const icon = document.getElementById('mobile-breakthroughs-icon');
