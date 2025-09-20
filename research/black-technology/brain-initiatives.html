@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AECION | Brain Initiatives</title>
+  <meta name="description" content="Explore AECION's Brain Initiatives: pioneering neural architectures, cognitive enhancement, and advanced neurotechnology.">
+  <link rel="canonical" href="https://www.aecion.com/research/black-technology/brain-initiatives.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+    .accent { color: #00ffff; }
+    .bg-accent { background-color: #00ffff; }
+    .ghost-btn { border: 2px solid #00ffff; color: #00ffff; background: transparent; transition: all 0.3s ease; }
+    .ghost-btn:hover { background: #00ffff; color: black; transform: scale(1.05); }
+    .primary-btn { background: #00ffff; color: black; transition: all 0.3s ease; }
+    .primary-btn:hover { transform: scale(1.05); }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+    h1,h2,h3 { font-weight: 700; }
+    .capabilities-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .capability-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 1rem; transition: all 0.3s ease; cursor: pointer; }
+    .capability-card:hover { box-shadow: 0 0 20px #00ffff; transform: translateY(-5px); }
+    .timeline { border-left: 2px solid #00ffff; padding-left: 2rem; margin-left: 1rem; position: relative; }
+    .timeline::before { content: ''; position: absolute; left: -6px; width: 12px; height: 12px; background: #00ffff; border-radius: 50%; top: 0; }
+    .hero-bg { position: absolute; inset: 0; object-fit: cover; z-index: -1; }
+    .hero-overlay { position: absolute; inset:0; background: rgba(0,0,0,0.5); z-index: -1; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="sticky top-0 bg-black bg-opacity-95 border-b border-gray-700 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="../../index.html" class="text-2xl font-bold hover:text-accent transition">AECION</a>
+
+      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+        <a href="../../index.html" class="hover:text-accent transition">Home</a>
+        <a href="../../technology.html" class="hover:text-accent transition">Technology</a>
+        <a href="../../quantum-application.html" class="hover:text-accent transition">Quantum Application</a>
+        <a href="../../quantum-neural-mapping.html" class="hover:text-accent transition">Quantum Neural Mapping</a>
+        <a href="../../case-study.html" class="hover:text-accent transition">Case Study</a>
+        <a href="../../impact.html" class="hover:text-accent transition">Impact</a>
+        <div class="dropdown relative">
+          <button class="flex items-center hover:text-accent transition">
+            Research
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-content absolute hidden bg-black min-w-[220px] mt-2 rounded-lg overflow-hidden">
+            <a href="../../cognitive-enhancement-drug.html">Cognitive Enhancement</a>
+            <a href="../../reverse-aging-serum.html">Reverse-Aging Serum</a>
+            <a href="../../super-soldier-serum.html">Super Soldier Serum</a>
+            <a href="black-technology.html">Black Technology</a>
+            <a href="brain-initiatives.html" class="accent">Brain Initiatives</a>
+          </div>
+        </div>
+        <a href="../../breakthroughs.html" class="hover:text-accent transition">Breakthroughs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
+    <video autoplay muted loop class="hero-bg">
+      <source src="../../videos/brain-lattice.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <h1 class="text-6xl md:text-7xl mb-4 fade-in accent">Redefining the Mind</h1>
+    <p class="text-xl md:text-2xl mb-6 fade-in max-w-3xl">
+      The Black Technology Department isn’t researching the brain—we’re creating new neural architectures and substrates that extend human potential.
+    </p>
+    <div class="flex gap-4 fade-in">
+      <button class="primary-btn px-8 py-4 rounded-xl" onclick="document.getElementById('capabilities').scrollIntoView({behavior:'smooth'});">Explore Our Architectures</button>
+      <a href="#contact" class="ghost-btn px-8 py-4 rounded-xl">Initiate Partnership</a>
+    </div>
+  </section>
+
+  <!-- Section 2: Our Breakthrough -->
+  <section class="py-20 px-6 max-w-7xl mx-auto fade-in">
+    <h2 class="text-4xl md:text-5xl font-bold accent mb-6 text-center">Beyond Biology: The New Science of Cognition</h2>
+    <p class="text-gray-300 text-center mb-12">From biological impulse to engineered intelligence.</p>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 class="text-2xl font-bold mb-2">Traditional Neuroscience</h3>
+        <p class="text-gray-300 mb-4">
+          Focuses on observation and influence. Maps and stimulates biological pathways.
+        </p>
+        <img src="../../images/traditional-neurons.gif" alt="Traditional neurons" class="rounded-xl shadow-xl">
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold mb-2">Neuro-Synthetic Engineering</h3>
+        <p class="text-gray-300 mb-4">
+          Designs novel neural architectures, integrating synthetic substrates to form hybrid systems.
+        </p>
+        <img src="../../images/synthetic-neurons.gif" alt="Synthetic neurons" class="rounded-xl shadow-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Neural Architectures in Action -->
+  <section id="capabilities" class="py-20 px-6 max-w-7xl mx-auto fade-in">
+    <h2 class="text-4xl md:text-5xl font-bold accent mb-8 text-center">A Catalog of New Capabilities</h2>
+    <div class="capabilities-grid">
+      <div class="capability-card" onclick="alert('Remote Neural Interface: High-bandwidth bi-directional neocortex link.')">
+        <h3 class="font-bold mb-2">Remote Neural Interface</h3>
+        <p>Connect the brain to encrypted digital networks.</p>
+      </div>
+      <div class="capability-card" onclick="alert('Emotion Translation: Decode affective states into transmittable data.')">
+        <h3 class="font-bold mb-2">Emotion Translation</h3>
+        <p>True empathy and advanced psychological profiling.</p>
+      </div>
+      <div class="capability-card" onclick="alert('Shared Vision: Visual signals streamed between individuals.')">
+        <h3 class="font-bold mb-2">Shared Vision</h3>
+        <p>Stream optic nerve input to another's visual cortex.</p>
+      </div>
+      <div class="capability-card" onclick="alert('Electrocution Resistance: Non-conductive synthetic neuronal insulation.')">
+        <h3 class="font-bold mb-2">Electrocution Resistance</h3>
+        <p>Protect the nervous system in high-voltage environments.</p>
+      </div>
+      <div class="capability-card" onclick="alert('Enhanced Recovery: Accelerates cellular repair and endurance.')">
+        <h3 class="font-bold mb-2">Enhanced Recovery</h3>
+        <p>Optimizes metabolism and tissue repair.</p>
+      </div>
+      <div class="capability-card" onclick="alert('Non-Acoustic Biosonar: Perception in zero-visibility environments.')">
+        <h3 class="font-bold mb-2">Non-Acoustic Biosonar</h3>
+        <p>High-frequency pulse generates 3D spatial maps of surroundings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: The Technology Platform -->
+  <section class="py-20 px-6 max-w-7xl mx-auto fade-in">
+    <h2 class="text-4xl md:text-5xl font-bold accent mb-12 text-center">Our Foundational Pillars</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="font-bold mb-2">Neuro-Synthetic Engineering</h3>
+        <p class="text-gray-300 mb-4">Fabricate synthetic neurons with capabilities beyond natural limits.</p>
+        <img src="../../images/syn-neuron.png" alt="Syn-neuron" class="rounded-xl shadow-xl">
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Quantum Neural Mapping</h3>
+        <p class="text-gray-300 mb-4">Create real-time maps of the brain's quantum state for perfect decoding.</p>
+        <img src="../../images/quantum-mapping.gif" alt="Quantum mapping" class="rounded-xl shadow-xl">
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Cognitive Substrate Design</h3>
+        <p class="text-gray-300 mb-4">Design functional circuits for new abilities.</p>
+        <img src="../../images/cognitive-substrate.gif" alt="Cognitive substrate" class="rounded-xl shadow-xl">
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Remote Cognitive Interface</h3>
+        <p class="text-gray-300 mb-4">Securely bridge hybrid brains to digital networks.</p>
+        <img src="../../images/remote-interface.gif" alt="Remote interface" class="rounded-xl shadow-xl">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Strategic Applications -->
+  <section class="py-20 px-6 max-w-7xl mx-auto fade-in">
+    <h2 class="text-4xl md:text-5xl font-bold accent mb-12 text-center">Transforming Industries, Redefining Futures</h2>
+    <div class="grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="font-bold mb-2">Defense & Security</h3>
+        <p class="text-gray-300">Cognitive edge, situational awareness, and resilience in extreme environments.</p>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Medicine & Restoration</h3>
+        <p class="text-gray-300">Rebuild and enhance neurological function after injury or disease.</p>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Exploration & Aerospace</h3>
+        <p class="text-gray-300">Sensory expansion and endurance for harsh environments.</p>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Strategic Partnerships</h3>
+        <p class="text-gray-300">Co-develop custom solutions with forward-thinking organizations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Pipeline & Vision -->
+  <section class="py-20 px-6 max-w-7xl mx-auto fade-in">
+    <h2 class="text-4xl md:text-5xl font-bold accent mb-12 text-center">The Horizon: What We're Building Next</h2>
+    <div class="timeline mb-12">
+      <h3 class="font-bold">Project Chimera</h3>
+      <p class="text-gray-300 mb-4">Metabolic & Myostatin Augmentation for peak physical performance.</p>
+      <h3 class="font-bold">Project Chronos</h3>
+      <p class="text-gray-300 mb-4">Targeted Telomere Regeneration & Cellular Senescence Reversal.</p>
+      <h3 class="font-bold">Project Prometheus</h3>
+      <p class="text-gray-300 mb-4">Nootropic Substrate Integration for enhanced intelligence.</p>
+    </div>
+    <p class="text-center text-xl md:text-2xl accent">We are not mapping the brain's limits. We are engineering a future where it has none.</p>
+  </section>
+
+  <!-- Section 7: Closing CTA -->
+  <section id="contact" class="flex flex-col justify-center items-center text-center min-h-screen px-6 bg-black fade-in">
+    <h2 class="text-5xl md:text-6xl font-bold mb-6 accent">We are not researching the mind. We are creating it anew.</h2>
+    <div class="flex gap-6 mb-12 flex-wrap">
+      <a href="../../contact.html" class="primary-btn px-8 py-4 rounded-xl">Contact Us for a Secure Briefing</a>
+      <a href="../../investor-portal.html" class="ghost-btn px-8 py-4 rounded-xl">Access Investor Portal</a>
+    </div>
+    <footer class="text-gray-400 text-sm text-center">
+      <p>&copy; 2025 The Black Technology Department. All Rights Reserved.</p>
+      <p class="mt-2"><a href="../../privacy.html" class="hover:text-accent transition">Privacy Policy</a> | <a href="../../terms.html" class="hover:text-accent transition">Terms of Use</a> | <a href="../../careers.html" class="hover:text-accent transition">Careers</a></p>
+    </footer>
+  </section>
+
+  <script>
+    // Fade-in animations
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState='running'; }); }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

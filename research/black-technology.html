@@ -14,30 +14,19 @@
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    .gradient-text {
-      background: linear-gradient(90deg, #00ffff, #8a2be2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline;
-      line-height: 1.25;
-      overflow: visible;
-    }
-
+    .gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline; line-height: 1.25; overflow: visible; }
     .glass-btn { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
     .glass-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px) scale(1.02); }
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
     .dropdown { position: relative; }
     .dropdown-content {
       display: block; position: absolute; top: 100%; left: 0;
-      background-color: rgba(20, 20, 20, 0.95);
-      min-width: 220px; border-radius: 0.5rem; overflow: hidden; z-index: 50;
-      opacity: 0; transform: translateY(-10px); pointer-events: none;
-      transition: opacity 0.25s ease, transform 0.25s ease;
+      background-color: rgba(20, 20, 20, 0.95); min-width: 220px; border-radius: 0.5rem; overflow: hidden; z-index: 50;
+      opacity: 0; transform: translateY(-10px); pointer-events: none; transition: opacity 0.25s ease, transform 0.25s ease;
     }
     .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #ffffff; }
     .dropdown-content a:hover { color: #00ffff; background-color: rgba(255,255,255,0.1); }
-    .dropdown:hover .dropdown-content,
-    .dropdown.open .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .dropdown:hover .dropdown-content, .dropdown.open .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
     a:focus, button:focus { outline: 2px solid #00ffff; outline-offset: 4px; border-radius: 0.375rem; }
     body:not(.user-is-tabbing) a:focus, body:not(.user-is-tabbing) button:focus { outline: none; }
     #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
@@ -90,6 +79,7 @@
                 <a href="sensory-extension.html">Perceiving the Unseen</a>
                 <a href="performance-enhancement.html">Beyond Human Limits</a>
                 <a href="beyond-science.html">Operating Outside the Known</a>
+                <a href="brain-initiatives.html">Brain Initiatives</a>
               </div>
             </div>
           </div>
@@ -144,10 +134,10 @@
               <a href="sensory-extension.html">Perceiving the Unseen</a>
               <a href="performance-enhancement.html">Beyond Human Limits</a>
               <a href="beyond-science.html">Operating Outside the Known</a>
+              <a href="brain-initiatives.html">Brain Initiatives</a>
             </div>
           </div>
         </div>
-
         <a href="../../breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
     </div>
@@ -174,7 +164,7 @@
       <div>
         <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Redefining the Mind</h2>
         <p class="text-gray-300 mb-4">
-          Black technology goes beyond traditional human enhancement. We create entirely new neural networks within the brain—networks that enable unprecedented behaviors and cognitive strategies. Learn more in our <a href="../research.html" class="text-cyan-400 underline hover:text-cyan-200">Research section</a>.
+          Black technology goes beyond traditional human enhancement. We create entirely new neural networks within the brain—networks that enable unprecedented behaviors and cognitive strategies. Learn more about our <a href="brain-initiatives.html" class="text-cyan-400 underline hover:text-cyan-200">brain initiatives</a>.
         </p>
         <ul class="text-gray-400 list-disc list-inside space-y-2">
           <li>Creation of Novel Neural Architectures</li>
@@ -243,7 +233,7 @@
   <section id="aecion-power" class="py-20 px-6 max-w-7xl mx-auto fade-in text-center">
     <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Beyond Science. Beyond Humanity.</h2>
     <p class="text-gray-300 mb-6">
-      AECION transcends the limits of contemporary science. Our breakthroughs create entirely new human capabilities—redefining what is possible.
+      AECION transcends the limits of contemporary science. Our breakthroughs create entirely new human capabilities—redefining what is possible. Learn more about our <a href="brain-initiatives.html" class="text-cyan-400 underline hover:text-cyan-200">brain initiatives</a>.
     </p>
     <img src="../../images/aecion-power.png" alt="AECION Power Visualization" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-4xl">
   </section>
@@ -280,14 +270,10 @@
   </footer>
 
   <script>
-    // Fade-in on scroll
     const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
-    }, { threshold: 0.2 });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; }); }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
@@ -306,7 +292,6 @@
       }
     });
 
-    // Research Submenu Mobile Toggle
     const mobileResearchToggle = document.getElementById('mobile-research-toggle');
     const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
     let researchOpen = false;
@@ -315,7 +300,6 @@
       mobileResearchSubmenu.style.maxHeight = researchOpen ? mobileResearchSubmenu.scrollHeight + 'px' : '0';
     });
 
-    // Black Technology Submenu Mobile Toggle
     const mobileBlacktechToggle = document.getElementById('mobile-blacktech-toggle');
     const mobileBlacktechSubmenu = document.getElementById('mobile-blacktech-submenu');
     let blackTechOpen = false;
