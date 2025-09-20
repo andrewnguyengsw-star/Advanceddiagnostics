@@ -13,7 +13,17 @@
     body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-    .gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+    /* Fixed gradient text for all headers */
+    .gradient-text {
+      background: linear-gradient(90deg, #00ffff, #8a2be2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline;       /* ensures descenders render */
+      line-height: 1.25;     /* allows enough vertical space */
+      overflow: visible;     /* prevents clipping */
+    }
+
     .glass-btn { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
     .glass-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px) scale(1.02); }
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
@@ -103,7 +113,8 @@
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
     <h1 class="text-5xl md:text-6xl font-extrabold mb-6 fade-in gradient-text">Science Has Limits. We Don’t.</h1>
     <p class="text-lg text-gray-300 max-w-3xl mb-6 fade-in">
-      Black technology exists beyond the boundaries of current scientific perception, opening new frontiers of innovation.
+      Black Technology operates beyond the reach of established theories and experimental limits. 
+      It is not an extension of science — it is a leap into the unknown.
     </p>
     <a href="#cognitive-augmentation" class="glass-btn px-8 py-4 rounded-xl font-semibold fade-in">
       Discover the Tech
