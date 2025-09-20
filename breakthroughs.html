@@ -18,9 +18,21 @@
     .glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
     .breakthrough-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); padding: 2rem; border-radius: 2rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .breakthrough-card:hover { transform: scale(1.03); box-shadow: 0 0 30px rgba(0,255,255,0.4); }
-    .subnav { position: sticky; top: 20px; background: rgba(0,0,0,0.8); z-index: 40; padding: 0.75rem 0; display: flex; justify-content: center; gap: 1.5rem; font-size: 0.95rem; flex-wrap: wrap; }
+
+    /* Subnavigation updated to remove sticky */
+    .subnav {
+      background: rgba(0,0,0,0.8);
+      z-index: 40;
+      padding: 0.75rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      flex-wrap: wrap;
+    }
     .subnav a { transition: all 0.3s; }
     .subnav a:hover { color: #00ffff; }
+
     .dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: black; border: 1px solid #444; border-radius: 0.5rem; width: 14rem; z-index: 50; }
     .dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
     .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: white; transition: background 0.3s; }
@@ -150,7 +162,6 @@
   <!-- Breakthroughs Grid -->
   <section class="py-20 px-6 max-w-7xl mx-auto fade-in" id="breakthroughs">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- 18 breakthrough cards -->
       <div class="breakthrough-card" id="project-atlas">
         <h3 class="text-2xl font-semibold mb-3">Project Atlas™</h3>
         <p class="text-gray-300 mb-4">Tactis™ allows humans to extract data, numbers, and images from objects via touch.</p>
