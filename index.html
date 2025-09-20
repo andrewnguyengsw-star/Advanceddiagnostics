@@ -9,19 +9,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
+    body { font-family: 'Inter', sans-serif; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Original dark-section buttons */
     .glass-btn { 
       background: rgba(255,255,255,0.1); 
       backdrop-filter: blur(8px); 
       border: 1px solid rgba(255,255,255,0.2); 
       transition: all 0.3s ease; 
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      color: white;
     }
     .glass-btn:hover { 
       background: rgba(255,255,255,0.2); 
       transform: translateY(-2px) scale(1.02); 
     }
+
+    /* Light-section buttons: subtle light gray gradient */
+    .glass-btn-light-gradient {
+      background: linear-gradient(135deg, #e0e0e0, #bdbdbd);
+      color: black;
+      border: 1px solid rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .glass-btn-light-gradient:hover {
+      transform: translateY(-2px) scale(1.05);
+      filter: brightness(1.1);
+    }
+
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
     .breakthrough-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); padding: 1.5rem; border-radius: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .breakthrough-card:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(0,255,255,0.4); }
@@ -32,7 +55,7 @@
     #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   </style>
 </head>
-<body>
+<body class="bg-black text-white">
 
   <!-- Navigation -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
@@ -71,8 +94,8 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black">
+  <!-- Hero Section (Dark) -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-black">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Mapping the Code of Life. Engineering What's Next.</h1>
     <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in">
       AECION operates at the intersection of quantum biology and human potential. We create dynamic, living maps of the human body to conquer disease and pioneer the next stage of evolution.
@@ -80,27 +103,27 @@
     <a href="#mission" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in">Explore Our Mission</a>
   </section>
 
-  <!-- Our Mission -->
-  <section id="mission" class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:gap-12">
-    <div class="md:w-1/2 bg-gray-900 p-6 rounded-2xl m-2">
-      <h3 class="text-2xl font-bold mb-4 text-cyan-400">Decode and Conquer Body</h3>
-      <p class="text-gray-300 mb-4">We observe disease at its source. Our Quantum Health Platform transforms complex biological interactions into actionable insights, making it possible to model multiple disease pathways simultaneously. By harnessing quantum principles, we are decoding the fundamental pathology of disease and metabolism to create a new paradigm in medicine.</p>
-      <a href="technology.html" class="glass-btn px-4 py-2 font-semibold text-white rounded-xl">View Health Applications</a>
+  <!-- Our Mission (Light) -->
+  <section id="mission" class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:gap-12 bg-gray-100 text-black">
+    <div class="md:w-1/2 p-6 rounded-2xl m-2 bg-white/5">
+      <h3 class="text-2xl font-bold mb-4 text-cyan-600">Decode and Conquer Body</h3>
+      <p class="mb-4">We observe disease at its source. Our Quantum Health Platform transforms complex biological interactions into actionable insights, making it possible to model multiple disease pathways simultaneously. By harnessing quantum principles, we are decoding the fundamental pathology of disease and metabolism to create a new paradigm in medicine.</p>
+      <a href="technology.html" class="glass-btn-light-gradient">View Health Applications</a>
     </div>
-    <div class="md:w-1/2 bg-gray-900 p-6 rounded-2xl m-2">
-      <h3 class="text-2xl font-bold mb-4 text-cyan-400">Enhance and Evolve Body</h3>
-      <p class="text-gray-300 mb-4">We are reshaping central and peripheral neural networks for ultimate human performance. Our breakthrough programs in cellular rejuvenation, cognitive enhancement, and physical resilience are designed for the most demanding environments. We are unlocking new capabilities, from augmented cognition to advanced sensory perception.</p>
-      <a href="breakthroughs.html" class="glass-btn px-4 py-2 font-semibold text-white rounded-xl">See Our Breakthroughs</a>
+    <div class="md:w-1/2 p-6 rounded-2xl m-2 bg-white/5">
+      <h3 class="text-2xl font-bold mb-4 text-cyan-600">Enhance and Evolve Body</h3>
+      <p class="mb-4">We are reshaping central and peripheral neural networks for ultimate human performance. Our breakthrough programs in cellular rejuvenation, cognitive enhancement, and physical resilience are designed for the most demanding environments. We are unlocking new capabilities, from augmented cognition to advanced sensory perception.</p>
+      <a href="breakthroughs.html" class="glass-btn-light-gradient">See Our Breakthroughs</a>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Quantum Engine -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
+  <!-- Quantum Engine (Dark) -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in bg-black text-white">
     <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400 text-center">The Technology that Translates Life Itself</h2>
-    <p class="text-gray-300 max-w-4xl mx-auto mb-6 text-center">At our core is a revolutionary approach to biological sensing. By using entangled quantum particles as remote, high-fidelity sensors, we can record the spatiotemporal pathology generated by a system of antibodies or the electrochemical patterns of neural pathways. This technology translates cognition in real time.</p>
-    <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-3">
+    <p class="max-w-4xl mx-auto mb-6 text-center">At our core is a revolutionary approach to biological sensing. By using entangled quantum particles as remote, high-fidelity sensors, we can record the spatiotemporal pathology generated by a system of antibodies or the electrochemical patterns of neural pathways. This technology translates cognition in real time.</p>
+    <ul class="list-disc list-inside max-w-3xl mx-auto space-y-3">
       <li><strong>Quantum Sensing & Entanglement:</strong> Process complex biological interactions simultaneously using entangled qubits, allowing us to model drug and disease perturbations with unparalleled accuracy.</li>
       <li><strong>Microenvironment Dynamics:</strong> Tracks subtle cellular deviations influencing chemical signaling, enabling predictive analysis of disease progression and drug efficacy.</li>
       <li><strong>Quantum Neural Mapping:</strong> Decodes CNS integration of multi-site inputs, producing a neural signature reflecting the entire systemic state of an organism.</li>
@@ -112,34 +135,34 @@
 
   <div class="section-divider"></div>
 
-  <!-- Breakthroughs Section -->
-  <section class="py-20 px-6 max-w-7xl mx-auto fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-400 text-center">Our Breakthroughs in Action</h2>
+  <!-- Breakthroughs Section (Light) -->
+  <section class="py-20 px-6 max-w-7xl mx-auto fade-in bg-gray-100 text-black">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-600 text-center">Our Breakthroughs in Action</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="breakthrough-card">
+      <div class="breakthrough-card bg-white/5 text-black">
         <h3 class="text-2xl font-semibold mb-2">Project VIGOR™</h3>
-        <p class="text-gray-300 mb-2">A novel human metabolic adaptation engineered to enhance recovery, endurance, and peak physical performance.</p>
+        <p class="mb-2">A novel human metabolic adaptation engineered to enhance recovery, endurance, and peak physical performance.</p>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card bg-white/5 text-black">
         <h3 class="text-2xl font-semibold mb-2">Project Remote Neural Interface™</h3>
-        <p class="text-gray-300 mb-2">NeuroWeave™ technology integrates the human brain with digital networks and online information.</p>
+        <p class="mb-2">NeuroWeave™ technology integrates the human brain with digital networks and online information.</p>
       </div>
-      <div class="breakthrough-card">
+      <div class="breakthrough-card bg-white/5 text-black">
         <h3 class="text-2xl font-semibold mb-2">Sanguivigilance</h3>
-        <p class="text-gray-300 mb-2">Monitoring blood-borne signals enables the remote detection of nuanced physiological and emotional states in other organisms.</p>
+        <p class="mb-2">Monitoring blood-borne signals enables the remote detection of nuanced physiological and emotional states in other organisms.</p>
       </div>
     </div>
     <div class="text-center mt-6">
-      <a href="breakthroughs.html" class="glass-btn px-6 py-3 font-semibold text-white rounded-xl">Discover All Breakthroughs</a>
+      <a href="breakthroughs.html" class="glass-btn-light-gradient">Discover All Breakthroughs</a>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Partner Section -->
-  <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in">
+  <!-- Partner Section (Dark) -->
+  <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in bg-black text-white">
     <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Partner with the Vanguard</h2>
-    <p class="text-gray-300 mb-6">AECION is seeking partners and collaborators who are dedicated to solving humanity's most critical challenges. Join us as we redefine what is possible.</p>
+    <p class="mb-6">AECION is seeking partners and collaborators who are dedicated to solving humanity's most critical challenges. Join us as we redefine what is possible.</p>
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <a href="contact.html" class="glass-btn px-6 py-3 font-semibold text-white rounded-xl">Contact Our Team</a>
       <a href="research.html" class="glass-btn px-6 py-3 font-semibold text-white rounded-xl">Explore Our Research</a>
@@ -147,7 +170,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
+  <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in text-white">
     <div class="mb-4">
       <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
       <a href="technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
