@@ -3,20 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AECION | Redefining Health at the Quantum Level</title>
-  <meta name="description" content="Observe disease at its source. AECION uses quantum sensing to create a dynamic, living map of human biology.">
+  <title>AECION | Mapping the Code of Life</title>
+  <meta name="description" content="AECION operates at the intersection of quantum biology and human potential, creating living maps of the human body to conquer disease and pioneer human evolution.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
+    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
-    #mobile-menu.open { display: block; }
-    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    #menu-toggle.open span:nth-child(2) { opacity: 0; }
-    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
     .glass-btn { 
       background: rgba(255,255,255,0.1); 
       backdrop-filter: blur(8px); 
@@ -28,9 +23,16 @@
       transform: translateY(-2px) scale(1.02); 
     }
     .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+    .breakthrough-card { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); padding: 1.5rem; border-radius: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .breakthrough-card:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(0,255,255,0.4); }
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
   </style>
 </head>
-<body class="bg-black text-white">
+<body>
 
   <!-- Navigation -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
@@ -71,76 +73,76 @@
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in" style="animation-delay:0.2s;">The Science Behind Our Quantum Health Platform</h1>
-    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
-      Observe disease at its source. Our platform uses quantum sensing to create a dynamic, living map of human biology.
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Mapping the Code of Life. Engineering What's Next.</h1>
+    <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in">
+      AECION operates at the intersection of quantum biology and human potential. We create dynamic, living maps of the human body to conquer disease and pioneer the next stage of evolution.
     </p>
-    <a href="#core-principles" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in" style="animation-delay:0.6s;">Learn How It Works</a>
+    <a href="#mission" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in">Explore Our Mission</a>
   </section>
 
-  <!-- Core Principles -->
-  <section id="core-principles" class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Core Principles</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-3 mb-4">
-        <li><strong>Quantum Entanglement:</strong> Process complex biological interactions simultaneously using entangled qubits.</li>
-        <li><strong>Superposition:</strong> Model multiple disease and drug pathways simultaneously.</li>
-        <li><strong>Microenvironment Dynamics:</strong> Track cellular deviations influencing chemical signaling.</li>
-      </ul>
-      <p class="text-gray-300 font-semibold">Visual Idea: Diagram showing entanglement and signaling pathways</p>
+  <!-- Our Mission -->
+  <section id="mission" class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:gap-12">
+    <div class="md:w-1/2 bg-gray-900 p-6 rounded-2xl m-2">
+      <h3 class="text-2xl font-bold mb-4 text-cyan-400">Decode and Conquer Body</h3>
+      <p class="text-gray-300 mb-4">We observe disease at its source. Our Quantum Health Platform transforms complex biological interactions into actionable insights, making it possible to model multiple disease pathways simultaneously. By harnessing quantum principles, we are decoding the fundamental pathology of disease and metabolism to create a new paradigm in medicine.</p>
+      <a href="technology.html" class="glass-btn px-4 py-2 font-semibold text-white rounded-xl">View Health Applications</a>
     </div>
-    <div class="md:w-1/2 mt-8 md:mt-0">
-      <img src="technology1.png" alt="Core Principles Graphic" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-64 object-cover">
-    </div>
-  </section>
-
-  <div class="section-divider"></div>
-
-  <!-- Approach -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12 md:flex-row-reverse">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">From Quantum Theory to Biomedical Insight</h2>
-      <ul class="list-decimal list-inside text-gray-300 space-y-3 mb-4">
-        <li><strong>Data Capture:</strong> Patient-level observations, chemical signals.</li>
-        <li><strong>Microenvironment Modeling:</strong> Represent drug/disease perturbations.</li>
-        <li><strong>Quantum-Inspired Processing:</strong> Algorithms emulate entanglement & parallelism.</li>
-        <li><strong>Insight Generation:</strong> Predict disease progression & drug efficacy.</li>
-      </ul>
-    </div>
-    <div class="md:w-1/2 mt-8 md:mt-0">
-      <img src="technology2.png" alt="Our Approach Graphic" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-64 object-cover">
+    <div class="md:w-1/2 bg-gray-900 p-6 rounded-2xl m-2">
+      <h3 class="text-2xl font-bold mb-4 text-cyan-400">Enhance and Evolve Body</h3>
+      <p class="text-gray-300 mb-4">We are reshaping central and peripheral neural networks for ultimate human performance. Our breakthrough programs in cellular rejuvenation, cognitive enhancement, and physical resilience are designed for the most demanding environments. We are unlocking new capabilities, from augmented cognition to advanced sensory perception.</p>
+      <a href="breakthroughs.html" class="glass-btn px-4 py-2 font-semibold text-white rounded-xl">See Our Breakthroughs</a>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- Features -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Key Features</h2>
-      <ul class="list-disc list-inside text-gray-300 space-y-3 mb-4">
-        <li>Simulate Disease Pathology</li>
-        <li>Model Drug Metabolism</li>
-        <li>Predictive Signaling Analysis</li>
-        <li>Scalable Quantum-Inspired Architecture</li>
-      </ul>
-      <p class="text-gray-300 font-semibold">Visual Idea: Interactive schematic showing drug → microenvironment → signaling → outcome</p>
-    </div>
-    <div class="md:w-1/2 mt-8 md:mt-0">
-      <img src="technology4.png" alt="Key Features Graphic" class="rounded-2xl shadow-lg hover:scale-105 transition-transform w-full h-64 object-cover">
+  <!-- Quantum Engine -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400 text-center">The Technology that Translates Life Itself</h2>
+    <p class="text-gray-300 max-w-4xl mx-auto mb-6 text-center">At our core is a revolutionary approach to biological sensing. By using entangled quantum particles as remote, high-fidelity sensors, we can record the spatiotemporal pathology generated by a system of antibodies or the electrochemical patterns of neural pathways. This technology translates cognition in real time.</p>
+    <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto space-y-3">
+      <li><strong>Quantum Sensing & Entanglement:</strong> Process complex biological interactions simultaneously using entangled qubits, allowing us to model drug and disease perturbations with unparalleled accuracy.</li>
+      <li><strong>Microenvironment Dynamics:</strong> Tracks subtle cellular deviations influencing chemical signaling, enabling predictive analysis of disease progression and drug efficacy.</li>
+      <li><strong>Quantum Neural Mapping:</strong> Decodes CNS integration of multi-site inputs, producing a neural signature reflecting the entire systemic state of an organism.</li>
+    </ul>
+    <div class="text-center mt-6">
+      <a href="research.html" class="glass-btn px-6 py-3 font-semibold text-white rounded-xl">Dive Deeper into Our Research</a>
     </div>
   </section>
 
   <div class="section-divider"></div>
 
-  <!-- CTA Section -->
-  <section id="cta" class="py-20 px-6 max-w-6xl mx-auto text-center fade-in">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">The Technology Powering the Future of Medicine</h2>
-    <p class="text-gray-300 mb-6">We transform complex biology into actionable insights using quantum principles.</p>
+  <!-- Breakthroughs Section -->
+  <section class="py-20 px-6 max-w-7xl mx-auto fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-400 text-center">Our Breakthroughs in Action</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-2">Project VIGOR™</h3>
+        <p class="text-gray-300 mb-2">A novel human metabolic adaptation engineered to enhance recovery, endurance, and peak physical performance.</p>
+      </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-2">Project Remote Neural Interface™</h3>
+        <p class="text-gray-300 mb-2">NeuroWeave™ technology integrates the human brain with digital networks and online information.</p>
+      </div>
+      <div class="breakthrough-card">
+        <h3 class="text-2xl font-semibold mb-2">Sanguivigilance</h3>
+        <p class="text-gray-300 mb-2">Monitoring blood-borne signals enables the remote detection of nuanced physiological and emotional states in other organisms.</p>
+      </div>
+    </div>
+    <div class="text-center mt-6">
+      <a href="breakthroughs.html" class="glass-btn px-6 py-3 font-semibold text-white rounded-xl">Discover All Breakthroughs</a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Partner Section -->
+  <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Partner with the Vanguard</h2>
+    <p class="text-gray-300 mb-6">AECION is seeking partners and collaborators who are dedicated to solving humanity's most critical challenges. Join us as we redefine what is possible.</p>
     <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <a href="research.html" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Explore Research</a>
-      <a href="mailto:support@aecion.com" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Contact Our Team</a>
-      <a href="#join" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white">Join the Quantum Health Revolution</a>
+      <a href="contact.html" class="glass-btn px-6 py-3 font-semibold text-white rounded-xl">Contact Our Team</a>
+      <a href="research.html" class="glass-btn px-6 py-3 font-semibold text-white rounded-xl">Explore Our Research</a>
     </div>
   </section>
 
@@ -149,17 +151,20 @@
     <div class="mb-4">
       <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
       <a href="technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
-      <a href="quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Application</a> |
-      <a href="case-study.html" class="hover:text-cyan-400 mx-2 transition">Case Study</a> |
-      <a href="impact.html" class="hover:text-cyan-400 mx-2 transition">Impact</a> |
       <a href="research.html" class="hover:text-cyan-400 mx-2 transition">Research</a> |
-      <a href="breakthroughs.html" class="hover:text-cyan-400 mx-2 transition">Breakthroughs</a>
+      <a href="careers.html" class="hover:text-cyan-400 mx-2 transition">Careers</a> |
+      <a href="contact.html" class="hover:text-cyan-400 mx-2 transition">Contact</a>
     </div>
     <div class="mb-4">
       <span>Phone: 123-456-7890 | Email: 
         <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | 
         Address: 123 Quantum Way, Tech City
       </span>
+    </div>
+    <div class="flex justify-center gap-4 mb-4">
+      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
+      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
     </div>
     <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
