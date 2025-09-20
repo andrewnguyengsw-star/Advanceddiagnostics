@@ -13,7 +13,6 @@
     body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-
     .gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline; line-height: 1.25; overflow: visible; }
     .glass-btn { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
     .glass-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px) scale(1.02); }
@@ -229,85 +228,110 @@
     <img src="../../images/abstract-frontiers.png" alt="Abstract Frontier Visual" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-3xl">
   </section>
 
-  <!-- AECION Power -->
-  <section id="aecion-power" class="py-20 px-6 max-w-7xl mx-auto fade-in text-center">
-    <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Beyond Science. Beyond Humanity.</h2>
-    <p class="text-gray-300 mb-6">
-      AECION transcends the limits of contemporary science. Our breakthroughs create entirely new human capabilities—redefining what is possible. Learn more about our <a href="brain-initiatives.html" class="text-cyan-400 underline hover:text-cyan-200">brain initiatives</a>.
-    </p>
-    <img src="../../images/aecion-power.png" alt="AECION Power Visualization" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-4xl">
-  </section>
+  <!-- Featured Research Projects -->
+  <section id="portfolio" class="py-20 px-6 max-w-7xl mx-auto fade-in">
+    <h2 class="text-4xl font-bold text-cyan-400 mb-12 text-center">Featured Research Projects</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <!-- Reverse-Aging Serum -->
+      <div class="group bg-gray-900 bg-opacity-30 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="images/reverse-aging-serum.png" alt="Reverse Aging Serum" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-white mb-2">Reverse-Aging Serum</h3>
+          <p class="text-gray-300 mb-4">Advanced biochemistry to slow, halt, and reverse cellular aging.</p>
+          <ul class="text-gray-400 space-y-1 mb-4">
+            <li>DNA repair & telomere extension</li>
+            <li>Stem cell rejuvenation</li>
+            <li>Anti-inflammatory & antioxidant</li>
+          </ul>
+          <a href="research/reverse-aging-serum.html" class="glass-btn px-4 py-2 rounded-lg font-semibold text-white hover:text-black">Learn More</a>
+        </div>
+      </div>
 
-  <!-- CTA to Research -->
-  <section class="py-16 px-6 max-w-7xl mx-auto text-center fade-in">
-    <h3 class="text-3xl font-bold gradient-text mb-4">Learn More About Our Research</h3>
-    <p class="text-gray-300 mb-6">
-      Discover the scientific foundations and ongoing studies behind our black technology breakthroughs.
-    </p>
-    <a href="../research.html" class="glass-btn px-8 py-4 rounded-xl font-semibold">
-      Explore Research
-    </a>
+      <!-- Super Soldier Serum -->
+      <div class="group bg-gray-900 bg-opacity-30 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="images/super-soldier-serum.png" alt="Super Soldier Serum" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-white mb-2">Super Soldier Serum</h3>
+          <p class="text-gray-300 mb-4">Designed to push human performance beyond natural limits.</p>
+          <ul class="text-gray-400 space-y-1 mb-4">
+            <li>Muscle & skeletal enhancement</li>
+            <li>Neural optimization</li>
+            <li>Metabolic acceleration</li>
+            <li>Resilience & recovery</li>
+          </ul>
+          <a href="research/super-soldier-serum.html" class="glass-btn px-4 py-2 rounded-lg font-semibold text-white hover:text-black">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Cognitive Enhancement Drug -->
+      <div class="group bg-gray-900 bg-opacity-30 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition">
+        <img src="images/cognitive-drug.png" alt="Cognitive Enhancement" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
+        <div class="p-6">
+          <h3 class="text-2xl font-semibold text-white mb-2">Cognitive Enhancement Drug</h3>
+          <p class="text-gray-300 mb-4">Neuropharmacology to improve memory, focus, and problem-solving.</p>
+          <ul class="text-gray-400 space-y-1 mb-4">
+            <li>Boosts synaptic efficiency</li>
+            <li>Enhances neurotransmitter production</li>
+            <li>Optimizes oxygen & glucose utilization</li>
+            <li>Supports long-term neural health</li>
+          </ul>
+          <a href="research/cognitive-enhancement-drug.html" class="glass-btn px-4 py-2 rounded-lg font-semibold text-white hover:text-black">Learn More</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black bg-opacity-90 py-12 text-gray-400 text-sm">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-      <div class="text-center md:text-left">
-        <a href="../../index.html" class="text-xl font-bold text-white hover:text-cyan-400 transition">AECION</a>
-        <p class="mt-1">&copy; 2025 AECION. All rights reserved.</p>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-6 text-center">
-        <a href="../../privacy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
-        <a href="../../terms.html" class="hover:text-cyan-400 transition">Terms of Service</a>
-        <a href="../../contact.html" class="hover:text-cyan-400 transition">Contact</a>
-      </div>
-      <div class="flex gap-4 justify-center md:justify-end">
-        <a href="https://twitter.com" target="_blank" class="hover:text-cyan-400 transition">Twitter</a>
-        <a href="https://linkedin.com" target="_blank" class="hover:text-cyan-400 transition">LinkedIn</a>
-        <a href="https://github.com" target="_blank" class="hover:text-cyan-400 transition">GitHub</a>
+  <footer class="py-12 px-6 bg-gray-900 text-gray-400">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <p>&copy; 2025 AECION. All rights reserved.</p>
+      <div class="flex space-x-4 mt-4 md:mt-0">
+        <a href="#" class="hover:text-cyan-400 transition">Twitter</a>
+        <a href="#" class="hover:text-cyan-400 transition">LinkedIn</a>
+        <a href="#" class="hover:text-cyan-400 transition">GitHub</a>
       </div>
     </div>
   </footer>
 
   <script>
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; }); }, { threshold: 0.2 });
-    fadeEls.forEach(el => observer.observe(el));
+    // Fade-in animations
+    const fadeIns = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+      });
+    }, { threshold: 0.1 });
+    fadeIns.forEach(el => observer.observe(el));
 
+    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
-    let menuOpen = false;
     menuToggle.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      menuToggle.classList.toggle('open', menuOpen);
-      if (menuOpen) {
-        mobileMenu.classList.add('open');
-        mobileMenu.style.display = 'block';
-        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-        mobileMenu.style.opacity = '1';
-      } else {
-        mobileMenu.style.maxHeight = '0';
-        mobileMenu.style.opacity = '0';
-        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
-      }
+      menuToggle.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
     });
 
+    // Mobile submenu toggles
     const mobileResearchToggle = document.getElementById('mobile-research-toggle');
     const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
-    let researchOpen = false;
     mobileResearchToggle.addEventListener('click', () => {
-      researchOpen = !researchOpen;
-      mobileResearchSubmenu.style.maxHeight = researchOpen ? mobileResearchSubmenu.scrollHeight + 'px' : '0';
+      mobileResearchSubmenu.style.maxHeight = mobileResearchSubmenu.style.maxHeight ? null : mobileResearchSubmenu.scrollHeight + "px";
     });
 
-    const mobileBlacktechToggle = document.getElementById('mobile-blacktech-toggle');
-    const mobileBlacktechSubmenu = document.getElementById('mobile-blacktech-submenu');
-    let blackTechOpen = false;
-    mobileBlacktechToggle.addEventListener('click', () => {
-      blackTechOpen = !blackTechOpen;
-      mobileBlacktechSubmenu.style.maxHeight = blackTechOpen ? mobileBlacktechSubmenu.scrollHeight + 'px' : '0';
+    const mobileBlackTechToggle = document.getElementById('mobile-blacktech-toggle');
+    const mobileBlackTechSubmenu = document.getElementById('mobile-blacktech-submenu');
+    mobileBlackTechToggle.addEventListener('click', () => {
+      mobileBlackTechSubmenu.style.maxHeight = mobileBlackTechSubmenu.style.maxHeight ? null : mobileBlackTechSubmenu.scrollHeight + "px";
     });
+
+    // Keyboard navigation detection
+    function handleFirstTab(e) {
+      if (e.key === 'Tab') {
+        document.body.classList.add('user-is-tabbing');
+        window.removeEventListener('keydown', handleFirstTab);
+      }
+    }
+    window.addEventListener('keydown', handleFirstTab);
   </script>
-
 </body>
 </html>
