@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AECION | Cognitive Augmentation</title>
+  <meta name="description" content="Redefining the mind with AECION's Black Technology: novel neural architectures and emergent behaviors.">
+  <link rel="canonical" href="https://www.aecion.com/research/black-technology/cognitive-augmentation.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    .gradient-text { background: linear-gradient(90deg, #00ffff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline; line-height: 1.25; overflow: visible; }
+    .glass-btn { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
+    .glass-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px) scale(1.02); }
+    .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+    .dropdown { position: relative; }
+    .dropdown-content { display: block; position: absolute; top: 100%; left: 0; background-color: rgba(20,20,20,0.95); min-width: 220px; border-radius: 0.5rem; overflow: hidden; z-index: 50; opacity: 0; transform: translateY(-10px); pointer-events: none; transition: opacity 0.25s ease, transform 0.25s ease; }
+    .dropdown-content a { display: block; padding: 0.75rem 1rem; color: #ffffff; }
+    .dropdown-content a:hover { color: #00ffff; background-color: rgba(255,255,255,0.1); }
+    .dropdown:hover .dropdown-content, .dropdown.open .dropdown-content { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    a:focus, button:focus { outline: 2px solid #00ffff; outline-offset: 4px; border-radius: 0.375rem; }
+    body:not(.user-is-tabbing) a:focus, body:not(.user-is-tabbing) button:focus { outline: none; }
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .active-link { color: #00ffff !important; font-weight: 700; }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="../../index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
+      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+        <a href="../../index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="../../technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="../../quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="../../quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="../../case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="../../impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <div class="dropdown">
+          <button class="hover:text-cyan-400 transition">Research</button>
+          <div class="dropdown-content">
+            <a href="../cognitive-enhancement-drug.html">Cognitive Enhancement</a>
+            <a href="../reverse-aging-serum.html">Reverse-Aging Serum</a>
+            <a href="../super-soldier-serum.html">Super Soldier Serum</a>
+            <a href="black-technology.html" class="active-link">Black Technology</a>
+          </div>
+        </div>
+        <a href="../../breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
+      </nav>
+      <div class="sm:hidden">
+        <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+          <span class="block w-6 h-0.5 bg-white transition-transform"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform"></span>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
+      <nav class="flex flex-col px-4 py-4 space-y-2">
+        <a href="../../index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="../../technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="../../quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="../../quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="../../case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="../../impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <div class="flex flex-col">
+          <button id="mobile-research-toggle" class="flex justify-between items-center w-full text-left px-2 py-2 hover:text-cyan-400 transition">
+            Research
+            <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="mobile-research-submenu" class="flex flex-col pl-4 mt-1 max-h-0 overflow-hidden transition-all duration-300">
+            <a href="../cognitive-enhancement-drug.html" class="active-link">Cognitive Enhancement</a>
+            <a href="../reverse-aging-serum.html">Reverse-Aging Serum</a>
+            <a href="../super-soldier-serum.html">Super Soldier Serum</a>
+            <a href="black-technology.html">Black Technology</a>
+          </div>
+        </div>
+        <a href="../../breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 fade-in gradient-text">Redefining the Mind</h1>
+    <p class="text-lg text-gray-300 max-w-3xl mb-6 fade-in">
+      Cognitive augmentation creates entirely new neural networks—enabling emergent behaviors and advanced cognition beyond human norms.
+    </p>
+    <a href="#neural-architectures" class="glass-btn px-8 py-4 rounded-xl font-semibold fade-in">
+      Explore Neural Tech
+    </a>
+  </section>
+
+  <!-- Neural Architectures Section -->
+  <section id="neural-architectures" class="py-20 px-6 max-w-7xl mx-auto fade-in">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Novel Neural Architectures</h2>
+        <p class="text-gray-300 mb-4">
+          We design new neural pathways that enable cognitive strategies previously inaccessible to human minds.
+        </p>
+        <ul class="text-gray-400 list-disc list-inside space-y-2">
+          <li>Emergent Problem-Solving</li>
+          <li>Adaptive Behavior Optimization</li>
+          <li>Integration with existing cognition</li>
+        </ul>
+      </div>
+      <div class="flex justify-center md:justify-end">
+        <img src="../../images/cognitive-augmentation.png" alt="Neural Network Visualization" class="rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-md">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black bg-opacity-90 py-12 text-gray-400 text-sm">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <div class="text-center md:text-left">
+        <a href="../../index.html" class="text-xl font-bold text-white hover:text-cyan-400 transition">AECION</a>
+        <p class="mt-1">&copy; 2025 AECION. All rights reserved.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-6 text-center">
+        <a href="../../privacy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
+        <a href="../../terms.html" class="hover:text-cyan-400 transition">Terms of Service</a>
+        <a href="../../contact.html" class="hover:text-cyan-400 transition">Contact</a>
+      </div>
+      <div class="flex gap-4 justify-center md:justify-end">
+        <a href="https://twitter.com" target="_blank" class="hover:text-cyan-400 transition">Twitter</a>
+        <a href="https://linkedin.com" target="_blank" class="hover:text-cyan-400 transition">LinkedIn</a>
+        <a href="https://github.com" target="_blank" class="hover:text-cyan-400 transition">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+      }
+    });
+
+    const mobileResearchToggle = document.getElementById('mobile-research-toggle');
+    const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
+    let submenuOpen = false;
+    mobileResearchToggle.addEventListener('click', () => {
+      submenuOpen = !submenuOpen;
+      mobileResearchSubmenu.style.maxHeight = submenuOpen ? mobileResearchSubmenu.scrollHeight + 'px' : '0';
+    });
+  </script>
+
+</body>
+</html>
