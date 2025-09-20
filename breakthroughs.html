@@ -25,6 +25,10 @@
     .dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
     .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: white; transition: background 0.3s; }
     .dropdown-menu a:hover { background: #111; }
+    /* Mobile submenu animation */
+    #mobile-breakthroughs-submenu { transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out; }
+    #mobile-breakthroughs-submenu.max-h-0 { max-height: 0; opacity: 0; overflow: hidden; }
+    #mobile-breakthroughs-submenu.max-h-screen { max-height: 1000px; opacity: 1; }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -94,7 +98,7 @@
           Breakthroughs
           <span id="mobile-breakthroughs-icon" class="ml-2">+</span>
         </button>
-        <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+        <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden">
           <a href="#project-atlas" class="hover:text-cyan-400 transition text-sm">Project Atlas™</a>
           <a href="#project-sentinel" class="hover:text-cyan-400 transition text-sm">Project Sentinel™</a>
           <a href="#project-remote-neural-interface" class="hover:text-cyan-400 transition text-sm">Project Remote Neural Interface™</a>
@@ -149,90 +153,106 @@
   <!-- Breakthroughs Grid -->
   <section class="py-20 px-6 max-w-7xl mx-auto fade-in" id="breakthroughs">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- All 18 breakthrough cards -->
+      <!-- Project Atlas -->
       <div class="breakthrough-card" id="project-atlas">
         <h3 class="text-2xl font-semibold mb-3">Project Atlas™</h3>
         <p class="text-gray-300 mb-4">Tactis™ allows humans to extract data, numbers, and images from objects via touch.</p>
         <a href="breakthrough/project-atlas.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Project Sentinel -->
       <div class="breakthrough-card" id="project-sentinel">
         <h3 class="text-2xl font-semibold mb-3">Project Sentinel™</h3>
         <p class="text-gray-300 mb-4">QuorumSense™ enables humans to sense and manipulate microbial collectives.</p>
         <a href="breakthrough/project-sentinel.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Project Remote Neural Interface -->
       <div class="breakthrough-card" id="project-remote-neural-interface">
         <h3 class="text-2xl font-semibold mb-3">Project Remote Neural Interface™</h3>
         <p class="text-gray-300 mb-4">NeuroWeave™ integrates the human brain with digital networks and online information.</p>
         <a href="breakthrough/project-remote-neural-interface.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Project Synapse -->
       <div class="breakthrough-card" id="project-synapse">
         <h3 class="text-2xl font-semibold mb-3">Project Synapse</h3>
         <p class="text-gray-300 mb-4">Reshaping central and peripheral neural networks for ultimate human performance.</p>
         <a href="breakthrough/project-synapse.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Human Biosonar -->
       <div class="breakthrough-card" id="human-biosonar">
         <h3 class="text-2xl font-semibold mb-3">Human Biosonar</h3>
         <p class="text-gray-300 mb-4">Advanced perception using neural and cellular signaling instead of acoustics.</p>
         <a href="breakthrough/human-biosonar.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Enhanced Senses -->
       <div class="breakthrough-card" id="enhanced-senses">
         <h3 class="text-2xl font-semibold mb-3">Enhanced Senses</h3>
         <p class="text-gray-300 mb-4">Sharpened sight, sound, proprioception, and Praetor Sense for evolved perception.</p>
         <a href="breakthrough/enhanced-senses.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Danger Detection -->
       <div class="breakthrough-card" id="danger-detection">
         <h3 class="text-2xl font-semibold mb-3">Danger Detection</h3>
-        <p class="text-gray-300 mb-4">Detects environmental threats and hostile intent before conscious awareness.</p>
+        <p class="text-gray-300 mb-4">Enhanced threat detection through cellular and neural evolution.</p>
         <a href="breakthrough/danger-detection.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Electrocution Resistance -->
       <div class="breakthrough-card" id="electrocution-resistance">
         <h3 class="text-2xl font-semibold mb-3">Electrocution Resistance</h3>
-        <p class="text-gray-300 mb-4">Enhances human survivability in extreme environments.</p>
+        <p class="text-gray-300 mb-4">Bioengineered ion channels provide high-voltage resistance.</p>
         <a href="breakthrough/electrocution-resistance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Particle Control -->
       <div class="breakthrough-card" id="particle-control">
-        <h3 class="text-2xl font-semibold mb-3">Fundamental Particle Control</h3>
-        <p class="text-gray-300 mb-4">Manipulation of fundamental particles for advanced quantum interactions.</p>
-        <a href="breakthrough/fundamental-particle-control.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
+        <h3 class="text-2xl font-semibold mb-3">Particle Control</h3>
+        <p class="text-gray-300 mb-4">Manipulate molecular and atomic-level dynamics via neural interfaces.</p>
+        <a href="breakthrough/particle-control.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- EFR -->
       <div class="breakthrough-card" id="efr">
-        <h3 class="text-2xl font-semibold mb-3">Energetic Field Resonance (EFR)</h3>
-        <p class="text-gray-300 mb-4">Detecting and interpreting energy transformations remotely.</p>
-        <a href="breakthrough/energetic-field-resonance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
+        <h3 class="text-2xl font-semibold mb-3">EFR</h3>
+        <p class="text-gray-300 mb-4">Enhanced Frequency Recognition: detect and analyze electromagnetic signals.</p>
+        <a href="breakthrough/efr.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Neuroception -->
       <div class="breakthrough-card" id="neuroception">
         <h3 class="text-2xl font-semibold mb-3">Neuroception</h3>
-        <p class="text-gray-300 mb-4">Detecting neural impulses and activity in other organisms in real-time.</p>
+        <p class="text-gray-300 mb-4">Automatic neural sensing of social and environmental threats.</p>
         <a href="breakthrough/neuroception.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Sanguivigilance -->
       <div class="breakthrough-card" id="sanguivigilance">
         <h3 class="text-2xl font-semibold mb-3">Sanguivigilance</h3>
-        <p class="text-gray-300 mb-4">Monitoring blood-borne signals to detect physiological and emotional states.</p>
+        <p class="text-gray-300 mb-4">Advanced blood monitoring for health, toxins, and battlefield readiness.</p>
         <a href="breakthrough/sanguivigilance.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- ExoSight -->
       <div class="breakthrough-card" id="exosight">
         <h3 class="text-2xl font-semibold mb-3">ExoSight™</h3>
-        <p class="text-gray-300 mb-4">Optical augmentation allowing perception of non-visible spectra.</p>
+        <p class="text-gray-300 mb-4">Neural-augmented vision extending perception beyond natural human range.</p>
         <a href="breakthrough/exosight.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Project ECHO -->
       <div class="breakthrough-card" id="project-echo">
         <h3 class="text-2xl font-semibold mb-3">Project ECHO™</h3>
-        <p class="text-gray-300 mb-4">Remote neural interfacing and telepresence via quantum signals.</p>
+        <p class="text-gray-300 mb-4">Evolved communication systems for long-range neural signal transmission.</p>
         <a href="breakthrough/project-echo.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Project LUCID -->
       <div class="breakthrough-card" id="project-lucid">
         <h3 class="text-2xl font-semibold mb-3">Project LUCID™</h3>
-        <p class="text-gray-300 mb-4">Augmented cognition for rapid learning, memory expansion, and creative problem-solving.</p>
+        <p class="text-gray-300 mb-4">Lucid neural states for enhanced creativity, learning, and cognition.</p>
         <a href="breakthrough/project-lucid.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Project VIGOR -->
       <div class="breakthrough-card" id="project-vigor">
         <h3 class="text-2xl font-semibold mb-3">Project VIGOR™</h3>
-        <p class="text-gray-300 mb-4">Enhanced physical resilience, endurance, and tissue regeneration protocols.</p>
+        <p class="text-gray-300 mb-4">Amplified human physical performance through muscular and neural optimization.</p>
         <a href="breakthrough/project-vigor.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
+      <!-- Project STORMCORE -->
       <div class="breakthrough-card" id="project-stormcore">
         <h3 class="text-2xl font-semibold mb-3">Project STORMCORE™</h3>
-        <p class="text-gray-300 mb-4">Integrated neurobiological systems enabling multi-sensory synchronization and advanced cognition.</p>
+        <p class="text-gray-300 mb-4">Advanced energy management and cellular resilience for extreme conditions.</p>
         <a href="breakthrough/project-stormcore.html" class="glass-btn px-4 py-2 font-semibold text-white hover:text-black">Learn More</a>
       </div>
     </div>
