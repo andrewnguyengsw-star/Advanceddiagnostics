@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AECION | Black Technology</title>
   <meta name="description" content="Explore AECION's Black Technology: cognitive augmentation, sensory extension, and human performance beyond contemporary science.">
-  <link rel="canonical" href="https://www.aecion.com/research/black-technology.html" />
+  <link rel="canonical" href="https://www.aecion.com/research/black-technology/black-technology.html" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -14,14 +14,13 @@
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    /* Fixed gradient text for all headers */
     .gradient-text {
       background: linear-gradient(90deg, #00ffff, #8a2be2);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      display: inline;       /* ensures descenders render */
-      line-height: 1.25;     /* allows enough vertical space */
-      overflow: visible;     /* prevents clipping */
+      display: inline;
+      line-height: 1.25;
+      overflow: visible;
     }
 
     .glass-btn { background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
@@ -54,25 +53,52 @@
   <!-- Header / Navigation -->
   <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <a href="../index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
+      <a href="../../index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
+
+      <!-- Desktop Menu -->
       <nav class="hidden sm:flex space-x-6" id="desktop-menu">
-        <a href="../index.html" class="hover:text-cyan-400 transition">Home</a>
-        <a href="../technology.html" class="hover:text-cyan-400 transition">Technology</a>
-        <a href="../quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
-        <a href="../quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
-        <a href="../case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
-        <a href="../impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <div class="dropdown">
-          <button class="hover:text-cyan-400 transition">Research</button>
+        <a href="../../index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="../../technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="../../quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="../../quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="../../case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="../../impact.html" class="hover:text-cyan-400 transition">Impact</a>
+
+        <!-- Research Dropdown -->
+        <div class="dropdown relative">
+          <button class="flex items-center hover:text-cyan-400 transition">
+            Research
+            <svg class="ml-1 w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
           <div class="dropdown-content">
-            <a href="cognitive-enhancement-drug.html">Cognitive Enhancement</a>
-            <a href="reverse-aging-serum.html">Reverse-Aging Serum</a>
-            <a href="super-soldier-serum.html">Super Soldier Serum</a>
-            <a href="black-technology.html" class="active-link">Black Technology</a>
+            <a href="../../cognitive-enhancement-drug.html">Cognitive Enhancement</a>
+            <a href="../../reverse-aging-serum.html">Reverse-Aging Serum</a>
+            <a href="../../super-soldier-serum.html">Super Soldier Serum</a>
+            <!-- Black Technology Submenu -->
+            <div class="dropdown relative">
+              <button class="flex items-center w-full text-left hover:text-cyan-400 transition">
+                Black Technology
+                <svg class="ml-1 w-4 h-4 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="dropdown-content">
+                <a href="black-technology.html" class="active-link">Overview</a>
+                <a href="cognitive-augmentation.html">Redefining the Mind</a>
+                <a href="sensory-extension.html">Perceiving the Unseen</a>
+                <a href="performance-enhancement.html">Beyond Human Limits</a>
+                <a href="beyond-science.html">Operating Outside the Known</a>
+              </div>
+            </div>
           </div>
         </div>
-        <a href="../breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
+
+        <a href="../../breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
+
+      <!-- Mobile Menu Toggle -->
       <div class="sm:hidden">
         <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
           <span class="block w-6 h-0.5 bg-white transition-transform"></span>
@@ -82,14 +108,17 @@
       </div>
     </div>
 
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
       <nav class="flex flex-col px-4 py-4 space-y-2">
-        <a href="../index.html" class="hover:text-cyan-400 transition">Home</a>
-        <a href="../technology.html" class="hover:text-cyan-400 transition">Technology</a>
-        <a href="../quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
-        <a href="../quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
-        <a href="../case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
-        <a href="../impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        <a href="../../index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="../../technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="../../quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="../../quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="../../case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="../../impact.html" class="hover:text-cyan-400 transition">Impact</a>
+
+        <!-- Research Mobile Toggle -->
         <div class="flex flex-col">
           <button id="mobile-research-toggle" class="flex justify-between items-center w-full text-left px-2 py-2 hover:text-cyan-400 transition">
             Research
@@ -98,13 +127,28 @@
             </svg>
           </button>
           <div id="mobile-research-submenu" class="flex flex-col pl-4 mt-1 max-h-0 overflow-hidden transition-all duration-300">
-            <a href="cognitive-enhancement-drug.html">Cognitive Enhancement</a>
-            <a href="reverse-aging-serum.html">Reverse-Aging Serum</a>
-            <a href="super-soldier-serum.html">Super Soldier Serum</a>
-            <a href="black-technology.html" class="active-link">Black Technology</a>
+            <a href="../../cognitive-enhancement-drug.html">Cognitive Enhancement</a>
+            <a href="../../reverse-aging-serum.html">Reverse-Aging Serum</a>
+            <a href="../../super-soldier-serum.html">Super Soldier Serum</a>
+
+            <!-- Black Technology Mobile Toggle -->
+            <button id="mobile-blacktech-toggle" class="flex justify-between items-center w-full text-left px-2 py-2 hover:text-cyan-400 transition">
+              Black Technology
+              <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="mobile-blacktech-submenu" class="flex flex-col pl-4 mt-1 max-h-0 overflow-hidden transition-all duration-300">
+              <a href="black-technology.html" class="active-link">Overview</a>
+              <a href="cognitive-augmentation.html">Redefining the Mind</a>
+              <a href="sensory-extension.html">Perceiving the Unseen</a>
+              <a href="performance-enhancement.html">Beyond Human Limits</a>
+              <a href="beyond-science.html">Operating Outside the Known</a>
+            </div>
           </div>
         </div>
-        <a href="../breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
+
+        <a href="../../breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
       </nav>
     </div>
   </header>
@@ -120,7 +164,7 @@
       Discover the Tech
     </a>
     <div class="absolute inset-0 flex justify-center items-center opacity-30">
-      <img src="../images/holographic-schematic.gif" alt="Holographic schematics" class="w-full h-full object-cover">
+      <img src="../../images/holographic-schematic.gif" alt="Holographic schematics" class="w-full h-full object-cover">
     </div>
   </section>
 
@@ -130,7 +174,7 @@
       <div>
         <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Redefining the Mind</h2>
         <p class="text-gray-300 mb-4">
-          Black technology goes beyond traditional human enhancement. We create entirely new neural networks within the brain—networks that enable unprecedented behaviors and cognitive strategies. Learn more in our <a href="research.html" class="text-cyan-400 underline hover:text-cyan-200">Research section</a>.
+          Black technology goes beyond traditional human enhancement. We create entirely new neural networks within the brain—networks that enable unprecedented behaviors and cognitive strategies. Learn more in our <a href="../research.html" class="text-cyan-400 underline hover:text-cyan-200">Research section</a>.
         </p>
         <ul class="text-gray-400 list-disc list-inside space-y-2">
           <li>Creation of Novel Neural Architectures</li>
@@ -139,23 +183,21 @@
         </ul>
       </div>
       <div class="flex justify-center md:justify-end">
-        <img src="../images/cognitive-augmentation.png" alt="Neural Network Visualization" class="rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-md">
+        <img src="../../images/cognitive-augmentation.png" alt="Neural Network Visualization" class="rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-md">
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- Sensory Extension -->
   <section id="sensory-augmentation" class="py-20 px-6 max-w-7xl mx-auto fade-in">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div class="order-2 md:order-1 flex justify-center md:justify-start">
-        <img src="../images/sensory-extension.png" alt="Sensory Augmentation" class="rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-md">
+        <img src="../../images/sensory-extension.png" alt="Sensory Augmentation" class="rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-md">
       </div>
       <div class="order-1 md:order-2">
         <h2 class="text-4xl sm:text-5xl font-bold gradient-text mb-4">Perceiving the Unseen</h2>
         <p class="text-gray-300 mb-4">
-          Advanced sensory augmentation allows humans to detect signals normally imperceptible, expanding situational awareness and cognitive capabilities. Explore more in our <a href="research.html" class="text-cyan-400 underline hover:text-cyan-200">Research section</a>.
+          Advanced sensory augmentation allows humans to detect signals normally imperceptible, expanding situational awareness and cognitive capabilities. Explore more in our <a href="../research.html" class="text-cyan-400 underline hover:text-cyan-200">Research section</a>.
         </p>
         <ul class="text-gray-400 list-disc list-inside space-y-2">
           <li>Extended Electromagnetic Perception</li>
@@ -166,8 +208,6 @@
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- Human Performance -->
   <section id="performance-enhancement" class="py-20 px-6 max-w-7xl mx-auto fade-in">
@@ -185,12 +225,10 @@
         </ul>
       </div>
       <div class="flex justify-center md:justify-end">
-        <img src="../images/performance-enhancement.png" alt="Human Performance" class="rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-md">
+        <img src="../../images/performance-enhancement.png" alt="Human Performance" class="rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-md">
       </div>
     </div>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- Beyond Science -->
   <section id="beyond-science" class="py-20 px-6 max-w-7xl mx-auto fade-in text-center">
@@ -198,10 +236,8 @@
     <p class="text-gray-300 mb-6">
       Technologies exist entirely outside contemporary science, with no current frameworks to explain or fully validate them. Each advancement represents a new frontier accessible only through black technology research.
     </p>
-    <img src="../images/abstract-frontiers.png" alt="Abstract Frontier Visual" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-3xl">
+    <img src="../../images/abstract-frontiers.png" alt="Abstract Frontier Visual" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-3xl">
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- AECION Power -->
   <section id="aecion-power" class="py-20 px-6 max-w-7xl mx-auto fade-in text-center">
@@ -209,10 +245,8 @@
     <p class="text-gray-300 mb-6">
       AECION transcends the limits of contemporary science. Our breakthroughs create entirely new human capabilities—redefining what is possible.
     </p>
-    <img src="../images/aecion-power.png" alt="AECION Power Visualization" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-4xl">
+    <img src="../../images/aecion-power.png" alt="AECION Power Visualization" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-4xl">
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- CTA to Research -->
   <section class="py-16 px-6 max-w-7xl mx-auto text-center fade-in">
@@ -220,24 +254,22 @@
     <p class="text-gray-300 mb-6">
       Discover the scientific foundations and ongoing studies behind our black technology breakthroughs.
     </p>
-    <a href="research.html" class="glass-btn px-8 py-4 rounded-xl font-semibold">
+    <a href="../research.html" class="glass-btn px-8 py-4 rounded-xl font-semibold">
       Explore Research
     </a>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- Footer -->
   <footer class="bg-black bg-opacity-90 py-12 text-gray-400 text-sm">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
       <div class="text-center md:text-left">
-        <a href="../index.html" class="text-xl font-bold text-white hover:text-cyan-400 transition">AECION</a>
+        <a href="../../index.html" class="text-xl font-bold text-white hover:text-cyan-400 transition">AECION</a>
         <p class="mt-1">&copy; 2025 AECION. All rights reserved.</p>
       </div>
       <div class="flex flex-col sm:flex-row gap-6 text-center">
-        <a href="../privacy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
-        <a href="../terms.html" class="hover:text-cyan-400 transition">Terms of Service</a>
-        <a href="../contact.html" class="hover:text-cyan-400 transition">Contact</a>
+        <a href="../../privacy.html" class="hover:text-cyan-400 transition">Privacy Policy</a>
+        <a href="../../terms.html" class="hover:text-cyan-400 transition">Terms of Service</a>
+        <a href="../../contact.html" class="hover:text-cyan-400 transition">Contact</a>
       </div>
       <div class="flex gap-4 justify-center md:justify-end">
         <a href="https://twitter.com" target="_blank" class="hover:text-cyan-400 transition">Twitter</a>
@@ -248,12 +280,14 @@
   </footer>
 
   <script>
+    // Fade-in on scroll
     const fadeEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
     }, { threshold: 0.2 });
     fadeEls.forEach(el => observer.observe(el));
 
+    // Mobile Menu Toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
@@ -272,12 +306,22 @@
       }
     });
 
+    // Research Submenu Mobile Toggle
     const mobileResearchToggle = document.getElementById('mobile-research-toggle');
     const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
-    let submenuOpen = false;
+    let researchOpen = false;
     mobileResearchToggle.addEventListener('click', () => {
-      submenuOpen = !submenuOpen;
-      mobileResearchSubmenu.style.maxHeight = submenuOpen ? mobileResearchSubmenu.scrollHeight + 'px' : '0';
+      researchOpen = !researchOpen;
+      mobileResearchSubmenu.style.maxHeight = researchOpen ? mobileResearchSubmenu.scrollHeight + 'px' : '0';
+    });
+
+    // Black Technology Submenu Mobile Toggle
+    const mobileBlacktechToggle = document.getElementById('mobile-blacktech-toggle');
+    const mobileBlacktechSubmenu = document.getElementById('mobile-blacktech-submenu');
+    let blackTechOpen = false;
+    mobileBlacktechToggle.addEventListener('click', () => {
+      blackTechOpen = !blackTechOpen;
+      mobileBlacktechSubmenu.style.maxHeight = blackTechOpen ? mobileBlacktechSubmenu.scrollHeight + 'px' : '0';
     });
   </script>
 
