@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AECION | Black Technology Department</title>
+  <meta name="description" content="Explore AECION's Black Technology Department: pioneering neural architectures, evolution synthesis, and next-generation energy platforms.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    .glass-btn { 
+      background: rgba(255,255,255,0.1); 
+      backdrop-filter: blur(8px); 
+      border: 1px solid rgba(255,255,255,0.2); 
+      transition: all 0.3s ease; 
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      color: white;
+    }
+    .glass-btn:hover { 
+      background: rgba(255,255,255,0.2); 
+      transform: translateY(-2px) scale(1.02); 
+      box-shadow: 0 0 15px rgba(0,255,255,0.6);
+    }
+
+    .glass-btn-light-gradient {
+      background: linear-gradient(135deg, #e0e0e0, #bdbdbd);
+      color: black;
+      border: 1px solid rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .glass-btn-light-gradient:hover {
+      transform: translateY(-2px) scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
+
+    .pillar-card { 
+      background: rgba(255,255,255,0.05); 
+      backdrop-filter: blur(8px); 
+      padding: 2rem; 
+      border-radius: 1.5rem; 
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between; 
+      height: 100%;
+    }
+    .pillar-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,255,255,0.4); }
+
+    .accent-line { width: 60px; height: 3px; background: #00ffff; margin: 1rem auto; border-radius: 2px; }
+
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
+      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+
+        <!-- Desktop Research Dropdown -->
+        <div class="dropdown relative">
+          <button class="flex items-center hover:text-cyan-400 transition">
+            Research
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-content absolute hidden bg-black min-w-[220px] mt-2 rounded-lg overflow-hidden">
+            <a href="../../cognitive-enhancement-drug.html">Cognitive Enhancement</a>
+            <a href="../../reverse-aging-serum.html">Reverse-Aging Serum</a>
+            <a href="../../super-soldier-serum.html">Super Soldier Serum</a>
+            <a href="black-technology.html">Black Technology</a>
+            <a href="explore-our-department.html" class="accent">Brain Initiatives</a>
+          </div>
+        </div>
+
+        <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
+      </nav>
+
+      <!-- Mobile menu toggle -->
+      <div class="sm:hidden">
+        <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false"
+          class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
+      <nav class="flex flex-col px-4 py-4 space-y-2">
+        <a href="../../index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="../../technology.html" class="hover:text-cyan-400 transition">Technology</a>
+        <a href="../../quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="../../quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="../../case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="../../impact.html" class="hover:text-cyan-400 transition">Impact</a>
+
+        <!-- Mobile Research Dropdown -->
+        <div class="flex flex-col">
+          <button class="flex justify-between items-center w-full hover:text-cyan-400 transition" onclick="this.nextElementSibling.classList.toggle('hidden')">
+            Research
+            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="flex flex-col ml-4 mt-2 space-y-1 hidden">
+            <a href="../../cognitive-enhancement-drug.html" class="hover:text-cyan-400 transition">Cognitive Enhancement</a>
+            <a href="../../reverse-aging-serum.html" class="hover:text-cyan-400 transition">Reverse-Aging Serum</a>
+            <a href="../../super-soldier-serum.html" class="hover:text-cyan-400 transition">Super Soldier Serum</a>
+            <a href="black-technology.html" class="hover:text-cyan-400 transition">Black Technology</a>
+            <a href="explore-our-department.html" class="accent hover:text-cyan-400 transition">Brain Initiatives</a>
+          </div>
+        </div>
+
+        <a href="../../breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-[url('https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center">
+    <div class="bg-black bg-opacity-60 p-10 rounded-xl fade-in">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">Pioneering the Future of Human Potential</h1>
+      <div class="accent-line"></div>
+      <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8">
+        Innovating at the intersection of neuroscience, evolution, and energy.
+      </p>
+      <a href="explore-our-department.html" class="glass-btn px-6 py-3 font-semibold rounded-xl">Explore Our Department</a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Mission & Values Section -->
+  <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in bg-black text-white">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-2 text-cyan-400">Our Mission</h2>
+    <div class="accent-line"></div>
+    <p class="max-w-3xl mx-auto mt-6 text-gray-300 mb-12">
+      At AECION, we harness the power of cutting-edge science to redefine human capabilities.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div>
+        <h3 class="text-xl font-semibold text-cyan-300 mb-2">Innovation</h3>
+        <p class="text-gray-400">Pushing the boundaries of science to discover the impossible.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-cyan-300 mb-2">Integrity</h3>
+        <p class="text-gray-400">Operating with transparency and ethical responsibility.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-cyan-300 mb-2">Collaboration</h3>
+        <p class="text-gray-400">Partnering across disciplines for groundbreaking solutions.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-cyan-300 mb-2">Excellence</h3>
+        <p class="text-gray-400">Striving for the highest standards in every endeavor.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Capabilities Section -->
+  <section id="capabilities" class="py-20 px-6 max-w-7xl mx-auto fade-in bg-gray-100 text-black">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-2 text-cyan-600 text-center">Our Capabilities</h2>
+    <div class="accent-line"></div>
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="pillar-card">
+        <h3 class="text-2xl font-semibold mb-2">Neural Mapping</h3>
+        <p>Mapping both peripheral and central nervous system down to individual neurons. Understanding and engineering human cognition, including intelligence, anxiety, and depression.</p>
+      </div>
+      <div class="pillar-card">
+        <h3 class="text-2xl font-semibold mb-2">Neural Creation</h3>
+        <p>Progressing beyond exploration to designing new neural networks and novel human functions.</p>
+      </div>
+      <div class="pillar-card">
+        <h3 class="text-2xl font-semibold mb-2">Evolution Synthesis</h3>
+        <p>Moving from studying evolution to actively synthesizing it, including intelligence augmentation and modeling high-intellect behavior.</p>
+      </div>
+      <div class="pillar-card">
+        <h3 class="text-2xl font-semibold mb-2">Pathogenesis & Immunology</h3>
+        <p>Developing a new theory of immunology and completing the final theory of pathogenicity—platforms multiple generations beyond current therapeutics.</p>
+      </div>
+      <div class="pillar-card">
+        <h3 class="text-2xl font-semibold mb-2">Energy Research</h3>
+        <p>Preliminary research on a palladium reactor as the next-generation energy platform enabling post-scarcity civilization.</p>
+      </div>
+      <div class="pillar-card">
+        <h3 class="text-2xl font-semibold mb-2">Visionary Applications</h3>
+        <p>Ideas and applications operating centuries beyond current science, creating new human possibilities at every level of brain and cognition.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Visual Storytelling Section -->
+  <section class="py-20 px-6 max-w-7xl mx-auto fade-in bg-black text-white">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400 text-center">How We Create Impact</h2>
+    <div class="accent-line"></div>
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div class="flex flex-col items-center text-center space-y-4">
+        <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center text-3xl">🧠</div>
+        <h3 class="text-xl font-semibold">Neural Mapping</h3>
+        <p class="text-gray-300">Advanced neuron-level mapping enabling precise cognitive modeling and engineering.</p>
+      </div>
+      <div class="flex flex-col items-center text-center space-y-4">
+        <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center text-3xl">⚡</div>
+        <h3 class="text-xl font-semibold">Energy Research</h3>
+        <p class="text-gray-300">Developing next-generation energy platforms for a sustainable and post-scarcity future.</p>
+      </div>
+      <div class="flex flex-col items-center text-center space-y-4">
+        <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center text-3xl">🧬</div>
+        <h3 class="text-xl font-semibold">Evolution Synthesis</h3>
+        <p class="text-gray-300">Synthesizing human evolution to augment intelligence and high-functioning behaviors.</p>
+      </div>
+      <div class="flex flex-col items-center text-center space-y-4">
+        <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center text-3xl">🛡️</div>
+        <h3 class="text-xl font-semibold">Pathogenesis & Immunology</h3>
+        <p class="text-gray-300">Innovating the final theory of pathogenicity for advanced therapeutics.</p>
+      </div>
+      <div class="flex flex-col items-center text-center space-y-4">
+        <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center text-3xl">🌐</div>
+        <h3 class="text-xl font-semibold">Visionary Applications</h3>
+        <p class="text-gray-300">Exploring future applications of science centuries ahead of contemporary methods.</p>
+      </div>
+      <div class="flex flex-col items-center text-center space-y-4">
+        <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center text-3xl">⚙️</div>
+        <h3 class="text-xl font-semibold">Neural Creation</h3>
+        <p class="text-gray-300">Designing novel neural networks and human functions beyond natural evolution.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Engagement CTA Section -->
+  <section class="py-20 px-6 max-w-6xl mx-auto text-center fade-in bg-gray-100 text-black">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-600">Join Us in Shaping the Future</h2>
+    <p class="max-w-2xl mx-auto mb-8 text-gray-800">Collaborate with AECION to push the boundaries of science and human potential.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-6 flex-wrap">
+      <a href="../../contact.html" class="glass-btn px-6 py-3 font-semibold rounded-xl">Contact Us</a>
+      <a href="explore-our-department.html" class="glass-btn-light-gradient px-6 py-3 font-semibold rounded-xl">Explore Our Department</a>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div>
+        <h4 class="font-semibold text-white mb-2">AECION</h4>
+        <p>Redefining the future of human potential through science, innovation, and exploration.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-2">Quick Links</h4>
+        <ul>
+          <li><a href="index.html" class="hover:text-cyan-400 transition">Home</a></li>
+          <li><a href="technology.html" class="hover:text-cyan-400 transition">Technology</a></li>
+          <li><a href="explore-our-department.html" class="hover:text-cyan-400 transition">Brain Initiatives</a></li>
+          <li><a href="contact.html" class="hover:text-cyan-400 transition">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-2">Connect</h4>
+        <p>Email: info@aecion.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+      </div>
+    </div>
+    <div class="text-center mt-12 text-gray-600 text-sm">
+      &copy; 2025 AECION. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Fade-in animations
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
+      menuToggle.setAttribute('aria-expanded', menuOpen);
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+      }
+    });
+  </script>
+</body>
+</html>
