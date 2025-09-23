@@ -40,7 +40,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
-          <div class="absolute left-0 mt-2 w-52 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none group-hover:pointer-events-auto z-50">
+          <div class="absolute left-0 mt-2 w-52 bg-white shadow-lg rounded-lg hidden group-hover:block z-50">
             <a href="research/cognitive-enhancement-drug.html" class="block px-4 py-2 text-gray-900 hover:bg-blue-50 hover:text-blue-600">Cognitive Enhancement</a>
             <a href="research/reverse-aging-serum.html" class="block px-4 py-2 text-gray-900 hover:bg-blue-50 hover:text-blue-600">Reverse-Aging Serum</a>
             <a href="research/super-soldier-serum.html" class="block px-4 py-2 text-gray-900 hover:bg-blue-50 hover:text-blue-600">Super Soldier Serum</a>
@@ -58,6 +58,8 @@
         </button>
       </div>
     </div>
+
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
       <nav class="flex flex-col px-4 py-4 space-y-2">
         <a href="index.html" class="hover:text-blue-600 transition">Home</a>
@@ -66,20 +68,23 @@
         <a href="quantum-neural-mapping.html" class="hover:text-blue-600 transition">Quantum Neural Mapping</a>
         <a href="case-study.html" class="hover:text-blue-600 transition">Case Study</a>
         <a href="impact.html" class="hover:text-blue-600 transition">Impact</a>
-        <div class="flex flex-col">
+
+        <!-- Mobile Research Dropdown -->
+        <div class="flex flex-col" id="mobile-research-dropdown">
           <button id="mobile-research-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-blue-600 transition">
             Research
-            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg id="mobile-research-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
-          <div id="mobile-research-submenu" class="flex flex-col pl-4 max-h-0 overflow-hidden transition-all duration-300">
+          <div id="mobile-research-submenu" class="flex flex-col pl-4 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
             <a href="research/cognitive-enhancement-drug.html" class="px-4 py-2 hover:text-blue-600 transition">Cognitive Enhancement</a>
             <a href="research/reverse-aging-serum.html" class="px-4 py-2 hover:text-blue-600 transition">Reverse-Aging Serum</a>
             <a href="research/super-soldier-serum.html" class="px-4 py-2 hover:text-blue-600 transition">Super Soldier Serum</a>
             <a href="research/black-science.html" class="px-4 py-2 hover:text-blue-600 transition">Black Science</a>
           </div>
         </div>
+
         <a href="breakthroughs.html" class="hover:text-blue-600 transition">Breakthroughs</a>
       </nav>
     </div>
@@ -212,16 +217,39 @@
 
   <script>
     // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuToggle.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
 
-    const mobileResearchToggle = document.getElementById('mobile-research-toggle');
-    const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
-    mobileResearchToggle.addEventListener('click', () => {
-      mobileResearchSubmenu.classList.toggle('max-h-0');
-      mobileResearchSubmenu.classList.toggle('max-h-96');
-      mobileResearchToggle.querySelector('svg').classList.toggle('rotate-180');
+    // Mobile Research dropdown
+    const mobileResearchToggle = document.getElementById("mobile-research-toggle");
+    const mobileResearchSubmenu = document.getElementById("mobile-research-submenu");
+    const mobileResearchArrow = document.getElementById("mobile-research-arrow");
+
+    mobileResearchToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = mobileResearchSubmenu.classList.contains("max-h-96");
+
+      if (isOpen) {
+        mobileResearchSubmenu.classList.remove("max-h-96");
+        mobileResearchSubmenu.classList.add("max-h-0");
+        mobileResearchArrow.classList.remove("rotate-180");
+      } else {
+        mobileResearchSubmenu.classList.add("max-h-96");
+        mobileResearchSubmenu.classList.remove("max-h-0");
+        mobileResearchArrow.classList.add("rotate-180");
+      }
+    });
+
+    // Close submenu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!document.getElementById("mobile-research-dropdown").contains(e.target)) {
+        mobileResearchSubmenu.classList.remove("max-h-96");
+        mobileResearchSubmenu.classList.add("max-h-0");
+        mobileResearchArrow.classList.remove("rotate-180");
+      }
     });
   </script>
 </body>
