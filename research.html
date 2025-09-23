@@ -16,6 +16,13 @@
     .glass-btn:hover { background: #0056b3; transform: translateY(-2px) scale(1.02); }
     .section-divider { height: 2px; background: linear-gradient(to right, #00cfff, #8a2be2); margin: 4rem 0; }
     .active-link { color: #00cfff !important; font-weight: 700; }
+
+    /* Dropdown styles */
+    .dropdown { position: relative; }
+    .dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ddd; border-radius: 0.5rem; width: 14rem; z-index: 50; }
+    .dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: #111; transition: background 0.3s; }
+    .dropdown-menu a:hover { background: #f0f8ff; }
   </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -24,7 +31,7 @@
   <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <a href="index.html" class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition">AECION</a>
-      <nav class="hidden md:flex space-x-6">
+      <nav class="hidden md:flex space-x-6 relative">
         <a href="index.html" class="hover:text-blue-600 transition">Home</a>
         <a href="science.html" class="hover:text-blue-600 transition">Science</a>
         <a href="quantum-application.html" class="hover:text-blue-600 transition">Quantum Application</a>
@@ -32,19 +39,14 @@
         <a href="case-study.html" class="hover:text-blue-600 transition">Case Study</a>
         <a href="impact.html" class="hover:text-blue-600 transition">Impact</a>
 
-        <!-- Research Dropdown (Updated) -->
-        <div class="relative group">
-          <button class="hover:text-blue-600 transition flex items-center font-medium">
-            Research
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </button>
-          <div class="absolute left-0 mt-2 w-52 bg-white shadow-lg rounded-lg hidden group-hover:block z-50">
-            <a href="research/cognitive-enhancement-drug.html" class="block px-4 py-2 text-gray-900 hover:bg-blue-50 hover:text-blue-600">Cognitive Enhancement</a>
-            <a href="research/reverse-aging-serum.html" class="block px-4 py-2 text-gray-900 hover:bg-blue-50 hover:text-blue-600 active-link">Reverse-Aging Serum</a>
-            <a href="research/super-soldier-serum.html" class="block px-4 py-2 text-gray-900 hover:bg-blue-50 hover:text-blue-600">Super Soldier Serum</a>
-            <a href="research/black-technology.html" class="block px-4 py-2 text-gray-900 hover:bg-blue-50 hover:text-blue-600">Black Technology</a>
+        <!-- Desktop Research Dropdown -->
+        <div class="dropdown" id="desktop-research">
+          <button class="hover:text-blue-600 transition font-semibold underline">Research</button>
+          <div class="dropdown-menu">
+            <a href="research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
+            <a href="research/reverse-aging-serum.html">Reverse-Aging Serum</a>
+            <a href="research/super-soldier-serum.html">Super Soldier Serum</a>
+            <a href="research/black-technology.html">Black Technology</a>
           </div>
         </div>
 
@@ -69,19 +71,17 @@
         <a href="case-study.html" class="hover:text-blue-600 transition">Case Study</a>
         <a href="impact.html" class="hover:text-blue-600 transition">Impact</a>
 
-        <!-- Mobile Research Dropdown (Updated) -->
+        <!-- Mobile Research Dropdown -->
         <div class="flex flex-col" id="mobile-research-dropdown">
           <button id="mobile-research-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-blue-600 transition">
             Research
-            <svg id="mobile-research-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
+            <span id="mobile-research-icon">+</span>
           </button>
-          <div id="mobile-research-submenu" class="flex flex-col pl-4 max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-            <a href="research/cognitive-enhancement-drug.html" class="px-4 py-2 hover:text-blue-600 transition">Cognitive Enhancement</a>
-            <a href="research/reverse-aging-serum.html" class="px-4 py-2 hover:text-blue-600 transition active-link">Reverse-Aging Serum</a>
-            <a href="research/super-soldier-serum.html" class="px-4 py-2 hover:text-blue-600 transition">Super Soldier Serum</a>
-            <a href="research/black-technology.html" class="px-4 py-2 hover:text-blue-600 transition">Black Technology</a>
+          <div id="mobile-research-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+            <a href="research/cognitive-enhancement-drug.html" class="hover:text-blue-600 text-sm">Cognitive Enhancement</a>
+            <a href="research/reverse-aging-serum.html" class="hover:text-blue-600 text-sm">Reverse-Aging Serum</a>
+            <a href="research/super-soldier-serum.html" class="hover:text-blue-600 text-sm">Super Soldier Serum</a>
+            <a href="research/black-technology.html" class="hover:text-blue-600 text-sm">Black Technology</a>
           </div>
         </div>
 
@@ -216,40 +216,37 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
+    document.addEventListener("DOMContentLoaded", () => {
+      // Desktop Research dropdown hover
+      const desktopResearch = document.getElementById('desktop-research');
+      desktopResearch.addEventListener('mouseenter', () => desktopResearch.classList.add('open'));
+      desktopResearch.addEventListener('mouseleave', () => desktopResearch.classList.remove('open'));
 
-    // Mobile Research dropdown
-    const mobileResearchToggle = document.getElementById("mobile-research-toggle");
-    const mobileResearchSubmenu = document.getElementById("mobile-research-submenu");
-    const mobileResearchArrow = document.getElementById("mobile-research-arrow");
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuToggle.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
 
-    mobileResearchToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = mobileResearchSubmenu.classList.contains("max-h-96");
+      // Mobile Research dropdown toggle
+      const mobileResearchToggle = document.getElementById("mobile-research-toggle");
+      const mobileResearchSubmenu = document.getElementById("mobile-research-submenu");
+      const mobileResearchIcon = document.getElementById("mobile-research-icon");
 
-      if (isOpen) {
-        mobileResearchSubmenu.classList.remove("max-h-96");
-        mobileResearchSubmenu.classList.add("max-h-0");
-        mobileResearchArrow.classList.remove("rotate-180");
-      } else {
-        mobileResearchSubmenu.classList.add("max-h-96");
-        mobileResearchSubmenu.classList.remove("max-h-0");
-        mobileResearchArrow.classList.add("rotate-180");
-      }
-    });
+      mobileResearchToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        mobileResearchSubmenu.classList.toggle("max-h-0");
+        mobileResearchSubmenu.classList.toggle("max-h-screen");
+        mobileResearchIcon.textContent = mobileResearchIcon.textContent === '+' ? '-' : '+';
+      });
 
-    // Close submenu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!document.getElementById("mobile-research-dropdown").contains(e.target)) {
-        mobileResearchSubmenu.classList.remove("max-h-96");
-        mobileResearchSubmenu.classList.add("max-h-0");
-        mobileResearchArrow.classList.remove("rotate-180");
-      }
+      // Close mobile submenu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!document.getElementById("mobile-research-dropdown").contains(e.target)) {
+          mobileResearchSubmenu.classList.add("max-h-0");
+          mobileResearchSubmenu.classList.remove("max-h-screen");
+          mobileResearchIcon.textContent = '+';
+        }
+      });
     });
   </script>
 </body>
