@@ -15,7 +15,7 @@
     .glass-btn { background: #007bff; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 0.5rem; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
     .glass-btn:hover { background: #0056b3; transform: translateY(-2px) scale(1.02); }
     .section-divider { height: 2px; background: linear-gradient(to right, #00cfff, #8a2be2); margin: 4rem 0; }
-    .active-link { color: #00cfff !important; font-weight: 700; }
+    .active-link { text-decoration: underline; text-underline-offset: 4px; color: #00cfff !important; font-weight: 700; }
 
     /* Dropdown styles */
     .dropdown { position: relative; }
@@ -41,7 +41,7 @@
 
         <!-- Desktop Research Dropdown -->
         <div class="dropdown" id="desktop-research">
-          <button class="hover:text-blue-600 transition font-semibold underline">Research</button>
+          <button class="hover:text-blue-600 transition font-semibold">Research</button>
           <div class="dropdown-menu">
             <a href="research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
             <a href="research/reverse-aging-serum.html">Reverse-Aging Serum</a>
@@ -52,7 +52,7 @@
 
         <!-- Desktop Breakthroughs Dropdown -->
         <div class="dropdown" id="desktop-breakthroughs">
-          <button class="hover:text-blue-600 transition font-semibold underline">Breakthroughs</button>
+          <button class="hover:text-blue-600 transition font-semibold">Breakthroughs</button>
           <div class="dropdown-menu">
             <a href="breakthroughs.html#project-atlas">Project Atlas™</a>
             <a href="breakthroughs.html#project-sentinel">Project Sentinel™</a>
@@ -229,43 +229,51 @@
     <p class="text-gray-700 mb-12">Safety is central to everything we do. Our research follows strict protocols, carefully designed to protect participants and guarantee the responsible development and monitoring of our products.</p>
     <div class="grid md:grid-cols-3 gap-8 text-gray-700 text-left">
       <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Establishing rigorous protocols for all research activities</div>
-      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Continuous monitoring of ongoing projects and products</div>
-      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Ethical oversight and risk mitigation strategies</div>
-    </div>
-  </section>
-
-  <!-- Cutting-Edge Science Section -->
-  <div class="section-divider"></div>
-  <section class="py-20 px-6 max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-blue-600">Cutting-Edge Science</h2>
-    <p class="text-gray-700 mb-6">Leveraging quantum computing, AI-driven drug design, and nanotechnology for precise molecular intervention and delivery.</p>
-    <img src="images/technology-pipeline.png" alt="Research pipeline" class="mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform">
-    <div class="mt-6">
-      <a href="science.html" class="glass-btn">See Our Science in Action</a>
+      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Continuous monitoring of ongoing projects and participants</div>
+      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Independent oversight and ethics compliance at every stage</div>
     </div>
   </section>
 
   <!-- Subscribe Section -->
-  <div class="section-divider"></div>
-  <section id="subscribe" class="py-20 px-6 max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Join the Future of Human Potential</h2>
-    <p class="text-gray-700 mb-6">Stay informed or collaborate with our research team.</p>
-    <div class="flex justify-center gap-4 flex-wrap">
-      <a href="#subscribe" class="glass-btn">Subscribe</a>
-      <a href="contact.html" class="glass-btn">Contact Us</a>
+  <section id="subscribe" class="bg-gray-900 text-white py-20 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Stay Connected</h2>
+      <p class="text-lg mb-6">Subscribe to receive updates about breakthroughs and new discoveries from our research team.</p>
+      <form action="#" method="POST" class="flex flex-col sm:flex-row gap-4">
+        <input type="email" name="email" placeholder="Enter your email" required class="flex-grow px-4 py-3 rounded-lg text-gray-900 focus:outline-none">
+        <button type="submit" class="glass-btn bg-blue-600 hover:bg-blue-700">Subscribe</button>
+      </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 px-6 bg-gray-100 text-gray-700 text-center space-y-2">
-    <p>© 2025 AECION. All rights reserved.</p>
-    <p><a href="privacy.html" class="hover:text-blue-600 transition">Privacy Policy</a> | <a href="terms.html" class="hover:text-blue-600 transition">Terms of Use</a></p>
+  <footer class="bg-gray-100 py-6 mt-16 text-center text-gray-600">
+    <p>&copy; 2025 AECION. All rights reserved.</p>
   </footer>
 
   <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Desktop dropdowns
+      // Highlight current nav link
+      const currentPath = window.location.pathname.split("/").pop();
+      const navLinks = document.querySelectorAll("nav a");
+
+      navLinks.forEach(link => {
+        const linkPath = link.getAttribute("href");
+        if (linkPath === currentPath) {
+          link.classList.add("active-link");
+        }
+      });
+
+      // Highlight dropdown parent for Research & Breakthroughs
+      if (currentPath.startsWith("research")) {
+        document.querySelector("#desktop-research > button")?.classList.add("active-link");
+      }
+      if (currentPath.startsWith("breakthroughs")) {
+        document.querySelector("#desktop-breakthroughs > button")?.classList.add("active-link");
+      }
+
+      // Dropdown hover (desktop)
       ['desktop-research', 'desktop-breakthroughs'].forEach(id => {
         const el = document.getElementById(id);
         el.addEventListener('mouseenter', () => el.classList.add('open'));
