@@ -11,17 +11,35 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #111; }
+
     .gradient-text { background: linear-gradient(90deg, #00cfff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .glass-btn { background: #007bff; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 0.5rem; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
     .glass-btn:hover { background: #0056b3; transform: translateY(-2px) scale(1.02); }
     .section-divider { height: 2px; background: linear-gradient(to right, #00cfff, #8a2be2); margin: 4rem 0; }
     .active-link { text-decoration: underline; text-underline-offset: 4px; color: #00cfff !important; font-weight: 700; }
 
-    /* Dropdown styles */
+    /* Dropdown styles for both Research and Breakthroughs */
     .dropdown { position: relative; }
-    .dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: #fff; border: 1px solid #ddd; border-radius: 0.5rem; width: 14rem; z-index: 50; }
+    .dropdown-menu {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      width: 14rem;
+      z-index: 50;
+    }
     .dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
-    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: #111; transition: background 0.3s; }
+    .dropdown-menu a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #111;
+      transition: background 0.3s;
+    }
     .dropdown-menu a:hover { background: #f0f8ff; }
   </style>
 </head>
@@ -41,7 +59,7 @@
 
         <!-- Desktop Research Dropdown -->
         <div class="dropdown" id="desktop-research">
-          <button id="desktop-research-btn" class="hover:text-blue-600 transition font-semibold">Research</button>
+          <a href="research.html" id="desktop-research-btn" class="hover:text-blue-600 transition font-semibold">Research</a>
           <div class="dropdown-menu">
             <a href="research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
             <a href="research/reverse-aging-serum.html">Reverse-Aging Serum</a>
