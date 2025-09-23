@@ -10,14 +10,17 @@
 <style>
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
+
 /* Fade-in animations */
 .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
 /* Buttons */
 .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
 .btn-primary:hover { transform: translateY(-2px) scale(1.03); }
 .btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
 .btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
+
 /* Navigation */
 #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
 #mobile-menu.open { display: block; }
@@ -101,36 +104,38 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   </div>
 </section>
 
-<!-- Serum Section -->
+<!-- Serum Section with Cards and Table -->
 <section class="py-20 px-6 max-w-7xl mx-auto fade-in">
   <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-cyan-500">From Pathways to Serum</h2>
-  <p class="max-w-4xl mx-auto mb-6 text-center">The Super Soldier Serum integrates validated biomarkers to enhance endurance, strength, cognition, and stress resilience.</p>
+  <p class="max-w-4xl mx-auto mb-12 text-center">The Super Soldier Serum integrates validated biomarkers to enhance endurance, strength, cognition, and stress resilience.</p>
 
-  <!-- Mission & Paradigm Shift -->
-  <div class="grid md:grid-cols-3 gap-6 mb-12">
-    <div class="bg-gray-50 p-6 rounded-xl shadow-xl">
-      <h4 class="font-semibold mb-2 text-lg text-cyan-500">Our Mission</h4>
-      <p>Redefining human potential with targeted interventions that unlock superhuman levels of strength, endurance, and accelerated recovery.</p>
+  <!-- Mission / Paradigm / Methodology Cards -->
+  <div class="grid md:grid-cols-3 gap-8 mb-16">
+    <div class="bg-gray-50 p-8 rounded-xl shadow-lg fade-in">
+      <h3 class="text-2xl font-bold mb-4 text-cyan-500">Our Mission</h3>
+      <p>Redefining human potential by developing targeted interventions to enhance the body and mind, unlocking superhuman levels of strength, endurance, and accelerated recovery.</p>
     </div>
-    <div class="bg-gray-50 p-6 rounded-xl shadow-xl">
-      <h4 class="font-semibold mb-2 text-lg text-cyan-500">Paradigm Shift</h4>
-      <p>Shattering traditional biological constraints, employing novel high-load and superhigh-repetition training paradigms to identify next-gen enhancement targets.</p>
+    <div class="bg-gray-50 p-8 rounded-xl shadow-lg fade-in">
+      <h3 class="text-2xl font-bold mb-4 text-cyan-500">A Paradigm Shift in Performance Science</h3>
+      <p>Traditional training normalizes performance within biological constraints. Our approach shatters these limits, leveraging novel high-load, superhigh-repetition protocols to modulate biomarkers under extreme stress conditions.</p>
     </div>
-    <div class="bg-gray-50 p-6 rounded-xl shadow-xl">
-      <h4 class="font-semibold mb-2 text-lg text-cyan-500">Methodology</h4>
-      <p>Integrating biomechanical, physiological, and molecular data in continuous circuit exercises to measure and enhance human performance under extreme conditions.</p>
+    <div class="bg-gray-50 p-8 rounded-xl shadow-lg fade-in">
+      <h3 class="text-2xl font-bold mb-4 text-cyan-500">Methodology</h3>
+      <p>Integrating biomechanical, physiological, and molecular data, we design continuous circuit exercises, quantify mechanical work and power, and correlate biomarkers with performance to identify actionable targets for enhancement.</p>
     </div>
   </div>
 
   <!-- Landmark Results Table -->
-  <h3 class="text-3xl font-bold mb-8 text-center text-cyan-500">Landmark Performance Results</h3>
+  <h3 class="text-3xl font-bold mb-8 text-center text-cyan-500">Preliminary Serum Evaluation</h3>
   <div class="overflow-x-auto bg-white shadow-lg rounded-lg">
     <table class="min-w-full table-auto">
       <thead class="bg-cyan-500 text-white">
         <tr>
           <th class="px-6 py-3 text-left">Exercise</th>
-          <th class="px-6 py-3 text-left">Performance Achieved</th>
+          <th class="px-6 py-3 text-left">Weight</th>
           <th class="px-6 py-3 text-left">Sets</th>
+          <th class="px-6 py-3 text-left">Repetitions</th>
+          <th class="px-6 py-3 text-left">Performance Achieved</th>
           <th class="px-6 py-3 text-left">Elite Benchmark</th>
           <th class="px-6 py-3 text-left">Relative Performance</th>
         </tr>
@@ -138,50 +143,73 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
       <tbody class="text-gray-700">
         <tr>
           <td class="border-t px-6 py-4">Bench Press</td>
-          <td class="border-t px-6 py-4">100 reps at 225 lbs</td>
+          <td class="border-t px-6 py-4">200 lbs</td>
           <td class="border-t px-6 py-4">1</td>
-          <td class="border-t px-6 py-4">50 reps at 225 lbs (NFL Combine)</td>
+          <td class="border-t px-6 py-4">100</td>
+          <td class="border-t px-6 py-4">Completed continuous set at full intensity</td>
+          <td class="border-t px-6 py-4">50 reps at 225 lbs</td>
           <td class="border-t px-6 py-4">2x</td>
         </tr>
         <tr>
-          <td class="border-t px-6 py-4">Overhead Press</td>
-          <td class="border-t px-6 py-4">60 reps at 300 lbs</td>
+          <td class="border-t px-6 py-4">Bench Press</td>
+          <td class="border-t px-6 py-4">135 lbs</td>
           <td class="border-t px-6 py-4">1</td>
+          <td class="border-t px-6 py-4">200</td>
+          <td class="border-t px-6 py-4">High-repetition endurance set</td>
           <td class="border-t px-6 py-4">1–5 reps at 300 lbs (Elite Powerlifters)</td>
+          <td class="border-t px-6 py-4">N/A</td>
+        </tr>
+        <tr>
+          <td class="border-t px-6 py-4">Overhead Press</td>
+          <td class="border-t px-6 py-4">300 lbs</td>
+          <td class="border-t px-6 py-4">1</td>
+          <td class="border-t px-6 py-4">70</td>
+          <td class="border-t px-6 py-4">Continuous high-repetition set</td>
+          <td class="border-t px-6 py-4">~30 reps at 500 lbs</td>
           <td class="border-t px-6 py-4">12x</td>
         </tr>
         <tr>
-          <td class="border-t px-6 py-4">Calf Raises</td>
-          <td class="border-t px-6 py-4">150 reps at 720 lbs</td>
+          <td class="border-t px-6 py-4">Calf Raise</td>
+          <td class="border-t px-6 py-4">720 lbs</td>
           <td class="border-t px-6 py-4">1</td>
-          <td class="border-t px-6 py-4">~30 reps at 500 lbs</td>
+          <td class="border-t px-6 py-4">150</td>
+          <td class="border-t px-6 py-4">Performed under extreme load</td>
+          <td class="border-t px-6 py-4">~75 reps</td>
           <td class="border-t px-6 py-4">5x</td>
         </tr>
         <tr>
-          <td class="border-t px-6 py-4">Core Endurance</td>
-          <td class="border-t px-6 py-4">3,000 incline sit-ups</td>
+          <td class="border-t px-6 py-4">Incline Sit-ups</td>
+          <td class="border-t px-6 py-4">Bodyweight</td>
           <td class="border-t px-6 py-4">1</td>
-          <td class="border-t px-6 py-4">~75 reps</td>
+          <td class="border-t px-6 py-4">3,000</td>
+          <td class="border-t px-6 py-4">Neuromuscular endurance demonstration</td>
+          <td class="border-t px-6 py-4">~100 reps</td>
           <td class="border-t px-6 py-4">40x</td>
         </tr>
         <tr>
-          <td class="border-t px-6 py-4">Lower Body Endurance</td>
-          <td class="border-t px-6 py-4">3,000 hip abductions with 100 lbs over 30 minutes</td>
+          <td class="border-t px-6 py-4">Hip Abductions</td>
+          <td class="border-t px-6 py-4">100 lbs</td>
           <td class="border-t px-6 py-4">1</td>
-          <td class="border-t px-6 py-4">~100 reps</td>
+          <td class="border-t px-6 py-4">3,000</td>
+          <td class="border-t px-6 py-4">Sustained lower-body endurance set</td>
+          <td class="border-t px-6 py-4">N/A</td>
           <td class="border-t px-6 py-4">30x</td>
         </tr>
         <tr>
-          <td class="border-t px-6 py-4">Tricep Extensions</td>
-          <td class="border-t px-6 py-4">200 reps at 60 lbs</td>
+          <td class="border-t px-6 py-4">Tricep Extension</td>
+          <td class="border-t px-6 py-4">80 lbs</td>
           <td class="border-t px-6 py-4">1</td>
+          <td class="border-t px-6 py-4">200</td>
+          <td class="border-t px-6 py-4">Continuous high-repetition set</td>
           <td class="border-t px-6 py-4">N/A</td>
           <td class="border-t px-6 py-4">N/A</td>
         </tr>
         <tr>
           <td class="border-t px-6 py-4">Push-Ups</td>
-          <td class="border-t px-6 py-4">260 reps</td>
+          <td class="border-t px-6 py-4">Bodyweight</td>
           <td class="border-t px-6 py-4">1</td>
+          <td class="border-t px-6 py-4">260</td>
+          <td class="border-t px-6 py-4">Full-intensity continuous set</td>
           <td class="border-t px-6 py-4">N/A</td>
           <td class="border-t px-6 py-4">N/A</td>
         </tr>
