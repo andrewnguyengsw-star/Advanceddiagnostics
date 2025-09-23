@@ -41,7 +41,7 @@
 
         <!-- Desktop Research Dropdown -->
         <div class="dropdown" id="desktop-research">
-          <button class="hover:text-blue-600 transition font-semibold">Research</button>
+          <button id="desktop-research-btn" class="hover:text-blue-600 transition font-semibold">Research</button>
           <div class="dropdown-menu">
             <a href="research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
             <a href="research/reverse-aging-serum.html">Reverse-Aging Serum</a>
@@ -52,7 +52,7 @@
 
         <!-- Desktop Breakthroughs Dropdown -->
         <div class="dropdown" id="desktop-breakthroughs">
-          <button class="hover:text-blue-600 transition font-semibold">Breakthroughs</button>
+          <a href="breakthroughs.html" id="desktop-breakthroughs-btn" class="hover:text-blue-600 transition font-semibold">Breakthroughs</a>
           <div class="dropdown-menu">
             <a href="breakthroughs.html#project-atlas">Project Atlas™</a>
             <a href="breakthroughs.html#project-sentinel">Project Sentinel™</a>
@@ -267,10 +267,10 @@
 
       // Highlight dropdown parent for Research & Breakthroughs
       if (currentPath.startsWith("research")) {
-        document.querySelector("#desktop-research > button")?.classList.add("active-link");
+        document.querySelector("#desktop-research-btn")?.classList.add("active-link");
       }
       if (currentPath.startsWith("breakthroughs")) {
-        document.querySelector("#desktop-breakthroughs > button")?.classList.add("active-link");
+        document.querySelector("#desktop-breakthroughs-btn")?.classList.add("active-link");
       }
 
       // Dropdown hover (desktop)
