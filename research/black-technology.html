@@ -164,6 +164,169 @@
     </p>
     <a href="#mission" class="btn-primary fade-in">Explore Our Research</a>
   </section>
+  
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neuroscience to Black Technology Timeline</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 60px 20px;
+      background: #ffffff;
+      color: #2b2b2b;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 80px; /* more space above timeline */
+      font-size: 2rem;
+      font-weight: 600;
+      color: #111111;
+    }
+
+    .timeline-container {
+      overflow-x: auto;
+      padding-bottom: 120px; /* more space for black box */
+      padding-top: 40px;     /* pushes scroll down a bit */
+    }
+
+    .timeline {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      min-width: 1400px;
+    }
+
+    /* Base line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #d9d9d9;
+      z-index: 0;
+    }
+
+    .event {
+      position: relative;
+      text-align: center;
+      flex: 1;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .event-marker {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid #004578;
+      margin: 0 auto;
+      position: relative;
+      top: 42px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .event:hover .event-marker {
+      background: #004578;
+      transform: scale(1.15);
+    }
+
+    .event p {
+      margin-top: 80px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .event span {
+      display: block;
+      font-size: 13px;
+      color: #555;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+
+    .event:hover p {
+      color: #004578;
+    }
+
+    /* Black highlight box for future section */
+    .future-box {
+      position: absolute;
+      left: 18%;   /* starts around "Full Human Connectome" */
+      right: 0;    /* extends to the end */
+      bottom: -120px; /* moved down for more breathing space */
+      background: #000000;
+      color: #ffffff;
+      padding: 18px 24px; /* slightly larger box */
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    /* Scrollbar styling */
+    .timeline-container::-webkit-scrollbar {
+      height: 8px;
+    }
+    .timeline-container::-webkit-scrollbar-thumb {
+      background: #cccccc;
+      border-radius: 4px;
+    }
+    .timeline-container::-webkit-scrollbar-thumb:hover {
+      background: #999999;
+    }
+  </style>
+</head>
+<body>
+  <h2>Timeline: From Neuroscience to Black Technology</h2>
+  <div class="timeline-container">
+    <div class="timeline">
+      <div class="event">
+        <div class="event-marker"></div>
+        <p>2025 <span>State of the Art</span></p>
+      </div>
+      <div class="event">
+        <div class="event-marker"></div>
+        <p>2200–2500 <span>Full Human Connectome</span></p>
+      </div>
+      <div class="event">
+        <div class="event-marker"></div>
+        <p>2500–2600 <span>Neural Circuits Translation</span></p>
+      </div>
+      <div class="event">
+        <div class="event-marker"></div>
+        <p>2600–3000 <span>Neural Activity Mapping</span></p>
+      </div>
+      <div class="event">
+        <div class="event-marker"></div>
+        <p>3000–4000 <span>Impulse Detection & Control</span></p>
+      </div>
+      <div class="event">
+        <div class="event-marker"></div>
+        <p>4000–4200 <span>Create Novel Neural Networks</span></p>
+      </div>
+      <div class="event">
+        <div class="event-marker"></div>
+        <p>4200+ <span>Black Technology Cognition</span></p>
+      </div>
+
+      <!-- Black box under future section -->
+      <div class="future-box">
+        Future ideas, theories, and applications: Black Technology
+      </div>
+    </div>
+  </div>
+</body>
+</html>
 
   <!-- Definition / Mission Section -->
   <section id="mission" class="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
