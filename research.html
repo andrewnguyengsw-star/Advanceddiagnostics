@@ -46,6 +46,21 @@
     .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
     .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
     .dropdown-menu a:hover { background: #f0f0f0; }
+    
+    /* Mobile submenu dropdowns */
+#mobile-research-submenu,
+#mobile-breakthroughs-submenu {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+}
+
+#mobile-research-submenu.max-h-screen,
+#mobile-breakthroughs-submenu.max-h-screen {
+  opacity: 1;
+  max-height: 500px; /* adjust if needed for taller submenus */
+}
   </style>
 </head>
 <body class="bg-white text-black">
