@@ -46,90 +46,113 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
 
-      <!-- Desktop Menu -->
-      <nav class="hidden sm:flex space-x-6 relative" id="desktop-menu">
-        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
+    <!-- Desktop Menu -->
+    <nav class="hidden sm:flex space-x-6 relative" id="desktop-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="technology.html" class="nav-link">Technology</a>
+      <a href="quantum-application.html" class="nav-link">Quantum Application</a>
+      <a href="quantum-neural-mapping.html" class="nav-link">Quantum Neural Mapping</a>
+      <a href="case-study.html" class="nav-link">Case Study</a>
+      <a href="impact.html" class="nav-link">Impact</a>
 
-        <!-- Breakthroughs dropdown -->
-        <div class="dropdown relative" id="desktop-breakthroughs">
-          <button class="hover:text-cyan-400 transition font-semibold underline">Breakthroughs</button>
-          <div class="dropdown-menu">
-            <a href="#project-atlas">Project Atlas™</a>
-            <a href="#project-sentinel">Project Sentinel™</a>
-            <a href="#project-remote-neural-interface">Project Remote Neural Interface™</a>
-            <a href="#project-synapse">Project Synapse</a>
-            <a href="#human-biosonar">Human Biosonar</a>
-            <a href="#enhanced-senses">Enhanced Senses</a>
-            <a href="#danger-detection">Danger Detection</a>
-            <a href="#electrocution-resistance">Electrocution Resistance</a>
-            <a href="#particle-control">Particle Control</a>
-            <a href="#efr">EFR</a>
-            <a href="#neuroception">Neuroception</a>
-            <a href="#sanguivigilance">Sanguivigilance</a>
-            <a href="#exosight">ExoSight™</a>
-            <a href="#project-echo">Project ECHO™</a>
-            <a href="#project-lucid">Project LUCID™</a>
-            <a href="#project-vigor">Project VIGOR™</a>
-            <a href="#project-stormcore">Project STORMCORE™</a>
-          </div>
+      <!-- Research dropdown -->
+      <div class="dropdown relative" id="desktop-research">
+        <button class="hover:text-cyan-400 transition font-semibold">Research</button>
+        <div class="dropdown-menu">
+          <a href="research/cognitive-enhancement.html" class="nav-link">Cognitive Enhancement</a>
+          <a href="research/reverse-aging.html" class="nav-link">Reverse Aging</a>
+          <a href="research/super-soldier-serum.html" class="nav-link">Super Soldier Serum</a>
+          <a href="research/black-technology.html" class="nav-link">Black Technology</a>
         </div>
-      </nav>
-
-      <!-- Mobile menu toggle -->
-      <div class="sm:hidden">
-        <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
-        </button>
       </div>
-    </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700 max-h-0 overflow-hidden transition-all duration-300">
-      <nav class="flex flex-col px-4 py-4 space-y-2">
-        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
-
-        <!-- Mobile Breakthroughs Expandable -->
-        <button id="mobile-breakthroughs-toggle" class="hover:text-cyan-400 transition flex justify-between items-center w-full text-left">
-          Breakthroughs
-          <span id="mobile-breakthroughs-icon" class="ml-2">+</span>
-        </button>
-        <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
-          <a href="#project-atlas" class="hover:text-cyan-400 transition text-sm">Project Atlas™</a>
-          <a href="#project-sentinel" class="hover:text-cyan-400 transition text-sm">Project Sentinel™</a>
-          <a href="#project-remote-neural-interface" class="hover:text-cyan-400 transition text-sm">Project Remote Neural Interface™</a>
-          <a href="#project-synapse" class="hover:text-cyan-400 transition text-sm">Project Synapse</a>
-          <a href="#human-biosonar" class="hover:text-cyan-400 transition text-sm">Human Biosonar</a>
-          <a href="#enhanced-senses" class="hover:text-cyan-400 transition text-sm">Enhanced Senses</a>
-          <a href="#danger-detection" class="hover:text-cyan-400 transition text-sm">Danger Detection</a>
-          <a href="#electrocution-resistance" class="hover:text-cyan-400 transition text-sm">Electrocution Resistance</a>
-          <a href="#particle-control" class="hover:text-cyan-400 transition text-sm">Particle Control</a>
-          <a href="#efr" class="hover:text-cyan-400 transition text-sm">EFR</a>
-          <a href="#neuroception" class="hover:text-cyan-400 transition text-sm">Neuroception</a>
-          <a href="#sanguivigilance" class="hover:text-cyan-400 transition text-sm">Sanguivigilance</a>
-          <a href="#exosight" class="hover:text-cyan-400 transition text-sm">ExoSight™</a>
-          <a href="#project-echo" class="hover:text-cyan-400 transition text-sm">Project ECHO™</a>
-          <a href="#project-lucid" class="hover:text-cyan-400 transition text-sm">Project LUCID™</a>
-          <a href="#project-vigor" class="hover:text-cyan-400 transition text-sm">Project VIGOR™</a>
-          <a href="#project-stormcore" class="hover:text-cyan-400 transition text-sm">Project STORMCORE™</a>
+      <!-- Breakthroughs dropdown -->
+      <div class="dropdown relative" id="desktop-breakthroughs">
+        <button class="hover:text-cyan-400 transition font-semibold">Breakthroughs</button>
+        <div class="dropdown-menu">
+          <a href="#project-atlas" class="nav-link">Project Atlas™</a>
+          <a href="#project-sentinel" class="nav-link">Project Sentinel™</a>
+          <a href="#project-remote-neural-interface" class="nav-link">Project Remote Neural Interface™</a>
+          <a href="#project-synapse" class="nav-link">Project Synapse</a>
+          <a href="#human-biosonar" class="nav-link">Human Biosonar</a>
+          <a href="#enhanced-senses" class="nav-link">Enhanced Senses</a>
+          <a href="#danger-detection" class="nav-link">Danger Detection</a>
+          <a href="#electrocution-resistance" class="nav-link">Electrocution Resistance</a>
+          <a href="#particle-control" class="nav-link">Particle Control</a>
+          <a href="#efr" class="nav-link">EFR</a>
+          <a href="#neuroception" class="nav-link">Neuroception</a>
+          <a href="#sanguivigilance" class="nav-link">Sanguivigilance</a>
+          <a href="#exosight" class="nav-link">ExoSight™</a>
+          <a href="#project-echo" class="nav-link">Project ECHO™</a>
+          <a href="#project-lucid" class="nav-link">Project LUCID™</a>
+          <a href="#project-vigor" class="nav-link">Project VIGOR™</a>
+          <a href="#project-stormcore" class="nav-link">Project STORMCORE™</a>
         </div>
-      </nav>
-    </div>
-  </header>
+      </div>
+    </nav>
 
+    <!-- Mobile menu toggle -->
+    <div class="sm:hidden">
+      <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+        <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+        <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+        <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700 max-h-0 overflow-hidden transition-all duration-300">
+    <nav class="flex flex-col px-4 py-4 space-y-2">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="technology.html" class="nav-link">Technology</a>
+      <a href="quantum-application.html" class="nav-link">Quantum Application</a>
+      <a href="quantum-neural-mapping.html" class="nav-link">Quantum Neural Mapping</a>
+      <a href="case-study.html" class="nav-link">Case Study</a>
+      <a href="impact.html" class="nav-link">Impact</a>
+
+      <!-- Mobile Research Expandable -->
+      <button id="mobile-research-toggle" class="hover:text-cyan-400 transition flex justify-between items-center w-full text-left">
+        Research
+        <span id="mobile-research-icon" class="ml-2">+</span>
+      </button>
+      <div id="mobile-research-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+        <a href="research/cognitive-enhancement.html" class="nav-link text-sm">Cognitive Enhancement</a>
+        <a href="research/reverse-aging.html" class="nav-link text-sm">Reverse Aging</a>
+        <a href="research/super-soldier-serum.html" class="nav-link text-sm">Super Soldier Serum</a>
+        <a href="research/black-technology.html" class="nav-link text-sm">Black Technology</a>
+      </div>
+
+      <!-- Mobile Breakthroughs Expandable -->
+      <button id="mobile-breakthroughs-toggle" class="hover:text-cyan-400 transition flex justify-between items-center w-full text-left">
+        Breakthroughs
+        <span id="mobile-breakthroughs-icon" class="ml-2">+</span>
+      </button>
+      <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+        <a href="#project-atlas" class="nav-link text-sm">Project Atlas™</a>
+        <a href="#project-sentinel" class="nav-link text-sm">Project Sentinel™</a>
+        <a href="#project-remote-neural-interface" class="nav-link text-sm">Project Remote Neural Interface™</a>
+        <a href="#project-synapse" class="nav-link text-sm">Project Synapse</a>
+        <a href="#human-biosonar" class="nav-link text-sm">Human Biosonar</a>
+        <a href="#enhanced-senses" class="nav-link text-sm">Enhanced Senses</a>
+        <a href="#danger-detection" class="nav-link text-sm">Danger Detection</a>
+        <a href="#electrocution-resistance" class="nav-link text-sm">Electrocution Resistance</a>
+        <a href="#particle-control" class="nav-link text-sm">Particle Control</a>
+        <a href="#efr" class="nav-link text-sm">EFR</a>
+        <a href="#neuroception" class="nav-link text-sm">Neuroception</a>
+        <a href="#sanguivigilance" class="nav-link text-sm">Sanguivigilance</a>
+        <a href="#exosight" class="nav-link text-sm">ExoSight™</a>
+        <a href="#project-echo" class="nav-link text-sm">Project ECHO™</a>
+        <a href="#project-lucid" class="nav-link text-sm">Project LUCID™</a>
+        <a href="#project-vigor" class="nav-link text-sm">Project VIGOR™</a>
+        <a href="#project-stormcore" class="nav-link text-sm">Project STORMCORE™</a>
+      </div>
+    </nav>
+  </div>
+
+  <style>
+    .nav-link.active { text-decoration: underline; }
+  </style>
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Breakthroughs in Human Performance</h1>
@@ -272,18 +295,22 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll('.fade-in').forEach((el, i) => {
-        setTimeout(() => el.style.animationPlayState = 'running', i * 150);
+      const path = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".nav-link").forEach(link => {
+        if (link.getAttribute("href") === path) {
+          link.classList.add("active");
+        }
       });
 
-      const dropdown = document.getElementById('desktop-breakthroughs');
-      dropdown.addEventListener('mouseenter', () => dropdown.classList.add('open'));
-      dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('open'));
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dd => {
+        dd.addEventListener('mouseenter', () => dd.classList.add('open'));
+        dd.addEventListener('mouseleave', () => dd.classList.remove('open'));
+      });
 
       const menuToggle = document.getElementById('menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
       menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('open');
         mobileMenu.classList.toggle('max-h-0');
         mobileMenu.classList.toggle('max-h-screen');
       });
@@ -295,6 +322,15 @@
         submenu.classList.toggle('max-h-0');
         submenu.classList.toggle('max-h-screen');
         icon.textContent = icon.textContent === '+' ? '-' : '+';
+      });
+
+      const researchToggle = document.getElementById('mobile-research-toggle');
+      const researchSubmenu = document.getElementById('mobile-research-submenu');
+      const researchIcon = document.getElementById('mobile-research-icon');
+      researchToggle.addEventListener('click', () => {
+        researchSubmenu.classList.toggle('max-h-0');
+        researchSubmenu.classList.toggle('max-h-screen');
+        researchIcon.textContent = researchIcon.textContent === '+' ? '-' : '+';
       });
     });
   </script>
