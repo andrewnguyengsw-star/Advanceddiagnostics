@@ -282,33 +282,36 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll('.fade-in').forEach((el, i) => {
-        setTimeout(() => el.style.animationPlayState = 'running', i * 150);
-      });
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-      const dropdown = document.getElementById('desktop-breakthroughs');
-      dropdown.addEventListener('mouseenter', () => dropdown.classList.add('open'));
-      dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('open'));
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("open");
+    mobileMenu.classList.toggle("max-h-0");
+    mobileMenu.classList.toggle("max-h-screen");
+  });
 
-      const menuToggle = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('open');
-        mobileMenu.classList.toggle('max-h-0');
-        mobileMenu.classList.toggle('max-h-screen');
-      });
+  const researchToggle = document.getElementById("mobile-research-toggle");
+  const researchSubmenu = document.getElementById("mobile-research-submenu");
+  const researchIcon = document.getElementById("mobile-research-icon");
 
-      const submenuToggle = document.getElementById('mobile-breakthroughs-toggle');
-      const submenu = document.getElementById('mobile-breakthroughs-submenu');
-      const icon = document.getElementById('mobile-breakthroughs-icon');
-      submenuToggle.addEventListener('click', () => {
-        submenu.classList.toggle('max-h-0');
-        submenu.classList.toggle('max-h-screen');
-        icon.textContent = icon.textContent === '+' ? '-' : '+';
-      });
-    });
-  </script>
-</body>
-</html> "
+  researchToggle.addEventListener("click", () => {
+    researchSubmenu.classList.toggle("max-h-0");
+    researchSubmenu.classList.toggle("max-h-screen");
+    researchIcon.textContent = researchIcon.textContent === "+" ? "−" : "+";
+  });
+
+  const breakthroughsToggle = document.getElementById("mobile-breakthroughs-toggle");
+  const breakthroughsSubmenu = document.getElementById("mobile-breakthroughs-submenu");
+  const breakthroughsIcon = document.getElementById("mobile-breakthroughs-icon");
+
+  breakthroughsToggle.addEventListener("click", () => {
+    breakthroughsSubmenu.classList.toggle("max-h-0");
+    breakthroughsSubmenu.classList.toggle("max-h-screen");
+    breakthroughsIcon.textContent = breakthroughsIcon.textContent === "+" ? "−" : "+";
+  });
+});
+</script>
+</html>
