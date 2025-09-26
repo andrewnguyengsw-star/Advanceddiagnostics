@@ -115,41 +115,41 @@
     </nav>
 
     <!-- Mobile Menu Button -->
-    <div class="sm:hidden">
-      <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-300">
-        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
-        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1"></span>
-        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
-      </button>
-    </div>
-  </div>
+<div class="sm:hidden">
+<button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-300">
+<span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+<span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1"></span>
+<span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+</button>
+</div>
+</div>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="sm:hidden bg-white border-t border-gray-200">
-    <nav class="flex flex-col px-4 py-4 space-y-2">
-      <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
-      <a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
-      <a href="/quantum-application.html" class="hover:text-cyan-500 transition">Quantum Application</a>
-      <a href="/quantum-neural-mapping.html" class="hover:text-cyan-500 transition">Quantum Neural Mapping</a>
-      <a href="/case-study.html" class="hover:text-cyan-500 transition">Case Study</a>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="sm:hidden bg-white border-t border-gray-200">
+<nav class="flex flex-col px-4 py-4 space-y-2">
+<a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
+<a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
+<a href="/quantum-application.html" class="hover:text-cyan-500 transition">Quantum Application</a>
+<a href="/quantum-neural-mapping.html" class="hover:text-cyan-500 transition">Quantum Neural Mapping</a>
+<a href="/case-study.html" class="hover:text-cyan-500 transition">Case Study</a>
 
-      <div class="flex flex-col">
-        <button id="mobile-research-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-cyan-500 transition font-semibold">
-          Research <span id="mobile-research-icon">+</span>
-        </button>
-        <div id="mobile-research-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
-          <a href="/research/cognitive-enhancement-drug.html" class="hover:text-cyan-500 text-sm">Cognitive Enhancement</a>
-          <a href="/research/reverse-aging-serum.html" class="hover:text-cyan-500 text-sm">Reverse-Aging Serum</a>
-          <a href="/research/super-soldier-serum.html" class="hover:text-cyan-500 text-sm">Super Soldier Serum</a>
-          <a href="/research/black-technology.html" class="hover:text-cyan-500 text-sm">Black Technology</a>
-        </div>
-      </div>
+<div class="flex flex-col">
+<button id="mobile-research-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-cyan-500 transition font-semibold">
+Research <span id="mobile-research-icon">+</span>
+</button>
+<div id="mobile-research-submenu" class="ml-4 flex flex-col space-y-1">
+<a href="/research/cognitive-enhancement-drug.html" class="hover:text-cyan-500 text-sm">Cognitive Enhancement</a>
+<a href="/research/reverse-aging-serum.html" class="hover:text-cyan-500 text-sm">Reverse-Aging Serum</a>
+<a href="/research/super-soldier-serum.html" class="hover:text-cyan-500 text-sm">Super Soldier Serum</a>
+<a href="/research/black-technology.html" class="hover:text-cyan-500 text-sm">Black Technology</a>
+</div>
+</div>
 
-      <div class="flex flex-col">
-        <button id="mobile-breakthroughs-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-cyan-500 transition font-semibold">
-          Breakthroughs <span id="mobile-breakthroughs-icon">+</span>
-        </button>
-        <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+<div class="flex flex-col">
+<button id="mobile-breakthroughs-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-cyan-500 transition font-semibold">
+Breakthroughs <span id="mobile-breakthroughs-icon">+</span>
+</button>
+<div id="mobile-breakthroughs-submenu" class="ml-4 flex flex-col space-y-1">
             <a href="breakthroughs.html#project-atlas" class="hover:text-blue-600 text-sm">Project Atlas™</a>
             <a href="breakthroughs.html#project-sentinel" class="hover:text-blue-600 text-sm">Project Sentinel™</a>
             <a href="breakthroughs.html#project-remote-neural-interface" class="hover:text-blue-600 text-sm">Project Remote Neural Interface™</a>
@@ -292,31 +292,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
 
-  // Mobile menu toggle
   menuToggle.addEventListener("click", () => {
     menuToggle.classList.toggle("open");
     mobileMenu.classList.toggle("open");
   });
 
-  // Mobile dropdowns
   const dropdowns = [
     { toggle: "mobile-research-toggle", submenu: "mobile-research-submenu", icon: "mobile-research-icon" },
     { toggle: "mobile-breakthroughs-toggle", submenu: "mobile-breakthroughs-submenu", icon: "mobile-breakthroughs-icon" }
   ];
+
   dropdowns.forEach(d => {
     const toggle = document.getElementById(d.toggle);
     const submenu = document.getElementById(d.submenu);
     const icon = document.getElementById(d.icon);
+
     toggle.addEventListener("click", e => {
       e.stopPropagation();
-      submenu.classList.toggle("max-h-0");
-      submenu.classList.toggle("max-h-screen");
-      icon.textContent = icon.textContent === "+" ? "-" : "+";
+      submenu.classList.toggle("show");
+      icon.textContent = icon.textContent === "+" ? "−" : "+";
     });
-    document.addEventListener("click", e => {
-      if (!toggle.parentElement.contains(e.target)) {
-        submenu.classList.add("max-h-0");
-        submenu.classList.remove("max-h-screen");
+  });
+
+  document.addEventListener("click", (e) => {
+    dropdowns.forEach(d => {
+      const toggle = document.getElementById(d.toggle);
+      const submenu = document.getElementById(d.submenu);
+      const icon = document.getElementById(d.icon);
+
+      if (!toggle.contains(e.target) && !submenu.contains(e.target)) {
+        submenu.classList.remove("show");
         icon.textContent = "+";
       }
     });
