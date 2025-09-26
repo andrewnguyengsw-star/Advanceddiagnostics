@@ -114,65 +114,66 @@
       </div>
     </nav>
 
-    <!-- Mobile Menu Button -->
-<div class="sm:hidden">
-<button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-300">
-<span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
-<span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1"></span>
-<span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
-</button>
-</div>
-</div>
-
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="sm:hidden bg-white border-t border-gray-200">
-<nav class="flex flex-col px-4 py-4 space-y-2">
-<a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
-<a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
-<a href="/quantum-application.html" class="hover:text-cyan-500 transition">Quantum Application</a>
-<a href="/quantum-neural-mapping.html" class="hover:text-cyan-500 transition">Quantum Neural Mapping</a>
-<a href="/case-study.html" class="hover:text-cyan-500 transition">Case Study</a>
-
-<div class="flex flex-col">
-<button id="mobile-research-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-cyan-500 transition font-semibold">
-Research <span id="mobile-research-icon">+</span>
-</button>
-<div id="mobile-research-submenu" class="ml-4 flex flex-col space-y-1">
-<a href="/research/cognitive-enhancement-drug.html" class="hover:text-cyan-500 text-sm">Cognitive Enhancement</a>
-<a href="/research/reverse-aging-serum.html" class="hover:text-cyan-500 text-sm">Reverse-Aging Serum</a>
-<a href="/research/super-soldier-serum.html" class="hover:text-cyan-500 text-sm">Super Soldier Serum</a>
-<a href="/research/black-technology.html" class="hover:text-cyan-500 text-sm">Black Technology</a>
-</div>
-</div>
-
-<div class="flex flex-col">
-<button id="mobile-breakthroughs-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-cyan-500 transition font-semibold">
-Breakthroughs <span id="mobile-breakthroughs-icon">+</span>
-</button>
-<div id="mobile-breakthroughs-submenu" class="ml-4 flex flex-col space-y-1">
-            <a href="breakthroughs.html#project-atlas" class="hover:text-blue-600 text-sm">Project Atlas™</a>
-            <a href="breakthroughs.html#project-sentinel" class="hover:text-blue-600 text-sm">Project Sentinel™</a>
-            <a href="breakthroughs.html#project-remote-neural-interface" class="hover:text-blue-600 text-sm">Project Remote Neural Interface™</a>
-            <a href="breakthroughs.html#project-synapse" class="hover:text-blue-600 text-sm">Project Synapse</a>
-            <a href="breakthroughs.html#human-biosonar" class="hover:text-blue-600 text-sm">Human Biosonar</a>
-            <a href="breakthroughs.html#enhanced-senses" class="hover:text-blue-600 text-sm">Enhanced Senses</a>
-            <a href="breakthroughs.html#danger-detection" class="hover:text-blue-600 text-sm">Danger Detection</a>
-            <a href="breakthroughs.html#electrocution-resistance" class="hover:text-blue-600 text-sm">Electrocution Resistance</a>
-            <a href="breakthroughs.html#particle-control" class="hover:text-blue-600 text-sm">Particle Control</a>
-            <a href="breakthroughs.html#efr" class="hover:text-blue-600 text-sm">EFR</a>
-            <a href="breakthroughs.html#neuroception" class="hover:text-blue-600 text-sm">Neuroception</a>
-            <a href="breakthroughs.html#sanguivigilance" class="hover:text-blue-600 text-sm">Sanguivigilance</a>
-            <a href="breakthroughs.html#exosight" class="hover:text-blue-600 text-sm">ExoSight™</a>
-            <a href="breakthroughs.html#project-echo" class="hover:text-blue-600 text-sm">Project ECHO™</a>
-            <a href="breakthroughs.html#project-lucid" class="hover:text-blue-600 text-sm">Project LUCID™</a>
-            <a href="breakthroughs.html#project-vigor" class="hover:text-blue-600 text-sm">Project VIGOR™</a>
-            <a href="breakthroughs.html#project-stormcore" class="hover:text-blue-600 text-sm">Project STORMCORE™</a>
-          </div>
+      <!-- Mobile menu toggle -->
+      <div class="sm:hidden">
+        <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+        </button>
       </div>
-    </nav>
-  </div>
-</header>
+    </div>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700 max-h-0 overflow-hidden transition-all duration-300">
+      <nav class="flex flex-col px-4 py-4 space-y-2">
+        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
+        <a href="science.html" class="hover:text-cyan-400 transition">Science</a>
+        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
+        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
+        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
+        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
+        
+        <!-- Mobile Research Expandable -->
+        <button id="mobile-research-toggle" class="hover:text-cyan-400 transition flex justify-between items-center w-full text-left">
+        Research
+        <span id="mobile-research-icon" class="ml-2">+</span>
+       </button>
+       <div id="mobile-research-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+       <a href="/research/cognitive-enhancement-drug.html" class="hover:text-cyan-400 transition text-sm">Cognitive Enhancement</a>
+       <a href="/research/reverse-aging-serum.html" class="hover:text-cyan-400 transition text-sm">Reverse-Aging Serum</a>
+       <a href="/research/super-soldier-serum.html" class="hover:text-cyan-400 transition text-sm">Super Soldier Serum</a>
+       <a href="/research/black-technology.html" class="hover:text-cyan-400 transition text-sm">Black Technology</a>
+      </div>
+
+        <!-- Mobile Breakthroughs Expandable -->
+        <button id="mobile-breakthroughs-toggle" class="hover:text-cyan-400 transition flex justify-between items-center w-full text-left">
+          Breakthroughs
+          <span id="mobile-breakthroughs-icon" class="ml-2">+</span>
+        </button>
+        <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+          <a href="#project-atlas" class="hover:text-cyan-400 transition text-sm">Project Atlas™</a>
+          <a href="#project-sentinel" class="hover:text-cyan-400 transition text-sm">Project Sentinel™</a>
+          <a href="#project-remote-neural-interface" class="hover:text-cyan-400 transition text-sm">Project Remote Neural Interface™</a>
+          <a href="#project-synapse" class="hover:text-cyan-400 transition text-sm">Project Synapse</a>
+          <a href="#human-biosonar" class="hover:text-cyan-400 transition text-sm">Human Biosonar</a>
+          <a href="#enhanced-senses" class="hover:text-cyan-400 transition text-sm">Enhanced Senses</a>
+          <a href="#danger-detection" class="hover:text-cyan-400 transition text-sm">Danger Detection</a>
+          <a href="#electrocution-resistance" class="hover:text-cyan-400 transition text-sm">Electrocution Resistance</a>
+          <a href="#particle-control" class="hover:text-cyan-400 transition text-sm">Particle Control</a>
+          <a href="#efr" class="hover:text-cyan-400 transition text-sm">EFR</a>
+          <a href="#neuroception" class="hover:text-cyan-400 transition text-sm">Neuroception</a>
+          <a href="#sanguivigilance" class="hover:text-cyan-400 transition text-sm">Sanguivigilance</a>
+          <a href="#exosight" class="hover:text-cyan-400 transition text-sm">ExoSight™</a>
+          <a href="#project-echo" class="hover:text-cyan-400 transition text-sm">Project ECHO™</a>
+          <a href="#project-lucid" class="hover:text-cyan-400 transition text-sm">Project LUCID™</a>
+          <a href="#project-vigor" class="hover:text-cyan-400 transition text-sm">Project VIGOR™</a>
+          <a href="#project-stormcore" class="hover:text-cyan-400 transition text-sm">Project STORMCORE™</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-white via-gray-100 to-white overflow-hidden">
     <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900">Research Portfolio: Unlocking Human Potential</h1>
