@@ -12,153 +12,145 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #111; }
 
-    .gradient-text { background: linear-gradient(90deg, #00cfff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .glass-btn { background: #007bff; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 0.5rem; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
-    .glass-btn:hover { background: #0056b3; transform: translateY(-2px) scale(1.02); }
-    .section-divider { height: 2px; background: linear-gradient(to right, #00cfff, #8a2be2); margin: 4rem 0; }
+/* Fade-in animations */
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    /* Active top-level nav links */
-    .active-link { color: #8a2be2 !important; font-weight: 700; }
+/* Buttons */
+.btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+.btn-primary:hover { transform: translateY(-2px) scale(1.03); }
+.btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+.btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
 
-    /* Dropdown menu links stay normal */
-    .dropdown-menu a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: #111;
-      transition: background 0.3s;
-      text-decoration: none;
-    }
-    .dropdown-menu a:hover { background: #f0f8ff; color: #111; }
+/* Navigation */
+#mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+#mobile-menu.open { display: block; }
+#menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#menu-toggle.open span:nth-child(2) { opacity: 0; }
+#menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* Dropdown container */
-    .dropdown { position: relative; }
-    .dropdown-menu {
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 0.5rem;
-      width: 14rem;
-      z-index: 50;
-    }
-    .dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
-  </style>
+/* Dropdown */
+.dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ddd; border-radius: 0.5rem; width: 14rem; z-index: 50; }
+.dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+.dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
+.dropdown-menu a:hover { background: #f0f0f0; }
+</style>
 </head>
-<body class="bg-white text-gray-900">
+<body>
 
-  <!-- Header -->
-  <header class="sticky top-0 bg-white border-b border-gray-200 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <a href="index.html" class="text-2xl font-bold text-gray-900 hover:text-blue-600 transition">AECION</a>
-      <nav class="hidden md:flex space-x-6 relative">
-        <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-        <a href="science.html" class="hover:text-blue-600 transition">Science</a>
-        <a href="quantum-application.html" class="hover:text-blue-600 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-blue-600 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-blue-600 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-blue-600 transition">Impact</a>
+<!-- Navigation -->
+<header class="sticky top-0 bg-white shadow z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
+    
+    <!-- Desktop Menu -->
+    <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+      <a href="index.html" class="hover:text-cyan-500 transition">Home</a>
+      <a href="science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="quantum-application.html" class="hover:text-cyan-500 transition">Quantum Application</a>
+      <a href="quantum-neural-mapping.html" class="hover:text-cyan-500 transition">Quantum Neural Mapping</a>
+      <a href="case-study.html" class="hover:text-cyan-500 transition">Case Study</a>
+      <a href="impact.html" class="hover:text-cyan-500 transition">Impact</a>
 
-        <!-- Desktop Research Dropdown -->
-        <div class="dropdown" id="desktop-research">
-          <a href="research.html" id="desktop-research-btn" class="transition font-semibold">Research</a>
-          <div class="dropdown-menu">
-            <a href="research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
-            <a href="research/reverse-aging-serum.html">Reverse-Aging Serum</a>
-            <a href="research/super-soldier-serum.html">Super Soldier Serum</a>
-            <a href="research/black-technology.html">Black Technology</a>
-          </div>
+      <!-- Research Dropdown -->
+      <div class="relative dropdown">
+        <button class="hover:text-cyan-500 transition font-semibold">Research</button>
+        <div class="dropdown-menu">
+          <a href="/research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
+          <a href="/research/reverse-aging-serum.html">Reverse-Aging Serum</a>
+          <a href="/research/super-soldier-serum.html">Super Soldier Serum</a>
+          <a href="/research/black-technology.html">Black Technology</a>
         </div>
-
-        <!-- Desktop Breakthroughs Dropdown -->
-        <div class="dropdown" id="desktop-breakthroughs">
-          <a href="breakthroughs.html" id="desktop-breakthroughs-btn" class="transition font-semibold">Breakthroughs</a>
-          <div class="dropdown-menu">
-            <a href="breakthroughs.html#project-atlas">Project Atlas™</a>
-            <a href="breakthroughs.html#project-sentinel">Project Sentinel™</a>
-            <a href="breakthroughs.html#project-remote-neural-interface">Project Remote Neural Interface™</a>
-            <a href="breakthroughs.html#project-synapse">Project Synapse</a>
-            <a href="breakthroughs.html#human-biosonar">Human Biosonar</a>
-            <a href="breakthroughs.html#enhanced-senses">Enhanced Senses</a>
-            <a href="breakthroughs.html#danger-detection">Danger Detection</a>
-            <a href="breakthroughs.html#electrocution-resistance">Electrocution Resistance</a>
-            <a href="breakthroughs.html#particle-control">Particle Control</a>
-            <a href="breakthroughs.html#efr">EFR</a>
-            <a href="breakthroughs.html#neuroception">Neuroception</a>
-            <a href="breakthroughs.html#sanguivigilance">Sanguivigilance</a>
-            <a href="breakthroughs.html#exosight">ExoSight™</a>
-            <a href="breakthroughs.html#project-echo">Project ECHO™</a>
-            <a href="breakthroughs.html#project-lucid">Project LUCID™</a>
-            <a href="breakthroughs.html#project-vigor">Project VIGOR™</a>
-            <a href="breakthroughs.html#project-stormcore">Project STORMCORE™</a>
-          </div>
-        </div>
-      </nav>
-      <div class="md:hidden">
-        <button id="menu-toggle" aria-label="Toggle menu" class="text-gray-900">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
-        </button>
       </div>
-    </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-      <nav class="flex flex-col px-4 py-4 space-y-2">
-        <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-        <a href="science.html" class="hover:text-blue-600 transition">Science</a>
-        <a href="quantum-application.html" class="hover:text-blue-600 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-blue-600 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-blue-600 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-blue-600 transition">Impact</a>
-
-        <!-- Mobile Research Dropdown -->
-        <div class="flex flex-col" id="mobile-research-dropdown">
-          <button id="mobile-research-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-blue-600 transition">
-            Research
-            <span id="mobile-research-icon">+</span>
-          </button>
-          <div id="mobile-research-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
-            <a href="research/cognitive-enhancement-drug.html" class="hover:text-blue-600 text-sm">Cognitive Enhancement</a>
-            <a href="research/reverse-aging-serum.html" class="hover:text-blue-600 text-sm">Reverse-Aging Serum</a>
-            <a href="research/super-soldier-serum.html" class="hover:text-blue-600 text-sm">Super Soldier Serum</a>
-            <a href="research/black-technology.html" class="hover:text-blue-600 text-sm">Black Technology</a>
-          </div>
+      <!-- Breakthroughs Dropdown -->
+      <div class="relative dropdown">
+        <button class="hover:text-cyan-500 transition font-semibold">Breakthroughs</button>
+        <div class="dropdown-menu">
+          <a href="#project-atlas">Project Atlas™</a>
+          <a href="#project-sentinel">Project Sentinel™</a>
+          <a href="#project-remote-neural-interface">Project Remote Neural Interface™</a>
+          <a href="#project-synapse">Project Synapse</a>
+          <a href="#human-biosonar">Human Biosonar</a>
+          <a href="#enhanced-senses">Enhanced Senses</a>
+          <a href="#danger-detection">Danger Detection</a>
+          <a href="#electrocution-resistance">Electrocution Resistance</a>
+          <a href="#particle-control">Particle Control</a>
+          <a href="#efr">EFR</a>
+          <a href="#neuroception">Neuroception</a>
+          <a href="#sanguivigilance">Sanguivigilance</a>
+          <a href="#exosight">ExoSight™</a>
+          <a href="#project-echo">Project ECHO™</a>
+          <a href="#project-lucid">Project LUCID™</a>
+          <a href="#project-vigor">Project VIGOR™</a>
+          <a href="#project-stormcore">Project STORMCORE™</a>
         </div>
+      </div>
+    </nav>
 
-        <!-- Mobile Breakthroughs Dropdown -->
-        <div class="flex flex-col" id="mobile-breakthroughs-dropdown">
-          <button id="mobile-breakthroughs-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-blue-600 transition">
-            Breakthroughs
-            <span id="mobile-breakthroughs-icon">+</span>
-          </button>
-          <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
-            <a href="breakthroughs.html#project-atlas" class="hover:text-blue-600 text-sm">Project Atlas™</a>
-            <a href="breakthroughs.html#project-sentinel" class="hover:text-blue-600 text-sm">Project Sentinel™</a>
-            <a href="breakthroughs.html#project-remote-neural-interface" class="hover:text-blue-600 text-sm">Project Remote Neural Interface™</a>
-            <a href="breakthroughs.html#project-synapse" class="hover:text-blue-600 text-sm">Project Synapse</a>
-            <a href="breakthroughs.html#human-biosonar" class="hover:text-blue-600 text-sm">Human Biosonar</a>
-            <a href="breakthroughs.html#enhanced-senses" class="hover:text-blue-600 text-sm">Enhanced Senses</a>
-            <a href="breakthroughs.html#danger-detection" class="hover:text-blue-600 text-sm">Danger Detection</a>
-            <a href="breakthroughs.html#electrocution-resistance" class="hover:text-blue-600 text-sm">Electrocution Resistance</a>
-            <a href="breakthroughs.html#particle-control" class="hover:text-blue-600 text-sm">Particle Control</a>
-            <a href="breakthroughs.html#efr" class="hover:text-blue-600 text-sm">EFR</a>
-            <a href="breakthroughs.html#neuroception" class="hover:text-blue-600 text-sm">Neuroception</a>
-            <a href="breakthroughs.html#sanguivigilance" class="hover:text-blue-600 text-sm">Sanguivigilance</a>
-            <a href="breakthroughs.html#exosight" class="hover:text-blue-600 text-sm">ExoSight™</a>
-            <a href="breakthroughs.html#project-echo" class="hover:text-blue-600 text-sm">Project ECHO™</a>
-            <a href="breakthroughs.html#project-lucid" class="hover:text-blue-600 text-sm">Project LUCID™</a>
-            <a href="breakthroughs.html#project-vigor" class="hover:text-blue-600 text-sm">Project VIGOR™</a>
-            <a href="breakthroughs.html#project-stormcore" class="hover:text-blue-600 text-sm">Project STORMCORE™</a>
-          </div>
-        </div>
-      </nav>
+    <!-- Mobile Menu Button -->
+    <div class="sm:hidden">
+      <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-300">
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+      </button>
     </div>
-  </header>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="sm:hidden bg-white border-t border-gray-200">
+    <nav class="flex flex-col px-4 py-4 space-y-2">
+      <a href="index.html" class="hover:text-cyan-500 transition">Home</a>
+      <a href="science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="quantum-application.html" class="hover:text-cyan-500 transition">Quantum Application</a>
+      <a href="quantum-neural-mapping.html" class="hover:text-cyan-500 transition">Quantum Neural Mapping</a>
+      <a href="case-study.html" class="hover:text-cyan-500 transition">Case Study</a>
+      <a href="impact.html" class="hover:text-cyan-500 transition">Impact</a>
+
+      <!-- Mobile Research Dropdown -->
+      <div class="flex flex-col">
+        <button id="mobile-research-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-cyan-500 transition font-semibold">
+          Research
+          <span id="mobile-research-icon">+</span>
+        </button>
+        <div id="mobile-research-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+          <a href="/research/cognitive-enhancement-drug.html" class="hover:text-cyan-500 text-sm">Cognitive Enhancement</a>
+          <a href="/research/reverse-aging-serum.html" class="hover:text-cyan-500 text-sm">Reverse-Aging Serum</a>
+          <a href="/research/super-soldier-serum.html" class="hover:text-cyan-500 text-sm">Super Soldier Serum</a>
+          <a href="/research/black-technology.html" class="hover:text-cyan-500 text-sm">Black Technology</a>
+        </div>
+      </div>
+
+      <!-- Mobile Breakthroughs Dropdown -->
+      <div class="flex flex-col">
+        <button id="mobile-breakthroughs-toggle" class="flex justify-between items-center w-full px-2 py-2 hover:text-cyan-500 transition font-semibold">
+          Breakthroughs
+          <span id="mobile-breakthroughs-icon">+</span>
+        </button>
+        <div id="mobile-breakthroughs-submenu" class="ml-4 mt-2 flex flex-col space-y-1 max-h-0 overflow-hidden transition-all duration-300">
+          <a href="#project-atlas" class="hover:text-cyan-500 text-sm">Project Atlas™</a>
+          <a href="#project-sentinel" class="hover:text-cyan-500 text-sm">Project Sentinel™</a>
+          <a href="#project-remote-neural-interface" class="hover:text-cyan-500 text-sm">Project Remote Neural Interface™</a>
+          <a href="#project-synapse" class="hover:text-cyan-500 text-sm">Project Synapse</a>
+          <a href="#human-biosonar" class="hover:text-cyan-500 text-sm">Human Biosonar</a>
+          <a href="#enhanced-senses" class="hover:text-cyan-500 text-sm">Enhanced Senses</a>
+          <a href="#danger-detection" class="hover:text-cyan-500 text-sm">Danger Detection</a>
+          <a href="#electrocution-resistance" class="hover:text-cyan-500 text-sm">Electrocution Resistance</a>
+          <a href="#particle-control" class="hover:text-cyan-500 text-sm">Particle Control</a>
+          <a href="#efr" class="hover:text-cyan-500 text-sm">EFR</a>
+          <a href="#neuroception" class="hover:text-cyan-500 text-sm">Neuroception</a>
+          <a href="#sanguivigilance" class="hover:text-cyan-500 text-sm">Sanguivigilance</a>
+          <a href="#exosight" class="hover:text-cyan-500 text-sm">ExoSight™</a>
+          <a href="#project-echo" class="hover:text-cyan-500 text-sm">Project ECHO™</a>
+          <a href="#project-lucid" class="hover:text-cyan-500 text-sm">Project LUCID™</a>
+          <a href="#project-vigor" class="hover:text-cyan-500 text-sm">Project VIGOR™</a>
+          <a href="#project-stormcore" class="hover:text-cyan-500 text-sm">Project STORMCORE™</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-white via-gray-100 to-white overflow-hidden">
@@ -249,121 +241,99 @@
   <div class="section-divider"></div>
   <section class="py-20 px-6 max-w-6xl mx-auto text-center">
     <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-blue-600">Responsible Research & Safety</h2>
-    <p class="text-gray-700 mb-12">Safety is central to everything we do. Our research follows strict protocols, carefully designed to protect participants and guarantee the responsible development and monitoring of our technologies.</p>
-    <div class="grid md:grid-cols-3 gap-8 text-left">
-      <div class="space-y-2">
-        <h3 class="font-semibold text-lg">Ethical Protocols</h3>
-        <p class="text-gray-600">All studies comply with international ethical standards and undergo rigorous review.</p>
-      </div>
-      <div class="space-y-2">
-        <h3 class="font-semibold text-lg">Biological Safety</h3>
-        <p class="text-gray-600">Our laboratories maintain high-level containment and monitoring to ensure zero risk to participants.</p>
-      </div>
-      <div class="space-y-2">
-        <h3 class="font-semibold text-lg">Regulatory Oversight</h3>
-        <p class="text-gray-600">We maintain full transparency with regulatory authorities and adhere to legal standards.</p>
-      </div>
+    <p class="text-gray-700 mb-12">Safety is central to everything we do. Our research follows strict protocols, carefully designed to protect participants and guarantee the responsible development and monitoring of our products.</p>
+    <div class="grid md:grid-cols-3 gap-8 text-gray-700 text-left">
+      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Establishing rigorous protocols for all research activities</div>
+      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Continuous monitoring of ongoing projects and participants</div>
+      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Independent oversight and ethics compliance at every stage</div>
     </div>
   </section>
 
   <!-- Subscribe Section -->
-  <section id="subscribe" class="py-20 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-center">
-    <h2 class="text-4xl font-bold mb-4">Subscribe for Research Updates</h2>
-    <p class="mb-8">Get notified when we publish new findings and breakthroughs.</p>
-    <form class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
-      <input type="email" placeholder="Enter your email" class="p-3 rounded-md flex-1 text-gray-900">
-      <button type="submit" class="glass-btn bg-white text-blue-600 hover:bg-gray-200">Subscribe</button>
-    </form>
+  <section id="subscribe" class="bg-gray-900 text-white py-20 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Stay Connected</h2>
+      <p class="text-lg mb-6">Subscribe to receive updates about breakthroughs and new discoveries from our research team.</p>
+      <form action="#" method="POST" class="flex flex-col sm:flex-row gap-4">
+        <input type="email" name="email" placeholder="Enter your email" required class="flex-grow px-4 py-3 rounded-lg text-gray-900 focus:outline-none">
+        <button type="submit" class="glass-btn bg-blue-600 hover:bg-blue-700">Subscribe</button>
+      </form>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-12 px-6">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
-      <div>
-        <h3 class="font-bold text-lg mb-4">AECION</h3>
-        <p>Driving human potential through advanced research in cognitive enhancement, cellular rejuvenation, and Black Technology.</p>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-4">Navigation</h4>
-        <ul class="space-y-2">
-          <li><a href="index.html" class="hover:underline">Home</a></li>
-          <li><a href="research.html" class="hover:underline">Research</a></li>
-          <li><a href="breakthroughs.html" class="hover:underline">Breakthroughs</a></li>
-          <li><a href="science.html" class="hover:underline">Science</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-4">Contact</h4>
-        <ul class="space-y-2">
-          <li>Email: info@aecion.com</li>
-          <li>Phone: +1 (555) 123-4567</li>
-          <li>Address: 123 Quantum Ave, Innovation City</li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-4">Follow Us</h4>
-        <ul class="space-y-2">
-          <li><a href="#" class="hover:underline">Twitter</a></li>
-          <li><a href="#" class="hover:underline">LinkedIn</a></li>
-          <li><a href="#" class="hover:underline">GitHub</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="text-center mt-12 text-gray-400">&copy; 2025 AECION. All rights reserved.</div>
-  </footer>
+<!-- Footer -->
+<footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
+  <div class="mb-4 flex justify-center flex-wrap gap-4">
+    <a href="index.html" class="hover:text-cyan-500 transition">About Us</a>
+    <a href="science.html" class="hover:text-cyan-500 transition">Science</a>
+    <a href="quantum-application.html" class="hover:text-cyan-500 transition">Quantum Application</a>
+    <a href="case-study.html" class="hover:text-cyan-500 transition">Case Study</a>
+    <a href="impact.html" class="hover:text-cyan-500 transition">Impact</a>
+    <a href="research.html" class="hover:text-cyan-500 transition">Research</a>
+    <a href="breakthroughs.html" class="hover:text-cyan-500 transition">Breakthroughs</a>
+  </div>
+  <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
+  <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
+</footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const currentPath = window.location.pathname.split("/").pop() || "index.html";
+<script>
+// Fade-in animations
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+}, { threshold: 0.2 });
+fadeEls.forEach(el => observer.observe(el));
 
-      // Highlight only top-level nav links
-      document.querySelectorAll("nav > a, nav > .dropdown > a").forEach(link => {
-        const href = link.getAttribute("href") || "";
-        if (
-          href === currentPath ||
-          (currentPath.startsWith("research") && href.includes("research")) ||
-          (currentPath.startsWith("breakthroughs") && href.includes("breakthroughs"))
-        ) {
-          link.classList.add("active-link");
-        }
-      });
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+let menuOpen = false;
+menuToggle.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  menuToggle.classList.toggle('open', menuOpen);
+  if (menuOpen) {
+    mobileMenu.classList.add('open');
+    mobileMenu.style.display = 'block';
+    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+    mobileMenu.style.opacity = '1';
+  } else {
+    mobileMenu.classList.remove('open');
+    mobileMenu.style.maxHeight = '0';
+    mobileMenu.style.opacity = '0';
+    setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+  }
+});
 
-      // Desktop dropdown hover
-      ["desktop-research", "desktop-breakthroughs"].forEach(id => {
-        const el = document.getElementById(id);
-        el.addEventListener("mouseenter", () => el.classList.add("open"));
-        el.addEventListener("mouseleave", () => el.classList.remove("open"));
-      });
+// ✅ Helper function to update mobile menu height
+function updateMobileMenuHeight() {
+    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+}
 
-      // Mobile menu toggle
-      const menuToggle = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      menuToggle.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+// Mobile Research Dropdown Toggle
+const mobileResearchToggle = document.getElementById('mobile-research-toggle');
+const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
+const mobileResearchIcon = document.getElementById('mobile-research-icon');
+let researchOpen = false;
+mobileResearchToggle.addEventListener('click', () => {
+  researchOpen = !researchOpen;
+  mobileResearchSubmenu.style.maxHeight = researchOpen ? mobileResearchSubmenu.scrollHeight + 'px' : '0';
+  mobileResearchSubmenu.style.opacity = researchOpen ? '1' : '0';
+  mobileResearchIcon.textContent = researchOpen ? '−' : '+';
+  updateMobileMenuHeight(); // 🔹 adjust height
+});
 
-      // Mobile dropdowns
-      const dropdowns = [
-        { toggle: "mobile-research-toggle", submenu: "mobile-research-submenu", icon: "mobile-research-icon" },
-        { toggle: "mobile-breakthroughs-toggle", submenu: "mobile-breakthroughs-submenu", icon: "mobile-breakthroughs-icon" }
-      ];
-      dropdowns.forEach(d => {
-        const toggle = document.getElementById(d.toggle);
-        const submenu = document.getElementById(d.submenu);
-        const icon = document.getElementById(d.icon);
-        toggle.addEventListener("click", e => {
-          e.stopPropagation();
-          submenu.classList.toggle("max-h-0");
-          submenu.classList.toggle("max-h-screen");
-          icon.textContent = icon.textContent === "+" ? "-" : "+";
-        });
-        document.addEventListener("click", e => {
-          if (!toggle.parentElement.contains(e.target)) {
-            submenu.classList.add("max-h-0");
-            submenu.classList.remove("max-h-screen");
-            icon.textContent = "+";
-          }
-        });
-      });
-    });
-  </script>
+// Mobile Breakthroughs Dropdown Toggle
+const mobileBreakthroughsToggle = document.getElementById('mobile-breakthroughs-toggle');
+const mobileBreakthroughsSubmenu = document.getElementById('mobile-breakthroughs-submenu');
+const mobileBreakthroughsIcon = document.getElementById('mobile-breakthroughs-icon');
+let breakthroughsOpen = false;
+mobileBreakthroughsToggle.addEventListener('click', () => {
+  breakthroughsOpen = !breakthroughsOpen;
+  mobileBreakthroughsSubmenu.style.maxHeight = breakthroughsOpen ? mobileBreakthroughsSubmenu.scrollHeight + 'px' : '0';
+  mobileBreakthroughsSubmenu.style.opacity = breakthroughsOpen ? '1' : '0';
+  mobileBreakthroughsIcon.textContent = breakthroughsOpen ? '−' : '+';
+  updateMobileMenuHeight(); // 🔹 adjust height
+});
+</script>
 </body>
 </html>
