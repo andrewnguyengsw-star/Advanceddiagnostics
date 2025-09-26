@@ -275,6 +275,11 @@ menuToggle.addEventListener('click', () => {
   }
 });
 
+// ✅ Helper function to update mobile menu height
+function updateMobileMenuHeight() {
+    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+}
+
 // Mobile Research Dropdown Toggle
 const mobileResearchToggle = document.getElementById('mobile-research-toggle');
 const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
@@ -285,6 +290,7 @@ mobileResearchToggle.addEventListener('click', () => {
   mobileResearchSubmenu.style.maxHeight = researchOpen ? mobileResearchSubmenu.scrollHeight + 'px' : '0';
   mobileResearchSubmenu.style.opacity = researchOpen ? '1' : '0';
   mobileResearchIcon.textContent = researchOpen ? '−' : '+';
+  updateMobileMenuHeight(); // 🔹 adjust height
 });
 
 // Mobile Breakthroughs Dropdown Toggle
@@ -297,8 +303,8 @@ mobileBreakthroughsToggle.addEventListener('click', () => {
   mobileBreakthroughsSubmenu.style.maxHeight = breakthroughsOpen ? mobileBreakthroughsSubmenu.scrollHeight + 'px' : '0';
   mobileBreakthroughsSubmenu.style.opacity = breakthroughsOpen ? '1' : '0';
   mobileBreakthroughsIcon.textContent = breakthroughsOpen ? '−' : '+';
+  updateMobileMenuHeight(); // 🔹 adjust height
 });
 </script>
-
 </body>
 </html>
