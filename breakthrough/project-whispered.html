@@ -38,9 +38,32 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 .aspect-w-16 { position: relative; width: 100%; }
 .aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
 .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* ===== MOBILE DROPDOWN SCROLL ===== */
+#research-mobile,
+#breakthroughs-mobile {
+  max-height: 300px; /* Adjust height as needed */
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+}
+
+#research-mobile::-webkit-scrollbar,
+#breakthroughs-mobile::-webkit-scrollbar {
+  width: 6px; /* Chrome, Safari */
+}
+
+#research-mobile::-webkit-scrollbar-thumb,
+#breakthroughs-mobile::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Optional: subtle shadow to indicate scrollable area */
+#research-mobile,
+#breakthroughs-mobile {
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+}
 </style>
-</head>
-<body>
 
 <!-- Navigation -->
 <header class="sticky top-0 bg-white shadow z-50">
@@ -115,7 +138,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Mobile Research Dropdown -->
       <div class="flex flex-col">
-        <button class="flex justify-between items-center w-full text-lg font-semibold hover:text-cyan-500" onclick="toggleDropdown('research-mobile')">
+        <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('research-mobile')">
           Research
           <svg class="w-4 h-4 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -131,7 +154,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Mobile Breakthroughs Dropdown -->
       <div class="flex flex-col">
-        <button class="flex justify-between items-center w-full text-lg font-semibold hover:text-cyan-500" onclick="toggleDropdown('breakthroughs-mobile')">
+        <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('breakthroughs-mobile')">
           Breakthroughs
           <svg class="w-4 h-4 transition-transform duration-300" id="icon-breakthroughs-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
