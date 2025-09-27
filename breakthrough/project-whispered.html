@@ -236,12 +236,12 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     
     <!-- Responsive YouTube Embed -->
     <div class="aspect-w-16 rounded-xl overflow-hidden shadow-lg border-4 border-cyan-500">
-      <iframe id="whispered-video"
-        src=""
-        data-src="https://www.youtube.com/embed/Pe31_fspo60?autoplay=1&mute=1&loop=1&playlist=Pe31_fspo60"
-        title="YouTube video player" 
+      <iframe 
+        src="https://www.youtube.com/embed/Pe31_fspo60?autoplay=1&mute=1&loop=1&playlist=Pe31_fspo60" 
+        title="Project WHISPERED Video Overview" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allow="autoplay; encrypted-media" 
         allowfullscreen>
       </iframe>
     </div>
@@ -296,21 +296,6 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
 }, { threshold: 0.2 });
 fadeEls.forEach(el => observer.observe(el));
-</script>
-
-<script>
-// Intersection Observer for lazy autoplay
-const videoEl = document.getElementById('whispered-video');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      videoEl.src = videoEl.dataset.src; // load video when in view
-      observer.unobserve(videoEl); // stop observing
-    }
-  });
-}, { threshold: 0.5 });
-
-observer.observe(videoEl);
 </script>
 
 </body>
