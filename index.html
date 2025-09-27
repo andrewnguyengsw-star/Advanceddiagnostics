@@ -283,40 +283,56 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
-  <script>
-    // Fade-in animations
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
-    }, { threshold: 0.2 });
-    fadeEls.forEach(el => observer.observe(el));
+<script>
+  // Fade-in animations
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+  }, { threshold: 0.2 });
+  fadeEls.forEach(el => observer.observe(el));
 
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    let menuOpen = false;
-    menuToggle.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      menuToggle.classList.toggle('open', menuOpen);
-      if (menuOpen) {
-        mobileMenu.classList.add('open');
-        mobileMenu.style.display = 'block';
-        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-        mobileMenu.style.opacity = '1';
-      } else {
-        mobileMenu.classList.remove('open');
-        mobileMenu.style.maxHeight = '0';
-        mobileMenu.style.opacity = '0';
-        setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
-      }
-    });
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+  menuToggle.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    menuToggle.classList.toggle('open', menuOpen);
+    if (menuOpen) {
+      mobileMenu.classList.add('open');
+      mobileMenu.style.display = 'block';
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.style.opacity = '1';
+    } else {
+      mobileMenu.classList.remove('open');
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.opacity = '0';
+      setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+    }
+  });
 
-    // Highlight current page
-    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
-    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-      if (link.getAttribute('href') === currentPage) { link.classList.add('font-semibold', 'underline'); }
-    });
-  </script>
+  // Highlight current page
+  const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+  document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+    if (link.getAttribute('href') === currentPage) { link.classList.add('font-semibold', 'underline'); }
+  });
+
+  // Mobile dropdown toggle function (added here)
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const icon = document.getElementById("icon-" + id);
+
+    if (dropdown.classList.contains("hidden")) {
+      dropdown.classList.remove("hidden");
+      dropdown.classList.add("flex");
+      if (icon) icon.classList.add("rotate-180");
+    } else {
+      dropdown.classList.add("hidden");
+      dropdown.classList.remove("flex");
+      if (icon) icon.classList.remove("rotate-180");
+    }
+  }
+</script>
 
 </body>
 </html>
