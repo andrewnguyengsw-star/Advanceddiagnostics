@@ -58,7 +58,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Research Dropdown -->
       <div class="relative dropdown">
-        <button class="hover:text-cyan-500 transition font-semibold">Research</button>
+        <button class="hover:text-cyan-500 transition">Research</button>
         <div class="dropdown-menu">
           <a href="/research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
           <a href="/research/reverse-aging-serum.html">Reverse-Aging Serum</a>
@@ -69,7 +69,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Breakthroughs Dropdown -->
       <div class="relative dropdown">
-        <button class="hover:text-cyan-500 transition font-semibold">Breakthroughs</button>
+        <button class="hover:text-cyan-500 transition">Breakthroughs</button>
         <div class="dropdown-menu">
           <a href="/breakthrough/project-atlas.html#project-atlas">Project Atlas™</a>
           <a href="/breakthrough/project-sentinel.html#project-sentinel">Project Sentinel™</a>
@@ -296,6 +296,26 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
 }, { threshold: 0.2 });
 fadeEls.forEach(el => observer.observe(el));
+
+// Highlight current page and dropdown sections
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+// Function to highlight active link
+function highlightLink(link) {
+  link.classList.add("font-semibold", "underline");
+}
+
+document.querySelectorAll("#desktop-menu a").forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    highlightLink(link);
+
+    // If inside a dropdown, also bold the dropdown button
+    const dropdown = link.closest(".dropdown");
+    if (dropdown) {
+      dropdown.querySelector("button").classList.add("font-semibold", "underline");
+    }
+  }
+});
 </script>
 
 </body>
