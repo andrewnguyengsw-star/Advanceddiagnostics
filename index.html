@@ -69,7 +69,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 <header class="sticky top-0 bg-white shadow z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
     <a href="/index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
-    
+
     <!-- Desktop Menu -->
     <nav class="hidden sm:flex space-x-6" id="desktop-menu">
       <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
@@ -81,7 +81,12 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Research Dropdown -->
       <div class="relative dropdown">
-        <button class="hover:text-cyan-500 transition">Research</button>
+        <a href="/research.html" class="hover:text-cyan-500 transition flex items-center">
+          Research
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
         <div class="dropdown-menu">
           <a href="/research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
           <a href="/research/reverse-aging-serum.html">Reverse-Aging Serum</a>
@@ -92,7 +97,12 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Breakthroughs Dropdown -->
       <div class="relative dropdown">
-        <button class="hover:text-cyan-500 transition">Breakthroughs</button>
+        <a href="/breakthroughs.html" class="hover:text-cyan-500 transition flex items-center">
+          Breakthroughs
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
         <div class="dropdown-menu">
           <a href="/breakthrough/project-atlas.html#project-atlas">Project Atlas™</a>
           <a href="/breakthrough/project-sentinel.html#project-sentinel">Project Sentinel™</a>
@@ -126,7 +136,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     </div>
   </div>
 
-  <!-- Modern Mobile Menu -->
+  <!-- Mobile Menu -->
   <nav id="mobile-menu" class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40">
     <div class="flex flex-col p-4 space-y-4">
       <a href="/index.html" class="text-lg font-medium hover:text-cyan-500">Home</a>
@@ -138,8 +148,8 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Mobile Research Dropdown -->
       <div class="flex flex-col">
+        <a href="/research.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Research</a>
         <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('research-mobile')">
-          Research
           <svg class="w-4 h-4 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
@@ -154,8 +164,8 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Mobile Breakthroughs Dropdown -->
       <div class="flex flex-col">
+        <a href="/breakthroughs.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Breakthroughs</a>
         <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('breakthroughs-mobile')">
-          Breakthroughs
           <svg class="w-4 h-4 transition-transform duration-300" id="icon-breakthroughs-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
@@ -287,7 +297,9 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   // Fade-in animations
   const fadeEls = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+    });
   }, { threshold: 0.2 });
   fadeEls.forEach(el => observer.observe(el));
 
@@ -298,6 +310,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   menuToggle.addEventListener('click', () => {
     menuOpen = !menuOpen;
     menuToggle.classList.toggle('open', menuOpen);
+
     if (menuOpen) {
       mobileMenu.classList.add('open');
       mobileMenu.style.display = 'block';
@@ -307,28 +320,44 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
       mobileMenu.classList.remove('open');
       mobileMenu.style.maxHeight = '0';
       mobileMenu.style.opacity = '0';
-      setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
+      setTimeout(() => {
+        if (!menuOpen) mobileMenu.style.display = 'none';
+      }, 300);
     }
   });
 
   // Highlight current page
-  const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
   document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-    if (link.getAttribute('href') === currentPage) { link.classList.add('font-semibold', 'underline'); }
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage || linkHref === currentPath) {
+      link.classList.add('font-semibold', 'underline');
+    }
   });
 
-  // Mobile dropdown toggle function (added here)
+  // Mobile dropdown toggle function
   function toggleDropdown(id) {
     const dropdown = document.getElementById(id);
     const icon = document.getElementById("icon-" + id);
 
-    if (dropdown.classList.contains("hidden")) {
+    if (!dropdown) return;
+
+    const isHidden = dropdown.classList.contains("hidden");
+
+    // Animate dropdown open/close
+    if (isHidden) {
       dropdown.classList.remove("hidden");
       dropdown.classList.add("flex");
+      dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+      dropdown.style.transition = "max-height 0.3s ease";
       if (icon) icon.classList.add("rotate-180");
     } else {
-      dropdown.classList.add("hidden");
-      dropdown.classList.remove("flex");
+      dropdown.style.maxHeight = "0";
+      setTimeout(() => {
+        dropdown.classList.add("hidden");
+        dropdown.classList.remove("flex");
+      }, 300);
       if (icon) icon.classList.remove("rotate-180");
     }
   }
