@@ -28,6 +28,32 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 #menu-toggle.open span:nth-child(2) { opacity: 0; }
 #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+/* ===== DESKTOP BREAKTHROUGHS DROPDOWN SCROLL ===== */
+.dropdown-menu {
+  max-height: 400px; /* Limit dropdown height */
+  overflow-y: auto; /* Enable vertical scroll */
+  scrollbar-width: thin; /* Firefox */
+}
+
+/* Chrome, Safari scrollbar */
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Optional subtle shadow for scroll depth */
+.dropdown-menu {
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+}
+
 /* Dropdown */
 .dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ddd; border-radius: 0.5rem; width: 14rem; z-index: 50; }
 .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
@@ -46,36 +72,21 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   overflow-y: auto;
   scrollbar-width: thin; /* Firefox */
 }
+
 #research-mobile::-webkit-scrollbar,
 #breakthroughs-mobile::-webkit-scrollbar {
   width: 6px; /* Chrome, Safari */
 }
+
 #research-mobile::-webkit-scrollbar-thumb,
 #breakthroughs-mobile::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
 }
+
 /* Optional: subtle shadow to indicate scrollable area */
 #research-mobile,
 #breakthroughs-mobile {
-  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
-}
-
-/* ===== DESKTOP BREAKTHROUGHS DROPDOWN SCROLL ===== */
-#desktop-menu .dropdown:nth-child(7) .dropdown-menu {
-  max-height: 400px; /* adjust height as needed */
-  overflow-y: auto;
-  scrollbar-width: thin; /* Firefox */
-}
-#desktop-menu .dropdown:nth-child(7) .dropdown-menu::-webkit-scrollbar {
-  width: 6px; /* Chrome, Safari */
-}
-#desktop-menu .dropdown:nth-child(7) .dropdown-menu::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-/* Optional: subtle shadow to indicate scrollable area */
-#desktop-menu .dropdown:nth-child(7) .dropdown-menu {
   box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
 }
 </style>
@@ -84,7 +95,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 <header class="sticky top-0 bg-white shadow z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
     <a href="/index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
-    
+
     <!-- Desktop Menu -->
     <nav class="hidden sm:flex space-x-6" id="desktop-menu">
       <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
@@ -96,7 +107,12 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Research Dropdown -->
       <div class="relative dropdown">
-        <button class="hover:text-cyan-500 transition">Research</button>
+        <a href="/research.html" class="hover:text-cyan-500 transition flex items-center">
+          Research
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
         <div class="dropdown-menu">
           <a href="/research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
           <a href="/research/reverse-aging-serum.html">Reverse-Aging Serum</a>
@@ -107,29 +123,34 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Breakthroughs Dropdown -->
       <div class="relative dropdown">
-        <button class="hover:text-cyan-500 transition">Breakthroughs</button>
+        <a href="/breakthroughs.html" class="hover:text-cyan-500 transition flex items-center">
+          Breakthroughs
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
         <div class="dropdown-menu">
-          <a href="/breakthrough/project-atlas.html#project-atlas">Project Atlas™</a>
-          <a href="/breakthrough/project-sentinel.html#project-sentinel">Project Sentinel™</a>
-          <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface">Project Remote Neural Interface™</a>
-          <a href="/breakthrough/project-synapse.html#project-synapse">Project Synapse</a>
-          <a href="/breakthrough/human-biosonar.html#human-biosonar">Human Biosonar</a>
-          <a href="/breakthrough/enhanced-senses.html#enhanced-senses">Enhanced Senses</a>
-          <a href="/breakthrough/danger-detection.html#danger-detection">Danger Detection</a>
-          <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance">Electrocution Resistance</a>
-          <a href="/breakthrough/particle-control.html#particle-control">Particle Control</a>
-          <a href="/breakthrough/efr.html#efr">EFR</a>
-          <a href="/breakthrough/neuroception.html#neuroception">Neuroception</a>
-          <a href="/breakthrough/sanguivigilance.html#sanguivigilance">Sanguivigilance</a>
-          <a href="/breakthrough/exosight.html#exosight">ExoSight™</a>
-          <a href="/breakthrough/project-echo.html#project-echo">Project ECHO™</a>
-          <a href="/breakthrough/project-lucid.html#project-lucid">Project LUCID™</a>
-          <a href="/breakthrough/project-vigor.html#project-vigor">Project VIGOR™</a>
-          <a href="/breakthrough/project-stormcore.html#project-stormcore">Project STORMCORE™</a>
-          <a href="/breakthrough/project-whispered.html#project-whispered">Project: WHISPERED™</a>
-        </div>
-      </div>
-    </nav>
+    <a href="/breakthrough/project-atlas.html#project-atlas">Project Atlas™</a>
+    <a href="/breakthrough/project-sentinel.html#project-sentinel">Project Sentinel™</a>
+    <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface">Project Remote Neural Interface™</a>
+    <a href="/breakthrough/project-synapse.html#project-synapse">Project Synapse</a>
+    <a href="/breakthrough/human-biosonar.html#human-biosonar">Human Biosonar</a>
+    <a href="/breakthrough/enhanced-senses.html#enhanced-senses">Enhanced Senses</a>
+    <a href="/breakthrough/danger-detection.html#danger-detection">Danger Detection</a>
+    <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance">Electrocution Resistance</a>
+    <a href="/breakthrough/particle-control.html#particle-control">Particle Control</a>
+    <a href="/breakthrough/efr.html#efr">EFR</a>
+    <a href="/breakthrough/neuroception.html#neuroception">Neuroception</a>
+    <a href="/breakthrough/sanguivigilance.html#sanguivigilance">Sanguivigilance</a>
+    <a href="/breakthrough/exosight.html#exosight">ExoSight™</a>
+    <a href="/breakthrough/project-echo.html#project-echo">Project ECHO™</a>
+    <a href="/breakthrough/project-lucid.html#project-lucid">Project LUCID™</a>
+    <a href="/breakthrough/project-vigor.html#project-vigor">Project VIGOR™</a>
+    <a href="/breakthrough/project-stormcore.html#project-stormcore">Project STORMCORE™</a>
+    <a href="/breakthrough/project-whispered.html#project-whispered">Project: WHISPERED™</a>
+    <a href="/breakthrough/superconductivity.html#superconductivity">Project SUPERCONDUCTIVITY</a>
+  </div>
+</div>
 
     <!-- Mobile Menu Button -->
     <div class="sm:hidden">
@@ -141,7 +162,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     </div>
   </div>
 
-  <!-- Modern Mobile Menu -->
+  <!-- Mobile Menu -->
   <nav id="mobile-menu" class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40">
     <div class="flex flex-col p-4 space-y-4">
       <a href="/index.html" class="text-lg font-medium hover:text-cyan-500">Home</a>
@@ -153,8 +174,8 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Mobile Research Dropdown -->
       <div class="flex flex-col">
+        <a href="/research.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Research</a>
         <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('research-mobile')">
-          Research
           <svg class="w-4 h-4 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
@@ -169,8 +190,8 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
       <!-- Mobile Breakthroughs Dropdown -->
       <div class="flex flex-col">
+        <a href="/breakthroughs.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Breakthroughs</a>
         <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('breakthroughs-mobile')">
-          Breakthroughs
           <svg class="w-4 h-4 transition-transform duration-300" id="icon-breakthroughs-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
@@ -194,11 +215,13 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
           <a href="/breakthrough/project-vigor.html#project-vigor" class="hover:text-cyan-500">Project VIGOR™</a>
           <a href="/breakthrough/project-stormcore.html#project-stormcore" class="hover:text-cyan-500">Project STORMCORE™</a>
           <a href="/breakthrough/project-whispered.html#project-whispered" class="hover:text-cyan-500">Project: WHISPERED™</a>
+          <a href="/breakthrough/superconductivity.html#superconductivity" class="hover:text-cyan-500">Project SUPERCONDUCTIVITY</a>
         </div>
       </div>
     </div>
   </nav>
 </header>
+
 
 <!-- Hero Section -->
 <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-purple-700 via-cyan-600 to-indigo-900 text-white">
@@ -226,14 +249,15 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     </div>
     <div>
       <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-l-4 border-cyan-500">
-        <h3 class="text-2xl font-bold text-cyan-500 mb-3">A Double-Edged Sword</h3>
+        <h3 class="text-2xl font-bold text-cyan-500 mb-3">Temporal Engineering</h3>
         <p class="leading-relaxed text-gray-900">
-          Project: WHISPERED™ embodies informational time travel — accelerating progress by centuries. Yet their knowledge carries ethical dilemmas, destabilizing power balances and blurring the boundaries of identity, science, and morality.
+          Project: WHISPERED™ transforms whispers from the future into engineered realities today. Temporal engineering is the art and science of applying advanced concepts across time — turning visions of tomorrow into breakthroughs of today.
         </p>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- Technology Examples -->
 <section class="py-20 px-6 bg-gray-100 text-black fade-in">
