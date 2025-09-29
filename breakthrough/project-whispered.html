@@ -233,39 +233,42 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 </section>
 
 <!-- Research Overview -->
-<section id="project-whispered" class="relative py-20 fade-in">
-  <!-- Background Image -->
+<section id="project-whispered" class="relative w-full min-h-screen fade-in">
+  <!-- Background Image with Gradient Overlay -->
   <div class="absolute inset-0">
-    <img src="project-whispered_img2.png" alt="Inside Project Whispered"
-         class="w-full h-full object-cover opacity-60">
-    <div class="absolute inset-0 bg-gradient-to-r from-purple-800 via-cyan-700 to-indigo-900 opacity-50"></div>
+    <img src="project-whispered_img2.png" 
+         alt="Inside Project Whispered" 
+         class="w-full h-full object-cover object-center">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-purple-900/60 to-black/70"></div>
   </div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-cyan-500">Inside Project: WHISPERED™</h2>
-    <p class="text-gray-100 text-center text-lg mb-12">
+  <div class="relative max-w-7xl mx-auto px-6 py-20">
+    <h2 class="text-4xl sm:text-5xl font-extrabold mb-6 text-center text-white drop-shadow-lg tracking-wide">
+      Inside Project: <span class="text-cyan-400">WHISPERED™</span>
+    </h2>
+
+    <p class="text-gray-200 text-center text-lg mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
       Project: WHISPERED™ seeks to create individuals who can subconsciously receive knowledge from a possible future — enabling the creation of technologies centuries ahead of their time.
     </p>
-    <div class="grid md:grid-cols-2 gap-12 items-center relative">
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
       <!-- Text Column -->
       <div class="space-y-6">
-        <p class="text-gray-100 text-lg leading-relaxed">
+        <p class="text-gray-200 text-lg leading-relaxed drop-shadow-md">
           Their insights are not learned but embedded — arriving as flashes of schematics, intuitive physics, and visions of engineering brilliance. Acting as human antennas, they bridge present limitations with future breakthroughs.
         </p>
-        <p class="text-gray-100 text-lg leading-relaxed">
-          This phenomenon results in <strong>Black Technology</strong>: advancements so profound they appear impossible, including AI, quantum systems, cloaking fields, and interstellar propulsion.
+        <p class="text-gray-200 text-lg leading-relaxed drop-shadow-md">
+          This phenomenon results in <span class="text-cyan-300 font-semibold">Black Technology</span>: advancements so profound they appear impossible, including AI, quantum systems, cloaking fields, and interstellar propulsion.
         </p>
       </div>
 
       <!-- Card Column -->
-      <div class="relative flex justify-center items-center">
-        <div class="bg-gray-50 p-8 rounded-xl shadow-lg border-l-4 border-cyan-500 max-w-sm">
-          <h3 class="text-2xl font-bold text-cyan-500 mb-3">Temporal Engineering</h3>
-          <p class="leading-relaxed text-gray-900">
-            Project: WHISPERED™ transforms whispers from the future into engineered realities today. Temporal engineering is the art and science of applying advanced concepts across time — turning visions of tomorrow into breakthroughs of today.
-          </p>
-        </div>
+      <div class="bg-black/50 p-8 rounded-xl shadow-xl border-l-4 border-cyan-500 relative z-10">
+        <h3 class="text-2xl font-bold text-cyan-400 mb-3">Temporal Engineering</h3>
+        <p class="leading-relaxed text-gray-200">
+          Project: WHISPERED™ transforms whispers from the future into engineered realities today. Temporal engineering is the art and science of applying advanced concepts across time — turning visions of tomorrow into breakthroughs of today.
+        </p>
       </div>
     </div>
   </div>
