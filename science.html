@@ -28,6 +28,32 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 #menu-toggle.open span:nth-child(2) { opacity: 0; }
 #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+/* ===== DESKTOP BREAKTHROUGHS DROPDOWN SCROLL ===== */
+.dropdown-menu {
+  max-height: 400px; /* Limit dropdown height */
+  overflow-y: auto; /* Enable vertical scroll */
+  scrollbar-width: thin; /* Firefox */
+}
+
+/* Chrome, Safari scrollbar */
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Optional subtle shadow for scroll depth */
+.dropdown-menu {
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+}
+
 /* Dropdown */
 .dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ddd; border-radius: 0.5rem; width: 14rem; z-index: 50; }
 .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
@@ -74,8 +100,6 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     <nav class="hidden sm:flex space-x-6" id="desktop-menu">
       <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
       <a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
-      <a href="/quantum-application.html" class="hover:text-cyan-500 transition">Quantum Application</a>
-      <a href="/quantum-neural-mapping.html" class="hover:text-cyan-500 transition">Quantum Neural Mapping</a>
       <a href="/case-study.html" class="hover:text-cyan-500 transition">Case Study</a>
       <a href="/impact.html" class="hover:text-cyan-500 transition">Impact</a>
 
@@ -104,27 +128,27 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
           </svg>
         </a>
         <div class="dropdown-menu">
-    <a href="/breakthrough/project-atlas.html#project-atlas">Project Atlas™</a>
-    <a href="/breakthrough/project-sentinel.html#project-sentinel">Project Sentinel™</a>
-    <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface">Project Remote Neural Interface™</a>
-    <a href="/breakthrough/project-synapse.html#project-synapse">Project Synapse</a>
-    <a href="/breakthrough/human-biosonar.html#human-biosonar">Human Biosonar</a>
-    <a href="/breakthrough/enhanced-senses.html#enhanced-senses">Enhanced Senses</a>
-    <a href="/breakthrough/danger-detection.html#danger-detection">Danger Detection</a>
-    <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance">Electrocution Resistance</a>
-    <a href="/breakthrough/particle-control.html#particle-control">Particle Control</a>
-    <a href="/breakthrough/efr.html#efr">EFR</a>
-    <a href="/breakthrough/neuroception.html#neuroception">Neuroception</a>
-    <a href="/breakthrough/sanguivigilance.html#sanguivigilance">Sanguivigilance</a>
-    <a href="/breakthrough/exosight.html#exosight">ExoSight™</a>
-    <a href="/breakthrough/project-echo.html#project-echo">Project ECHO™</a>
-    <a href="/breakthrough/project-lucid.html#project-lucid">Project LUCID™</a>
-    <a href="/breakthrough/project-vigor.html#project-vigor">Project VIGOR™</a>
-    <a href="/breakthrough/project-stormcore.html#project-stormcore">Project STORMCORE™</a>
-    <a href="/breakthrough/project-whispered.html#project-whispered">Project: WHISPERED™</a>
-    <a href="/breakthrough/superconductivity.html#superconductivity">Project SUPERCONDUCTIVITY</a>
-  </div>
-</div>
+          <a href="/breakthrough/project-atlas.html#project-atlas">Project Atlas™</a>
+          <a href="/breakthrough/project-sentinel.html#project-sentinel">Project Sentinel™</a>
+          <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface">Project Remote Neural Interface™</a>
+          <a href="/breakthrough/project-synapse.html#project-synapse">Project Synapse</a>
+          <a href="/breakthrough/human-biosonar.html#human-biosonar">Human Biosonar</a>
+          <a href="/breakthrough/enhanced-senses.html#enhanced-senses">Enhanced Senses</a>
+          <a href="/breakthrough/danger-detection.html#danger-detection">Danger Detection</a>
+          <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance">Electrocution Resistance</a>
+          <a href="/breakthrough/particle-control.html#particle-control">Particle Control</a>
+          <a href="/breakthrough/efr.html#efr">EFR</a>
+          <a href="/breakthrough/neuroception.html#neuroception">Neuroception</a>
+          <a href="/breakthrough/sanguivigilance.html#sanguivigilance">Sanguivigilance</a>
+          <a href="/breakthrough/exosight.html#exosight">ExoSight™</a>
+          <a href="/breakthrough/project-echo.html#project-echo">Project ECHO™</a>
+          <a href="/breakthrough/project-lucid.html#project-lucid">Project LUCID™</a>
+          <a href="/breakthrough/project-vigor.html#project-vigor">Project VIGOR™</a>
+          <a href="/breakthrough/project-stormcore.html#project-stormcore">Project STORMCORE™</a>
+          <a href="/breakthrough/project-whispered.html#project-whispered">Project: WHISPERED™</a>
+          <a href="/breakthrough/superconductivity.html#superconductivity">Project SUPERCONDUCTIVITY</a>
+        </div>
+      </div>
 
     <!-- Mobile Menu Button -->
     <div class="sm:hidden">
@@ -141,8 +165,6 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     <div class="flex flex-col p-4 space-y-4">
       <a href="/index.html" class="text-lg font-medium hover:text-cyan-500">Home</a>
       <a href="/science.html" class="text-lg font-medium hover:text-cyan-500">Science</a>
-      <a href="/quantum-application.html" class="text-lg font-medium hover:text-cyan-500">Quantum Application</a>
-      <a href="/quantum-neural-mapping.html" class="text-lg font-medium hover:text-cyan-500">Quantum Neural Mapping</a>
       <a href="/case-study.html" class="text-lg font-medium hover:text-cyan-500">Case Study</a>
       <a href="/impact.html" class="text-lg font-medium hover:text-cyan-500">Impact</a>
 
@@ -196,64 +218,139 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   </nav>
 </header>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-blue-50">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">The Science Behind AECION</h1>
-    <p class="text-lg md:text-xl text-gray-700 max-w-3xl mb-6 fade-in" style="animation-delay:0.4s;">
-      Explore the scientific foundations and quantum principles that drive the AECION Quantum Health Platform.
+
+<!-- Unified Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-black via-gray-900 to-black">
+  <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in text-white" style="animation-delay:0.2s;">
+    The Science Behind AECION: Quantum Computing & Human Health
+  </h1>
+  <p class="text-md sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 fade-in" style="animation-delay:0.4s;">
+    Explore the scientific foundations and quantum principles driving the AECION Quantum Health Platform — harnessing quantum entanglement to decode disease pathology and drug metabolism, transforming the future of medicine.
+  </p>
+  <a href="#learn-more" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in" style="animation-delay:0.6s;">
+    Learn More
+  </a>
+</section>
+
+<!-- Section 1: Scientific Capabilities -->
+<section id="learn-more" class="py-20 px-6 max-w-7xl mx-auto fade-in">
+  <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-cyan-400">Scientific Capabilities</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="capability-card">
+      <div class="placeholder-img mb-4">Quantum Entanglement Image</div>
+      <h3 class="text-xl font-semibold mb-2">Quantum Entanglement</h3>
+      <p>Process complex interactions simultaneously using entangled qubits to accelerate analysis and reduce R&D timelines.</p>
+    </div>
+    <div class="capability-card">
+      <div class="placeholder-img mb-4">Superposition Image</div>
+      <h3 class="text-xl font-semibold mb-2">Superposition Modeling</h3>
+      <p>Simultaneously model multiple disease and drug pathways to identify promising candidates and reduce failures.</p>
+    </div>
+    <div class="capability-card">
+      <div class="placeholder-img mb-4">Microenvironment Analytics Image</div>
+      <h3 class="text-xl font-semibold mb-2">Microenvironment Analytics</h3>
+      <p>Track subtle cellular deviations affecting chemical signaling for high-resolution predictions and biomarker discovery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: What is Quantum Computing? -->
+<section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
+  <div class="md:w-1/2">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">What is Quantum Computing?</h2>
+    <p class="text-black-300 mb-4">
+      Quantum computing uses qubits instead of classical bits. Through superposition and entanglement, quantum systems can process many possibilities at once, making them ideal for solving highly complex problems.
     </p>
-    <a href="#cta" class="glass-btn fade-in" style="animation-delay:0.6s;">Request a Science Briefing</a>
-    <div class="placeholder-img mt-8 fade-in" style="animation-delay:0.8s;">Hero Image Placeholder</div>
-  </section>
+    <p class="text-black-300 font-semibold">Graphic Idea: Classical bits (0/1) vs. Qubits (0 + 1 at once)</p>
+  </div>
+  <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-2xl flex items-center justify-center shadow-lg">
+    <span class="text-gray-300">[Graphic Placeholder]</span>
+  </div>
+</section>
 
-  <!-- Capabilities Section -->
-  <section class="py-20 px-6 max-w-7xl mx-auto fade-in">
-    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-800">Scientific Capabilities</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="capability-card">
-        <div class="placeholder-img mb-4">Quantum Entanglement Image</div>
-        <h3 class="text-xl font-semibold mb-2">Quantum Entanglement</h3>
-        <p>Process complex interactions simultaneously using entangled qubits to accelerate analysis and reduce R&D timelines.</p>
-      </div>
-      <div class="capability-card">
-        <div class="placeholder-img mb-4">Superposition Image</div>
-        <h3 class="text-xl font-semibold mb-2">Superposition Modeling</h3>
-        <p>Simultaneously model multiple disease and drug pathways to identify promising candidates and reduce failures.</p>
-      </div>
-      <div class="capability-card">
-        <div class="placeholder-img mb-4">Microenvironment Analytics Image</div>
-        <h3 class="text-xl font-semibold mb-2">Microenvironment Analytics</h3>
-        <p>Track subtle cellular deviations affecting chemical signaling for high-resolution predictions and biomarker discovery.</p>
-      </div>
+<div class="section-divider"></div>
+
+<!-- Section 3: Understanding Complexity -->
+<section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12 md:flex-row-reverse">
+  <div class="md:w-1/2">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Understanding Complexity</h2>
+    <p class="text-black-300 mb-4">Complexity measures how difficult something is to solve or predict.</p>
+    <p class="text-black-300 mb-4">In computer science: Resources (time, memory) needed to solve problems, expressed in Big-O notation.</p>
+    <p class="text-black-300 mb-4">In systems science: Complexity grows when many parts interact unpredictably (e.g., weather, biology).</p>
+    <p class="text-black-300 font-semibold">Graphic Idea: Simple pendulum → Weather system (low → high complexity)</p>
+  </div>
+  <div class="md:w-1/2 mt-8 md:mt-0 bg-black-700 h-64 rounded-2xl flex items-center justify-center shadow-lg">
+    <span class="text-black-300">[Graphic Placeholder]</span>
+  </div>
+</section>
+
+  <!-- Section 4: Why Complexity Matters -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Why Complexity Matters</h2>
+      <p class="text-black-300 mb-4">Classical computers struggle with exponential complexity (like simulating molecules).</p>
+      <p class="text-black-300 mb-4">Quantum computing can shift complexity boundaries, making the impossible solvable.</p>
+      <ul class="list-disc list-inside text-black-300 space-y-2">
+        <li>Shor’s Algorithm: Efficient factoring</li>
+        <li>Grover’s Algorithm: Accelerates searching</li>
+        <li>Quantum simulations: Model chemistry and biology</li>
+      </ul>
+      <p class="text-black-300 font-semibold mt-2">Tagline: Quantum extends what’s possible beyond classical limits.</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-2xl flex items-center justify-center shadow-lg">
+      <span class="text-black-300">[Graphic Placeholder]</span>
+    </div>
+  </section>
+  
+  <div class="section-divider"></div>
+
+  <!-- Section 5: Harnessing Quantum Entanglement for Health -->
+  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12 md:flex-row-reverse">
+    <div class="md:w-1/2">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Harnessing Quantum Entanglement for Health</h2>
+      <p class="text-black-300 mb-4">
+        Diseases and drugs trigger microenvironment deviations, altering chemical signaling and reshaping cellular responses.
+      </p>
+      <p class="text-black-300 mb-4">
+        We model these deviations using quantum entanglement to offer new insights into disease pathology and drug metabolism.
+      </p>
+      <p class="text-black-300 font-semibold mt-2">Living the Quantum Dream: modeling complex systems, simulating biology, unlocking predictive insights.</p>
+    </div>
+    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-2xl flex items-center justify-center shadow-lg">
+      <span class="text-gray-300">[Graphic Placeholder]</span>
     </div>
   </section>
 
-  <!-- Workflow Section -->
-  <section class="py-20 px-6 max-w-7xl mx-auto fade-in bg-white rounded-xl shadow">
-    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-800">From Data to Actionable Insights</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="capability-card">
-        <div class="placeholder-img mb-4">Data Capture Image</div>
-        <h3 class="text-xl font-semibold mb-2">High-Fidelity Data Capture</h3>
-        <p>Ingest complex multi-modal data including patient-level observations and chemical signals.</p>
-      </div>
-      <div class="capability-card">
-        <div class="placeholder-img mb-4">Modeling Image</div>
-        <h3 class="text-xl font-semibold mb-2">Predictive Biological Modeling</h3>
-        <p>Create sophisticated models to simulate drug and disease perturbations across the microenvironment.</p>
-      </div>
-      <div class="capability-card">
-        <div class="placeholder-img mb-4">Quantum Analytics Image</div>
-        <h3 class="text-xl font-semibold mb-2">Quantum Analytics</h3>
-        <p>Apply quantum-inspired algorithms for rapid and scalable processing beyond classical methods.</p>
-      </div>
-      <div class="capability-card">
-        <div class="placeholder-img mb-4">Insight Delivery Image</div>
-        <h3 class="text-xl font-semibold mb-2">Insight Delivery</h3>
-        <p>Deliver actionable intelligence for clinical, research, and commercial decision-making.</p>
-      </div>
+<!-- Section 6: From Data to Actionable Insights -->
+<section class="py-20 px-6 max-w-7xl mx-auto fade-in bg-white rounded-xl shadow">
+  <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-800">From Data to Actionable Insights</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="capability-card">
+      <div class="placeholder-img mb-4">Data Capture Image</div>
+      <h3 class="text-xl font-semibold mb-2">High-Fidelity Data Capture</h3>
+      <p>Ingest complex multi-modal data including patient-level observations and chemical signals.</p>
     </div>
-  </section>
+    <div class="capability-card">
+      <div class="placeholder-img mb-4">Modeling Image</div>
+      <h3 class="text-xl font-semibold mb-2">Predictive Biological Modeling</h3>
+      <p>Create sophisticated models to simulate drug and disease perturbations across the microenvironment.</p>
+    </div>
+    <div class="capability-card">
+      <div class="placeholder-img mb-4">Quantum Analytics Image</div>
+      <h3 class="text-xl font-semibold mb-2">Quantum Analytics</h3>
+      <p>Apply quantum-inspired algorithms for rapid and scalable processing beyond classical methods.</p>
+    </div>
+    <div class="capability-card">
+      <div class="placeholder-img mb-4">Insight Delivery Image</div>
+      <h3 class="text-xl font-semibold mb-2">Insight Delivery</h3>
+      <p>Deliver actionable intelligence for clinical, research, and commercial decision-making.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="section-divider"></div>
+
 
   <!-- CTA Section -->
   <section id="cta" class="py-20 px-6 max-w-6xl mx-auto text-center fade-in">
