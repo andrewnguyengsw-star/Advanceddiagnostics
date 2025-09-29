@@ -28,6 +28,32 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 #menu-toggle.open span:nth-child(2) { opacity: 0; }
 #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
+/* ===== DESKTOP BREAKTHROUGHS DROPDOWN SCROLL ===== */
+.dropdown-menu {
+  max-height: 400px; /* Limit dropdown height */
+  overflow-y: auto; /* Enable vertical scroll */
+  scrollbar-width: thin; /* Firefox */
+}
+
+/* Chrome, Safari scrollbar */
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Optional subtle shadow for scroll depth */
+.dropdown-menu {
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+}
+
 /* Dropdown */
 .dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ddd; border-radius: 0.5rem; width: 14rem; z-index: 50; }
 .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
