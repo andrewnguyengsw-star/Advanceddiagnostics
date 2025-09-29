@@ -22,182 +22,371 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-  <!-- TailwindCSS & Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
-    
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
-    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
-    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
-    #mobile-menu.open { display: block; }
+/* Fade-in animations */
+.fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    #menu-toggle.open span:nth-child(2) { opacity: 0; }
-    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+/* Buttons */
+.btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+.btn-primary:hover { transform: translateY(-2px) scale(1.03); }
+.btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+.btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
 
-    .glass-btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease; }
-    .glass-btn:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px) scale(1.02); }
-    
-    .section-divider { height: 2px; background: linear-gradient(to right, #00ffff, #8a2be2); margin: 4rem 0; }
-  </style>
-</head>
-<body>
+/* Navigation */
+#mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+#mobile-menu.open { display: block; max-height: 100vh; opacity: 1; }
+#menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#menu-toggle.open span:nth-child(2) { opacity: 0; }
+#menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-  <!-- Navigation -->
-  <header class="sticky top-0 bg-black bg-opacity-90 border-b border-gray-700 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <a href="index.html" class="text-2xl font-bold hover:text-cyan-400 transition">AECION</a>
-      <nav class="hidden sm:flex space-x-6" id="desktop-menu">
-        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
-        <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
-      </nav>
-      <div class="sm:hidden">
-        <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-500">
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out my-1"></span>
-          <span class="block w-6 h-0.5 bg-white transition-transform duration-300 ease-in-out"></span>
+/* ===== DESKTOP BREAKTHROUGHS DROPDOWN SCROLL ===== */
+.dropdown-menu {
+  max-height: 400px; /* Limit dropdown height */
+  overflow-y: auto; /* Enable vertical scroll */
+  scrollbar-width: thin; /* Firefox */
+}
+
+/* Chrome, Safari scrollbar */
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Optional subtle shadow for scroll depth */
+.dropdown-menu {
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+}
+
+/* Dropdown */
+.dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ddd; border-radius: 0.5rem; width: 14rem; z-index: 50; }
+.dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+.dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
+.dropdown-menu a:hover { background: #f0f0f0; }
+
+/* Aspect ratio for video */
+.aspect-w-16 { position: relative; width: 100%; }
+.aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
+.aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* ===== MOBILE DROPDOWN SCROLL ===== */
+#research-mobile,
+#breakthroughs-mobile {
+  max-height: 300px; /* Adjust height as needed */
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+}
+
+#research-mobile::-webkit-scrollbar,
+#breakthroughs-mobile::-webkit-scrollbar {
+  width: 6px; /* Chrome, Safari */
+}
+
+#research-mobile::-webkit-scrollbar-thumb,
+#breakthroughs-mobile::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Optional: subtle shadow to indicate scrollable area */
+#research-mobile,
+#breakthroughs-mobile {
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+}
+</style>
+
+<!-- Navigation -->
+<header class="sticky top-0 bg-white shadow z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="/index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+      <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
+      <a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="/case-study.html" class="hover:text-cyan-500 transition">Case Study</a>
+      <a href="/impact.html" class="hover:text-cyan-500 transition">Impact</a>
+
+      <!-- Research Dropdown -->
+      <div class="relative dropdown">
+        <a href="/research.html" class="hover:text-cyan-500 transition flex items-center">
+          Research
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
+          <a href="/research/reverse-aging-serum.html">Reverse-Aging Serum</a>
+          <a href="/research/super-soldier-serum.html">Super Soldier Serum</a>
+          <a href="/research/black-technology.html">Black Technology</a>
+        </div>
+      </div>
+
+      <!-- Breakthroughs Dropdown -->
+      <div class="relative dropdown">
+        <a href="/breakthroughs.html" class="hover:text-cyan-500 transition flex items-center">
+          Breakthroughs
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/breakthrough/project-atlas.html#project-atlas">Project Atlas™</a>
+          <a href="/breakthrough/project-sentinel.html#project-sentinel">Project Sentinel™</a>
+          <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface">Project Remote Neural Interface™</a>
+          <a href="/breakthrough/project-synapse.html#project-synapse">Project Synapse</a>
+          <a href="/breakthrough/human-biosonar.html#human-biosonar">Human Biosonar</a>
+          <a href="/breakthrough/enhanced-senses.html#enhanced-senses">Enhanced Senses</a>
+          <a href="/breakthrough/danger-detection.html#danger-detection">Danger Detection</a>
+          <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance">Electrocution Resistance</a>
+          <a href="/breakthrough/particle-control.html#particle-control">Particle Control</a>
+          <a href="/breakthrough/efr.html#efr">EFR</a>
+          <a href="/breakthrough/neuroception.html#neuroception">Neuroception</a>
+          <a href="/breakthrough/sanguivigilance.html#sanguivigilance">Sanguivigilance</a>
+          <a href="/breakthrough/exosight.html#exosight">ExoSight™</a>
+          <a href="/breakthrough/project-echo.html#project-echo">Project ECHO™</a>
+          <a href="/breakthrough/project-lucid.html#project-lucid">Project LUCID™</a>
+          <a href="/breakthrough/project-vigor.html#project-vigor">Project VIGOR™</a>
+          <a href="/breakthrough/project-stormcore.html#project-stormcore">Project STORMCORE™</a>
+          <a href="/breakthrough/project-whispered.html#project-whispered">Project: WHISPERED™</a>
+          <a href="/breakthrough/superconductivity.html#superconductivity">Project SUPERCONDUCTIVITY</a>
+        </div>
+      </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="sm:hidden">
+      <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-300">
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40">
+    <div class="flex flex-col p-4 space-y-4">
+      <a href="/index.html" class="text-lg font-medium hover:text-cyan-500">Home</a>
+      <a href="/science.html" class="text-lg font-medium hover:text-cyan-500">Science</a>
+      <a href="/case-study.html" class="text-lg font-medium hover:text-cyan-500">Case Study</a>
+      <a href="/impact.html" class="text-lg font-medium hover:text-cyan-500">Impact</a>
+
+      <!-- Mobile Research Dropdown -->
+      <div class="flex flex-col">
+        <a href="/research.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Research</a>
+        <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('research-mobile')">
+          <svg class="w-4 h-4 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
         </button>
+        <div id="research-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2">
+          <a href="/research/cognitive-enhancement-drug.html" class="hover:text-cyan-500">Cognitive Enhancement</a>
+          <a href="/research/reverse-aging-serum.html" class="hover:text-cyan-500">Reverse-Aging Serum</a>
+          <a href="/research/super-soldier-serum.html" class="hover:text-cyan-500">Super Soldier Serum</a>
+          <a href="/research/black-technology.html" class="hover:text-cyan-500">Black Technology</a>
+        </div>
+      </div>
+
+      <!-- Mobile Breakthroughs Dropdown -->
+      <div class="flex flex-col">
+        <a href="/breakthroughs.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Breakthroughs</a>
+        <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('breakthroughs-mobile')">
+          <svg class="w-4 h-4 transition-transform duration-300" id="icon-breakthroughs-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="breakthroughs-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2 max-h-96 overflow-y-auto">
+          <a href="/breakthrough/project-atlas.html#project-atlas" class="hover:text-cyan-500">Project Atlas™</a>
+          <a href="/breakthrough/project-sentinel.html#project-sentinel" class="hover:text-cyan-500">Project Sentinel™</a>
+          <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface" class="hover:text-cyan-500">Project Remote Neural Interface™</a>
+          <a href="/breakthrough/project-synapse.html#project-synapse" class="hover:text-cyan-500">Project Synapse</a>
+          <a href="/breakthrough/human-biosonar.html#human-biosonar" class="hover:text-cyan-500">Human Biosonar</a>
+          <a href="/breakthrough/enhanced-senses.html#enhanced-senses" class="hover:text-cyan-500">Enhanced Senses</a>
+          <a href="/breakthrough/danger-detection.html#danger-detection" class="hover:text-cyan-500">Danger Detection</a>
+          <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance" class="hover:text-cyan-500">Electrocution Resistance</a>
+          <a href="/breakthrough/particle-control.html#particle-control" class="hover:text-cyan-500">Particle Control</a>
+          <a href="/breakthrough/efr.html#efr" class="hover:text-cyan-500">EFR</a>
+          <a href="/breakthrough/neuroception.html#neuroception" class="hover:text-cyan-500">Neuroception</a>
+          <a href="/breakthrough/sanguivigilance.html#sanguivigilance" class="hover:text-cyan-500">Sanguivigilance</a>
+          <a href="/breakthrough/exosight.html#exosight" class="hover:text-cyan-500">ExoSight™</a>
+          <a href="/breakthrough/project-echo.html#project-echo" class="hover:text-cyan-500">Project ECHO™</a>
+          <a href="/breakthrough/project-lucid.html#project-lucid" class="hover:text-cyan-500">Project LUCID™</a>
+          <a href="/breakthrough/project-vigor.html#project-vigor" class="hover:text-cyan-500">Project VIGOR™</a>
+          <a href="/breakthrough/project-stormcore.html#project-stormcore" class="hover:text-cyan-500">Project STORMCORE™</a>
+          <a href="/breakthrough/project-whispered.html#project-whispered" class="hover:text-cyan-500">Project: WHISPERED™</a>
+          <a href="/breakthrough/superconductivity.html#superconductivity" class="hover:text-cyan-500">Project SUPERCONDUCTIVITY</a>
+        </div>
       </div>
     </div>
-    <div id="mobile-menu" class="sm:hidden bg-black border-t border-gray-700">
-      <nav class="flex flex-col px-4 py-4 space-y-2">
-        <a href="index.html" class="hover:text-cyan-400 transition">Home</a>
-        <a href="technology.html" class="hover:text-cyan-400 transition">Technology</a>
-        <a href="quantum-application.html" class="hover:text-cyan-400 transition">Quantum Application</a>
-        <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 transition">Quantum Neural Mapping</a>
-        <a href="case-study.html" class="hover:text-cyan-400 transition">Case Study</a>
-        <a href="impact.html" class="hover:text-cyan-400 transition">Impact</a>
-        <a href="research.html" class="hover:text-cyan-400 transition">Research</a>
-        <a href="breakthroughs.html" class="hover:text-cyan-400 transition">Breakthroughs</a>
-      </nav>
-    </div>
-  </header>
+  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 fade-in">
-    <h1 class="text-5xl md:text-6xl font-bold mb-4">Impact</h1>
-    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mb-8">
-      Discover how AECION transforms diagnostics and therapy across humans, animals, and plants with real-time quantum-biophysical insights.
-    </p>
-    <a href="index.html" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in">Back to Overview</a>
-  </section>
+
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 fade-in bg-black">
+  <h1 class="text-5xl md:text-6xl font-bold mb-4 text-white">Impact</h1>
+  <p class="text-lg md:text-xl text-white max-w-3xl mb-8">
+    Discover how AECION transforms diagnostics and therapy across humans, animals, and plants with real-time quantum-biophysical insights.
+  </p>
+  <a href="index.html" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in">
+    Back to Overview
+  </a>
+</section>
 
   <div class="section-divider"></div>
 
   <!-- Main Impact Content -->
   <section class="py-20 px-6 max-w-6xl mx-auto space-y-16">
 
-    <!-- Quantum Diagnostic Platform -->
-    <div class="md:flex md:items-center md:gap-12 fade-in">
-      <div class="md:w-1/2">
-        <h2 class="text-3xl font-bold mb-6 text-cyan-400">Quantum Diagnostic Platform</h2>
-        <p class="text-gray-300 mb-4">Our quantum diagnostic platform can analyze any disease in real time, creating a spatiotemporal map of how it spreads and interacts across the body.</p>
-        <p class="text-gray-300 mb-4">By tracing the neural involvement of any condition, the platform enables biomarker discovery and the identification of precise intervention points.</p>
-        <p class="text-gray-300">Unlike conventional approaches, it is not limited to pre-existing biomarkers; every point along the spatiotemporal map represents a potential new biomarker, providing a complete and dynamic view of disease pathology.</p>
-      </div>
-      <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-        <div class="w-full h-64 bg-gray-800 rounded-2xl flex items-center justify-center text-gray-500">Image Placeholder</div>
-      </div>
-    </div>
+<!-- Quantum Diagnostic Platform -->
+<div class="md:flex md:items-center md:gap-12 fade-in">
+  <div class="md:w-1/2">
+    <h2 class="text-3xl font-bold mb-6 text-cyan-400">Quantum Diagnostic Platform</h2>
+    <p class="text-black mb-4">Our quantum diagnostic platform can analyze any disease in real time, creating a spatiotemporal map of how it spreads and interacts across the body.</p>
+    <p class="text-black mb-4">By tracing the neural involvement of any condition, the platform enables biomarker discovery and the identification of precise intervention points.</p>
+    <p class="text-black">Unlike conventional approaches, it is not limited to pre-existing biomarkers; every point along the spatiotemporal map represents a potential new biomarker, providing a complete and dynamic view of disease pathology.</p>
+  </div>
+  <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+    <div class="w-full h-64 bg-gray-800 rounded-2xl flex items-center justify-center text-gray-500">Image Placeholder</div>
+  </div>
+</div>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
+<!-- Divider -->
+<div class="section-divider"></div>
 
-    <!-- Plants -->
-    <div class="md:flex md:items-center md:gap-12 md:flex-row-reverse fade-in">
-      <div class="md:w-1/2">
-        <h2 class="text-3xl font-bold mb-6 text-cyan-400">Plants</h2>
-        <p class="text-gray-300">The platform can analyze any plant and determine its medicinal properties in under 24 hours, enabling rapid evaluation of therapeutic potential.</p>
-      </div>
-      <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-        <div class="w-full h-64 bg-gray-700 rounded-2xl flex items-center justify-center text-gray-500">Image Placeholder</div>
-      </div>
-    </div>
+<!-- Plants -->
+<div class="md:flex md:items-center md:gap-12 md:flex-row-reverse fade-in">
+  <div class="md:w-1/2">
+    <h2 class="text-3xl font-bold mb-6 text-cyan-400">Plants</h2>
+    <p class="text-black">The platform can analyze any plant and determine its medicinal properties in under 24 hours, enabling rapid evaluation of therapeutic potential.</p>
+  </div>
+  <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+    <div class="w-full h-64 bg-gray-700 rounded-2xl flex items-center justify-center text-gray-500">Image Placeholder</div>
+  </div>
+</div>
 
-    <!-- Divider -->
-    <div class="section-divider"></div>
+<!-- Divider -->
+<div class="section-divider"></div>
 
-    <!-- Pharmaceuticals -->
-    <div class="md:flex md:items-center md:gap-12 fade-in">
-      <div class="md:w-1/2">
-        <h2 class="text-3xl font-bold mb-6 text-cyan-400">Pharmaceuticals</h2>
-        <p class="text-gray-300 mb-4">It can trace the spatiotemporal metabolism of any drug within the body and identify potential side effects, reducing reliance on costly clinical trials.</p>
-        <p class="text-gray-300">With quantum calculations completed in less than a day, the platform allows early identification of effective and ineffective candidates, minimizing clinical trial losses and accelerating drug development.</p>
-      </div>
-      <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-        <div class="w-full h-64 bg-gray-800 rounded-2xl flex items-center justify-center text-gray-500">Image Placeholder</div>
-      </div>
-    </div>
+<!-- Pharmaceuticals -->
+<div class="md:flex md:items-center md:gap-12 fade-in">
+  <div class="md:w-1/2">
+    <h2 class="text-3xl font-bold mb-6 text-cyan-400">Pharmaceuticals</h2>
+    <p class="text-black mb-4">It can trace the spatiotemporal metabolism of any drug within the body and identify potential side effects, reducing reliance on costly clinical trials.</p>
+    <p class="text-black">With quantum calculations completed in less than a day, the platform allows early identification of effective and ineffective candidates, minimizing clinical trial losses and accelerating drug development.</p>
+  </div>
+  <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+    <div class="w-full h-64 bg-gray-800 rounded-2xl flex items-center justify-center text-gray-500">Image Placeholder</div>
+  </div>
+</div>
 
-  </section>
+</section>
 
-  <div class="section-divider"></div>
+<div class="section-divider"></div>
 
   <!-- Footer -->
-  <footer class="bg-black border-t border-gray-700 py-12 px-6 text-center fade-in">
-    <div class="mb-4">
-      <a href="index.html" class="hover:text-cyan-400 mx-2 transition">About Us</a> |
-      <a href="technology.html" class="hover:text-cyan-400 mx-2 transition">Technology</a> |
-      <a href="quantum-application.html" class="hover:text-cyan-400 mx-2 transition">Quantum Application</a> |
-      <a href="quantum-neural-mapping.html" class="hover:text-cyan-400 mx-2 transition">Quantum Neural Mapping</a> |
-      <a href="case-study.html" class="hover:text-cyan-400 mx-2 transition">Case Study</a> |
-      <a href="impact.html" class="hover:text-cyan-400 mx-2 transition">Impact</a> |
-      <a href="research.html" class="hover:text-cyan-400 mx-2 transition">Research</a> |
-      <a href="breakthroughs.html" class="hover:text-cyan-400 mx-2 transition">Breakthroughs</a>
+  <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
+    <div class="mb-4 flex justify-center flex-wrap gap-4">
+      <a href="index.html" class="hover:text-cyan-500 transition">About Us</a>
+      <a href="science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="research.html" class="hover:text-cyan-500 transition">Research</a>
+      <a href="careers.html" class="hover:text-cyan-500 transition">Careers</a>
+      <a href="contact.html" class="hover:text-cyan-500 transition">Contact</a>
     </div>
-    <div class="mb-4">
-      <span>Phone: 123-456-7890 | Email: 
-        <a href="mailto:support@aecion.com" class="hover:text-cyan-400 transition">support@aecion.com</a> | 
-        Address: 123 Quantum Way, Tech City
-      </span>
+    <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
+    <div class="flex justify-center gap-4 mb-4">
+      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
+      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
     </div>
-    <div class="text-gray-500 text-sm">&copy; 2025 AECION. All rights reserved.</div>
+    <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState='running'; });
-    }, { threshold: 0.2 });
-    fadeEls.forEach(el => observer.observe(el));
-
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    let menuOpen = false;
-
-    menuToggle.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      menuToggle.classList.toggle('open', menuOpen);
-      if(menuOpen){
-        mobileMenu.classList.add('open');
-        mobileMenu.style.display = 'block';
-        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-        mobileMenu.style.opacity = '1';
-      } else {
-        mobileMenu.classList.remove('open');
-        mobileMenu.style.maxHeight = '0';
-        mobileMenu.style.opacity = '0';
-        setTimeout(() => { if(!menuOpen) mobileMenu.style.display = 'none'; }, 300);
-      }
+<script>
+  // Fade-in animations
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
     });
+  }, { threshold: 0.2 });
+  fadeEls.forEach(el => observer.observe(el));
 
-    const currentPage = window.location.pathname.split("/").pop() || 'index.html';
-    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-      if(link.getAttribute('href') === currentPage) link.classList.add('font-semibold','underline');
-    });
-  </script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+  menuToggle.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    menuToggle.classList.toggle('open', menuOpen);
+
+    if (menuOpen) {
+      mobileMenu.classList.add('open');
+      mobileMenu.style.display = 'block';
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.style.opacity = '1';
+    } else {
+      mobileMenu.classList.remove('open');
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.opacity = '0';
+      setTimeout(() => {
+        if (!menuOpen) mobileMenu.style.display = 'none';
+      }, 300);
+    }
+  });
+
+  // Highlight current page
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+  document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage || linkHref === currentPath) {
+      link.classList.add('font-semibold', 'underline');
+    }
+  });
+
+  // Mobile dropdown toggle function
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const icon = document.getElementById("icon-" + id);
+
+    if (!dropdown) return;
+
+    const isHidden = dropdown.classList.contains("hidden");
+
+    // Animate dropdown open/close
+    if (isHidden) {
+      dropdown.classList.remove("hidden");
+      dropdown.classList.add("flex");
+      dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+      dropdown.style.transition = "max-height 0.3s ease";
+      if (icon) icon.classList.add("rotate-180");
+    } else {
+      dropdown.style.maxHeight = "0";
+      setTimeout(() => {
+        dropdown.classList.add("hidden");
+        dropdown.classList.remove("flex");
+      }, 300);
+      if (icon) icon.classList.remove("rotate-180");
+    }
+  }
+</script>
 
 </body>
 </html>
