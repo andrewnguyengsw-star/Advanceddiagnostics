@@ -152,64 +152,66 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <nav id="mobile-menu" class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40">
-    <div class="flex flex-col p-4 space-y-4">
-      <a href="/index.html" class="text-lg font-medium hover:text-cyan-500">Home</a>
-      <a href="/science.html" class="text-lg font-medium hover:text-cyan-500">Science</a>
-      <a href="/products.html" class="text-lg font-medium hover:text-cyan-500">Products</a>
-      <a href="/impact.html" class="text-lg font-medium hover:text-cyan-500">Impact</a>
+ <!-- Mobile Menu -->
+<nav id="mobile-menu" class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40">
+  <div class="flex flex-col p-4 space-y-4">
 
-      <!-- Mobile Research Dropdown -->
-      <div class="flex flex-col">
-        <a href="/research.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Research</a>
-        <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('research-mobile')">
-          <svg class="w-4 h-4 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-        <div id="research-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2">
-          <a href="/research/cognitive-enhancement-drug.html" class="hover:text-cyan-500">Cognitive Enhancement</a>
-          <a href="/research/reverse-aging-serum.html" class="hover:text-cyan-500">Reverse-Aging Serum</a>
-          <a href="/research/super-soldier-serum.html" class="hover:text-cyan-500">Super Soldier Serum</a>
-          <a href="/research/black-technology.html" class="hover:text-cyan-500">Black Technology</a>
-        </div>
-      </div>
+    <!-- Main Links -->
+    <a href="/index.html" class="text-lg font-medium hover:text-cyan-500">Home</a>
+    <a href="/science.html" class="text-lg font-medium hover:text-cyan-500">Science</a>
+    <a href="/products.html" class="text-lg font-medium hover:text-cyan-500">Products</a>
+    <a href="/impact.html" class="text-lg font-medium hover:text-cyan-500">Impact</a>
 
-      <!-- Mobile Breakthroughs Dropdown -->
-      <div class="flex flex-col">
-        <a href="/breakthroughs.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Breakthroughs</a>
-        <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('breakthroughs-mobile')">
-          <svg class="w-4 h-4 transition-transform duration-300" id="icon-breakthroughs-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-        <div id="breakthroughs-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2 max-h-96 overflow-y-auto">
-          <a href="/breakthrough/project-atlas.html#project-atlas" class="hover:text-cyan-500">Project Atlas™</a>
-          <a href="/breakthrough/project-sentinel.html#project-sentinel" class="hover:text-cyan-500">Project Sentinel™</a>
-          <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface" class="hover:text-cyan-500">Project Remote Neural Interface™</a>
-          <a href="/breakthrough/project-synapse.html#project-synapse" class="hover:text-cyan-500">Project Synapse</a>
-          <a href="/breakthrough/human-biosonar.html#human-biosonar" class="hover:text-cyan-500">Human Biosonar</a>
-          <a href="/breakthrough/enhanced-senses.html#enhanced-senses" class="hover:text-cyan-500">Enhanced Senses</a>
-          <a href="/breakthrough/danger-detection.html#danger-detection" class="hover:text-cyan-500">Danger Detection</a>
-          <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance" class="hover:text-cyan-500">Electrocution Resistance</a>
-          <a href="/breakthrough/particle-control.html#particle-control" class="hover:text-cyan-500">Particle Control</a>
-          <a href="/breakthrough/efr.html#efr" class="hover:text-cyan-500">EFR</a>
-          <a href="/breakthrough/neuroception.html#neuroception" class="hover:text-cyan-500">Neuroception</a>
-          <a href="/breakthrough/sanguivigilance.html#sanguivigilance" class="hover:text-cyan-500">Sanguivigilance</a>
-          <a href="/breakthrough/exosight.html#exosight" class="hover:text-cyan-500">ExoSight™</a>
-          <a href="/breakthrough/project-echo.html#project-echo" class="hover:text-cyan-500">Project ECHO™</a>
-          <a href="/breakthrough/project-lucid.html#project-lucid" class="hover:text-cyan-500">Project LUCID™</a>
-          <a href="/breakthrough/project-vigor.html#project-vigor" class="hover:text-cyan-500">Project VIGOR™</a>
-          <a href="/breakthrough/project-stormcore.html#project-stormcore" class="hover:text-cyan-500">Project STORMCORE™</a>
-          <a href="/breakthrough/project-whispered.html#project-whispered" class="hover:text-cyan-500">Project: WHISPERED™</a>
-          <a href="/breakthrough/project-seer.html#project-seer" class="hover:text-cyan-500">Project Seer™</a>
-          <a href="/breakthrough/superconductivity.html#superconductivity" class="hover:text-cyan-500">Project SUPERCONDUCTIVITY</a>
-        </div>
+    <!-- Research Dropdown -->
+    <div class="flex flex-col">
+      <button class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500" onclick="toggleDropdown('research-mobile')">
+        Research
+        <svg class="w-4 h-4 ml-2 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="research-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2">
+        <a href="/research/cognitive-enhancement-drug.html" class="hover:text-cyan-500">Cognitive Enhancement</a>
+        <a href="/research/reverse-aging-serum.html" class="hover:text-cyan-500">Reverse-Aging Serum</a>
+        <a href="/research/super-soldier-serum.html" class="hover:text-cyan-500">Super Soldier Serum</a>
+        <a href="/research/black-technology.html" class="hover:text-cyan-500">Black Technology</a>
       </div>
     </div>
-  </nav>
-</header>
+
+    <!-- Breakthroughs Dropdown -->
+    <div class="flex flex-col">
+      <button class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500" onclick="toggleDropdown('breakthroughs-mobile')">
+        Breakthroughs
+        <svg class="w-4 h-4 ml-2 transition-transform duration-300" id="icon-breakthroughs-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="breakthroughs-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2 max-h-96 overflow-y-auto">
+        <a href="/breakthrough/project-atlas.html#project-atlas" class="hover:text-cyan-500">Project Atlas™</a>
+        <a href="/breakthrough/project-sentinel.html#project-sentinel" class="hover:text-cyan-500">Project Sentinel™</a>
+        <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface" class="hover:text-cyan-500">Project Remote Neural Interface™</a>
+        <a href="/breakthrough/project-synapse.html#project-synapse" class="hover:text-cyan-500">Project Synapse</a>
+        <a href="/breakthrough/human-biosonar.html#human-biosonar" class="hover:text-cyan-500">Human Biosonar</a>
+        <a href="/breakthrough/enhanced-senses.html#enhanced-senses" class="hover:text-cyan-500">Enhanced Senses</a>
+        <a href="/breakthrough/danger-detection.html#danger-detection" class="hover:text-cyan-500">Danger Detection</a>
+        <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance" class="hover:text-cyan-500">Electrocution Resistance</a>
+        <a href="/breakthrough/particle-control.html#particle-control" class="hover:text-cyan-500">Particle Control</a>
+        <a href="/breakthrough/efr.html#efr" class="hover:text-cyan-500">EFR</a>
+        <a href="/breakthrough/neuroception.html#neuroception" class="hover:text-cyan-500">Neuroception</a>
+        <a href="/breakthrough/sanguivigilance.html#sanguivigilance" class="hover:text-cyan-500">Sanguivigilance</a>
+        <a href="/breakthrough/exosight.html#exosight" class="hover:text-cyan-500">ExoSight™</a>
+        <a href="/breakthrough/project-echo.html#project-echo" class="hover:text-cyan-500">Project ECHO™</a>
+        <a href="/breakthrough/project-lucid.html#project-lucid" class="hover:text-cyan-500">Project LUCID™</a>
+        <a href="/breakthrough/project-vigor.html#project-vigor" class="hover:text-cyan-500">Project VIGOR™</a>
+        <a href="/breakthrough/project-stormcore.html#project-stormcore" class="hover:text-cyan-500">Project STORMCORE™</a>
+        <a href="/breakthrough/project-whispered.html#project-whispered" class="hover:text-cyan-500">Project: WHISPERED™</a>
+        <a href="/breakthrough/project-seer.html#project-seer" class="hover:text-cyan-500">Project Seer™</a>
+        <a href="/breakthrough/superconductivity.html#superconductivity" class="hover:text-cyan-500">Project SUPERCONDUCTIVITY</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white">
@@ -276,6 +278,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
+<!-- Scripts -->
 <script>
   // Fade-in animations
   const fadeEls = document.querySelectorAll('.fade-in');
@@ -290,6 +293,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   let menuOpen = false;
+
   menuToggle.addEventListener('click', () => {
     menuOpen = !menuOpen;
     menuToggle.classList.toggle('open', menuOpen);
@@ -309,16 +313,6 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     }
   });
 
-  // Highlight current page
-  const currentPath = window.location.pathname;
-  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
-  document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-    const linkHref = link.getAttribute('href');
-    if (linkHref === currentPage || linkHref === currentPath) {
-      link.classList.add('font-semibold', 'underline');
-    }
-  });
-
   // Mobile dropdown toggle function
   function toggleDropdown(id) {
     const dropdown = document.getElementById(id);
@@ -328,7 +322,6 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
     const isHidden = dropdown.classList.contains("hidden");
 
-    // Animate dropdown open/close
     if (isHidden) {
       dropdown.classList.remove("hidden");
       dropdown.classList.add("flex");
@@ -344,6 +337,16 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
       if (icon) icon.classList.remove("rotate-180");
     }
   }
+
+  // Highlight current page
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+  document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage || linkHref === currentPath) {
+      link.classList.add('font-semibold', 'underline');
+    }
+  });
 </script>
 
 </body>
