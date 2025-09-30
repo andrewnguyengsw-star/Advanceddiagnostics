@@ -326,35 +326,31 @@ header { position: relative; z-index: 100; }
     }
   });
 
-  // Mobile dropdown toggle function
-  function toggleDropdown(id) {
-    const dropdown = document.getElementById(id);
-    const icon = document.getElementById("icon-" + id);
+  // Accordion toggle for mobile menu (classic accordion behavior)
+  document.addEventListener("DOMContentLoaded", function () {
+    const accordions = document.querySelectorAll(".accordion-btn");
 
-    if (!dropdown) return;
+    accordions.forEach(btn => {
+      btn.addEventListener("click", function () {
+        const content = btn.nextElementSibling;
+        const isOpen = content.classList.contains("show");
 
-    const isHidden = dropdown.classList.contains("hidden");
+        // Close all accordions
+        document.querySelectorAll(".accordion-content").forEach(c => {
+          c.classList.remove("show");
+          c.style.maxHeight = null;
+        });
+        document.querySelectorAll(".accordion-btn").forEach(b => {
+          b.classList.remove("active");
+        });
 
-    if (isHidden) {
-      dropdown.classList.remove("hidden");
-      dropdown.classList.add("flex");
-      dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-      if (icon) icon.classList.add("rotate-180");
-    } else {
-      dropdown.style.maxHeight = "0";
-      setTimeout(() => {
-        dropdown.classList.add("hidden");
-        dropdown.classList.remove("flex");
-      }, 300);
-      if (icon) icon.classList.remove("rotate-180");
-    }
-  }
-
-  // Attach toggle events for mobile dropdowns
-  document.querySelectorAll('[onclick^="toggleDropdown"]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('onclick').match(/toggleDropdown\('(.+)'\)/)[1];
-      toggleDropdown(id);
+        // Open clicked accordion if it wasn't already open
+        if (!isOpen) {
+          content.classList.add("show");
+          btn.classList.add("active");
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
     });
   });
 
