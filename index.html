@@ -28,66 +28,49 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 #menu-toggle.open span:nth-child(2) { opacity: 0; }
 #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* ===== DESKTOP BREAKTHROUGHS DROPDOWN SCROLL ===== */
+/* Dropdown styling */
 .dropdown-menu {
-  max-height: 400px; /* Limit dropdown height */
-  overflow-y: auto; /* Enable vertical scroll */
-  scrollbar-width: thin; /* Firefox */
-}
-
-/* Chrome, Safari scrollbar */
-.dropdown-menu::-webkit-scrollbar {
-  width: 6px;
-}
-
-.dropdown-menu::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-
-.dropdown-menu::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* Optional subtle shadow for scroll depth */
-.dropdown-menu {
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
   box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  width: 14rem;
+  z-index: 50;
 }
-
-/* Dropdown */
-.dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ddd; border-radius: 0.5rem; width: 14rem; z-index: 50; }
 .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
 .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
 .dropdown-menu a:hover { background: #f0f0f0; }
+
+/* Scrollbar styling */
+.dropdown-menu::-webkit-scrollbar { width: 6px; }
+.dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
+.dropdown-menu::-webkit-scrollbar-track { background: transparent; }
 
 /* Aspect ratio for video */
 .aspect-w-16 { position: relative; width: 100%; }
 .aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
 .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-/* ===== MOBILE DROPDOWN SCROLL ===== */
-#research-mobile,
-#breakthroughs-mobile {
-  max-height: 300px; /* Adjust height as needed */
+/* Mobile dropdowns */
+#research-mobile, #breakthroughs-mobile {
+  max-height: 300px;
   overflow-y: auto;
-  scrollbar-width: thin; /* Firefox */
+  scrollbar-width: thin;
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
 }
-
-#research-mobile::-webkit-scrollbar,
-#breakthroughs-mobile::-webkit-scrollbar {
-  width: 6px; /* Chrome, Safari */
-}
-
-#research-mobile::-webkit-scrollbar-thumb,
-#breakthroughs-mobile::-webkit-scrollbar-thumb {
+#research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
+#research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
-}
-
-/* Optional: subtle shadow to indicate scrollable area */
-#research-mobile,
-#breakthroughs-mobile {
-  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
 }
 </style>
 
@@ -146,9 +129,11 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
           <a href="/breakthrough/project-vigor.html#project-vigor">Project VIGOR™</a>
           <a href="/breakthrough/project-stormcore.html#project-stormcore">Project STORMCORE™</a>
           <a href="/breakthrough/project-whispered.html#project-whispered">Project: WHISPERED™</a>
+          <a href="/breakthrough/project-seer.html#project-seer">Project Seer™</a>
           <a href="/breakthrough/superconductivity.html#superconductivity">Project SUPERCONDUCTIVITY</a>
         </div>
       </div>
+    </nav>
 
     <!-- Mobile Menu Button -->
     <div class="sm:hidden">
@@ -211,13 +196,13 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
           <a href="/breakthrough/project-vigor.html#project-vigor" class="hover:text-cyan-500">Project VIGOR™</a>
           <a href="/breakthrough/project-stormcore.html#project-stormcore" class="hover:text-cyan-500">Project STORMCORE™</a>
           <a href="/breakthrough/project-whispered.html#project-whispered" class="hover:text-cyan-500">Project: WHISPERED™</a>
+          <a href="/breakthrough/project-seer.html#project-seer" class="hover:text-cyan-500">Project Seer™</a>
           <a href="/breakthrough/superconductivity.html#superconductivity" class="hover:text-cyan-500">Project SUPERCONDUCTIVITY</a>
         </div>
       </div>
     </div>
   </nav>
 </header>
-
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white">
