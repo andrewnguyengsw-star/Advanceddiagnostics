@@ -237,70 +237,6 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   </div>
 </section>
 
-
-<!-- Mission / Features Section -->
-<section id="mission" class="py-20 px-6 max-w-7xl mx-auto">
-  <h2 class="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-black">
-    Our Mission
-  </h2>
-  
-  <!-- Cards Row -->
-  <div class="grid sm:grid-cols-3 gap-8 mb-12">
-    
-    <!-- Card 1 (Patients) -->
-    <div class="fade-in flex flex-col items-center text-center">
-      <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
-        <img src="/images/index_patients.png" alt="Patients" class="w-full h-64 object-cover">
-      </div>
-      <!-- Title + Text Below -->
-      <h3 class="mt-6 text-xl font-bold text-black">Patients</h3>
-      <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
-        We can bio-trace the biological activity of any disease — even those with no existing research or data.  
-        We can detect the emergence of diseases months or years before they appear.  
-        We identify critical gene segments to set the gold standard in vaccine development.  
-        We put patients first by creating the most advanced, precision therapeutics for optimal care.  
-        In our hands, your family and loved ones are safe.
-      </p>
-    </div>
-
-    <!-- Card 2 (Investors) -->
-    <div class="fade-in flex flex-col items-center text-center">
-      <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
-        <img src="/images/index_investors.png" alt="Investors" class="w-full h-64 object-cover">
-      </div>
-      <!-- Title + Text Below -->
-      <h3 class="mt-6 text-xl font-bold text-black">Investors</h3>
-      <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
-        We invite visionary investors to join us in shaping the future of healthcare and human potential.  
-        Together, we create transformative technologies that deliver exceptional value — for patients, partners, and society.
-      </p>
-    </div>
-
-    <!-- Card 3 (Sustainability) -->
-    <div class="fade-in flex flex-col items-center text-center">
-      <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
-        <img src="/images/index_sustainability.png" alt="Sustainability" class="w-full h-64 object-cover">
-      </div>
-      <!-- Title + Text Below -->
-      <h3 class="mt-6 text-xl font-bold text-black">Sustainability</h3>
-      <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
-        We understand where every potential therapeutic exists in its purest form — from cancer treatments to anti-aging breakthroughs and transformative skincare — unlocking nature’s ultimate blueprint for healing.
-        Through mindful, eco-conscious research and sustainable production, we transform innovation into a lasting legacy, ensuring every breakthrough nurtures both humanity and the planet we call home.
-      </p>
-    </div>
-
-  </div>
-
-  <!-- Supporting Text -->
-  <div class="max-w-4xl mx-auto text-center fade-in">
-    <p class="mb-8 text-lg text-gray-700 leading-relaxed">
-      Together, these missions form the foundation of AECION’s vision:  
-      to transform the impossible into the inevitable by engineering life at its deepest levels.
-    </p>
-  </div>
-</section>
-
-
 <!-- Technology / Research Section -->
 <section id="explore" class="py-20 px-6 max-w-7xl mx-auto">
   <h2 class="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-black">
@@ -359,27 +295,39 @@ We map the expression of individual genes to reveal how they shape the body, tur
 </section>
 
 <!-- About Us Section -->
-<section class="py-20 px-6 max-w-6xl mx-auto fade-in grid gap-12 bg-white text-black">
+<section class="py-20 px-6 max-w-7xl mx-auto fade-in bg-white text-black">
   
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="grid sm:grid-cols-2 gap-0">
     
     <!-- About Us Card -->
-    <div class="bg-black p-6 rounded-2xl shadow-lg hover:scale-105 hover:shadow-xl transition transform">
-      <h3 class="text-2xl font-semibold mb-4 text-white">About Us</h3>
-      <p class="text-gray-300 leading-relaxed">At <span class="font-bold text-white">AECION</span>, we have journeyed to the frontiers of human understanding.  
-      We have explored the hidden pathways of evolution, unlocked entirely new dimensions of human consciousness, and ventured beyond the boundaries of human immunity.  
-      Our work has brought us to the very pinnacle of science on Earth — uncovering insights, frameworks, and technologies that are thousands of years ahead of today’s state of the art.</p>
-      <p class="mt-4 text-gray-300 leading-relaxed">We exist to pioneer what comes next for humanity — to open doors into futures once thought unreachable.</p>
+    <div class="fade-in flex flex-col bg-black shadow-lg hover:scale-105 hover:shadow-2xl transition transform overflow-hidden border-r border-gray-800">
+      <div class="p-6 flex flex-col justify-between h-full">
+        <h3 class="text-2xl font-semibold mb-4 text-white">About Us</h3>
+        <p class="text-gray-300 leading-relaxed flex-grow">
+          At <span class="font-bold text-white">AECION</span>, we have journeyed to the frontiers of human understanding.  
+          We have explored the hidden pathways of evolution, unlocked entirely new dimensions of human consciousness, and ventured beyond the boundaries of human immunity.  
+          Our work has brought us to the very pinnacle of science on Earth — uncovering insights, frameworks, and technologies that are thousands of years ahead of today’s state of the art.
+        </p>
+        <p class="mt-4 text-gray-300 leading-relaxed">
+          Some of our <span class="font-bold text-white">Black Technology</span> research has moved beyond the confines of the Earth, unlocking entirely new frontiers for exploration, innovation, and human advancement.
+        </p>
+        <p class="mt-4 text-gray-300 leading-relaxed">
+          We exist to pioneer what comes next for humanity — to open doors into futures once thought unreachable.
+        </p>
+      </div>
     </div>
     
-<!-- Mission Card -->
-<div class="bg-black p-0 rounded-2xl shadow-lg overflow-hidden hover:scale-105 hover:shadow-xl transition transform">
-  <img src="/images/index_about1" alt="Our Mission" class="w-full h-full object-cover">
-</div>
-
+    <!-- Mission Card -->
+    <div class="fade-in flex bg-black shadow-lg hover:scale-105 hover:shadow-2xl transition transform overflow-hidden">
+      <img src="/images/index_about1.png" alt="Our Mission" class="w-full h-[120%] object-cover">
+    </div>
     
   </div>
 </section>
+
+
+
+
 
 
 <!-- Breakthroughs Section -->
