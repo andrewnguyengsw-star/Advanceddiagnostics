@@ -205,14 +205,38 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 </header>
 
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">Science at the Frontier of Human Potential</h1>
-    <p class="text-md sm:text-lg md:text-xl max-w-3xl mb-8 fade-in">
-      AECION operates at the intersection of quantum biology and human potential. We create dynamic, living maps of the human body to decode disease and pioneer the next stage of evolution.
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-black text-white overflow-hidden">
+  
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img src="/images/index_header.png" alt="Hero Background" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- dark overlay for contrast -->
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 fade-in drop-shadow-lg leading-tight">
+      Building the Future <br class="hidden sm:block"/> with Science of Tomorrow
+    </h1>
+    
+    <p class="text-lg sm:text-xl md:text-2xl max-w-4xl mb-10 fade-in delay-200">
+      AECION transforms the impossible into the inevitable.  
+      By decoding quantum signals of life itself, we are creating technologies that rewrite medicine, human potential, and the future of civilization — today.  
     </p>
-    <a href="#mission" class="btn-primary fade-in">Explore Our Science</a>
-  </section>
+
+    <!-- CTA Button -->
+    <a href="#mission" class="px-8 py-4 rounded-2xl bg-white text-cyan-600 font-semibold shadow-lg hover:scale-105 transition">
+      Explore Our Science
+    </a>
+
+    <!-- Subtext -->
+    <p class="mt-8 text-sm sm:text-md max-w-xl opacity-80 fade-in delay-600">
+      From quantum biology to human evolution, AECION is not waiting for the future — we are engineering it.
+    </p>
+  </div>
+</section>
+
 
 <!-- Mission / Features Section -->
 <section id="mission" class="py-20 px-6 max-w-7xl mx-auto">
