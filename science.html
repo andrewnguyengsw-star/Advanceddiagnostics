@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AECION | Science</title>
   <meta name="description" content="Discover the scientific foundations of the AECION Quantum Health Platform, translating complex biological data into actionable insights.">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Optional: Swiper CSS (carousel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <!-- Custom styles (single <style> block, cleaned) -->
   <style>
+    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
+
+    /* Fade-in animations */
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Buttons */
     .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
     .btn-primary:hover { transform: translateY(-2px) scale(1.03); }
+    .btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
+
+    /* Product card hover */
     .product-card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
-<style>
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
-/* Fade-in animations */
-.fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
-@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    /* Navigation (mobile menu) */
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; max-height: 100vh; opacity: 1; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* Buttons */
-.btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
-.btn-primary:hover { transform: translateY(-2px) scale(1.03); }
-.btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
-.btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
+    /* Dropdown styling */
+    .dropdown-menu {
+      max-height: 400px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      width: 14rem;
+      z-index: 50;
+    }
+    .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
+    .dropdown-menu a:hover { background: #f0f0f0; }
 
-/* Navigation */
-#mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
-#mobile-menu.open { display: block; max-height: 100vh; opacity: 1; }
-#menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-#menu-toggle.open span:nth-child(2) { opacity: 0; }
-#menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    /* Scrollbar styling for dropdowns */
+    .dropdown-menu::-webkit-scrollbar { width: 6px; }
+    .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
+    .dropdown-menu::-webkit-scrollbar-track { background: transparent; }
 
-/* Dropdown styling */
-.dropdown-menu {
-  max-height: 400px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  width: 14rem;
-  z-index: 50;
-}
-.dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
-.dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
-.dropdown-menu a:hover { background: #f0f0f0; }
+    /* Aspect ratio helper for embedded video */
+    .aspect-w-16 { position: relative; width: 100%; }
+    .aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
+    .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-/* Scrollbar styling */
-.dropdown-menu::-webkit-scrollbar { width: 6px; }
-.dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
-.dropdown-menu::-webkit-scrollbar-track { background: transparent; }
-
-/* Aspect ratio for video */
-.aspect-w-16 { position: relative; width: 100%; }
-.aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
-.aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-/* Mobile dropdowns */
-#research-mobile, #breakthroughs-mobile {
-  max-height: 300px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
-}
-#research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
-#research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 3px;
-}
-</style>
+    /* Mobile dropdowns (scrollbar tweaks) */
+    #research-mobile, #breakthroughs-mobile {
+      max-height: 300px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+    }
+    #research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
+    #research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+  </style>
+</head>
 
 <!-- Navigation -->
 <header class="sticky top-0 bg-white shadow z-50">
@@ -281,32 +287,53 @@ Each day, our team works to reverse-engineer future discoveries to improve human
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
     
     <!-- Card 1: Our Areas of Focus -->
-    <div class="capability-card">
+    <div class="capability-card relative">
       <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">
         Our Areas of Focus
       </h2>
       <p class="text-lg text-gray-700 mb-6">
         Where future expertise meets today’s science — building the technologies of tomorrow to improve the lives of all.
       </p>
-      <ul class="divide-y divide-black border-t border-b border-black text-left">
-        <li class="py-2 font-bold">Human Gain-of-Function</li>
-        <li class="py-2 font-bold">Oncology</li>
-        <li class="py-2 font-bold">Immunology</li>
-        <li class="py-2 font-bold">Neuroscience</li>
-        <li class="py-2 font-bold">Infectious Disease</li>
+      <ul id="focus-list" class="divide-y divide-black border-t border-b border-black text-left">
+        <li class="py-2 font-bold focus-btn active" data-slide="0">Human Gain-of-Function</li>
+        <li class="py-2 font-bold focus-btn" data-slide="1">Oncology</li>
+        <li class="py-2 font-bold focus-btn" data-slide="2">Immunology</li>
+        <li class="py-2 font-bold focus-btn" data-slide="3">Neuroscience</li>
+        <li class="py-2 font-bold focus-btn" data-slide="4">Infectious Disease</li>
       </ul>
     </div>
     
-    <!-- Card 2: Advanced Modeling -->
+    <!-- Card 2: Carousel -->
     <div class="capability-card">
-      <h3 class="text-xl font-semibold mb-2">Advanced Modeling</h3>
-      <p>
-        Leveraging hyper-advanced frameworks to accelerate discovery, reduce failures, and bring future therapies into the present.
-      </p>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <h3 class="text-xl font-semibold mb-2">Human Gain-of-Function</h3>
+            <p>Exploring enhancements that transcend human limitations — pioneering new frontiers in biology and capability.</p>
+          </div>
+          <div class="swiper-slide">
+            <h3 class="text-xl font-semibold mb-2">Oncology</h3>
+            <p>Redefining cancer treatment through advanced modeling and predictive insights for targeted, life-saving therapies.</p>
+          </div>
+          <div class="swiper-slide">
+            <h3 class="text-xl font-semibold mb-2">Immunology</h3>
+            <p>Unlocking the immune system’s hidden layers to prevent, control, and cure diseases with precision medicine.</p>
+          </div>
+          <div class="swiper-slide">
+            <h3 class="text-xl font-semibold mb-2">Neuroscience</h3>
+            <p>Advancing brain science to enhance cognition, repair neurological damage, and unlock new dimensions of human thought.</p>
+          </div>
+          <div class="swiper-slide">
+            <h3 class="text-xl font-semibold mb-2">Infectious Disease</h3>
+            <p>Developing future-proof defenses against pathogens through predictive modeling and breakthrough therapeutics.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    
+
   </div>
 </section>
+
 
 
 
@@ -462,75 +489,104 @@ Each day, our team works to reverse-engineer future discoveries to improve human
     <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
-<script>
-  // Fade-in animations
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+  <!-- Swiper core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Your site scripts (with fade-in, mobile menu, and carousel logic) -->
+  <script>
+    // Fade-in animations
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
+
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => {
+          if (!menuOpen) mobileMenu.style.display = 'none';
+        }, 300);
+      }
     });
-  }, { threshold: 0.2 });
-  fadeEls.forEach(el => observer.observe(el));
 
-  // Mobile menu toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  let menuOpen = false;
-  menuToggle.addEventListener('click', () => {
-    menuOpen = !menuOpen;
-    menuToggle.classList.toggle('open', menuOpen);
+    // Highlight current page
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === currentPage || linkHref === currentPath) {
+        link.classList.add('font-semibold', 'underline');
+      }
+    });
 
-    if (menuOpen) {
-      mobileMenu.classList.add('open');
-      mobileMenu.style.display = 'block';
-      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-      mobileMenu.style.opacity = '1';
-    } else {
-      mobileMenu.classList.remove('open');
-      mobileMenu.style.maxHeight = '0';
-      mobileMenu.style.opacity = '0';
-      setTimeout(() => {
-        if (!menuOpen) mobileMenu.style.display = 'none';
-      }, 300);
+    // Mobile dropdown toggle
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const icon = document.getElementById("icon-" + id);
+      if (!dropdown) return;
+
+      const isHidden = dropdown.classList.contains("hidden");
+
+      if (isHidden) {
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("flex");
+        dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+        dropdown.style.transition = "max-height 0.3s ease";
+        if (icon) icon.classList.add("rotate-180");
+      } else {
+        dropdown.style.maxHeight = "0";
+        setTimeout(() => {
+          dropdown.classList.add("hidden");
+          dropdown.classList.remove("flex");
+        }, 300);
+        if (icon) icon.classList.remove("rotate-180");
+      }
     }
-  });
 
-  // Highlight current page
-  const currentPath = window.location.pathname;
-  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
-  document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-    const linkHref = link.getAttribute('href');
-    if (linkHref === currentPage || linkHref === currentPath) {
-      link.classList.add('font-semibold', 'underline');
-    }
-  });
+    // ===== Carousel Logic for Our Areas of Focus =====
+    var swiper = new Swiper(".mySwiper", {
+      allowTouchMove: false, // disable manual swiping
+      effect: "fade",        // smooth fade transition
+    });
 
-  // Mobile dropdown toggle function
-  function toggleDropdown(id) {
-    const dropdown = document.getElementById(id);
-    const icon = document.getElementById("icon-" + id);
+    // List controls carousel
+    document.querySelectorAll(".focus-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const slideIndex = btn.getAttribute("data-slide");
+        swiper.slideTo(slideIndex);
 
-    if (!dropdown) return;
+        // Update active styling
+        document.querySelectorAll(".focus-btn").forEach(el => el.classList.remove("text-blue-600", "active"));
+        btn.classList.add("text-blue-600", "active");
+      });
+    });
 
-    const isHidden = dropdown.classList.contains("hidden");
-
-    // Animate dropdown open/close
-    if (isHidden) {
-      dropdown.classList.remove("hidden");
-      dropdown.classList.add("flex");
-      dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-      dropdown.style.transition = "max-height 0.3s ease";
-      if (icon) icon.classList.add("rotate-180");
-    } else {
-      dropdown.style.maxHeight = "0";
-      setTimeout(() => {
-        dropdown.classList.add("hidden");
-        dropdown.classList.remove("flex");
-      }, 300);
-      if (icon) icon.classList.remove("rotate-180");
-    }
-  }
-</script>
-
+    // Sync list when carousel changes
+    swiper.on("slideChange", () => {
+      const items = document.querySelectorAll(".focus-btn");
+      items.forEach((item, i) => {
+        item.classList.toggle("text-blue-600", i === swiper.activeIndex);
+        item.classList.toggle("active", i === swiper.activeIndex);
+      });
+    });
+  </script>
 </body>
 </html>
+
