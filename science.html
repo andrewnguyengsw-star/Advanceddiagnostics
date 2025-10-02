@@ -84,6 +84,22 @@
       background-color: rgba(0, 0, 0, 0.2);
       border-radius: 3px;
     }
+    var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,   // only show ONE slide at a time
+  allowTouchMove: false, // disable manual dragging/swiping
+  effect: "fade",     // fade transition
+  speed: 600          // optional: smooth transition speed
+});
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
   </style>
 </head>
 
@@ -303,37 +319,34 @@ Each day, our team works to reverse-engineer future discoveries to improve human
       </ul>
     </div>
     
-    <!-- Card 2: Carousel -->
-    <div class="capability-card">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <h3 class="text-xl font-semibold mb-2">Human Gain-of-Function</h3>
-            <p>Exploring enhancements that transcend human limitations — pioneering new frontiers in biology and capability.</p>
-          </div>
-          <div class="swiper-slide">
-            <h3 class="text-xl font-semibold mb-2">Oncology</h3>
-            <p>Redefining cancer treatment through advanced modeling and predictive insights for targeted, life-saving therapies.</p>
-          </div>
-          <div class="swiper-slide">
-            <h3 class="text-xl font-semibold mb-2">Immunology</h3>
-            <p>Unlocking the immune system’s hidden layers to prevent, control, and cure diseases with precision medicine.</p>
-          </div>
-          <div class="swiper-slide">
-            <h3 class="text-xl font-semibold mb-2">Neuroscience</h3>
-            <p>Advancing brain science to enhance cognition, repair neurological damage, and unlock new dimensions of human thought.</p>
-          </div>
-          <div class="swiper-slide">
-            <h3 class="text-xl font-semibold mb-2">Infectious Disease</h3>
-            <p>Developing future-proof defenses against pathogens through predictive modeling and breakthrough therapeutics.</p>
-          </div>
-        </div>
+<!-- Card 2: Carousel -->
+<div class="capability-card">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <h3 class="text-xl font-semibold mb-2">Human Gain-of-Function</h3>
+        <p>Exploring enhancements that transcend human limitations — pioneering new frontiers in biology and capability.</p>
+      </div>
+      <div class="swiper-slide">
+        <h3 class="text-xl font-semibold mb-2">Oncology</h3>
+        <p>Redefining cancer treatment through advanced modeling and predictive insights for targeted, life-saving therapies.</p>
+      </div>
+      <div class="swiper-slide">
+        <h3 class="text-xl font-semibold mb-2">Immunology</h3>
+        <p>Unlocking the immune system’s hidden layers to prevent, control, and cure diseases with precision medicine.</p>
+      </div>
+      <div class="swiper-slide">
+        <h3 class="text-xl font-semibold mb-2">Neuroscience</h3>
+        <p>Advancing brain science to enhance cognition, repair neurological damage, and unlock new dimensions of human thought.</p>
+      </div>
+      <div class="swiper-slide">
+        <h3 class="text-xl font-semibold mb-2">Infectious Disease</h3>
+        <p>Developing future-proof defenses against pathogens through predictive modeling and breakthrough therapeutics.</p>
       </div>
     </div>
-
   </div>
+</div>
 </section>
-
 
 
 
