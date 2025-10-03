@@ -329,10 +329,18 @@ Each day, our team works to reverse-engineer future discoveries to improve human
 
 <!-- Slide 1 -->
 <div class="swiper-slide h-full">
-  <div 
-    class="relative h-full p-8 flex flex-col justify-end bg-cover bg-center text-white overflow-hidden rounded-none"
-    style="background-image: url('/images/science_focus1.png');"
-  >
+  <div class="relative h-full p-8 flex flex-col justify-end text-white overflow-hidden rounded-none">
+    
+    <!-- Background image responsive -->
+    <picture>
+      <!-- Mobile -->
+      <source srcset="/images/science_focus1_mobile.png" media="(max-width: 640px)">
+      <!-- Tablet -->
+      <source srcset="/images/science_focus1_tablet.png" media="(max-width: 1024px)">
+      <!-- Default / Desktop -->
+      <img src="/images/science_focus1.png" alt="Science Focus" class="absolute inset-0 h-full w-full object-cover">
+    </picture>
+    
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
