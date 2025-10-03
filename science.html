@@ -303,7 +303,7 @@ Each day, our team works to reverse-engineer future discoveries to improve human
 
 <!-- Our Areas of Focus Section -->
 <section id="focus" class="py-20 px-6 fade-in">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full h-full">
 
     <!-- Card 1: Our Areas of Focus -->
     <div class="h-full p-8 flex flex-col justify-between bg-white">
@@ -313,46 +313,34 @@ Each day, our team works to reverse-engineer future discoveries to improve human
       <p class="text-lg text-gray-700 mb-6">
         Where future expertise meets today’s science — building the technologies of tomorrow to improve the lives of all.
       </p>
-      <ul id="focus-list" class="divide-y divide-black border-t border-b border-black text-left">
-        <li 
-          class="py-3 px-4 font-bold focus-btn active cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" 
-          data-slide="0">
+      <ul id="focus-list" class="divide-y divide-black border-t border-b border-black text-left flex-1">
+        <li class="py-3 px-4 font-bold focus-btn active cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="0">
           <span>Human Gain-of-Function</span>
           <span class="text-black text-xl">&gt;</span>
         </li>
-        <li 
-          class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" 
-          data-slide="1">
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="1">
           <span>Oncology</span>
           <span class="text-black text-xl">&gt;</span>
         </li>
-        <li 
-          class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" 
-          data-slide="2">
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="2">
           <span>Immunology</span>
           <span class="text-black text-xl">&gt;</span>
         </li>
-        <li 
-          class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" 
-          data-slide="3">
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="3">
           <span>Neuroscience</span>
           <span class="text-black text-xl">&gt;</span>
         </li>
-        <li 
-          class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" 
-          data-slide="4">
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="4">
           <span>Infectious Disease</span>
           <span class="text-black text-xl">&gt;</span>
         </li>
       </ul>
     </div>
 
-
     <!-- Card 2: Carousel -->
-    <div class="h-full">
-      <div class="swiper mySwiper h-full">
+    <div class="h-full flex">
+      <div class="swiper mySwiper h-full flex-1">
         <div class="swiper-wrapper h-full">
-
 <!-- Slide 1 -->
 <div class="swiper-slide h-full">
   <div class="relative h-full p-8 flex flex-col justify-end text-white overflow-hidden rounded-none">
@@ -470,124 +458,39 @@ Each day, our team works to reverse-engineer future discoveries to improve human
 </section>
 
 
-<!-- Section 1: Scientific Capabilities -->
-<section id="learn-more" class="py-20 px-6 max-w-7xl mx-auto fade-in">
-  <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-cyan-400">Scientific Capabilities</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="capability-card">
-      <div class="placeholder-img mb-4">Quantum Entanglement Image</div>
-      <h3 class="text-xl font-semibold mb-2">Quantum Entanglement</h3>
-      <p>Process complex interactions simultaneously using entangled qubits to accelerate analysis and reduce R&D timelines.</p>
-    </div>
-    <div class="capability-card">
-      <div class="placeholder-img mb-4">Superposition Image</div>
-      <h3 class="text-xl font-semibold mb-2">Superposition Modeling</h3>
-      <p>Simultaneously model multiple disease and drug pathways to identify promising candidates and reduce failures.</p>
-    </div>
-    <div class="capability-card">
-      <div class="placeholder-img mb-4">Microenvironment Analytics Image</div>
-      <h3 class="text-xl font-semibold mb-2">Microenvironment Analytics</h3>
-      <p>Track subtle cellular deviations affecting chemical signaling for high-resolution predictions and biomarker discovery.</p>
-    </div>
-  </div>
-</section>
+<!-- Innovation Section -->
+<section id="innovation" class="py-20 px-6 fade-in">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full h-full">
 
-<!-- Section 2: What is Quantum Computing? -->
-<section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
-  <div class="md:w-1/2">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">What is Quantum Computing?</h2>
-    <p class="text-black-300 mb-4">
-      Quantum computing uses qubits instead of classical bits. Through superposition and entanglement, quantum systems can process many possibilities at once, making them ideal for solving highly complex problems.
-    </p>
-    <p class="text-black-300 font-semibold">Graphic Idea: Classical bits (0/1) vs. Qubits (0 + 1 at once)</p>
-  </div>
-  <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-2xl flex items-center justify-center shadow-lg">
-    <span class="text-gray-300">[Graphic Placeholder]</span>
-  </div>
-</section>
+    <!-- Card 1: Full Image -->
+    <div class="h-full relative overflow-hidden rounded-none min-h-full">
+      <picture>
+        <source srcset="/images/science_innovation1_mobile.png" media="(max-width: 640px)">
+        <source srcset="/images/science_innovation1_tablet.png" media="(max-width: 1024px)">
+        <img src="/images/science_innovation1.png" alt="Science Innovation" class="absolute inset-0 h-full w-full object-cover">
+      </picture>
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    </div>
 
-<div class="section-divider"></div>
+<!-- Card 2: Text Content -->
+<div class="h-full p-8 flex flex-col justify-between bg-white">
+  <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">
+    Innovation
+  </h2>
+  <p class="text-lg text-gray-700 mb-6">
+    The tools we are using represent the end state — where spatiotemporal mapping of the entire nervous system reveals every biomarker and every disease course, accelerating the discovery and delivery of transformative therapeutics to patients.
+  </p>
 
-<!-- Section 3: Understanding Complexity -->
-<section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12 md:flex-row-reverse">
-  <div class="md:w-1/2">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Understanding Complexity</h2>
-    <p class="text-black-300 mb-4">Complexity measures how difficult something is to solve or predict.</p>
-    <p class="text-black-300 mb-4">In computer science: Resources (time, memory) needed to solve problems, expressed in Big-O notation.</p>
-    <p class="text-black-300 mb-4">In systems science: Complexity grows when many parts interact unpredictably (e.g., weather, biology).</p>
-    <p class="text-black-300 font-semibold">Graphic Idea: Simple pendulum → Weather system (low → high complexity)</p>
-  </div>
-  <div class="md:w-1/2 mt-8 md:mt-0 bg-black-700 h-64 rounded-2xl flex items-center justify-center shadow-lg">
-    <span class="text-black-300">[Graphic Placeholder]</span>
-  </div>
-</section>
+  <!-- New Paragraph Section -->
+  <p class="text-base text-gray-600">
+	— This approach ensures scalability across disciplines and enables collaboration between clinicians and researchers.<br>
+    — Every insight shortens the path from discovery to treatment.<br>
+    — Spatiotemporal mapping of the nervous system enables detection of all biological activity in response to any stimuli.<br>
+	— Translation of electrochemical impulses reveals the subjective experiences of a patient.<br>
 
-  <!-- Section 4: Why Complexity Matters -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Why Complexity Matters</h2>
-      <p class="text-black-300 mb-4">Classical computers struggle with exponential complexity (like simulating molecules).</p>
-      <p class="text-black-300 mb-4">Quantum computing can shift complexity boundaries, making the impossible solvable.</p>
-      <ul class="list-disc list-inside text-black-300 space-y-2">
-        <li>Shor’s Algorithm: Efficient factoring</li>
-        <li>Grover’s Algorithm: Accelerates searching</li>
-        <li>Quantum simulations: Model chemistry and biology</li>
-      </ul>
-      <p class="text-black-300 font-semibold mt-2">Tagline: Quantum extends what’s possible beyond classical limits.</p>
-    </div>
-    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-2xl flex items-center justify-center shadow-lg">
-      <span class="text-black-300">[Graphic Placeholder]</span>
-    </div>
-  </section>
-  
-  <div class="section-divider"></div>
+  </p>
+</div>
 
-  <!-- Section 5: Harnessing Quantum Entanglement for Health -->
-  <section class="py-20 px-6 max-w-6xl mx-auto fade-in md:flex md:items-center md:gap-12 md:flex-row-reverse">
-    <div class="md:w-1/2">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-400">Harnessing Quantum Entanglement for Health</h2>
-      <p class="text-black-300 mb-4">
-        Diseases and drugs trigger microenvironment deviations, altering chemical signaling and reshaping cellular responses.
-      </p>
-      <p class="text-black-300 mb-4">
-        We model these deviations using quantum entanglement to offer new insights into disease pathology and drug metabolism.
-      </p>
-      <p class="text-black-300 font-semibold mt-2">Living the Quantum Dream: modeling complex systems, simulating biology, unlocking predictive insights.</p>
-    </div>
-    <div class="md:w-1/2 mt-8 md:mt-0 bg-gray-700 h-64 rounded-2xl flex items-center justify-center shadow-lg">
-      <span class="text-gray-300">[Graphic Placeholder]</span>
-    </div>
-  </section>
-
-<!-- Section 6: From Data to Actionable Insights -->
-<section class="py-20 px-6 max-w-7xl mx-auto fade-in bg-white rounded-xl shadow">
-  <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-blue-800">From Data to Actionable Insights</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div class="capability-card">
-      <div class="placeholder-img mb-4">Data Capture Image</div>
-      <h3 class="text-xl font-semibold mb-2">High-Fidelity Data Capture</h3>
-      <p>Ingest complex multi-modal data including patient-level observations and chemical signals.</p>
-    </div>
-    <div class="capability-card">
-      <div class="placeholder-img mb-4">Modeling Image</div>
-      <h3 class="text-xl font-semibold mb-2">Predictive Biological Modeling</h3>
-      <p>Create sophisticated models to simulate drug and disease perturbations across the microenvironment.</p>
-    </div>
-    <div class="capability-card">
-      <div class="placeholder-img mb-4">Quantum Analytics Image</div>
-      <h3 class="text-xl font-semibold mb-2">Quantum Analytics</h3>
-      <p>Apply quantum-inspired algorithms for rapid and scalable processing beyond classical methods.</p>
-    </div>
-    <div class="capability-card">
-      <div class="placeholder-img mb-4">Insight Delivery Image</div>
-      <h3 class="text-xl font-semibold mb-2">Insight Delivery</h3>
-      <p>Deliver actionable intelligence for clinical, research, and commercial decision-making.</p>
-    </div>
-  </div>
-</section>
-
-
-<div class="section-divider"></div>
 
 
   <!-- CTA Section -->
