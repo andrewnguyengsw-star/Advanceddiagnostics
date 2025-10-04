@@ -271,7 +271,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
           <span>Human Augmentation</span>
         </button>
         <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-          Description: X-Ray Vision is a sensory enhancement that enables penetrative visual perception.
+          <span class="font-bold">Description</span>: X-Ray Vision is a sensory enhancement that enables penetrative visual perception.
         </div>
       </div>
 
@@ -290,7 +290,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
           <span>Human Enhancement</span>
         </button>
         <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-          Details about Program B, therapeutic approach, and development pipeline.
+          <span class="font-bold">Description</span>:Details about Program B, therapeutic approach, and development pipeline.
         </div>
       </div>
 
@@ -309,7 +309,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     <span>Human Augmentation</span>
   </button>
   <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-    Mind Reading enables the detection and translation of another person’s nerve impulses, providing direct insight into thoughts and intentions.
+    <span class="font-bold">Description</span>: Mind Reading represents a breakthrough in neurotechnology, enabling the remote detection and translation of another individual’s thoughts and mental imagery. By transforming neural activity into interpretable information, this capability opens new frontiers in communication, intelligence gathering, and human augmentation, positioning it as a transformative advance in the future of cognitive technologies.
   </div>
 </div>
 
@@ -328,26 +328,45 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     <span>Human Enhancement</span>
   </button>
   <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-    Program details about Muscle Enhancement, focusing on improved strength, endurance, and recovery through human enhancement technologies.
+    <span class="font-bold">Description</span>: A next-generation approach to human performance, enhancing muscle tissue to deliver measurable gains in strength, endurance, and recovery — advancing the frontier of human enhancement technologies.
   </div>
 </div>
 
-      <!-- Row 4 -->
+      <!-- Row 5 -->
       <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
         <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
           <div class="flex items-center gap-2">
             <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
-            <span class="font-medium">Program C</span>
+            <span class="font-medium">Electrical Resistance</span>
           </div>
-          <span>Infectious Disease</span>
-          <span>Vaccine Development</span>
+          <span>Enhanced Resistance</span>
+          <span>Increased Survivability</span>
           <span>Clinical Trials</span>
-          <span>mRNA</span>
+          <span>Human Enhancement</span>
         </button>
         <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-          Program C details including trial locations, patient engagement, and expected outcomes.
+          <span class="font-bold">Description</span>: A breakthrough human enhancement designed to increase survivability by strengthening resistance to fatal injuries such as electrocution, forming part of a broader portfolio of technologies focused on human resilience and protection.
+        </div>
+      </div>
+
+      <!-- Row 6 -->
+      <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+        <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+          <div class="flex items-center gap-2">
+            <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+            <span class="font-medium">Enhanced Recognition</span>
+          </div>
+    <span>Sensory</span>
+    <span>Operational Awareness</span>
+    <span>Clinical Trials</span>
+    <span>Human Enhancement</span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
+          <span class="font-bold">Description</span>: Authority Recognition is a next-generation sensory enhancement that enables the detection and identification of law enforcement and security personnel at multiple levels — including local police, state agencies, federal organizations such as the FBI and DHS, as well as military forces including the U.S. Army and Navy, and international bodies such as Interpol. This capability enhances operational awareness by providing users with real-time insights into the presence and affiliation of authoritative entities, strengthening decision-making, safety, and strategic advantage in dynamic environments.
         </div>
       </div>
     </div>
@@ -356,6 +375,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
 <!-- Alpine.js -->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 
 <!-- Products Grid -->
 <section id="products" class="py-20 px-6 max-w-7xl mx-auto fade-in">
