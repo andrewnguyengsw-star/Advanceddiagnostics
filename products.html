@@ -370,7 +370,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
         </div>
       </div>
       
-            <!-- Row 6 -->
+            <!-- Row 7 -->
       <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
         <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
           <div class="flex items-center gap-2">
@@ -386,6 +386,25 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
         </button>
         <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
           <span class="font-bold">Description</span>: Human BioRadar is an advanced sensory enhancement that leverages novel biological signal modalities to enable real-time spatial mapping and situational awareness. By interpreting environmental feedback beyond traditional human senses, it empowers individuals to detect obstacles, movement, and hidden structures in complex or low-visibility environments. This innovation expands the frontier of human perception, offering transformative applications in defense, security, search and rescue, and high-performance navigation.
+        </div>
+      </div>
+      
+                  <!-- Row 8 -->
+      <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+        <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+          <div class="flex items-center gap-2">
+            <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+            <span class="font-medium">Human Intelligence</span>
+          </div>
+    <span>Neurology</span>
+    <span>Cognitive Enhancement</span>
+    <span>Preclinical</span>
+    <span>Brain Enhancement</span>
+        </button>
+        <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
+          <span class="font-bold">Description</span>: Human Intelligence builds on groundbreaking research that has successfully mapped the neural architecture and activity patterns underlying cognitive performance measured through IQ. Leveraging this foundation, the program is advancing next-generation cognitive enhancement technologies designed to elevate learning speed, analytical reasoning, and problem-solving ability. By directly targeting the neural pathways of intelligence, this initiative seeks to unlock new levels of human potential with applications across defense, research, education, and innovation-driven fields.
         </div>
       </div>
     </div>
