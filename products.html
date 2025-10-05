@@ -253,181 +253,203 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
       <div>Modality</div>
     </div>
 
-    <!-- Table Rows with Dropdowns -->
-    <div class="space-y-4">
-      <!-- Row 1 -->
-      <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-        <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-          <!-- Arrow + Name -->
-          <div class="flex items-center gap-2">
-            <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-            <span class="font-medium">X-Ray Vision</span>
-          </div>
-          <span>Ophthalmology</span>
-          <span>Sensory Augmentation</span>
-          <span>Field Test</span>
-          <span>Human Augmentation</span>
-        </button>
-        <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-          <span class="font-bold">Description</span>: X-Ray Vision is a sensory enhancement that enables penetrative visual perception.
-        </div>
+<!-- Table Rows with Dropdowns -->
+<div class="space-y-4">
+  <!-- Row 1 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <!-- Arrow + Name -->
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">X-Ray Vision</span>
       </div>
-
-      <!-- Row 2 -->
-      <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-        <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-          <div class="flex items-center gap-2">
-            <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-            <span class="font-medium">Neuroception</span>
-          </div>
-          <span>Neurology</span>
-          <span>Cognitive Enhancement</span>
-          <span>Field Test</span>
-          <span>Human Enhancement</span>
-        </button>
-        <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-          <span class="font-bold">Description</span>:Details about Program B, therapeutic approach, and development pipeline.
-        </div>
-      </div>
-
-<!-- Row 3 -->
-<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-  <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-    <div class="flex items-center gap-2">
-      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-      <span class="font-medium">Mind Reading</span>
+      <span>Ophthalmology</span>
+      <span>Sensory Augmentation</span>
+      <span>Field Test</span>
+      <span>Human Augmentation</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: X-Ray Vision is a sensory enhancement that enables penetrative visual perception.
     </div>
-    <span>Sensory</span>
-    <span>Intelligence</span>
-    <span>Field Test</span>
-    <span>Human Augmentation</span>
-  </button>
-  <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-    <span class="font-bold">Description</span>: Mind Reading represents a breakthrough in neurotechnology, enabling the remote detection and translation of another individual’s thoughts and mental imagery. By transforming neural activity into interpretable information, this capability opens new frontiers in communication, intelligence gathering, and human augmentation, positioning it as a transformative advance in the future of cognitive technologies.
   </div>
-</div>
 
-<!-- Row 4 -->
-<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-  <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-    <div class="flex items-center gap-2">
-      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-      <span class="font-medium">Muscle Enhancement</span>
+  <!-- Row 2 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">Neuroception</span>
+      </div>
+      <span>Neurology</span>
+      <span>Cognitive Enhancement</span>
+      <span>Field Test</span>
+      <span>Human Enhancement</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: An advanced sensory augmentation granting the user the ability to perceive and interpret the neural activity of others at unprecedented resolution. Neuroception extends human perception into the neuroelectric domain, allowing observation of individual nerve impulses across both the central and peripheral nervous systems. Through dynamic neural resonance mapping and phase-locked bioelectrical translation, it enables real-time visualization and interpretation of another’s sensory input, motor intent, and emotional state. This capability transforms the understanding of human interaction — bridging physiology and cognition to create a direct interface between nervous systems.
     </div>
-    <span>Therapeutic Area</span>
-    <span>Human Performance</span>
-    <span>Preclinical</span>
-    <span>Human Enhancement</span>
-  </button>
-  <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-    <span class="font-bold">Description</span>: A next-generation approach to human performance, enhancing muscle tissue to deliver measurable gains in strength, endurance, and recovery — advancing the frontier of human enhancement technologies.
   </div>
-</div>
 
-      <!-- Row 5 -->
-      <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-        <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-          <div class="flex items-center gap-2">
-            <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-            <span class="font-medium">Electrical Resistance</span>
-          </div>
-          <span>Enhanced Resistance</span>
-          <span>Increased Survivability</span>
-          <span>Clinical Trials</span>
-          <span>Human Enhancement</span>
-        </button>
-        <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-          <span class="font-bold">Description</span>: A breakthrough human enhancement designed to increase survivability by strengthening resistance to fatal injuries such as electrocution, forming part of a broader portfolio of technologies focused on human resilience and protection.
-        </div>
+  <!-- Row 3 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">Mind Reading</span>
       </div>
-
-      <!-- Row 6 -->
-      <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-        <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-          <div class="flex items-center gap-2">
-            <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-            <span class="font-medium">Enhanced Recognition</span>
-          </div>
-    <span>Sensory</span>
-    <span>Operational Awareness</span>
-    <span>Clinical Trials</span>
-    <span>Human Enhancement</span>
-        </button>
-        <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-          <span class="font-bold">Description</span>: Authority Recognition is a next-generation sensory enhancement that enables the detection and identification of law enforcement and security personnel at multiple levels — including local police, state agencies, federal organizations such as the FBI and DHS, as well as military forces including the U.S. Army and Navy, and international bodies such as Interpol. This capability enhances operational awareness by providing users with real-time insights into the presence and affiliation of authoritative entities, strengthening decision-making, safety, and strategic advantage in dynamic environments.
-        </div>
-      </div>
-      
-            <!-- Row 7 -->
-      <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-        <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-          <div class="flex items-center gap-2">
-            <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-            <span class="font-medium">Human BioRadar</span>
-          </div>
-    <span>Human Gain-of-Function</span>
-    <span>Operational Awareness</span>
-    <span>Clinical Trials</span>
-    <span>Human Enhancement</span>
-        </button>
-        <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-          <span class="font-bold">Description</span>: Human BioRadar is an advanced sensory enhancement that leverages novel biological signal modalities to enable real-time spatial mapping and situational awareness. By interpreting environmental feedback beyond traditional human senses, it empowers individuals to detect obstacles, movement, and hidden structures in complex or low-visibility environments. This innovation expands the frontier of human perception, offering transformative applications in defense, security, search and rescue, and high-performance navigation.
-        </div>
-      </div>
-      
-                  <!-- Row 8 -->
-      <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-        <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-          <div class="flex items-center gap-2">
-            <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-            <span class="font-medium">Human Intelligence</span>
-          </div>
-    <span>Neurology</span>
-    <span>Cognitive Enhancement</span>
-    <span>Preclinical</span>
-    <span>Brain Enhancement</span>
-        </button>
-        <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
-          <span class="font-bold">Description</span>: Human Intelligence builds on groundbreaking research that has successfully mapped the neural architecture and activity patterns underlying cognitive performance measured through IQ. Leveraging this foundation, the program is advancing next-generation cognitive enhancement technologies designed to elevate learning speed, analytical reasoning, and problem-solving ability. By directly targeting the neural pathways of intelligence, this initiative seeks to unlock new levels of human potential with applications across defense, research, education, and innovation-driven fields.
-        </div>
-      </div>
-      
-      <!-- Row 9 -->
-<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-  <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-    <div class="flex items-center gap-2">
-      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-      <span class="font-medium">Proximity Reflex System (PRS)</span>
+      <span>Sensory</span>
+      <span>Intelligence</span>
+      <span>Field Test</span>
+      <span>Human Augmentation</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: Mind Reading represents a breakthrough in neurotechnology, enabling the remote detection and translation of another individual’s thoughts and mental imagery. By transforming neural activity into interpretable information, this capability opens new frontiers in communication, intelligence gathering, and human augmentation, positioning it as a transformative advance in the future of cognitive technologies.
     </div>
-    <span>Human Enhancement</span>
-    <span>Reflex & Situational Awareness</span>
-    <span>Field Test</span>
-    <span>Neural Interface</span>
-  </button>
-  <div x-show="open" x-collapse class="px-6 pb-4 text-base text-gray-100 col-span-5">
-    <span class="font-bold">Description</span>: The Proximity Reflex System (PRS) is a heightened extrasensory perception that allows an individual to detect imminent danger or environmental changes before they are consciously aware of them. This intuitive awareness functions like an advanced threat detection and reflex enhancement system, combining spatial sensing, motion prediction, and subconscious neural processing to trigger immediate protective or evasive responses.
   </div>
-</div>
 
-      <!-- Row 10 -->
+  <!-- Row 4 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">Enhanced Muscles</span>
+      </div>
+      <span>Therapeutic Area</span>
+      <span>Human Performance</span>
+      <span>Preclinical</span>
+      <span>Human Enhancement</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: A next-generation evolution in human performance, engineered to augment muscle tissue for extraordinary strength and endurance without the bulk of traditional hypertrophy. Designed to produce superior musculature while preserving full mobility, agility, and precision of motion, this capability redefines the balance between power and control. Through bioadaptive modulation of muscle fiber dynamics, optimized neuromuscular synchronization, and enhanced metabolic efficiency, it unlocks a new class of human endurance — one capable of sustained, high-intensity performance with uncompromised fluidity and resilience, advancing the frontier of adaptive human enhancement technologies.
+    </div>
+  </div>
+
+  <!-- Row 5 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">Enhanced Endurance</span>
+      </div>
+      <span>Therapeutic Area</span>
+      <span>Human Performance</span>
+      <span>Field Test</span>
+      <span>Human Enhancement</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: A next-generation enhancement redefining the limits of human stamina and resilience. Superhuman Endurance augments muscular, cardiovascular, and metabolic systems to sustain peak output far beyond natural thresholds. Through engineered mitochondrial efficiency, adaptive muscle fiber regeneration, and neurometabolic synchronization, it enables continuous high-intensity performance with minimal fatigue or degradation. This capability transforms human physiology into a self-optimizing system — capable of enduring extreme environments, prolonged exertion, and mission-critical demands once thought impossible.
+    </div>
+  </div>
+
+  <!-- Row 6 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">Electrical Resistance</span>
+      </div>
+      <span>Enhanced Resistance</span>
+      <span>Increased Survivability</span>
+      <span>Clinical Trials</span>
+      <span>Human Enhancement</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: A breakthrough human enhancement designed to increase survivability by strengthening resistance to fatal injuries such as electrocution, forming part of a broader portfolio of technologies focused on human resilience and protection.
+    </div>
+  </div>
+
+  <!-- Row 7 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">Neural Spatioperception</span>
+      </div>
+      <span>Human Perception</span>
+      <span>
+        <span class="block">Situational Awareness</span>
+        <span class="block mt-2">Threat Detection Capabilities</span>
+      </span>
+      <span>Field Test</span>
+      <span>Human Augmentation</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: A biologically integrated perceptual system engineered to enhance situational awareness and threat detection capabilities without reliance on external instrumentation or existing intelligence networks. In field evaluations, enhanced individuals have demonstrated the unprecedented ability to detect and identify unique human bio-signatures — including those of undercover law enforcement and military personnel — across intercontinental distances approaching 16,000 kilometers. This capability is driven by ultra-sensitive neurobiological pattern recognition that interprets minute bioelectric and kinetic emissions, enabling autonomous environmental mapping and real-time target differentiation. The result is a fully internalized, self-sustaining perceptual sense that transforms human awareness into a continuous, global-scale detection system.
+    </div>
+  </div>
+
+  <!-- Row 8 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">Human BioRadar</span>
+      </div>
+      <span>Human Gain-of-Function</span>
+      <span>Operational Awareness</span>
+      <span>Clinical Trials</span>
+      <span>Human Enhancement</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: Human BioRadar is an advanced sensory enhancement that leverages novel biological signal modalities to enable real-time spatial mapping and situational awareness. By interpreting environmental feedback beyond traditional human senses, it empowers individuals to detect obstacles, movement, and hidden structures in complex or low-visibility environments. This innovation expands the frontier of human perception, offering transformative applications in defense, security, search and rescue, and high-performance navigation.
+    </div>
+  </div>
+
+  <!-- Row 9 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">Human Intelligence</span>
+      </div>
+      <span>Neurology</span>
+      <span>Cognitive Enhancement</span>
+      <span>Preclinical</span>
+      <span>Brain Enhancement</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: Human Intelligence builds on groundbreaking research that has successfully mapped the neural architecture and activity patterns underlying cognitive performance measured through IQ. Leveraging this foundation, the program is advancing next-generation cognitive enhancement technologies designed to elevate learning speed, analytical reasoning, and problem-solving ability. By directly targeting the neural pathways of intelligence, this initiative seeks to unlock new levels of human potential with applications across defense, research, education, and innovation-driven fields.
+    </div>
+  </div>
+
+  <!-- Row 10 -->
+  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+      <div class="flex items-center gap-2">
+        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="font-medium">Proximity Reflex System (PRS)</span>
+      </div>
+      <span>Human Enhancement</span>
+      <span>Reflex & Situational Awareness</span>
+      <span>Field Test</span>
+      <span>Neural Interface</span>
+    </button>
+    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+      <span class="font-semibold text-white text-lg">Description</span>: The Proximity Reflex System (PRS) is a heightened extrasensory perception that allows an individual to detect imminent danger or environmental changes before they are consciously aware of them. This intuitive awareness functions like an advanced threat detection and reflex enhancement system, combining spatial sensing, motion prediction, and subconscious neural processing to trigger immediate protective or evasive responses.
+    </div>
+  </div>
+
+<!-- Row 11 -->
 <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
   <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
     <div class="flex items-center gap-2">
@@ -441,14 +463,15 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     <span>Preclinical</span>
     <span>Biochemical Augmentation</span>
   </button>
-  <div x-show="open" x-collapse class="px-6 pb-4 text-base text-gray-100 col-span-5">
-    <span class="font-bold">Description</span>: AECION COMPOUND OMEGA represents the initial phase of research into advanced human enhancement biochemistry. Currently in the <span class="font-bold">Preclinical</span> stage, this program focuses on molecular design and biological validation of compounds intended to elevate strength, endurance, recovery rate, and neural-muscular efficiency. Testing emphasizes safety, stability, and efficacy across in vitro and in vivo models prior to any human evaluation.
+  <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
+    <span class="font-semibold text-white text-lg">Description</span>: AECION COMPOUND OMEGA represents the initial phase of research into advanced human enhancement biochemistry. Currently in the <span class="font-bold">Preclinical</span> stage, this program focuses on molecular design and biological validation of compounds intended to elevate strength, endurance, recovery rate, and neural-muscular efficiency. Testing emphasizes safety, stability, and efficacy across in vitro and in vivo models prior to any human evaluation.
   </div>
 </div>
 
-    </div>
-  </div>
+</div>
+</div>
 </section>
+
 
 <!-- Alpine.js -->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
