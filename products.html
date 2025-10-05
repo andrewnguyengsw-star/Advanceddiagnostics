@@ -370,27 +370,76 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     </div>
   </div>
 
-  <!-- Row 7 -->
-  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-      <div class="flex items-center gap-2">
-        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-        <span class="font-medium">Neural Spatioperception</span>
-      </div>
-      <span>Human Perception</span>
-      <span>
-        <span class="block">Situational Awareness</span>
-        <span class="block mt-2">Threat Detection Capabilities</span>
-      </span>
-      <span>Field Test</span>
-      <span>Human Augmentation</span>
-    </button>
-    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
-      <span class="font-semibold text-white text-lg">Description</span>: A biologically integrated perceptual system engineered to enhance situational awareness and threat detection capabilities without reliance on external instrumentation or existing intelligence networks. In field evaluations, enhanced individuals have demonstrated the unprecedented ability to detect and identify unique human bio-signatures — including those of undercover law enforcement and military personnel — across intercontinental distances approaching 16,000 kilometers. This capability is driven by ultra-sensitive neurobiological pattern recognition that interprets minute bioelectric and kinetic emissions, enabling autonomous environmental mapping and real-time target differentiation. The result is a fully internalized, self-sustaining perceptual sense that transforms human awareness into a continuous, global-scale detection system.
+<!-- Row 7 -->
+<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+  <button
+    @click="open = !open"
+    class="w-full grid grid-cols-5 gap-8 items-start px-6 py-4 text-left focus:outline-none"
+  >
+    <!-- Column 1 -->
+    <div class="flex items-center gap-2">
+      <svg
+        :class="{ 'rotate-180': open }"
+        class="w-5 h-5 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+      <span class="font-medium">Neural Spatioperception</span>
     </div>
+
+    <!-- Column 2 -->
+    <span>Human Perception</span>
+
+    <!-- Column 3 (Two rows stacked) -->
+    <span class="flex flex-col">
+      <span>Situational Awareness</span>
+      <span class="mt-2">Threat Detection Capabilities</span>
+    </span>
+
+    <!-- Column 4 -->
+    <span>Field Test</span>
+
+    <!-- Column 5 -->
+    <span>Human Augmentation</span>
+  </button>
+
+  <!-- Collapsible Content -->
+  <div
+    x-show="open"
+    x-collapse
+    class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5"
+  >
+    <span class="font-semibold text-white text-lg">Description</span>:
+    A biologically integrated perceptual system engineered to elevate soldiers’
+    situational awareness and decision-making in combat. Operating entirely
+    internally—without reliance on external instrumentation or existing
+    intelligence networks—it enables users to function as autonomous detection
+    platforms. Its purpose is to enhance battlefield readiness by identifying
+    the global positioning of threats before deployment, providing strategic
+    awareness and precision planning. Soldiers can detect threats beyond
+    conventional visual or instrumental range, extending perceptual reach across
+    the entire planet. In field evaluations, enhanced individuals have
+    demonstrated the ability to identify and differentiate unique human
+    bio-signatures—including those of covert law enforcement and military
+    operatives—across intercontinental distances approaching 16,000 kilometers.
+    This global-scale reconnaissance capability allows enhanced soldiers to
+    scan the planet for potential threats, analyze them before they become
+    visible to the human eye, and receive real-time data to inform tactical and
+    strategic decisions. The system autonomously maps environmental and human
+    activity with instantaneous target classification, resulting in a fully
+    self-sustaining, internalized sensory network that transforms human
+    perception into a continuous, planetary-scale detection and decision-support
+    system.
   </div>
+</div>
 
   <!-- Row 8 -->
   <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
@@ -430,24 +479,62 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     </div>
   </div>
 
-  <!-- Row 10 -->
-  <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-    <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
-      <div class="flex items-center gap-2">
-        <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-        <span class="font-medium">Proximity Reflex System (PRS)</span>
-      </div>
-      <span>Human Enhancement</span>
-      <span>Reflex & Situational Awareness</span>
-      <span>Field Test</span>
-      <span>Neural Interface</span>
-    </button>
-    <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5">
-      <span class="font-semibold text-white text-lg">Description</span>: The Proximity Reflex System (PRS) is a heightened extrasensory perception that allows an individual to detect imminent danger or environmental changes before they are consciously aware of them. This intuitive awareness functions like an advanced threat detection and reflex enhancement system, combining spatial sensing, motion prediction, and subconscious neural processing to trigger immediate protective or evasive responses.
+<!-- Row 10 -->
+<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+  <button
+    @click="open = !open"
+    class="w-full grid grid-cols-5 gap-8 items-start px-6 py-4 text-left focus:outline-none"
+  >
+    <!-- Column 1 -->
+    <div class="flex items-center gap-2">
+      <svg
+        :class="{ 'rotate-180': open }"
+        class="w-5 h-5 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        />
+      </svg>
+      <span class="font-medium">Proximity Reflex System (PRS)</span>
     </div>
+
+    <!-- Column 2 -->
+    <span>Human Enhancement</span>
+
+    <!-- Column 3 (Two stacked rows) -->
+    <span class="flex flex-col">
+      <span>Reflex</span>
+      <span class="mt-2">Situational Awareness</span>
+    </span>
+
+    <!-- Column 4 -->
+    <span>Field Test</span>
+
+    <!-- Column 5 -->
+    <span>Neural Interface</span>
+  </button>
+
+  <!-- Collapsible Content -->
+  <div
+    x-show="open"
+    x-collapse
+    class="px-6 pb-4 text-base leading-relaxed text-gray-100 col-span-5"
+  >
+    <span class="font-semibold text-white text-lg">Description</span>:
+    The Proximity Reflex System (PRS) is a heightened extrasensory perception
+    that allows an individual to detect imminent danger or environmental changes
+    before they are consciously aware of them. This intuitive awareness
+    functions like an advanced threat detection and reflex enhancement system,
+    combining spatial sensing, motion prediction, and subconscious neural
+    processing to trigger immediate protective or evasive responses.
   </div>
+</div>
 
 <!-- Row 11 -->
 <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
