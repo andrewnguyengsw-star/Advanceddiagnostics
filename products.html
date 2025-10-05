@@ -267,7 +267,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
           </div>
           <span>Ophthalmology</span>
           <span>Sensory Augmentation</span>
-          <span>Pilot</span>
+          <span>Field Test</span>
           <span>Human Augmentation</span>
         </button>
         <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
@@ -286,7 +286,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
           </div>
           <span>Neurology</span>
           <span>Cognitive Enhancement</span>
-          <span>Pilot</span>
+          <span>Field Test</span>
           <span>Human Enhancement</span>
         </button>
         <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
@@ -305,7 +305,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
     </div>
     <span>Sensory</span>
     <span>Intelligence</span>
-    <span>Pilot</span>
+    <span>Field Test</span>
     <span>Human Augmentation</span>
   </button>
   <div x-show="open" x-collapse class="px-6 pb-4 text-sm text-gray-100 col-span-5">
@@ -407,12 +407,145 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
           <span class="font-bold">Description</span>: Human Intelligence builds on groundbreaking research that has successfully mapped the neural architecture and activity patterns underlying cognitive performance measured through IQ. Leveraging this foundation, the program is advancing next-generation cognitive enhancement technologies designed to elevate learning speed, analytical reasoning, and problem-solving ability. By directly targeting the neural pathways of intelligence, this initiative seeks to unlock new levels of human potential with applications across defense, research, education, and innovation-driven fields.
         </div>
       </div>
+      
+      <!-- Row 9 -->
+<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+  <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+    <div class="flex items-center gap-2">
+      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+      <span class="font-medium">Proximity Reflex System (PRS)</span>
+    </div>
+    <span>Human Enhancement</span>
+    <span>Reflex & Situational Awareness</span>
+    <span>Field Test</span>
+    <span>Neural Interface</span>
+  </button>
+  <div x-show="open" x-collapse class="px-6 pb-4 text-base text-gray-100 col-span-5">
+    <span class="font-bold">Description</span>: The Proximity Reflex System (PRS) is a heightened extrasensory perception that allows an individual to detect imminent danger or environmental changes before they are consciously aware of them. This intuitive awareness functions like an advanced threat detection and reflex enhancement system, combining spatial sensing, motion prediction, and subconscious neural processing to trigger immediate protective or evasive responses.
+  </div>
+</div>
+
+      <!-- Row 10 -->
+<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+  <button @click="open = !open" class="w-full grid grid-cols-5 items-center px-6 py-4 text-left focus:outline-none">
+    <div class="flex items-center gap-2">
+      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+      <span class="font-medium">Compound Omega</span>
+    </div>
+    <span>Human Enhancement</span>
+    <span>Super Soldier Serum</span>
+    <span>Preclinical</span>
+    <span>Biochemical Augmentation</span>
+  </button>
+  <div x-show="open" x-collapse class="px-6 pb-4 text-base text-gray-100 col-span-5">
+    <span class="font-bold">Description</span>: AECION COMPOUND OMEGA represents the initial phase of research into advanced human enhancement biochemistry. Currently in the <span class="font-bold">Preclinical</span> stage, this program focuses on molecular design and biological validation of compounds intended to elevate strength, endurance, recovery rate, and neural-muscular efficiency. Testing emphasizes safety, stability, and efficacy across in vitro and in vivo models prior to any human evaluation.
+  </div>
+</div>
+
     </div>
   </div>
 </section>
 
 <!-- Alpine.js -->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+<!-- What Does Status Mean Section -->
+<section id="status-meaning" class="py-20 px-6 bg-white text-black" x-data="{ allOpen: false }">
+  <div class="max-w-6xl mx-auto border-b border-black pb-4">
+    <div class="flex justify-between items-center mb-10">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center w-full">
+        What Does Status Mean?
+      </h2>
+    </div>
+
+    <!-- Expand/Collapse Button -->
+    <div class="flex justify-end mb-6">
+      <button 
+        @click="allOpen = !allOpen" 
+        class="border border-black px-4 py-2 font-bold text-sm uppercase hover:bg-black hover:text-white transition"
+      >
+        <span x-show="!allOpen">Expand All</span>
+        <span x-show="allOpen">Collapse All</span>
+      </button>
+    </div>
+
+    <!-- Definitions -->
+    <div class="divide-y divide-black">
+
+      <!-- Preclinical -->
+      <div x-data="{ open: false }" x-init="$watch('allOpen', val => open = val)" class="py-4">
+        <button 
+          @click="open = !open" 
+          class="w-full flex justify-between items-center text-left font-bold text-lg focus:outline-none"
+        >
+          <span>Preclinical</span>
+          <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div x-show="open" x-collapse class="pl-1 pt-2 text-base text-gray-800 leading-relaxed">
+          Early-stage research focused on proof-of-concept, safety, and efficacy testing in laboratory or model systems before human application.
+        </div>
+      </div>
+
+      <!-- Field Test -->
+      <div x-data="{ open: false }" x-init="$watch('allOpen', val => open = val)" class="py-4">
+        <button 
+          @click="open = !open" 
+          class="w-full flex justify-between items-center text-left font-bold text-lg focus:outline-none"
+        >
+          <span>Field Test</span>
+          <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div x-show="open" x-collapse class="pl-1 pt-2 text-base text-gray-800 leading-relaxed">
+A stage in which a technology, system, pharmaceutical, or enhancement is evaluated in real-world or simulated environments to measure accuracy, precision, and performance under operational conditions. Field testing focuses on validating functionality and effectiveness beyond the laboratory setting, serving as a bridge between experimental development and formal clinical evaluation or large-scale deployment.
+        </div>
+      </div>
+
+      <!-- Clinical Trials -->
+      <div x-data="{ open: false }" x-init="$watch('allOpen', val => open = val)" class="py-4">
+        <button 
+          @click="open = !open" 
+          class="w-full flex justify-between items-center text-left font-bold text-lg focus:outline-none"
+        >
+          <span>Clinical Trials</span>
+          <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div x-show="open" x-collapse class="pl-1 pt-2 text-base text-gray-800 leading-relaxed">
+          Expanded testing phase assessing safety, performance, and benefits across broader participant groups under regulatory oversight.
+        </div>
+      </div>
+
+      <!-- Deployed -->
+      <div x-data="{ open: false }" x-init="$watch('allOpen', val => open = val)" class="py-4 border-b border-black">
+        <button 
+          @click="open = !open" 
+          class="w-full flex justify-between items-center text-left font-bold text-lg focus:outline-none"
+        >
+          <span>Deployed</span>
+          <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div x-show="open" x-collapse class="pl-1 pt-2 text-base text-gray-800 leading-relaxed">
+          Mature technologies validated through trials and operational testing, ready for integration, scaling, or specialized deployment.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
 
 
 <!-- Products Grid -->
