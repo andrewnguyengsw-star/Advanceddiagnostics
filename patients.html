@@ -255,25 +255,151 @@
   </nav>
 </header>
 
-<!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 text-white" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/products_header.png') center/cover no-repeat;">
+<!-- Unified Hero Section -->
+<section class="relative min-h-screen grid sm:grid-cols-2 items-center">
   
-  <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 fade-in">
-    Shaping Tomorrow’s Breakthroughs, Today
-  </h1>
+  <!-- Left Half: Image -->
+  <div class="w-full h-full">
+    <img src="/images/patients_head.png" alt="Quantum Health" class="w-full h-full object-cover select-none">
+  </div>
+  
+  <!-- Right Half: White background with black text, seamless edge -->
+  <div class="flex flex-col justify-center items-center text-center px-6 py-12 bg-white text-black border-0">
+    <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
+      Patients
+    </h1>
+    <p class="text-lg sm:text-xl md:text-2xl text-gray-700 max-w-xl mb-8 fade-in" style="animation-delay:0.4s;">
+We are building a future where every disease can be diagnosed, every biomarker identified, and every treatment designed to give you the happily ever after you deserve.
+    </p>
+    <a href="#learn-more" class="btn-primary fade-in" style="animation-delay:0.6s;">
+      Learn More
+    </a>
+  </div>
 
-  <p class="max-w-3xl text-lg sm:text-xl mb-4 fade-in">
-    Discovery and development is a bold journey that demands creativity, perseverance, and agility — powered by the expertise of thousands of dedicated scientists working together to transform healthcare.
-  </p>
-
-  <p class="max-w-3xl text-lg sm:text-xl mb-8 fade-in">
-    Today’s science is limited by present knowledge.  
-    We break those boundaries by fusing future insights with cutting‑edge innovation to accelerate research and development.  
-    The result is a new era — where tomorrow’s breakthroughs arrive today.
-  </p>
-
-  <a href="#products" class="btn-primary fade-in">
-    Explore the Future
-  </a>
 </section>
+
+
+<!-- Technology / Research Section -->
+<section class="py-20 px-6 bg-white text-black fade-in">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-black-500">Our journey of scientific discovery has brought us to the singularity — the threshold where the pursuit of knowledge meets the natural boundaries of science itself.</h2>
+  <p class="max-w-4xl mx-auto mb-6 text-center">
+Each day, our team works to reverse-engineer future discoveries to improve human health and well-being.
+  </p>
+  <p class="max-w-3xl mx-auto mb-6 text-center">
+    We are focused on applying future knowledge and scientific practice to develop groundbreaking medicines and vaccines for patients. Our teams of scientists combine diverse expertise with cutting-edge technologies and tools to drive the discovery of the next breakthrough in patient care.
+  </p>
+  <div class="text-center">
+    <a href="research.html" class="btn-primary">Dive Deeper into Our Research</a>
+  </div>
+</section>
+
+<!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
+    <div class="mb-4 flex justify-center flex-wrap gap-4">
+      <a href="index.html" class="hover:text-cyan-500 transition">About Us</a>
+      <a href="science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="research.html" class="hover:text-cyan-500 transition">Research</a>
+      <a href="careers.html" class="hover:text-cyan-500 transition">Careers</a>
+      <a href="contact.html" class="hover:text-cyan-500 transition">Contact</a>
+    </div>
+    <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
+    <div class="flex justify-center gap-4 mb-4">
+      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
+      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
+    </div>
+    <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
+  </footer>
+
+<script>
+  // Fade-in animations
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+    });
+  }, { threshold: 0.2 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+
+  menuToggle.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    menuToggle.classList.toggle('open', menuOpen);
+
+    if (menuOpen) {
+      mobileMenu.classList.add('open');
+      mobileMenu.style.display = 'block';
+      setTimeout(() => {
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      }, 10);
+    } else {
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.opacity = '0';
+      setTimeout(() => {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.display = 'none';
+      }, 300);
+    }
+  });
+
+  // Accordion toggle for mobile menu (classic accordion behavior)
+  document.addEventListener("DOMContentLoaded", function () {
+    const accordions = document.querySelectorAll(".accordion-btn");
+
+    accordions.forEach(btn => {
+      btn.addEventListener("click", function () {
+        const content = btn.nextElementSibling;
+        const isOpen = content.classList.contains("show");
+
+        // Close all accordions
+        document.querySelectorAll(".accordion-content").forEach(c => {
+          c.classList.remove("show");
+          c.style.maxHeight = null;
+        });
+        document.querySelectorAll(".accordion-btn").forEach(b => {
+          b.classList.remove("active");
+        });
+
+        // Open clicked accordion if it wasn't already open
+        if (!isOpen) {
+          content.classList.add("show");
+          btn.classList.add("active");
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    });
+  });
+
+  // Highlight current page
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+  document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage || linkHref === currentPath) {
+      link.classList.add('font-semibold', 'underline');
+    }
+  });
+  
+   const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+</body>
+</html>
 
