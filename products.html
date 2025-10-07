@@ -592,7 +592,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 <!-- Row: Sensoryn -->
 <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
   <button @click="open = !open" class="w-full grid grid-cols-1 md:grid-cols-5 gap-y-4 md:gap-y-0 items-center px-6 py-4 text-left focus:outline-none">
-    <div class="flex items-center gap-2">
+    <div class="flex items-start gap-2">
       <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
@@ -665,30 +665,30 @@ CPH-X represents a breakthrough in biochemical cognition — a molecular intelli
 
 <!-- Row: Remote Neural Interface (RNI) -->
 <div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
-  <button @click="open = !open" class="w-full grid grid-cols-1 md:grid-cols-5 gap-y-4 md:gap-y-0 items-center px-6 py-4 text-left focus:outline-none">
-    <div class="flex items-center gap-2">
-      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <button @click="open = !open" class="w-full grid grid-cols-1 md:grid-cols-5 gap-y-4 md:gap-y-0 items-start px-6 py-4 text-left focus:outline-none">
+    <div class="flex items-start gap-2">
+      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
       <span class="font-medium">Remote Neural Interface (RNI)</span>
     </div>
 
-    <div class="flex justify-between items-center md:block">
+    <div class="flex justify-between items-start md:block">
       <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Therapeutic Area</span>
       <span>Neurocommunication</span>
     </div>
 
-    <div class="flex justify-between items-center md:block">
+    <div class="flex justify-between items-start md:block">
       <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Potential Use</span>
       <span>Brain Computer Interface (BCI)</span>
     </div>
 
-    <div class="flex justify-between items-center md:block">
+    <div class="flex justify-between items-start md:block">
       <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Status</span>
       <span>Prototype Field Test</span>
     </div>
 
-    <div class="flex justify-between items-center md:block">
+    <div class="flex justify-between items-start md:block">
       <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Modality</span>
       <span>Neural Interface</span>
     </div>
@@ -696,9 +696,10 @@ CPH-X represents a breakthrough in biochemical cognition — a molecular intelli
 
   <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100">
     <span class="font-semibold text-white text-lg">Description</span>: 
-The Remote Neural Interface (RNI) establishes a bidirectional communication channel between the human brain, nervous system, and external computational architectures — without requiring physical implants or invasive procedures. Utilizing a state-of-the-art adaptive framework capable of rewriting its own operational code to integrate with virtually any computational system on the planet, RNI enables seamless synchronization between biological cognition and machine intelligence, forming the foundation for real-time, thought-driven interaction and distributed neural collaboration. As a next-generation brain-computer interface (BCI), it translates machine code into neural language, enabling direct cognitive integration with global digital networks and allowing human consciousness to comprehend and interact with computational intelligence as naturally as thought itself. In field evaluations, computer-programmed constructs of temperature, scent, heat, and fluid dynamics were successfully interpreted by the neural interface, allowing users to directly experience the corresponding physical sensations through pure cognitive translation. Current research focuses on refining multisensory translation fidelity, stabilizing cross-domain coherence, and exploring the ethical thresholds of consciousness extension through synthetic neural pathways.
+    The Remote Neural Interface (RNI) establishes a bidirectional communication channel between the human brain, nervous system, and external computational architectures — without requiring physical implants or invasive procedures. Utilizing a state-of-the-art adaptive framework capable of rewriting its own operational code to integrate with virtually any computational system on the planet, RNI enables seamless synchronization between biological cognition and machine intelligence, forming the foundation for real-time, thought-driven interaction and distributed neural collaboration. As a next-generation brain-computer interface (BCI), it translates machine code into neural language, enabling direct cognitive integration with global digital networks and allowing human consciousness to comprehend and interact with computational intelligence as naturally as thought itself. In field evaluations, computer-programmed constructs of temperature, scent, heat, and fluid dynamics were successfully interpreted by the neural interface, allowing users to directly experience the corresponding physical sensations through pure cognitive translation. Current research focuses on refining multisensory translation fidelity, stabilizing cross-domain coherence, and exploring the ethical thresholds of consciousness extension through synthetic neural pathways.
   </div>
 </div>
+
 
 </section>
 
