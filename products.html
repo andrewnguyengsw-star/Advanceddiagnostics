@@ -625,6 +625,44 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 Sensoryn represents a new frontier in human perception — a synthetic sense engineered to extract structured information through physical contact. It functions as a novel intelligence tool, capable of acquiring data directly from any object or material surface without reliance on prior datasets or external references. By accessing information at its physical source, sensoryn inherently bypasses disinformation and data manipulation. Currently in the Field Test stage, the program is focused on exploring the full spectrum of retrievable information — from residual memories and environmental imprints to uncommunicated events and latent intelligence.
   </div>
 </div>
+
+<!-- Row: CPH-X -->
+<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden">
+  <button @click="open = !open" class="w-full grid grid-cols-1 md:grid-cols-5 gap-y-4 md:gap-y-0 items-center px-6 py-4 text-left focus:outline-none">
+    <div class="flex items-center gap-2">
+      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+      <span class="font-medium">CPH-X</span>
+    </div>
+
+    <div class="flex justify-between items-center md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Therapeutic Area</span>
+      <span>Brain Enhancement</span>
+    </div>
+
+    <div class="flex justify-between items-center md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Potential Use</span>
+      <span>Cerebral Colonization</span>
+    </div>
+
+    <div class="flex justify-between items-center md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Status</span>
+      <span>Preclinical</span>
+    </div>
+
+    <div class="flex justify-between items-center md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Modality</span>
+      <span>Brain Augmentation</span>
+    </div>
+  </button>
+
+  <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100">
+    <span class="font-semibold text-white text-lg">Description</span>: 
+CPH-X represents a breakthrough in biochemical cognition — a molecular intelligence catalyst engineered to unlock the brain’s ability to generate its own informational patterns independent of external stimuli. By activating self-catalytic neurodynamics and enhancing recursive pattern formation, CPH-X transforms cognition from a reactive process into a generative one — where perception, memory, and synthesis emerge autonomously from the brain’s internal architecture. As a next-generation neuromodulatory compound, it transiently enhances synaptic plasticity and initiates a controlled neurotrophic cascade, enabling rapid cortical reconfiguration. The result is accelerated learning, heightened associative mapping, and superior pattern synthesis — all sustained within an adaptive, human-centered cognitive framework. Currently in the preclinical phase, CPH-X research focuses on optimizing safety related to temporal modulation of neural plasticity and evaluating its influence on baseline human function.
+  </div>
+</div>
+
 </section>
 
 <!-- Alpine.js -->
