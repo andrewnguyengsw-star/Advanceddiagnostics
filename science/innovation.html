@@ -300,27 +300,82 @@ By developing a Remote Neural Interface, we surpass the limits of conventional D
 
 </section>
 
-<!-- YouTube Demo Section -->
-<section id="bci-video" class="py-20 bg-gray-50 w-full">
-  <div class="max-w-6xl mx-auto px-6 md:px-12 text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-black mb-8">
-      See the Remote Neural Interface in Action
-    </h2>
-    <div class="aspect-w-16 aspect-h-9">
-      <iframe 
-        src="https://www.youtube.com/embed/QmIKCUNIjZ8" 
-        title="Remote Neural Interface Demo" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen
-        class="w-full h-full rounded-xl shadow-lg">
-      </iframe>
+<!-- Our Areas of Focus Section with Dropdown and Full-Width YouTube -->
+<section id="focus" class="py-20 px-6 fade-in">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start w-full h-full">
+
+    <!-- Left Side: Dropdown List -->
+    <div class="h-full p-8 flex flex-col justify-start bg-white shadow rounded-lg">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">
+        Remote Neural Interface
+      </h2>
+      <p class="text-lg text-gray-700 mb-6">
+        Developing a Remote Neural Interface — the fusion of mind and machine, connecting human consciousness directly with technology to expand perception, interaction, and potential.
+      </p>
+<ul id="focus-list" class="divide-y divide-black border-t border-b border-black text-left flex-1">
+  <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="0">
+    <span>Neural Optic Integration</span>
+    <span class="text-black text-xl">▼</span>
+  </li>
+  <div class="dropdown-content hidden px-4 py-2 text-gray-700" id="dropdown-0">
+    Translates programming language and encoded computer data into neural signals, enabling the visual cortex to decode GPU-rendered information directly in the brain. This allows the user to perceive digital visualizations and computational outputs as immersive, sensory experiences in real-time.
+  </div>
+</ul>
+
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="1">
+          <span>Oncology</span>
+          <span class="text-black text-xl">▼</span>
+        </li>
+        <div class="dropdown-content hidden px-4 py-2 text-gray-700" id="dropdown-1">
+          Detailed info about Oncology goes here.
+        </div>
+
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="2">
+          <span>Immunology</span>
+          <span class="text-black text-xl">▼</span>
+        </li>
+        <div class="dropdown-content hidden px-4 py-2 text-gray-700" id="dropdown-2">
+          Detailed info about Immunology goes here.
+        </div>
+
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="3">
+          <span>Neuroscience</span>
+          <span class="text-black text-xl">▼</span>
+        </li>
+        <div class="dropdown-content hidden px-4 py-2 text-gray-700" id="dropdown-3">
+          Detailed info about Neuroscience goes here.
+        </div>
+
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="4">
+          <span>Infectious Disease</span>
+          <span class="text-black text-xl">▼</span>
+        </li>
+        <div class="dropdown-content hidden px-4 py-2 text-gray-700" id="dropdown-4">
+          Detailed info about Infectious Disease goes here.
+        </div>
+      </ul>
     </div>
-    <p class="text-gray-700 text-base sm:text-lg mt-6 max-w-2xl mx-auto">
-      Witness how our self-evolving system enables the human brain to connect to any computer, transforming digital data into real-time sensory and cognitive experiences.
-    </p>
+
+
+    <!-- Right Side: YouTube Video Filling Card -->
+    <div class="w-full h-full bg-white shadow rounded-lg overflow-hidden">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/QmIKCUNIjZ8" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
 </section>
+
+<!-- Dropdown Script -->
+<script>
+  const buttons = document.querySelectorAll('.focus-btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dropdownId = btn.getAttribute('data-dropdown');
+      const content = document.getElementById('dropdown-' + dropdownId);
+      content.classList.toggle('hidden');
+    });
+  });
+</script>
+
 
   <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
