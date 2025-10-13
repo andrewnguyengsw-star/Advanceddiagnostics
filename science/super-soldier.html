@@ -371,14 +371,25 @@ AECION's Super Soldier Project pushes the boundaries of human capability by inte
       Our breakthroughs redefine what it means to be a super soldier. We have moved beyond traditional concepts like strength and endurance. Through our advancements, we have transcended the limits of human potential, empowering soldiers with entirely novel abilities to operate with unparalleled clarity, control, and sustainability across any environment or mission.
     </p>
 
-    <!-- Carousel Clicker -->
-    <div class="flex justify-center mb-12 space-x-4">
-      <div 
-        class="px-6 py-4 bg-gray-100 border border-gray-300 rounded-md shadow-md flex items-center justify-center text-center cursor-pointer hover:bg-gray-200 transition"
-        onclick="showSlide(0)"
-      >
-        <span class="text-base font-semibold text-black">Human BioRadar</span>
-      </div>
+<!-- Carousel Clicker -->
+<div class="flex justify-center mb-12 space-x-4">
+  <!-- Slide 0 Clicker -->
+  <div 
+    class="px-6 py-4 bg-gray-100 border border-gray-300 rounded-md shadow-md flex items-center justify-center text-center cursor-pointer hover:bg-gray-200 transition"
+    onclick="showSlide(0)"
+  >
+    <span class="text-base font-semibold text-black">Human BioRadar</span>
+  </div>
+
+  <!-- Slide 1 Clicker (Electrocution Resistance) -->
+  <div 
+    class="px-6 py-4 bg-gray-100 border border-gray-300 rounded-md shadow-md flex items-center justify-center text-center cursor-pointer hover:bg-gray-200 transition"
+    onclick="showSlide(1)"
+  >
+    <span class="text-base font-semibold text-black">Electrocution Resistance</span>
+  </div>
+</div>
+
       <!-- Add more boxes here for other abilities -->
     </div>
 
@@ -395,10 +406,26 @@ AECION's Super Soldier Project pushes the boundaries of human capability by inte
         <div class="md:w-1/2 w-full md:pl-12 mt-6 md:mt-0">
           <h3 class="text-2xl font-bold text-black mb-4">Human BioRadar</h3>
           <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-            Human BioRadar harnesses a novel form of echolocation, using a signal imperceptible to any counter-detection technology. It enables precise 4-dimensional mapping of the environment and is engineered to enhance operational awareness, with a field-tested range of up to 16,000 km. Our development efforts continue to improve signal resolution and the ability to detect pre-determined, precise signatures.
+            Human BioRadar harnesses a novel form of echolocation, using a signal imperceptible to any counter-detection technology. It enables precise 4-dimensional mapping of the environment and is engineered to enhance operational awareness, with a field-tested range of up to 16,000 km. Our development efforts continue to improve sonar resolution and the ability to detect pre-determined, precise signatures.
           </p>
         </div>
       </div>
+      
+      <!-- Slide 1: Electrocution Resistance -->
+<div class="flex flex-col md:flex-row items-center transition-transform duration-500" id="slide-1" style="display: none;">
+  <!-- Image on left -->
+  <div class="md:w-1/2 w-full">
+    <img src="/images/electrocution_resistance.png" alt="Electrocution Resistance" class="w-full h-auto rounded-lg shadow-lg object-cover">
+  </div>
+  <!-- Text on right -->
+  <div class="md:w-1/2 w-full md:pl-12 mt-6 md:mt-0">
+    <h3 class="text-2xl font-bold text-black mb-4">Electrocution Resistance</h3>
+    <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+Electrocution Resistance significantly elevates a soldier’s capacity to endure high-voltage shocks and electrical hazards in combat and operational environments. This advanced human trait also primes super soldiers for tissue augmentation, allowing them to harness electrons through a groundbreaking system known as Nguyen's Gradient. By flooding the electron transport chain with free electrons and readily available oxygen via electrolysis, this innovation dramatically increases ATP generation, enhancing energy availability, physiological resilience, and overall performance under extreme conditions.
+    </p>
+  </div>
+</div>
+
 
       <!-- Additional slides can be added similarly with unique IDs -->
 
