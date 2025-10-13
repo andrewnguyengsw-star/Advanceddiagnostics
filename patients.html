@@ -269,33 +269,31 @@
   </nav>
 </header>
 
-
-
-<!-- Unified Hero Section (Reduced Height, Image Resizes Inside Container) -->
+<!-- Unified Hero Section (Reduced Height, Fixed) -->
 <section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center">
-  <!-- Left Half: Image (Resizes Proportionally Inside Container) -->
-  <div class="w-full h-full flex justify-center items-center bg-black">
+  <!-- Left Half: Image -->
+  <div class="w-full h-[60vh] sm:h-auto overflow-hidden">
     <img 
       src="/images/patients_head.png" 
-      alt="Quantum Health" 
-      class="max-w-full max-h-full object-contain select-none"
+      alt="Patients and Quantum Health" 
+      class="w-full h-full object-cover object-center select-none"
     >
   </div>
 
-  <!-- Right Half: Text -->
+  <!-- Right Half: Text (White Background, Black Text, Left-Aligned with Right Shift) -->
   <div class="flex flex-col justify-center items-start text-left px-8 sm:px-12 py-10 bg-white text-black">
     <!-- Main Title -->
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">
       Patients
     </h1>
 
-    <!-- Unified Text Block -->
-    <p class="text-sm sm:text-base md:text-lg max-w-xl mb-6 fade-in leading-relaxed space-y-2" style="animation-delay:0.4s;">
-      <span class="block">No more goodbyes.</span>
-      <span class="block">A future where every disease can be diagnosed, every biomarker identified, and every treatment designed to give you the happily ever after you deserve.</span>
+    <!-- Unified Text Block (Smaller Text) -->
+    <p class="text-sm sm:text-base md:text-lg max-w-xl mb-6 fade-in leading-relaxed" style="animation-delay:0.4s;">
+      No more goodbyes. We envision a world where every disease can be diagnosed, every biomarker identified, and every treatment precisely designed to restore health — creating the future where recovery is certain and life is never cut short.
     </p>
   </div>
 </section>
+
 
 <!-- Our Commitment to Excellence Section -->
 <section class="pt-20 pb-4 px-6 bg-white text-black fade-in">
