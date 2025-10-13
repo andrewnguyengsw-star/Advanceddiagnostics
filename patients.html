@@ -269,7 +269,7 @@
   </nav>
 </header>
 
-<!-- Unified Hero Section (Reduced Height, Fixed) -->
+<!-- Unified Hero Section (Reduced Height, Balanced Text Layout with Split Paragraphs) -->
 <section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center">
   <!-- Left Half: Image -->
   <div class="w-full h-[60vh] sm:h-auto overflow-hidden">
@@ -280,19 +280,34 @@
     >
   </div>
 
-  <!-- Right Half: Text (White Background, Black Text, Left-Aligned with Right Shift) -->
-  <div class="flex flex-col justify-center items-start text-left px-8 sm:px-12 py-10 bg-white text-black">
-    <!-- Main Title -->
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in" style="animation-delay:0.2s;">
-      Patients
-    </h1>
+  <!-- Right Half: Text (Balanced Distribution) -->
+  <div class="flex flex-col justify-center h-full px-8 sm:px-12 py-16 bg-white text-black">
+    <div class="self-start fade-in" style="animation-delay:0.2s;">
+      <!-- Main Title -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+        Patients
+      </h1>
 
-    <!-- Unified Text Block (Smaller Text) -->
-    <p class="text-sm sm:text-base md:text-lg max-w-xl mb-6 fade-in leading-relaxed" style="animation-delay:0.4s;">
-      No more goodbyes. We envision a world where every disease can be diagnosed, every biomarker identified, and every treatment precisely designed to restore health — creating the future where recovery is certain and life is never cut short.
-    </p>
+      <!-- First Paragraph (Standalone Intro) -->
+      <p class="text-lg sm:text-xl md:text-2xl font-medium mb-4 fade-in" style="animation-delay:0.4s;">
+        No more goodbyes.
+      </p>
+
+      <!-- Second Paragraph (Body Text) -->
+      <p class="text-sm sm:text-base md:text-lg max-w-xl leading-relaxed mb-4 fade-in" style="animation-delay:0.6s;">
+        We envision a world where every disease can be diagnosed, every biomarker identified, and every treatment precisely designed to restore health.
+      </p>
+
+      <!-- Third Paragraph (Closing Line, Separate Block) -->
+      <p class="text-sm sm:text-base md:text-lg max-w-xl leading-relaxed fade-in" style="animation-delay:0.8s;">
+        — creating the future where recovery is certain and life is never cut short.
+      </p>
+    </div>
   </div>
 </section>
+
+
+
 
 
 <!-- Our Commitment to Excellence Section -->
