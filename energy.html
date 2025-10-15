@@ -309,16 +309,16 @@
     </h2>
   </div>
 
-  <!-- Two-column layout -->
-  <div class="max-w-[120rem] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+  <!-- Two-column layout with flex for equal height -->
+  <div class="max-w-[120rem] mx-auto px-6 flex flex-col md:flex-row gap-12 items-start md:items-stretch">
 
     <!-- Left: Image -->
-    <div class="w-full">
-      <img src="/images/energy_fission.png" alt="Traditional Nuclear Reactor Diagram" class="w-full h-auto rounded-lg shadow-md">
+    <div class="w-full md:w-1/2 flex-shrink-0">
+      <img src="/images/energy_fission.png" alt="Traditional Nuclear Reactor Diagram" class="w-full h-full object-cover">
     </div>
 
     <!-- Right: Text -->
-    <div class="text-left">
+    <div class="w-full md:w-1/2 text-left flex flex-col justify-between">
       <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4">
         Traditional nuclear reactors generate energy through the controlled manipulation of quantum activity within atomic nuclei. At the core of each reactor lies a neutron-emitting device, which initiates a chain reaction by striking fissile material—most commonly uranium-235 or plutonium-239. When these nuclei absorb incoming neutrons, they enter an unstable quantum state and split apart, releasing both energy and additional neutrons. The newly released neutrons then collide with nearby atoms, sustaining a controlled chain reaction.
       </p>
@@ -335,6 +335,7 @@
   </div>
 
 </section>
+
 
 
 
