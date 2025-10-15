@@ -258,33 +258,30 @@
 </header>
 
 
-<!-- Unified Hero Section (Reduced Height, Fixed, Full Image) -->
-<section class="relative py-16 px-8 sm:px-12 gap-16 grid sm:grid-cols-2 items-center">
+<!-- Unified Hero Section (Full-Width Image, Text Overlay) -->
+<section class="relative py-16 px-0">
 
-  <!-- Left Half: Image -->
-  <div class="w-full h-[40vh] sm:h-[60vh]">
+  <!-- Image Container aligned with next section -->
+  <div class="px-6 md:px-12">
     <img 
       src="/images/energy_head.png" 
       alt="palladium reactor" 
-      class="w-full h-full object-contain object-center select-none"
+      class="w-full h-auto object-cover select-none rounded-md"
     >
   </div>
 
-  <!-- Right Half: Text (White Background, Black Text, Left-Aligned) -->
-  <div class="flex flex-col justify-center items-start text-left bg-white text-black">
-    <!-- Main Title -->
+  <!-- Text Overlay (floating on top of image) -->
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 p-6 sm:p-12 rounded shadow-md max-w-2xl text-center">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
       Palladium reactor
     </h1>
 
-    <!-- Unified Text Block -->
-    <p class="text-sm sm:text-base md:text-lg max-w-xl mb-6 leading-relaxed fade-in" style="animation-delay:0.4s;">
+    <p class="text-sm sm:text-base md:text-lg leading-relaxed fade-in" style="animation-delay:0.4s;">
       The palladium reactor represents a new reaction that generates multiple factors more energy than traditional nuclear reactions, creating a greater yield. It enables unprecedented energy density and efficiency, paving the way for next-generation sustainable power solutions.
     </p>
   </div>
+
 </section>
-
-
 
 <!-- Palladium Reactor Basics Section -->
 <section id="palladium-reactor-basics" class="py-16 bg-white w-full">
