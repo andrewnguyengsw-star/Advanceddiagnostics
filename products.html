@@ -223,10 +223,6 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   </nav>
 </header>
 
-
-
-
-
 <!-- Hero Section (Reduced Height) -->
 <section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-6 text-white" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/products_header.png') center/cover no-repeat;">
   
@@ -854,6 +850,45 @@ Currently being field-tested, Hematoscopic Perception offers advanced situationa
     <span class="font-semibold text-white text-lg">Description</span>:
     <p class="mt-2">
 This raw analgesic represents an unpurified, preclinical formulation with potential headache- and pain-relieving properties. In its current state, it exists in a natural, untapped form, with the specific cellular location of the active compound identified but not yet extracted or purified. As a preclinical agent, it offers researchers the opportunity to study its complete spectrum of bioactive molecules and their effects on neural and pain-processing pathways. Early investigations focus on understanding its mechanism of action, safety profile, and potential for development into a purified therapeutic capable of targeted headache and analgesic applications.
+    </p>
+  </div>
+</div>
+
+<!-- Row: Aetherial Venom -->
+<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden mt-4">
+  <button @click="open = !open" class="w-full grid grid-cols-1 md:grid-cols-5 gap-y-4 md:gap-y-0 items-start px-6 py-4 text-left focus:outline-none">
+    <div class="flex items-start gap-2">
+      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+      <span class="font-medium">Aetherial Venom</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Therapeutic Area</span>
+      <span>Neuroactive</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Potential Use</span>
+      <span>Neuromodulation Sensory Amplification</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Status</span>
+      <span>Field Test</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Modality</span>
+      <span>Human Augmentation</span>
+    </div>
+  </button>
+
+  <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100">
+    <span class="font-semibold text-white text-lg">Description</span>:
+    <p class="mt-2">
+Aetherial Vampire Venom is a human enhancement that augments human function by allowing the controlled production of etherial vampire venom, which amplifies sensory and sensual experiences to the point that it makes sex and all the euphoric effects of all man-made substances pale in comparison, without any of the negative side effects.  Engineered with the philosophy of “happy wife, happy life,” it optimizes intimacy and connection in ways previously unimaginable—with just a drop of ethereal vampire venom.
     </p>
   </div>
 </div>
