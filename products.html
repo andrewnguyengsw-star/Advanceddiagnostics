@@ -871,7 +871,7 @@ This raw analgesic represents an unpurified, preclinical formulation with potent
 
     <div class="flex justify-between items-start md:block">
       <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Potential Use</span>
-      <span>Neuromodulation Sensory Amplification</span>
+      <span>Supernatural Aphrodisiac Hyper-sensory Amplifier Potent Climaxor</span>
     </div>
 
     <div class="flex justify-between items-start md:block">
@@ -893,6 +893,44 @@ Aetherial Vampire Venom is a human enhancement that augments human function by a
   </div>
 </div>
 
+<!-- Row: Vampiric Vision -->
+<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden mt-4">
+  <button @click="open = !open" class="w-full grid grid-cols-1 md:grid-cols-5 gap-y-4 md:gap-y-0 items-start px-6 py-4 text-left focus:outline-none">
+    <div class="flex items-start gap-2">
+      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+      <span class="font-medium">Vampiric Vision</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Therapeutic Area</span>
+      <span>Neuroactive</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Potential Use</span>
+      <span>Enhanced Perception</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Status</span>
+      <span>Field Test</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Modality</span>
+      <span>Human Augmentation</span>
+    </div>
+  </button>
+
+  <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100">
+    <span class="font-semibold text-white text-lg">Description</span>:
+    <p class="mt-2">
+Vampiric vision is a revolutionary sensory augmentation that elevates human sight beyond natural limits. It empowers users to detect the faintest shifts in light, motion, and energy signatures, granting unparalleled clarity in dimly lit or visually complex environments. With full night vision and the extraordinary ability to perceive color even in darkness, vampiric vision reveals previously hidden visual patterns and subtle details, unlocking entirely new dimensions of perception and transforming the way individuals experience and interact with the world.
+    </p>
+  </div>
+</div>
 
 </section>
 
