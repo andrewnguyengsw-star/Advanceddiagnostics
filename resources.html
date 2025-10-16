@@ -257,3 +257,148 @@
     </div>
   </nav>
 </header>
+
+<!-- Unified Hero Section (Full-Width Image, Text Overlay) -->
+<section class="relative py-16 px-0">
+
+  <!-- Image Container aligned with next section -->
+  <div class="px-6 md:px-12 overflow-hidden h-[40vh] sm:h-[60vh]">
+    <img 
+      src="/images/resources_head.png" 
+      alt="natural resources" 
+      class="w-full h-full object-cover select-none"
+    >
+  </div>
+
+  <!-- Text Overlay (floating on top of image) -->
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 p-6 sm:p-12 rounded shadow-md max-w-2xl text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
+      Natural Resources
+    </h1>
+
+    <p class="text-sm sm:text-base md:text-lg leading-relaxed fade-in" style="animation-delay:0.4s;">
+      We know the location of every natural resource on the planet, including undiscovered rare earth metals.
+</p>
+    </p>
+  </div>
+
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
+    <div class="mb-4 flex justify-center flex-wrap gap-4">
+      <a href="index.html" class="hover:text-cyan-500 transition">About Us</a>
+      <a href="science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="research.html" class="hover:text-cyan-500 transition">Research</a>
+      <a href="careers.html" class="hover:text-cyan-500 transition">Careers</a>
+      <a href="contact.html" class="hover:text-cyan-500 transition">Contact</a>
+    </div>
+    <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
+    <div class="flex justify-center gap-4 mb-4">
+      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
+      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
+    </div>
+    <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
+  </footer>
+
+  <!-- Swiper core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Your site scripts (with fade-in, mobile menu, and carousel logic) -->
+  <script>
+    // Fade-in animations
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
+
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => {
+          if (!menuOpen) mobileMenu.style.display = 'none';
+        }, 300);
+      }
+    });
+
+    // Highlight current page
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === currentPage || linkHref === currentPath) {
+        link.classList.add('font-semibold', 'underline');
+      }
+    });
+
+    // Mobile dropdown toggle
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const icon = document.getElementById("icon-" + id);
+      if (!dropdown) return;
+
+      const isHidden = dropdown.classList.contains("hidden");
+
+      if (isHidden) {
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("flex");
+        dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+        dropdown.style.transition = "max-height 0.3s ease";
+        if (icon) icon.classList.add("rotate-180");
+      } else {
+        dropdown.style.maxHeight = "0";
+        setTimeout(() => {
+          dropdown.classList.add("hidden");
+          dropdown.classList.remove("flex");
+        }, 300);
+        if (icon) icon.classList.remove("rotate-180");
+      }
+    }
+
+    // ===== Carousel Logic for Our Areas of Focus =====
+    var swiper = new Swiper(".mySwiper", {
+      allowTouchMove: false, // disable manual swiping
+      effect: "fade",        // smooth fade transition
+    });
+
+    // List controls carousel
+    document.querySelectorAll(".focus-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const slideIndex = btn.getAttribute("data-slide");
+        swiper.slideTo(slideIndex);
+
+        // Update active styling
+        document.querySelectorAll(".focus-btn").forEach(el => el.classList.remove("text-blue-600", "active"));
+        btn.classList.add("text-blue-600", "active");
+      });
+    });
+
+    // Sync list when carousel changes
+    swiper.on("slideChange", () => {
+      const items = document.querySelectorAll(".focus-btn");
+      items.forEach((item, i) => {
+        item.classList.toggle("text-blue-600", i === swiper.activeIndex);
+        item.classList.toggle("active", i === swiper.activeIndex);
+      });
+    });
+  </script>
+</body>
+</html>
