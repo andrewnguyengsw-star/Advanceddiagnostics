@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AECION | Science</title>
-  <meta name="description" content="AECION operates at the intersection of quantum biology and human potential, creating living maps of the human body to conquer disease and pioneer human evolution.">
+  <title>AECION | Careers</title>
+  <meta name="description" content="Join AECION and help shape the future of science, technology, and human evolution. Explore our current career opportunities and discover where your potential meets our vision.">
+  <link rel="stylesheet" href="/styles/main.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -28,49 +29,66 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 #menu-toggle.open span:nth-child(2) { opacity: 0; }
 #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* Dropdown styling */
+/* ===== DESKTOP BREAKTHROUGHS DROPDOWN SCROLL ===== */
 .dropdown-menu {
-  max-height: 400px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  width: 14rem;
-  z-index: 50;
+  max-height: 400px; /* Limit dropdown height */
+  overflow-y: auto; /* Enable vertical scroll */
+  scrollbar-width: thin; /* Firefox */
 }
+
+/* Chrome, Safari scrollbar */
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Optional subtle shadow for scroll depth */
+.dropdown-menu {
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+}
+
+/* Dropdown */
+.dropdown-menu { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ddd; border-radius: 0.5rem; width: 14rem; z-index: 50; }
 .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
 .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
 .dropdown-menu a:hover { background: #f0f0f0; }
-
-/* Scrollbar styling */
-.dropdown-menu::-webkit-scrollbar { width: 6px; }
-.dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
-.dropdown-menu::-webkit-scrollbar-track { background: transparent; }
 
 /* Aspect ratio for video */
 .aspect-w-16 { position: relative; width: 100%; }
 .aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
 .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-/* Mobile dropdowns */
-#research-mobile, #breakthroughs-mobile {
-  max-height: 300px;
+/* ===== MOBILE DROPDOWN SCROLL ===== */
+#research-mobile,
+#breakthroughs-mobile {
+  max-height: 300px; /* Adjust height as needed */
   overflow-y: auto;
-  scrollbar-width: thin;
-  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+  scrollbar-width: thin; /* Firefox */
 }
-#research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
-#research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
+
+#research-mobile::-webkit-scrollbar,
+#breakthroughs-mobile::-webkit-scrollbar {
+  width: 6px; /* Chrome, Safari */
+}
+
+#research-mobile::-webkit-scrollbar-thumb,
+#breakthroughs-mobile::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
+}
+
+/* Optional: subtle shadow to indicate scrollable area */
+#research-mobile,
+#breakthroughs-mobile {
+  box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
 }
 </style>
 
@@ -237,222 +255,40 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   </nav>
 </header>
 
+<!-- Unified Hero Section (Full-Width Image, Text Overlay) -->
+<section class="relative py-16 px-0">
 
-<!-- Hero Section (Reduced Height) -->
-<section class="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-6 bg-black text-white overflow-hidden">
-  
-  <!-- Background Image -->
-  <div class="absolute inset-0">
-    <img src="/images/index_header.png" alt="Hero Background" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- dark overlay for contrast -->
+  <!-- Image Container aligned with next section -->
+  <div class="px-6 md:px-12 overflow-hidden h-[40vh] sm:h-[60vh]">
+    <img 
+      src="/images/careers_head.png" 
+      alt="AECION careers" 
+      class="w-full h-full object-cover select-none"
+    >
   </div>
 
-  <!-- Content -->
-  <div class="relative z-10 flex flex-col items-center">
-    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 fade-in drop-shadow-lg leading-tight">
-      Building the Future <br class="hidden sm:block"/> with Science of Tomorrow
+  <!-- Text Overlay (floating on top of image) -->
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 p-6 sm:p-12 rounded shadow-md max-w-2xl text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
+      Careers at AECION
     </h1>
-    
-    <p class="text-base sm:text-lg md:text-xl max-w-3xl mb-6 fade-in delay-200 leading-relaxed">
-      AECION transforms the impossible into the inevitable.  
-      By decoding quantum signals of life itself, we are creating technologies that rewrite medicine, human potential, and the future of civilization — today.  
-    </p>
 
-    <!-- CTA Button -->
-    <a href="#mission" class="px-6 py-3 rounded-2xl bg-white text-cyan-600 font-semibold shadow-lg hover:scale-105 transition">
-      Explore Our Science
-    </a>
-
-    <!-- Subtext -->
-    <p class="mt-6 text-sm sm:text-base max-w-md opacity-80 fade-in delay-600 leading-relaxed">
-      From quantum biology to human evolution, AECION is not waiting for the future — we are engineering it.
+    <p class="text-sm sm:text-base md:text-lg leading-relaxed fade-in" style="animation-delay:0.4s;">
+      Join the teams designing tomorrow’s breakthroughs today.  
+      At AECION, innovation isn’t a department — it’s our DNA.
     </p>
   </div>
+
 </section>
-
-<!-- Technology / Research Section -->
-<section id="explore" class="py-20 px-6 max-w-7xl mx-auto">
-  <h2 class="text-3xl sm:text-4xl font-extrabold mb-12 text-center text-black">
-    Explore Our Insights
-  </h2>
-
-  <!-- Cards Row -->
-  <div class="grid sm:grid-cols-4 gap-8 mb-12">
-
-    <!-- Card 1 -->
-    <div class="fade-in flex flex-col items-center text-center mt-0">
-      <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
-        <img src="/images/index_explore1.png" alt="Seeing Disease in Motion" class="w-full h-64 object-cover">
-      </div>
-      <h3 class="mt-6 text-xl font-bold text-black">Seeing Disease in Motion</h3>
-      <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
-        For the first time, disease can be mapped in real time across space and time — revealing how it unfolds in the body and impacts the nervous system with extraordinary clarity. This changes everything in diagnosis, prevention, and treatment.
-      </p>
-    </div>
-
-<!-- Card 2 -->
-<div class="fade-in flex flex-col items-center text-center mt-12">
-  <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
-    <img src="/images/index_explore2.png" alt="Beyond Connectomics: Mapping the Mind in Motion" class="w-full h-64 object-cover">
-  </div>
-  <h3 class="mt-6 text-xl font-bold text-black">Beyond Connectomics: Mapping the Mind in Motion</h3>
-  <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
-    We monitor individual neural impulses and their role in the collective emergence of human behavior.  
-    Moving beyond connectomics, we map the brain as a living, dynamic network.
-  </p>
-</div>
-
-    <!-- Card 3 -->
-    <div class="fade-in flex flex-col items-center text-center mt-4">
-      <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
-        <img src="/images/index_explore3.png" alt="Neural Integration Mapping" class="w-full h-64 object-cover">
-      </div>
-      <h3 class="mt-6 text-xl font-bold text-black">Decoding Genes, Defining Medicine</h3>
-      <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
-We map the expression of individual genes to reveal how they shape the body, turning genetic data into actionable insights for precision medicine and targeted therapy.
-      </p>
-    </div>
-
-<!-- Card 4 -->
-<div class="fade-in flex flex-col items-center text-center mt-14">
-  <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
-    <img src="/images/index_explore4.png" alt="Black Technology" class="w-full h-64 object-cover">
-  </div>
-  <h3 class="mt-6 text-xl font-bold text-black">Black Technology</h3>
-  <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
-    Harnessing the power of the Whispered, humans with access to advanced scientific knowledge far beyond current technological limits, to create hyper-advanced systems and devices.
-  </p>
-</div>
-
-  </div>
-</section>
-
-<!-- About Us Section -->
-<section class="py-20 px-6 max-w-7xl mx-auto fade-in bg-white text-black">
-
-  <div class="grid sm:grid-cols-2 gap-8 items-center">
-
-    <!-- About Us Text -->
-    <div class="fade-in flex flex-col justify-center">
-      <h3 class="text-2xl sm:text-3xl font-semibold mb-4 text-gray-900">About Us</h3>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        At AECION, we have journeyed to the frontiers of human understanding.  
-        We have explored the hidden pathways of evolution, unlocked entirely new dimensions of human consciousness, and ventured beyond the boundaries of human immunity.  
-        Our work has brought us to the very pinnacle of science on Earth — uncovering insights, frameworks, and technologies that are thousands of years ahead of today’s state of the art.
-      </p>
-      <p class="text-gray-700 leading-snug mb-4">
-        Some of our Black Technology research has moved beyond the confines of the Earth, unlocking entirely new frontiers for exploration, innovation, and human advancement.
-      </p>
-      <p class="text-gray-700 leading-snug">
-        We exist to pioneer what comes next for humanity — to open doors into futures once thought unreachable.
-      </p>
-    </div>
-
-    <!-- About Us Image -->
-    <div class="fade-in w-full h-[450px]">
-      <img 
-        src="/images/index_about1.png" 
-        alt="Our Mission" 
-        class="w-full h-full object-cover rounded-none"
-      >
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Our Pipeline Section (Flipped Layout) -->
-<section class="py-20 px-6 max-w-7xl mx-auto fade-in bg-white text-black">
-
-  <div class="grid sm:grid-cols-2 gap-8 items-center">
-
-    <!-- Image -->
-    <div class="fade-in w-full h-[450px]">
-      <img 
-        src="/images/index_about2.png" 
-        alt="Our Pipeline" 
-        class="w-full h-full object-cover rounded-none"
-      >
-    </div>
-
-    <!-- Text -->
-    <div class="fade-in flex flex-col justify-center">
-      <h3 class="text-2xl sm:text-3xl font-semibold mb-4 text-gray-900">Our Pipeline</h3>
-      
-      <p class="text-gray-700 leading-snug mb-4">
-        We are a pharmaceutical company, and our most valuable assets span four broad categories:
-      </p>
-
-      <div class="space-y-3 text-gray-800 mb-6">
-        <p>Brain Enhancement</p>
-        <p>Human Enhancement</p>
-        <p>Pharmaceuticals</p>
-        <p>Black Technology</p>
-      </div>
-
-      <p class="text-center">
-        <a href="https://www.aecion.com/products.html" 
-           class="font-bold text-lg text-black tracking-wide underline hover:text-blue-600 transition-all duration-300">
-          Explore Our Pipeline
-        </a>
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Breakthroughs Section -->
-<section class="py-20 px-6 max-w-7xl mx-auto fade-in grid gap-12">
-  <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-cyan-500 text-center">Breakthroughs in Action</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    
-    <div class="bg-gray-50 p-6 rounded-xl shadow hover:scale-105 transition">
-      <h3 class="text-2xl font-semibold mb-2">Project Atlas™</h3>
-      <p>Developing advanced strategies for human cognitive enhancement, global neural integration, and environmental adaptation.</p>
-      <a href="/breakthrough/project-atlas.html#project-atlas" class="btn-primary mt-4 inline-block">Learn More</a>
-    </div>
-    
-    <div class="bg-gray-50 p-6 rounded-xl shadow hover:scale-105 transition">
-      <h3 class="text-2xl font-semibold mb-2">Project: WHISPERED™</h3>
-      <p>Investigating rare individuals who intuitively receive advanced knowledge of Black Technology — unlocking future breakthroughs today.</p>
-      <a href="/breakthrough/project-whispered.html" class="btn-primary mt-4 inline-block">Learn More</a>
-    </div>
-    
-    <div class="bg-gray-50 p-6 rounded-xl shadow hover:scale-105 transition">
-      <h3 class="text-2xl font-semibold mb-2">Electrocution Resistance</h3>
-      <p>Enhancing human resilience to high-voltage environments through advanced bioengineering and nanotechnology.</p>
-      <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance" class="btn-primary mt-4 inline-block">Learn More</a>
-    </div>
-    
-  </div>
-
-  <!-- Modern See Our Breakthroughs Button -->
-  <div class="text-center mt-12">
-    <a href="/breakthroughs.html" class="inline-block px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
-      See Our Breakthroughs
-    </a>
-  </div>
-</section>
-
-  <!-- Partner / CTA Section -->
-  <section class="py-20 px-6 bg-cyan-50 text-black fade-in text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-cyan-500">Partner with the Vanguard</h2>
-    <p class="mb-6">AECION is seeking partners and collaborators dedicated to solving humanity's most critical challenges.</p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4">
-      <a href="contact.html" class="btn-primary">Contact Our Team</a>
-      <a href="research.html" class="btn-secondary">Explore Our Research</a>
-    </div>
-  </section>
 
  <!-- Footer -->
   <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
     <div class="mb-4 flex justify-center flex-wrap gap-4">
-      <a href="/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
-      <a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
-      <a href="/research.html" class="hover:text-cyan-500 transition">Research</a>
-      <a href="/careers.html" class="hover:text-cyan-500 transition">Careers</a>
-      <a href="/contact.html" class="hover:text-cyan-500 transition">Contact</a>
+      <a href="index.html" class="hover:text-cyan-500 transition">About Us</a>
+      <a href="science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="research.html" class="hover:text-cyan-500 transition">Research</a>
+      <a href="careers.html" class="hover:text-cyan-500 transition">Careers</a>
+      <a href="contact.html" class="hover:text-cyan-500 transition">Contact</a>
     </div>
     <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
     <div class="flex justify-center gap-4 mb-4">
