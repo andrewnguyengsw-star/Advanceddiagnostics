@@ -120,65 +120,79 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   </div>
 </div>
 
+<a href="/investors.html" class="hover:text-cyan-500 transition flex items-center">Investors</a>
+
     </nav>
 
     <!-- Mobile Menu Button -->
-    <div class="sm:hidden">
-      <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-300">
+   <div class="sm:hidden">
+      <button id="menu-toggle" 
+              aria-label="Toggle navigation menu" 
+              aria-controls="mobile-menu" 
+              aria-expanded="false" 
+              class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
-        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1.5"></span>
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
       </button>
     </div>
-  </div>
+  </div> <nav id="mobile-menu" 
+       class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
+    
+    <div class="flex flex-col p-4 space-y-1">
 
-  <!-- Mobile Menu -->
-  <nav id="mobile-menu" class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40">
-    <div class="flex flex-col p-4 space-y-4">
-      <a href="/index.html" class="text-lg font-medium hover:text-cyan-500">Home</a>
+      <a href="/index.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Home</a>
 
-      <!-- Mobile Science Dropdown -->
-      <div class="flex flex-col">
-        <a href="/science.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Science</a>
-        <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('science-mobile')">
-          <svg class="w-4 h-4 transition-transform duration-300" id="icon-science-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div>
+        <button onclick="toggleDropdown('science-mobile')" 
+                aria-controls="science-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Science</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-science-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </button>
-        <div id="science-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2">
-          <a href="/science/how-we-develop.html">How We Develop</a>
-          <a href="/science/innovation.html">Innovation</a>
-          <a href="/science/neuroscience.html">Neuroscience</a>
-          <a href="/science/super-soldier.html">Super Soldier Project</a>
-          <a href="/science/superhuman-senses.html">Superhuman Senses Program</a>
-	  <a href="/science/nightvision.html">Nightvision</a>
+        <div id="science-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/science.html" class="block hover:text-cyan-500 py-2 rounded">Science Overview</a>
+          <a href="/science/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
+          <a href="/science/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
+          <a href="/science/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
+          <a href="/science/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
+          <a href="/science/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
+          <a href="/science/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
         </div>
       </div>
 
-      <a href="/products.html" class="text-lg font-medium hover:text-cyan-500">Products</a>
-      <a href="/patients.html" class="text-lg font-medium hover:text-cyan-500">Patients</a>
-      <a href="/energy.html" class="text-lg font-medium hover:text-cyan-500">Energy</a>
-      <a href="/resources.html" class="hover:text-cyan-500 transition flex items-center">Resources</a>
+      <a href="/products.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Products</a>
+      <a href="/patients.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Patients</a>
+      <a href="/energy.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Energy</a>
+      
+      <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Resources</a>
+      
+      <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">About Us</a>
 
-<a href="https://www.aecion.com/about-us.html" class="text-lg font-medium hover:text-cyan-500 ml-4 mt-2">About Us</a>
+      <div>
+        <button onclick="toggleDropdown('careers-mobile')" 
+                aria-controls="careers-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Careers</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="careers-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/careers.html" class="block hover:text-cyan-500 py-2 rounded">Careers Overview</a>
+          <a href="/careers/learn-more.html#gulf-war-syndrome" class="block hover:text-cyan-500 py-2 rounded">Gulf War Syndrome</a>
+        </div>
+      </div>
 
-<!-- Mobile Careers Dropdown -->
-<div class="flex flex-col">
-  <a href="/careers.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Careers</a>
-  <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('careers-mobile')">
-    <svg class="w-4 h-4 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div id="careers-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2">
-    <a href="/careers/learn-more.html#gulf-war-syndrome" class="hover:text-cyan-500">Gulf War Syndrome</a>
-  </div>
-</div>
+      <a href="/investors.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Investors</a>
 
     </div>
   </nav>
 </header>
-
 
 
 
