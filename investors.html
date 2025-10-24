@@ -451,6 +451,30 @@ A hidden cache of preserved manuscripts, carted to safety by librarians and a sm
     </p>
   </div>
 
+  <div class="max-w-5xl mx-auto mb-12 px-6 md:px-12">
+    <div id="carousel-text-nav" class="flex flex-wrap justify-center bg-gray-100 rounded-lg shadow-sm divide-x divide-gray-300 overflow-hidden">
+      <button class="carousel-nav-button flex-auto py-3 px-5 text-sm font-medium text-gray-700 hover:bg-gray-200 transition-colors duration-200" data-slide="0">
+        Platform
+      </button>
+      <button class="carousel-nav-button flex-auto py-3 px-5 text-sm font-medium text-gray-700 hover:bg-gray-200 transition-colors duration-200" data-slide="1">
+        Neuro-OS
+      </button>
+      <button class="carousel-nav-button flex-auto py-3 px-5 text-sm font-medium text-gray-700 hover:bg-gray-200 transition-colors duration-200" data-slide="2">
+        Therapeutics
+      </button>
+      <button class="carousel-nav-button flex-auto py-3 px-5 text-sm font-medium text-gray-700 hover:bg-gray-200 transition-colors duration-200" data-slide="3">
+        Overview
+      </button>
+      <button class="carousel-nav-button flex-auto py-3 px-5 text-sm font-medium text-gray-700 hover:bg-gray-200 transition-colors duration-200" data-slide="4">
+        Predictive Power
+      </button>
+      <button class="carousel-nav-button flex-auto py-3 px-5 text-sm font-medium text-gray-700 hover:bg-gray-200 transition-colors duration-200" data-slide="5">
+        Case Study
+      </button>
+    </div>
+  </div>
+
+
   <div id="valuationCarousel" class="relative w-full">
     
     <div class="relative w-full min-h-[600px] md:min-h-[500px]">
@@ -555,7 +579,7 @@ A hidden cache of preserved manuscripts, carted to safety by librarians and a sm
               This capability transforms the platform into a proactive immunological forecasting oracle, capable of mapping viral evolution and anticipating zoonotic spillover.
             </p>
             <p class="text-gray-700 mb-4 p-4 bg-blue-50 border-l-4 border-blue-400">
-              <strong>AECION's predictive engine forecasts novel mutations before they mutate and emerge</strong>, modeling their complete clinical impact. This compresses centuries of biodefense R&D into actionable intelligence for today.
+              <strong>AECION's predictive engine forecasts novel mutations *before they emerge*</strong>, modeling their complete clinical impact. This compresses a century of biodefense R&D into actionable intelligence for today.
             </p>
             <p class="text-gray-700 italic">
               This foresight will save billions annually and prevent trillions in pandemic-scale losses, securing its role as a multi-trillion-dollar global infrastructure.
@@ -609,12 +633,18 @@ A hidden cache of preserved manuscripts, carted to safety by librarians and a sm
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // Select all elements
-    const carousel = document.getElementById('valuationCarousel');
-    if (carousel) {
+    const carouselSection = document.querySelector('section.overflow-hidden'); // Get the main section
+    if (!carouselSection) return;
+
+    const carousel = carouselSection.querySelector('#valuationCarousel');
+    const navBar = carouselSection.querySelector('#carousel-text-nav');
+    
+    if (carousel && navBar) {
       const slides = carousel.querySelectorAll('.carousel-slide');
       const prevButton = carousel.querySelector('#prev-slide');
       const nextButton = carousel.querySelector('#next-slide');
       const dotsContainer = carousel.querySelector('#pagination-dots');
+      const navButtons = navBar.querySelectorAll('.carousel-nav-button'); // Get new nav buttons
       let currentSlide = 0;
 
       if (slides.length === 0) return; // Exit if no slides
@@ -644,8 +674,9 @@ A hidden cache of preserved manuscripts, carted to safety by librarians and a sm
           slides[currentSlide].classList.add('opacity-100');
         }, 50); // Small delay to trigger transition
 
-        // Update pagination dots
+        // Update all navigation elements
         updateDots();
+        updateNavButtons(); // Call new update function
       }
 
       // Function to update dot active state
@@ -661,20 +692,37 @@ A hidden cache of preserved manuscripts, carted to safety by librarians and a sm
         });
       }
 
+      // NEW Function to update text nav active state
+      function updateNavButtons() {
+        navButtons.forEach((button, i) => {
+          button.classList.remove('text-blue-600', 'font-semibold', 'bg-white');
+          button.classList.add('text-gray-700');
+          if (i === currentSlide) {
+            button.classList.add('text-blue-600', 'font-semibold', 'bg-white');
+            button.classList.remove('text-gray-700');
+          }
+        });
+      }
+
       // Create pagination dots
       slides.forEach((_, i) => {
         const dot = document.createElement('button');
-        // Corrected the typo in duration-300
         dot.classList.add('pagination-dot', 'w-3', 'h-3', 'rounded-full', 'transition-all', 'duration-300');
         dot.dataset.slide = i;
         dot.addEventListener('click', () => {
-          showSlide(i);
-          // THE STRAY 'D' WAS HERE. I have removed it.
+          showSlide(Number(dot.dataset.slide));
         });
         dotsContainer.appendChild(dot);
       });
 
-      // Event Listeners for buttons
+      // Add Event Listeners for NEW nav buttons
+      navButtons.forEach((button, i) => {
+        button.addEventListener('click', () => {
+          showSlide(Number(button.dataset.slide));
+        });
+      });
+
+      // Event Listeners for arrow buttons
       prevButton.addEventListener('click', () => {
         showSlide(currentSlide - 1);
       });
