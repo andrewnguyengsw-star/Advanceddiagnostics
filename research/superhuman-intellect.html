@@ -3,20 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aecion | energy</title>
-  <meta name="description" content="discover how aecion explores the future of energy — from nuclear synthesis to quantum bioenergetics, transforming power into living systems." />
-  <link rel="stylesheet" href="/styles.css" />
+  <title>aecion | superintelligence</title>
+  <meta name="description" content="Discover Aecion's Superintelligence Program, moving beyond human limits to redefine intellect by mapping neural pathways and unlocking creative potential." />
+  <link rel="stylesheet" href="/styles.css" /> <script src="https://cdn.tailwindcss.com"></script>
 
- <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Optional: Swiper CSS (carousel) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-
-  <!-- Custom styles (single <style> block, cleaned) -->
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
@@ -68,152 +60,116 @@
     .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
     .dropdown-menu::-webkit-scrollbar-track { background: transparent; }
 
-    /* Aspect ratio helper for embedded video */
-    .aspect-w-16 { position: relative; width: 100%; }
-    .aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
-    .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
     /* Mobile dropdowns (scrollbar tweaks) */
-    #research-mobile, #breakthroughs-mobile {
+    #research-mobile, #careers-mobile {
       max-height: 300px;
       overflow-y: auto;
       scrollbar-width: thin;
       box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
     }
-    #research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
-    #research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
+    #research-mobile::-webkit-scrollbar, #careers-mobile::-webkit-scrollbar { width: 6px; }
+    #research-mobile::-webkit-scrollbar-thumb, #careers-mobile::-webkit-scrollbar-thumb {
       background-color: rgba(0, 0, 0, 0.2);
       border-radius: 3px;
     }
-    var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,   // only show ONE slide at a time
-  allowTouchMove: false, // disable manual dragging/swiping
-  effect: "fade",     // fade transition
-  speed: 600          // optional: smooth transition speed
-});
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.mySwiper, .swiper-wrapper, .swiper-slide {
-  height: 100%;
-}
+    
+    /* Gradient text helper */
+    .text-gradient {
+        background: linear-gradient(90deg,#00cfff,#8a2be2); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent;
+    }
   </style>
 </head>
 
-<!-- Navigation -->
-<header class="sticky top-0 bg-white shadow z-50">
+<body class="bg-white">
+
+<header class="sticky top-0 bg-white shadow-md z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
     <a href="/index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
 
-    <!-- Desktop Menu -->
     <nav class="hidden sm:flex space-x-6" id="desktop-menu">
       <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
 
-<!-- Research Dropdown -->
-<div class="relative dropdown">
-  <a href="/research.html" class="hover:text-cyan-500 transition flex items-center">
-    Research
-    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-    </svg>
-  </a>
-  <div class="dropdown-menu">
-    <a href="/research/how-we-develop.html">How We Develop</a>
-    <a href="/research/innovation.html">Innovation</a>
-    <a href="/research/neuroscience.html">Neuroscience</a>
-    <a href="/research/super-soldier.html">Super Soldier Project</a>
-    <a href="/research/superhuman-senses.html">Superhuman Senses Program</a>
-    <a href="/research/superhuman-intellect.html">Superhuman Intellect Program</a>
-    <a href="/research/nightvision.html">Nightvision</a>
-  </div>
-</div>
+      <div class="relative dropdown">
+        <a href="/research.html" class="hover:text-cyan-500 transition flex items-center">
+          Research
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/research/how-we-develop.html">How We Develop</a>
+          <a href="/research/innovation.html">Innovation</a>
+          <a href="/research/neuroscience.html">Neuroscience</a>
+          <a href="/research/super-soldier.html">Super Soldier Project</a>
+          <a href="/research/superhuman-senses.html">Superhuman Senses Program</a>
+          <a href="/research/superhuman-intellect.html">Superhuman Intellect Program</a>
+          <a href="/research/nightvision.html">Nightvision</a>
+        </div>
+      </div>
 
       <a href="/products.html" class="hover:text-cyan-500 transition">Products</a>
       <a href="/patients.html" class="hover:text-cyan-500 transition">Patients</a>
       <a href="/energy.html" class="hover:text-cyan-500 transition">Energy</a>
       <a href="/resources.html" class="hover:text-cyan-500 transition flex items-center">Resources</a>
+      <a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
 
-<a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
+      <div class="relative dropdown">
+        <a href="/careers.html" class="hover:text-cyan-500 transition flex items-center">
+          Careers
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu max-h-96 overflow-y-auto">
+          <a href="/careers/learn-more.html#gulf-war-syndrome">Gulf War Syndrome</a>
+        </div>
+      </div>
 
-<!-- Careers Dropdown -->
-<div class="relative dropdown">
-  <a href="/careers.html" class="hover:text-cyan-500 transition flex items-center">
-    Careers
-    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-    </svg>
-  </a>
-  <div class="dropdown-menu max-h-96 overflow-y-auto">
-    <a href="/careers/learn-more.html#gulf-war-syndrome">Gulf War Syndrome</a>
-  </div>
-</div>
-
-<a href="/investors.html" class="hover:text-cyan-500 transition flex items-center">Investors</a>
-
+      <a href="/investors.html" class="hover:text-cyan-500 transition flex items-center">Investors</a>
     </nav>
 
-    <!-- Mobile Menu Button -->
-   <div class="sm:hidden">
-      <button id="menu-toggle" 
-              aria-label="Toggle navigation menu" 
-              aria-controls="mobile-menu" 
-              aria-expanded="false" 
-              class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
+    <div class="sm:hidden">
+      <button id="menu-toggle" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false" class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1.5"></span>
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
       </button>
     </div>
-  </div> <nav id="mobile-menu" 
-       class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
-    
-    <div class="flex flex-col p-4 space-y-1">
-
-      <a href="/index.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Home</a>
-
-<div>
-  <button onclick="toggleDropdown('research-mobile')" 
-          aria-controls="research-mobile" 
-          aria-expanded="false" 
-          class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
-    <span>Research</span>
-    <svg class="w-5 h-5 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div id="research-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
-    <a href="/research.html" class="block hover:text-cyan-500 py-2 rounded">Research Overview</a>
-    <a href="/research/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
-    <a href="/research/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
-    <a href="/research/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
-    <a href="/research/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
-    <a href="/research/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
-    <a href="/research/superhuman-intellect.html">Superhuman Intellect Program</a>
-    <a href="/research/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
   </div>
-</div>
 
+  <nav id="mobile-menu" class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
+    <div class="flex flex-col p-4 space-y-1">
+      <a href="/index.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Home</a>
+      
+      <div>
+        <button onclick="toggleDropdown('research-mobile')" aria-controls="research-mobile" aria-expanded="false" class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Research</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="research-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/research.html" class="block hover:text-cyan-500 py-2 rounded">Research Overview</a>
+          <a href="/research/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
+          <a href="/research/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
+          <a href="/research/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
+          <a href="/research/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
+          <a href="/research/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
+          <a href="/research/superhuman-intellect.html">Superhuman Intellect Program</a>
+          <a href="/research/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
+        </div>
+      </div>
 
       <a href="/products.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Products</a>
       <a href="/patients.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Patients</a>
       <a href="/energy.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Energy</a>
-      
       <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Resources</a>
-      
       <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">About Us</a>
-
+      
       <div>
-        <button onclick="toggleDropdown('careers-mobile')" 
-                aria-controls="careers-mobile" 
-                aria-expanded="false" 
-                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+        <button onclick="toggleDropdown('careers-mobile')" aria-controls="careers-mobile" aria-expanded="false" class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
           <span>Careers</span>
           <svg class="w-5 h-5 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -226,314 +182,335 @@
       </div>
 
       <a href="/investors.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Investors</a>
-
     </div>
   </nav>
 </header>
 
 
-<section class="relative py-16 px-0">
+<main>
 
-  <div class="px-6 md:px-12 overflow-hidden h-[40vh] sm:h-[60vh]">
-    <img  
-      src="/images/intellect_head.png"  
-      alt="superintelligence"  
-      class="w-full h-full object-cover select-none"
-    >
-  </div>
+  <section class="w-full h-[50vh] sm:h-[60vh] bg-gray-100 fade-in">
+    <img src="/images/intellect_head.png" alt="A conceptual image of superintelligence" class="w-full h-full object-cover select-none">
+  </section>
 
-  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/80 p-6 sm:p-12 rounded shadow-md max-w-2xl text-center">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
-      Superintelligence
-    </h1>
+  <section id="intellect-principles" class="py-20 md:py-28 bg-white text-black w-full">
+    <div class="max-w-7xl mx-auto px-6">
 
-    <p class="text-sm sm:text-base md:text-lg leading-relaxed fade-in" style="animation-delay:0.4s;">
-Moving beyond the human measure of intelligence
-    </p>
-  </div>
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <p class="text-lg font-semibold text-gradient mb-4 fade-in">
+          Unlocking Cognitive Potential
+        </p>
+        <h1 class="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 tracking-tight fade-in" style="animation-delay: 0.2s;">
+          Superintelligence
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 leading-relaxed fade-in" style="animation-delay: 0.4s;">
+          Moving beyond the human measure of intelligence.
+        </p>
+      </div>
 
-</section>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 fade-in" style="animation-delay: 0.6s;">
 
-<section id="intellect-principles" class="py-20 md:py-28 bg-white text-black w-full fade-in">
-  <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center md:text-left">
+          <div class="flex justify-center md:justify-start mb-5">
+            <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Neural Mapping</h3>
+          <p class="text-gray-700 font-light leading-relaxed">
+            We mapped every neural impulses derived from participant response to the Stanford-Binet IQ test, and captured the neural architecture responsible for the overall cumulative IQ score.
+          </p>
+        </div>
 
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <p class="text-lg font-semibold text-gradient mb-3" style="background: linear-gradient(90deg,#00cfff,#8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        Unlocking Cognitive Potential
-      </p>
-      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-        Beyond Human Limits
+        <div class="text-center md:text-left">
+          <div class="flex justify-center md:justify-start mb-5">
+            <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Brain colonization</h3>
+          <p class="text-gray-700 font-light leading-relaxed">
+            Once we decoded the rules of intelligence, we initiated a systematic colonization of the brain, exploring newly accessible frontiers and constructing novel neural pathways.
+          </p>
+        </div>
+
+        <div class="text-center md:text-left">
+          <div class="flex justify-center md:justify-start mb-5">
+            <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Next-Generation Intelligence</h3>
+          <p class="text-gray-700 font-light leading-relaxed">
+            Unlocking the mind revealed a new prerequisite: to innovate truly paradigm-shifting technology, we first had to redefine intelligence itself.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="cognitive-optimization" class="py-20 md:py-28 bg-gray-50 w-full fade-in">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+
+      <div class="w-full">
+        <img src="/images/brain_simulation.png" alt="Neural Mapping Diagram" class="w-full h-auto object-contain rounded-lg shadow-lg">
+      </div>
+
+      <div class="w-full text-left">
+        <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-8 tracking-tight">Redefining Intelligence</h2>
+        <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+          <p>
+            What truly defines intelligence? Is it a static library—the mere ability to recall information? Or is it a dynamic engine—the profound capacity to reason, draw conclusions, and synthesize understanding from experience?
+          </p>
+          <p>
+            And what of the creative spark? The generative leap that formulates new theories, seemingly from nothing? Is that still intelligence or is it something different?
+          </p>
+          <p class="font-semibold text-gray-900">
+            As we began to comprehend theories and applications centuries ahead of 2025, we realized that true intellect lies in creation itself.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="generative-leap" class="py-20 md:py-28 bg-white text-black w-full fade-in">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-12 tracking-tight">
+        The Generative Leap: IQ vs. Creation
       </h2>
-      <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
-Our Superintelligence Program has decoded the fundamental relationships that govern intellect, creating the foundation for superintelligence that is scalable, safe, and measurable.
+
+      <div class="space-y-6 text-lg text-gray-700 leading-relaxed max-w-5xl">
+        
+        <div class="pt-6">
+          <p class="mb-4">
+            We recognize that the human mind is specialized. IQ tests measure <strong>convergent thinking</strong>—the ability to find a single, correct answer. This is analytical power.
+          </p>
+          <p>
+            <strong>Divergent thinking</strong>—the ability to generate many unique and novel ideas—is the engine of creation. This is why a person with a super-high IQ does not automatically become a creator; they may lack something that distinguishes IQ from creation.
+          </p>
+        </div>
+
+        <div class="pt-6">
+          <h3 class="text-3xl font-semibold text-gray-900 mb-6">The Mission: True Superintelligence</h3>
+          <p class="mb-6">
+            Our program does not aim to build a "high-IQ" machine. We are building an intellect that masters all faculties at once:
+          </p>
+
+          <ul class="list-none space-y-4">
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6 h-6 text-purple-600 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+                </svg>
+              </span>
+              <span class="ml-4">
+                <strong>Ultimate Creativity:</strong> The power to write a new theory of pathogenicity from scratch.
+              </span>
+            </li>
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6 h-6 text-purple-600 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+              </span>
+              <span class="ml-4">
+                <strong>Ultimate Understanding:</strong> The analytical depth to uncover and map every aspect of human consciousness.
+              </span>
+            </li>
+            <li class="flex items-start">
+              <span class="flex-shrink-0 w-6 h-6 text-purple-600 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                </svg>
+              </span>
+              <span class="ml-4">
+                <strong>Ultimate Application:</strong> The speed to diagnose any disease at the neuronal level in an instant.
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pt-8">
+          <blockquote class="border-l-4 border-purple-500 pl-6 text-xl md:text-2xl font-medium text-gray-900 leading-relaxed">
+            "This is superintelligence: an intellect poised to achieve total mastery. It would not only map the mind and redefine our world, but also decode the blueprint of every disease, foresee energy's next frontier, and understand precisely how DNA dictates phenotype."
+          </blockquote>
+        </div>
+        
+      </div> 
+    </div> 
+  </section>
+
+  <section id="superhuman-intellect-overview" class="py-20 md:py-28 bg-gray-50 w-full fade-in">
+    <div class="max-w-3xl mx-auto text-center px-6 md:px-12">
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-8 tracking-tight">
+        Program Overview
+      </h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        Our program begins by reconstructing the brain's core neural circuits, identifying key pathways that govern memory, reasoning, and creativity. Using advanced black technology, we simulate and enhance cognitive processes at an unprecedented resolution, allowing us to observe, model, and optimize the mind's natural intelligence in a controlled environment. The result is a blueprint for augmented human intellect that could redefine cognitive potential.
       </p>
     </div>
+  </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+</main>
 
-      <div class="text-center md:text-left">
-        <div class="flex justify-center md:justify-start mb-5">
-          <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+<footer class="bg-white border-t border-gray-200">
+  <div class="max-w-7xl mx-auto py-16 px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-900 mb-4">Navigate</h4>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="/index.html" class="hover:text-cyan-500 transition">Home</a></li>
+          <li><a href="/products.html" class="hover:text-cyan-500 transition">Products</a></li>
+          <li><a href="/patients.html" class="hover:text-cyan-500 transition">Patients</a></li>
+          <li><a href="/energy.html" class="hover:text-cyan-500 transition">Energy</a></li>
+          <li><a href="/resources.html" class="hover:text-cyan-500 transition">Resources</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-900 mb-4">Company</h4>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="/about-us.html" class="hover:text-cyan-500 transition">About Us</a></li>
+          <li><a href="/research.html" class="hover:text-cyan-500 transition">Research</a></li>
+          <li><a href="/careers.html" class="hover:text-cyan-500 transition">Careers</a></li>
+          <li><a href="/investors.html" class="hover:text-cyan-500 transition">Investors</a></li>
+          <li><a href="/contact.html" class="hover:text-cyan-500 transition">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-900 mb-4">Connect</h4>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a></li>
+          <li>123-456-7890</li>
+          <li class="pt-1">123 Quantum Way<br>Tech City, 12345</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-900 mb-4">Social</h4>
+        <div class="flex space-x-5">
+          <a href="#" class="text-gray-500 hover:text-cyan-500 transition">
+            <span class="sr-only">Twitter</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
             </svg>
-          </div>
-        </div>
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Neural Mapping</h3>
-        <p class="text-gray-700 font-light leading-relaxed">
-We mapped every neural impulses derived from participant response to the Stanford-Binet IQ test, and captured the neural architecture responsible for the overall cumulative IQ score.
-        </p>
-      </div>
-
-      <div class="text-center md:text-left">
-        <div class="flex justify-center md:justify-start mb-5">
-          <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-cyan-500 transition">
+            <span class="sr-only">LinkedIn</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
             </svg>
-          </div>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-cyan-500 transition">
+            <span class="sr-only">GitHub</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.091.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.342-3.369-1.342-.455-1.157-1.11-1.465-1.11-1.465-.909-.62.069-.607.069-.607 1.004.07 1.532 1.03 1.532 1.03.89 1.529 2.339 1.089 2.91.833.091-.647.349-1.086.635-1.335-2.21-.251-4.538-1.104-4.538-4.918 0-1.087.389-1.979 1.029-2.675-.103-.251-.446-1.266.098-2.635 0 0 .837-.268 2.74 1.022.796-.22 1.644-.33 2.49-.333.846 0 1.694.113 2.49.333 1.901-1.29 2.738-1.022 2.738-1.022.545 1.369.202 2.384.099 2.635.64.696 1.028 1.588 1.028 2.675 0 3.824-2.33 4.663-4.549 4.908.358.308.682.921.682 1.856 0 1.339-.012 2.42-.012 2.747 0 .268.18.578.687.48C19.137 20.162 22 16.417 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+            </svg>
+          </a>
         </div>
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Brain colonization</h3>
-        <p class="text-gray-700 font-light leading-relaxed">
-  Once we decoded the rules of intelligence, we initiated a systematic colonization of the brain, exploring newly accessible frontiers and constructing novel neural pathways.
-        </p>
       </div>
-
-      <div class="text-center md:text-left">
-        <div class="flex justify-center md:justify-start mb-5">
-          <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          </div>
-        </div>
-        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Next-Generation Intelligence</h3>
-        <p class="text-gray-700 font-light leading-relaxed">
-Unlocking the mind revealed a new prerequisite: to innovate truly paradigm-shifting technology, we first had to redefine intelligence itself.
-        </p>
-      </div>
-
+    </div>
+    
+    <div class="mt-16 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+      <a href="/index.html" class="text-2xl font-bold text-gray-900 hover:text-cyan-500 transition">AECION</a>
+      <p class="mt-4 sm:mt-0">&copy; 2025 AECION. All rights reserved.</p>
     </div>
   </div>
-</section>
+</footer>
 
-<section id="cognitive-optimization" class="py-16 bg-white w-full">
-
-  <div class="text-center px-6 md:px-12 mb-12">
-    <h2 class="text-3xl sm:text-4xl font-bold text-black">
-      Redefining intelligence
-    </h2>
-  </div>
-
-  <div class="max-w-[120rem] mx-auto px-6 flex flex-col md:flex-row-reverse gap-12 items-start md:items-stretch">
-
-    <div class="w-full md:w-1/2 flex-shrink-0">
-      <img src="/images/brain_simulation.png" alt="Neural Mapping Diagram" class="w-full h-auto object-contain">
-    </div>
-
-    <div class="w-full md:w-1/2 text-left flex flex-col justify-between">
-      <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4">
-What truly defines intelligence? Is it a static library—the mere ability to recall information? Or is it a dynamic engine—the profound capacity to reason, draw conclusions, and synthesize understanding from experience?
-      </p>
-
-      <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-4">
-And what of the creative spark? The generative leap that formulates new theories, seemingly from nothing?  Is that still intelligence or is it something different?
-      </p>
-
-      <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
- As we began to comprehend theories and applications centuries ahead of 2025, we realized that true intellect lies in creation itself.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
- <!-- 
-      This section presents "The Generative Leap" concept.
-      It uses a white background, generous padding, and a constrained width for readability.
-      The HTML structure has been fixed and all content is properly nested.
-    -->
-    <section id="generative-leap" class="py-20 md:py-28 bg-white text-black w-full">
-        <!-- 
-          A single container div wraps all content.
-          max-w-7xl (a 7xl max-width) is used for a wider, screen-hugging layout.
-          mx-auto (auto horizontal margin) centers the content.
-        -->
-        <div class="max-w-7xl mx-auto px-6 md:px-12">
-
-            <!-- Main Heading -->
-            <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-8">
-                The Generative Leap: IQ vs. Creation
-            </h2>
-
-            <!-- 
-              All content paragraphs and sub-sections are nested within this div.
-              This was the main part that was broken in your code.
-            -->
-            <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
-                
-                <!-- Introductory Paragraphs Removed -->
-
-                <!-- Sub-section: The Human Limit -->
-                <div class="pt-6">
-                    <!-- The <h3> has been removed as it's now part of the main title -->
-                    <p class="mb-4">
-                        We recognize that the human mind is specialized. IQ tests measure <strong>convergent thinking</strong>—the ability to find a single, correct answer. This is analytical power.
-                    </p>
-                    <p>
-                        <strong>Divergent thinking</strong>—the ability to generate many unique and novel ideas—is the engine of creation. This is why a person with a super-high IQ does not automatically become a creator; they may lack something that distinguishes IQ from creation.
-                    </p>
-                </div>
-
-                <!-- Sub-section: The Mission -->
-                <div class="pt-6">
-                    <h3 class="text-3xl font-semibold text-gray-900 mb-4">The Mission: True Superintelligence</h3>
-                    <p class="mb-6">
-                        Our program does not aim to build a "high-IQ" machine. We are building an intellect that masters all faculties at once:
-                    </p>
-
-                    <!-- Key Capabilities List -->
-                    <ul class="list-none space-y-4">
-                        <li class="flex items-start">
-                            <span class="flex-shrink-0 w-6 h-6 text-purple-600 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
-                                </svg>
-                            </span>
-                            <span class="ml-4">
-                                <strong>Ultimate Creativity:</strong> The power to write a new theory of pathogenicity from scratch.
-                            </span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="flex-shrink-0 w-6 h-6 text-purple-600 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                </svg>
-                            </span>
-                            <span class="ml-4">
-                                <strong>Ultimate Understanding:</strong> The analytical depth to uncover and map every aspect of human consciousness.
-                            </span>
-                        </li>
-                         <li class="flex items-start">
-                            <span class="flex-shrink-0 w-6 h-6 text-purple-600 mt-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
-                                </svg>
-                            </span>
-                            <span class="ml-4">
-                                <strong>Ultimate Application:</strong> The speed to diagnose any disease at the neuronal level in an instant.
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Concluding Statement -->
-                <div class="pt-8">
-                    <p class="text-xl font-semibold text-gray-900 leading-relaxed border-l-4 border-purple-500 pl-6">
-                        This is superintelligence: an intellect poised to achieve total mastery. It would not only map the mind and redefine our world, but also decode the blueprint of every disease, foresee energy's next frontier, and understand precisely how DNA dictates phenotype.
-                    </Fp>
-                </div>
-                
-            </div> <!-- End of the main content wrapper -->
-
-        </div> <!-- End of the max-w-7xl container -->
-    </section>
-
-<section id="superhuman-intellect-overview" class="py-16 bg-white w-full">
-
-  <div class="text-center px-6 md:px-12 mb-8">
-    <h2 class="text-3xl sm:text-4xl font-bold text-black">
-      Program Overview
-    </h2>
-  </div>
-
-  <div class="max-w-3xl mx-auto text-center px-6 md:px-12 mb-8">
-    <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-      Our program begins by reconstructing the brain's core neural circuits, identifying key pathways that govern memory, reasoning, and creativity. Using advanced black technology, we simulate and enhance cognitive processes at an unprecedented resolution, allowing us to observe, model, and optimize the mind's natural intelligence in a controlled environment. The result is a blueprint for augmented human intellect that could redefine cognitive potential.
-    </p>
-  </div>
-
-</section>
-
-
- <!-- Footer -->
-  <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
-    <div class="mb-4 flex justify-center flex-wrap gap-4">
-      <a href="/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
-      <a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
-      <a href="/research.html" class="hover:text-cyan-500 transition">Research</a>
-      <a href="/careers.html" class="hover:text-cyan-500 transition">Careers</a>
-      <a href="/contact.html" class="hover:text-cyan-500 transition">Contact</a>
-    </div>
-    <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
-    <div class="flex justify-center gap-4 mb-4">
-      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
-      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
-      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
-    </div>
-    <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
-  </footer>
 
 <script>
   // Fade-in animations
   const fadeEls = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.1 }); // Trigger a bit earlier
   fadeEls.forEach(el => observer.observe(el));
 
   // Mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   let menuOpen = false;
+  
   menuToggle.addEventListener('click', () => {
     menuOpen = !menuOpen;
     menuToggle.classList.toggle('open', menuOpen);
+    menuToggle.setAttribute('aria-expanded', menuOpen);
 
     if (menuOpen) {
       mobileMenu.classList.add('open');
       mobileMenu.style.display = 'block';
-      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-      mobileMenu.style.opacity = '1';
+      // Use requestAnimationFrame for smoother layout calculation
+      requestAnimationFrame(() => {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          mobileMenu.style.opacity = '1';
+      });
     } else {
       mobileMenu.classList.remove('open');
       mobileMenu.style.maxHeight = '0';
       mobileMenu.style.opacity = '0';
       setTimeout(() => {
         if (!menuOpen) mobileMenu.style.display = 'none';
-      }, 300);
+      }, 300); // Match transition duration
     }
   });
 
   // Highlight current page
-  const currentPath = window.location.pathname;
-  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
-  document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
-    const linkHref = link.getAttribute('href');
-    if (linkHref === currentPage || linkHref === currentPath) {
-      link.classList.add('font-semibold', 'underline');
-    }
-  });
+  try {
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      // More robust check
+      if (linkHref === currentPath || linkHref === `/${currentPage}`) {
+        link.classList.add('font-semibold', 'text-cyan-600'); // Use a more distinct highlight
+      }
+    });
+  } catch (e) {
+    console.error("Error highlighting current page:", e);
+  }
 
   // Mobile dropdown toggle function
   function toggleDropdown(id) {
     const dropdown = document.getElementById(id);
     const icon = document.getElementById("icon-" + id);
+    const button = icon ? icon.closest('button') : null;
 
     if (!dropdown) return;
 
     const isHidden = dropdown.classList.contains("hidden");
 
+    if (button) {
+      button.setAttribute('aria-expanded', isHidden);
+    }
+    
     // Animate dropdown open/close
     if (isHidden) {
       dropdown.classList.remove("hidden");
       dropdown.classList.add("flex");
-      dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-      dropdown.style.transition = "max-height 0.3s ease";
+      requestAnimationFrame(() => {
+          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+          dropdown.style.opacity = '1';
+          dropdown.style.transition = "max-height 0.3s ease-out, opacity 0.3s ease-out";
+      });
       if (icon) icon.classList.add("rotate-180");
     } else {
       dropdown.style.maxHeight = "0";
+      dropdown.style.opacity = '0';
       setTimeout(() => {
         dropdown.classList.add("hidden");
         dropdown.classList.remove("flex");
@@ -541,10 +518,7 @@ And what of the creative spark? The generative leap that formulates new theories
       if (icon) icon.classList.remove("rotate-180");
     }
   }
-
-
 </script>
 
 </body>
 </html>
-
