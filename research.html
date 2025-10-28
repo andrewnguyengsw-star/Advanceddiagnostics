@@ -1,49 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AECION | Research Portfolio</title>
-  <meta name="description" content="Explore AECION's research portfolio integrating quantum sensing and biological mapping to uncover mechanisms driving human health and performance.">
-  <link rel="canonical" href="https://www.aecion.com/research.html" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AECION | Science</title>
+  <meta name="description" content="Discover the scientific foundations of the AECION Quantum Health Platform, translating complex biological data into actionable insights.">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Optional: Swiper CSS (carousel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <!-- Custom styles (single <style> block, cleaned) -->
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #111; }
+    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
-    .gradient-text { background: linear-gradient(90deg, #00cfff, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .glass-btn { background: #007bff; color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 0.5rem; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
-    .glass-btn:hover { background: #0056b3; transform: translateY(-2px) scale(1.02); }
-    .section-divider { height: 2px; background: linear-gradient(to right, #00cfff, #8a2be2); margin: 4rem 0; }
-    .active-link { text-decoration: underline; text-underline-offset: 4px; color: #00cfff !important; font-weight: 700; }
+    /* Fade-in animations */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
-    /* Dropdown styles for both Research and Breakthroughs */
-    .dropdown { position: relative; }
+    /* Buttons */
+    .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px) scale(1.03); }
+    .btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
+
+    /* Product card hover */
+    .product-card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+
+    /* Navigation (mobile menu) */
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; max-height: 100vh; opacity: 1; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Dropdown styling */
     .dropdown-menu {
+      max-height: 400px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
       position: absolute;
       top: 100%;
       left: 0;
-      background: #fff;
+      background: white;
       border: 1px solid #ddd;
       border-radius: 0.5rem;
       width: 14rem;
       z-index: 50;
     }
-    .dropdown.open .dropdown-menu { opacity: 1; pointer-events: auto; }
-    .dropdown-menu a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: #111;
-      transition: background 0.3s;
+    .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
+    .dropdown-menu a:hover { background: #f0f0f0; }
+
+    /* Scrollbar styling for dropdowns */
+    .dropdown-menu::-webkit-scrollbar { width: 6px; }
+    .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
+    .dropdown-menu::-webkit-scrollbar-track { background: transparent; }
+
+    /* Aspect ratio helper for embedded video */
+    .aspect-w-16 { position: relative; width: 100%; }
+    .aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
+    .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    /* Mobile dropdowns (scrollbar tweaks) */
+    #research-mobile, #breakthroughs-mobile {
+      max-height: 300px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
     }
-    .dropdown-menu a:hover { background: #f0f8ff; }
+    #research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
+    #research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+    var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,   // only show ONE slide at a time
+  allowTouchMove: false, // disable manual dragging/swiping
+  effect: "fade",     // fade transition
+  speed: 600          // optional: smooth transition speed
+});
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mySwiper, .swiper-wrapper, .swiper-slide {
+  height: 100%;
+}
   </style>
 </head>
-<body class="bg-white text-gray-900">
 
 <!-- Navigation -->
 <header class="sticky top-0 bg-white shadow z-50">
@@ -77,54 +138,6 @@
       <a href="/energy.html" class="hover:text-cyan-500 transition">Energy</a>
       <a href="/resources.html" class="hover:text-cyan-500 transition flex items-center">Resources</a>
 
-      <!-- Research Dropdown -->
-      <div class="relative dropdown">
-        <a href="/research.html" class="hover:text-cyan-500 transition flex items-center">
-          Research
-          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </a>
-        <div class="dropdown-menu">
-          <a href="/research/cognitive-enhancement-drug.html">Cognitive Enhancement</a>
-          <a href="/research/reverse-aging-serum.html">Reverse-Aging Serum</a>
-          <a href="/research/super-soldier-serum.html">Super Soldier Serum</a>
-          <a href="/research/black-technology.html">Black Technology</a>
-        </div>
-      </div>
-
-      <!-- Breakthroughs Dropdown -->
-      <div class="relative dropdown">
-        <a href="/breakthroughs.html" class="hover:text-cyan-500 transition flex items-center">
-          Breakthroughs
-          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </a>
-        <div class="dropdown-menu max-h-96 overflow-y-auto">
-          <a href="/breakthrough/project-atlas.html#project-atlas">Project Atlas™</a>
-          <a href="/breakthrough/project-sentinel.html#project-sentinel">Project Sentinel™</a>
-          <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface">Project Remote Neural Interface™</a>
-          <a href="/breakthrough/project-synapse.html#project-synapse">Project Synapse</a>
-          <a href="/breakthrough/human-biosonar.html#human-biosonar">Human Biosonar</a>
-          <a href="/breakthrough/enhanced-senses.html#enhanced-senses">Enhanced Senses</a>
-          <a href="/breakthrough/danger-detection.html#danger-detection">Danger Detection</a>
-          <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance">Electrocution Resistance</a>
-          <a href="/breakthrough/particle-control.html#particle-control">Particle Control</a>
-          <a href="/breakthrough/efr.html#efr">EFR</a>
-          <a href="/breakthrough/neuroception.html#neuroception">Neuroception</a>
-          <a href="/breakthrough/sanguivigilance.html#sanguivigilance">Sanguivigilance</a>
-          <a href="/breakthrough/exosight.html#exosight">ExoSight™</a>
-          <a href="/breakthrough/project-echo.html#project-echo">Project ECHO™</a>
-          <a href="/breakthrough/project-lucid.html#project-lucid">Project LUCID™</a>
-          <a href="/breakthrough/project-vigor.html#project-vigor">Project VIGOR™</a>
-          <a href="/breakthrough/project-stormcore.html#project-stormcore">Project STORMCORE™</a>
-          <a href="/breakthrough/project-whispered.html#project-whispered">Project: WHISPERED™</a>
-          <a href="/breakthrough/project-seer.html#project-seer">Project Seer™</a>
-          <a href="/breakthrough/superconductivity.html#superconductivity">Project SUPERCONDUCTIVITY</a>
-        </div>
-      </div>
-
 <a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
 
 <!-- Careers Dropdown -->
@@ -140,92 +153,75 @@
   </div>
 </div>
 
+<a href="/investors.html" class="hover:text-cyan-500 transition flex items-center">Investors</a>
+
     </nav>
 
     <!-- Mobile Menu Button -->
-    <div class="sm:hidden">
-      <button id="menu-toggle" aria-label="Toggle navigation menu" class="relative flex flex-col justify-center items-center w-10 h-10 rounded-md border border-gray-300">
+   <div class="sm:hidden">
+      <button id="menu-toggle" 
+              aria-label="Toggle navigation menu" 
+              aria-controls="mobile-menu" 
+              aria-expanded="false" 
+              class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
-        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1.5"></span>
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
       </button>
     </div>
-  </div>
+  </div> <nav id="mobile-menu" 
+       class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
+    
+    <div class="flex flex-col p-4 space-y-1">
 
-  <!-- Mobile Menu -->
-  <nav id="mobile-menu" class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40">
-    <div class="flex flex-col p-4 space-y-4">
-      <a href="/index.html" class="text-lg font-medium hover:text-cyan-500">Home</a>
+      <a href="/index.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Home</a>
 
-      <!-- Mobile Science Dropdown -->
-      <div class="flex flex-col">
-        <a href="/science.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Science</a>
-        <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('science-mobile')">
-          <svg class="w-4 h-4 transition-transform duration-300" id="icon-science-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div>
+        <button onclick="toggleDropdown('science-mobile')" 
+                aria-controls="science-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Science</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-science-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </button>
-        <div id="science-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2">
-          <a href="/science/how-we-develop.html">How We Develop</a>
-          <a href="/science/innovation.html">Innovation</a>
-          <a href="/science/neuroscience.html">Neuroscience</a>
-          <a href="/science/super-soldier.html">Super Soldier Project</a>
-          <a href="/science/superhuman-senses.html">Superhuman Senses Program</a>
-	  <a href="/science/nightvision.html">Nightvision</a>
+        <div id="science-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/science.html" class="block hover:text-cyan-500 py-2 rounded">Science Overview</a>
+          <a href="/science/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
+          <a href="/science/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
+          <a href="/science/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
+          <a href="/science/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
+          <a href="/science/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
+          <a href="/science/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
         </div>
       </div>
 
-      <a href="/products.html" class="text-lg font-medium hover:text-cyan-500">Products</a>
-      <a href="/patients.html" class="text-lg font-medium hover:text-cyan-500">Patients</a>
-      <a href="/energy.html" class="text-lg font-medium hover:text-cyan-500">Energy</a>
-      <a href="/resources.html" class="hover:text-cyan-500 transition flex items-center">Resources</a>
+      <a href="/products.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Products</a>
+      <a href="/patients.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Patients</a>
+      <a href="/energy.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Energy</a>
+      
+      <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Resources</a>
+      
+      <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">About Us</a>
 
-      <!-- Mobile Breakthroughs Dropdown -->
-      <div class="flex flex-col">
-        <a href="/breakthroughs.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Breakthroughs</a>
-        <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('breakthroughs-mobile')">
-          <svg class="w-4 h-4 transition-transform duration-300" id="icon-breakthroughs-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div>
+        <button onclick="toggleDropdown('careers-mobile')" 
+                aria-controls="careers-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Careers</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </button>
-        <div id="breakthroughs-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2 max-h-96 overflow-y-auto">
-          <a href="/breakthrough/project-atlas.html#project-atlas" class="hover:text-cyan-500">Project Atlas™</a>
-          <a href="/breakthrough/project-sentinel.html#project-sentinel" class="hover:text-cyan-500">Project Sentinel™</a>
-          <a href="/breakthrough/project-remote-neural-interface.html#project-remote-neural-interface" class="hover:text-cyan-500">Project Remote Neural Interface™</a>
-          <a href="/breakthrough/project-synapse.html#project-synapse" class="hover:text-cyan-500">Project Synapse</a>
-          <a href="/breakthrough/human-biosonar.html#human-biosonar" class="hover:text-cyan-500">Human Biosonar</a>
-          <a href="/breakthrough/enhanced-senses.html#enhanced-senses" class="hover:text-cyan-500">Enhanced Senses</a>
-          <a href="/breakthrough/danger-detection.html#danger-detection" class="hover:text-cyan-500">Danger Detection</a>
-          <a href="/breakthrough/electrocution-resistance.html#electrocution-resistance" class="hover:text-cyan-500">Electrocution Resistance</a>
-          <a href="/breakthrough/particle-control.html#particle-control" class="hover:text-cyan-500">Particle Control</a>
-          <a href="/breakthrough/efr.html#efr" class="hover:text-cyan-500">EFR</a>
-          <a href="/breakthrough/neuroception.html#neuroception" class="hover:text-cyan-500">Neuroception</a>
-          <a href="/breakthrough/sanguivigilance.html#sanguivigilance" class="hover:text-cyan-500">Sanguivigilance</a>
-          <a href="/breakthrough/exosight.html#exosight" class="hover:text-cyan-500">ExoSight™</a>
-          <a href="/breakthrough/project-echo.html#project-echo" class="hover:text-cyan-500">Project ECHO™</a>
-          <a href="/breakthrough/project-lucid.html#project-lucid" class="hover:text-cyan-500">Project LUCID™</a>
-          <a href="/breakthrough/project-vigor.html#project-vigor" class="hover:text-cyan-500">Project VIGOR™</a>
-          <a href="/breakthrough/project-stormcore.html#project-stormcore" class="hover:text-cyan-500">Project STORMCORE™</a>
-          <a href="/breakthrough/project-whispered.html#project-whispered" class="hover:text-cyan-500">Project: WHISPERED™</a>
-          <a href="/breakthrough/project-seer.html#project-seer" class="hover:text-cyan-500">Project Seer™</a>
-          <a href="/breakthrough/superconductivity.html#superconductivity" class="hover:text-cyan-500">Project SUPERCONDUCTIVITY</a>
+        <div id="careers-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/careers.html" class="block hover:text-cyan-500 py-2 rounded">Careers Overview</a>
+          <a href="/careers/learn-more.html#gulf-war-syndrome" class="block hover:text-cyan-500 py-2 rounded">Gulf War Syndrome</a>
         </div>
       </div>
 
-<a href="https://www.aecion.com/about-us.html" class="text-lg font-medium hover:text-cyan-500 ml-4 mt-2">About Us</a>
-
-<!-- Mobile Careers Dropdown -->
-<div class="flex flex-col">
-  <a href="/careers.html" class="flex justify-between items-center w-full text-lg hover:text-cyan-500">Careers</a>
-  <button class="flex justify-between items-center w-full text-lg hover:text-cyan-500" onclick="toggleDropdown('careers-mobile')">
-    <svg class="w-4 h-4 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-    </svg>
-  </button>
-  <div id="careers-mobile" class="hidden flex flex-col pl-4 mt-2 space-y-2">
-    <a href="/careers/learn-more.html#gulf-war-syndrome" class="hover:text-cyan-500">Gulf War Syndrome</a>
-  </div>
-</div>
+      <a href="/investors.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Investors</a>
 
     </div>
   </nav>
@@ -233,113 +229,267 @@
 
 
 
-
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-b from-white via-gray-100 to-white overflow-hidden">
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900">Research Portfolio: Unlocking Human Potential</h1>
-    <p class="text-lg text-gray-700 max-w-3xl mb-4">
-      Human Gain-of-Function: We explore the frontiers of human performance, integrating quantum-informed therapeutics and biological optimization. Our projects target cellular rejuvenation, cognitive enhancement, and extraordinary physical capabilities.
+<!-- Unified Hero Section (Reduced Height) -->
+<section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center bg-gradient-to-b from-black via-gray-900 to-black">
+  
+  <!-- Left Half: Image -->
+  <div class="w-full h-full">
+    <img src="/images/science_head.png" alt="Quantum Health" class="w-full h-full object-cover">
+  </div>
+  
+  <!-- Right Half: Text -->
+  <div class="flex flex-col justify-center items-center text-center px-6 py-10">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 fade-in text-white" style="animation-delay:0.2s;">
+      Research
+    </h1>
+    <p class="text-base sm:text-lg md:text-xl text-gray-300 max-w-md mb-6 fade-in leading-relaxed" style="animation-delay:0.4s;">
+      Our research uses future knowledge to bypass the limitations of the present.
     </p>
-    <div class="flex gap-4">
-      <a href="#portfolio" class="glass-btn">Explore Projects</a>
-      <a href="#subscribe" class="glass-btn">Subscribe for Updates</a>
+    <a href="#learn-more" class="glass-btn px-6 py-3 font-semibold rounded-xl text-white fade-in hover:scale-105 transition" style="animation-delay:0.6s;">
+      Learn More
+    </a>
+  </div>
+
+</section>
+
+<!-- Technology / Research Section -->
+<section class="py-20 px-6 bg-white text-black fade-in">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center text-black-500">Our journey of scientific discovery has brought us to the singularity — the threshold where the pursuit of knowledge meets the natural boundaries of science itself.</h2>
+  <p class="max-w-4xl mx-auto mb-6 text-center">
+Each day, our team works to reverse-engineer future discoveries to improve human health and well-being.
+  </p>
+  <p class="max-w-3xl mx-auto mb-6 text-center">
+    We are focused on applying future knowledge and scientific practice to develop groundbreaking medicines and vaccines for patients. Our teams of scientists combine diverse expertise with cutting-edge technologies and tools to drive the discovery of the next breakthrough in patient care.
+  </p>
+  <div class="text-center">
+    <a href="research.html" class="btn-primary">Dive Deeper into Our Research</a>
+  </div>
+</section>
+
+<!-- AECION LAB Section -->
+<section class="py-20 px-6 fade-in bg-black text-white">
+  <div class="grid sm:grid-cols-2 gap-12 items-center w-full">
+    
+    <!-- Left: Image -->
+    <div class="w-full h-full">
+      <img src="/images/science_labs.png" alt="AECION Lab" class="w-full h-[500px] object-cover rounded-xl shadow-lg">
     </div>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="py-20 px-6 max-w-7xl mx-auto">
-    <h2 class="text-4xl font-bold text-center text-blue-600 mb-12">Featured Research Projects</h2>
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <!-- Reverse-Aging Serum -->
-      <div class="group bg-white shadow-lg rounded-2xl overflow-hidden transition hover:shadow-2xl">
-        <img src="images/reverse-aging-serum.png" alt="Reverse Aging Serum" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-2">Reverse-Aging Serum</h3>
-          <p class="text-gray-700 mb-4">Advanced biochemistry to slow, halt, and reverse cellular aging.</p>
-          <ul class="text-gray-600 space-y-1 mb-4">
-            <li>DNA repair & telomere extension</li>
-            <li>Stem cell rejuvenation</li>
-            <li>Anti-inflammatory & antioxidant</li>
-          </ul>
-          <a href="research/reverse-aging-serum.html" class="glass-btn">Learn More</a>
-        </div>
-      </div>
-
-      <!-- Super Soldier Serum -->
-      <div class="group bg-white shadow-lg rounded-2xl overflow-hidden transition hover:shadow-2xl">
-        <img src="images/super-soldier-serum.png" alt="Super Soldier Serum" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-2">Super Soldier Serum</h3>
-          <p class="text-gray-700 mb-4">Designed to push human performance beyond natural limits.</p>
-          <ul class="text-gray-600 space-y-1 mb-4">
-            <li>Muscle & skeletal enhancement</li>
-            <li>Neural optimization</li>
-            <li>Metabolic acceleration</li>
-            <li>Resilience & recovery</li>
-          </ul>
-          <a href="research/super-soldier-serum.html" class="glass-btn">Learn More</a>
-        </div>
-      </div>
-
-      <!-- Cognitive Enhancement Drug -->
-      <div class="group bg-white shadow-lg rounded-2xl overflow-hidden transition hover:shadow-2xl">
-        <img src="images/cognitive-drug.png" alt="Cognitive Enhancement" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300">
-        <div class="p-6">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-2">Cognitive Enhancement Drug</h3>
-          <p class="text-gray-700 mb-4">Neuropharmacology to improve memory, focus, and problem-solving.</p>
-          <ul class="text-gray-600 space-y-1 mb-4">
-            <li>Boosts synaptic efficiency</li>
-            <li>Enhances neurotransmitter production</li>
-            <li>Optimizes oxygen & glucose utilization</li>
-            <li>Supports long-term neural health</li>
-          </ul>
-          <a href="research/cognitive-enhancement-drug.html" class="glass-btn">Learn More</a>
-        </div>
-      </div>
+    
+    <!-- Right: Text -->
+    <div class="flex flex-col justify-center text-left">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+        AECION LABS
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-300 leading-relaxed">
+        Our discoveries are so advanced, science has yet to invent the language to describe them.
+      </p>
+      <p class="mt-4 text-gray-400">
+        AECION research laboratories operate decades ahead of today’s frameworks — forging breakthroughs so disruptive that conventional nomenclature, and even human acceptance, have yet to emerge.
+      </p>
+      <a href="/research.html" class="mt-8 inline-block px-8 py-4 bg-white text-black font-semibold rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 hover:scale-105">
+        Explore Our Research
+      </a>
     </div>
-  </section>
 
-  <!-- Black Science Section -->
-  <section id="black-science" class="py-20 px-6 bg-gray-50 text-gray-900">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div class="space-y-6">
-        <h2 class="text-5xl font-bold gradient-text">Black Technology: Redefining the Limits of Science</h2>
-        <p class="text-gray-700 text-lg">Research and applications so advanced that they challenge and expand the boundaries of contemporary science. Black Technology represents the frontier where human potential, quantum innovation, and bioengineering converge.</p>
-        <ul class="text-gray-600 list-disc list-inside space-y-1">
-          <li>Quantum-field manipulation beyond current understanding</li>
-          <li>Neural and cognitive augmentation</li>
-          <li>Precision bio-molecular engineering</li>
-          <li>AI-guided experimental systems</li>
-        </ul>
-        <a href="research/black-technology.html" class="glass-btn mt-4 inline-block">Learn More</a>
-      </div>
-      <div class="flex justify-center md:justify-end">
-        <img src="images/black-technology-illustration.png" alt="Black Technology Illustration" class="rounded-2xl shadow-xl hover:scale-105 transition-transform w-full max-w-md">
-      </div>
+  </div>
+</section>
+
+<!-- Our Areas of Focus Section -->
+<section id="focus" class="py-20 px-6 fade-in">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full h-full">
+
+    <!-- Card 1: Our Areas of Focus -->
+    <div class="h-full p-8 flex flex-col justify-between bg-white">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">
+        Our Areas of Focus
+      </h2>
+      <p class="text-lg text-black-700 mb-6">
+        Where future expertise meets today’s science — building the technologies of tomorrow to improve the lives of all.
+      </p>
+      <ul id="focus-list" class="divide-y divide-black border-t border-b border-black text-left flex-1">
+        <li class="py-3 px-4 font-bold focus-btn active cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="0">
+          <span>Human Gain-of-Function</span>
+          <span class="text-black text-xl">&gt;</span>
+        </li>
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="1">
+          <span>Oncology</span>
+          <span class="text-black text-xl">&gt;</span>
+        </li>
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="2">
+          <span>Immunology</span>
+          <span class="text-black text-xl">&gt;</span>
+        </li>
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="3">
+          <span>Neuroscience</span>
+          <span class="text-black text-xl">&gt;</span>
+        </li>
+        <li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-slide="4">
+          <span>Infectious Disease</span>
+          <span class="text-black text-xl">&gt;</span>
+        </li>
+      </ul>
     </div>
-  </section>
 
-  <!-- Responsible Research Section -->
-  <div class="section-divider"></div>
-  <section class="py-20 px-6 max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-blue-600">Responsible Research & Safety</h2>
-    <p class="text-gray-700 mb-12">Safety is central to everything we do. Our research follows strict protocols, carefully designed to protect participants and guarantee the responsible development and monitoring of our products.</p>
-    <div class="grid md:grid-cols-3 gap-8 text-gray-700 text-left">
-      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Establishing rigorous protocols for all research activities</div>
-      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Continuous monitoring of ongoing projects and participants</div>
-      <div class="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition">Independent oversight and ethics compliance at every stage</div>
+    <!-- Card 2: Carousel -->
+    <div class="h-full flex">
+      <div class="swiper mySwiper h-full flex-1">
+        <div class="swiper-wrapper h-full">
+<!-- Slide 1 -->
+<div class="swiper-slide h-full">
+  <div class="relative h-full p-8 flex flex-col justify-end text-white overflow-hidden rounded-none">
+    
+    <picture>
+      <source srcset="/images/science_focus1.png" media="(max-width: 640px)">
+      <source srcset="/images/science_focus1.png" media="(max-width: 1024px)">
+      <img src="/images/science_focus1.png" alt="Science Focus 1" class="absolute inset-0 h-full w-full object-cover">
+    </picture>
+
+    <div class="relative z-10">
+      <h3 class="text-2xl font-semibold mb-4 drop-shadow-lg">Human Gain-of-Function</h3>
+      <p class="max-w-3xl mb-4 leading-relaxed drop-shadow-md">
+        Exploring enhancements that transcend human limitations — pioneering new frontiers in biology and capability.
+      </p>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- Subscribe Section -->
-  <section id="subscribe" class="bg-gray-900 text-white py-20 px-6">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-6">Stay Connected</h2>
-      <p class="text-lg mb-6">Subscribe to receive updates about breakthroughs and new discoveries from our research team.</p>
-      <form action="#" method="POST" class="flex flex-col sm:flex-row gap-4">
-        <input type="email" name="email" placeholder="Enter your email" required class="flex-grow px-4 py-3 rounded-lg text-gray-900 focus:outline-none">
-        <button type="submit" class="glass-btn bg-blue-600 hover:bg-blue-700">Subscribe</button>
-      </form>
+<!-- Slide 2 -->
+<div class="swiper-slide h-full">
+  <div class="relative h-full p-8 flex flex-col justify-end text-white overflow-hidden rounded-none">
+    
+    <picture>
+      <source srcset="/images/science_focus2.png" media="(max-width: 640px)">
+      <source srcset="/images/science_focus2.png" media="(max-width: 1024px)">
+      <img src="/images/science_focus2.png" alt="Science Focus 2" class="absolute inset-0 h-full w-full object-cover">
+    </picture>
+
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <div class="relative z-10">
+      <h3 class="text-2xl font-semibold mb-4 drop-shadow-lg">Oncology</h3>
+      <p class="max-w-3xl mb-4 leading-relaxed drop-shadow-md">
+        Imagine a future where cancer is no longer a threat — a world where diagnostics are so advanced they can detect the disease at its earliest, most subtle stages. In this future, questions like how and when cancer first evades the immune system are no longer mysteries, but part of our common knowledge. This is where the Black Technologies Department is today — and it has already gone beyond.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="swiper-slide h-full">
+  <div class="relative h-full p-8 flex flex-col justify-end text-white overflow-hidden rounded-none">
+    
+    <picture>
+      <source srcset="/images/science_focus3.png" media="(max-width: 640px)">
+      <source srcset="/images/science_focus3.png" media="(max-width: 1024px)">
+      <img src="/images/science_focus3.png" alt="Science Focus 3" class="absolute inset-0 h-full w-full object-cover">
+    </picture>
+
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <div class="relative z-10">
+      <h3 class="text-2xl font-semibold mb-4 drop-shadow-lg">Immunology</h3>
+      <p class="max-w-3xl mb-4 leading-relaxed drop-shadow-md">
+        We can track immune-driven inflammation across space and time, building a complete atlas of biomarkers for autoimmune disease. Our mission: to turn these discoveries into therapies that transform lives.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 4 -->
+<div class="swiper-slide h-full">
+  <div class="relative h-full p-8 flex flex-col justify-end text-white overflow-hidden rounded-none">
+    
+    <picture>
+      <source srcset="/images/science_focus4.png" media="(max-width: 640px)">
+      <source srcset="/images/science_focus4.png" media="(max-width: 1024px)">
+      <img src="/images/science_focus4.png" alt="Science Focus 4" class="absolute inset-0 h-full w-full object-cover">
+    </picture>
+
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <div class="relative z-10">
+      <h3 class="text-2xl font-semibold mb-4 drop-shadow-lg">Neuroscience</h3>
+
+      <p class="max-w-3xl mb-4 leading-relaxed drop-shadow-md">
+        We have already mapped much of human consciousness — from intelligence to depression.
+      </p>
+
+      <p class="max-w-3xl leading-relaxed drop-shadow-md">
+        Now, our work in neuroscience moves beyond characterization into creation, engineering novel neural networks and unlocking new dimensions of human function.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5 -->
+<div class="swiper-slide h-full">
+  <div class="relative h-full p-8 flex flex-col justify-end text-white overflow-hidden rounded-none">
+    
+    <picture>
+      <source srcset="/images/science_focus5.png" media="(max-width: 640px)">
+      <source srcset="/images/science_focus5.png" media="(max-width: 1024px)">
+      <img src="/images/science_focus5.png" alt="Science Focus 5" class="absolute inset-0 h-full w-full object-cover">
+    </picture>
+
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <div class="relative z-10">
+      <h3 class="text-2xl font-semibold mb-4 drop-shadow-lg">Infectious Disease</h3>
+      
+      <p class="max-w-3xl mb-4 leading-relaxed drop-shadow-md">
+        We’ve glimpsed a future where the very definition of infectious diseases has changed—what they are, how they emerge, and how we respond. Our work moves beyond vaccines toward entirely radical new therapies that are predictive, adaptive, and profoundly transformative.
+      </p>
+
+      <p class="max-w-3xl leading-relaxed drop-shadow-md">
+        Beyond the end state of infectious disease management lies a world where infection itself is obsolete—where immune systems are adaptive, programmable, and self-healing, and pathogens no longer define the boundaries of human health.
+      </p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- Our Innovation Section -->
+<section id="innovation" class="py-20 px-6 fade-in">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full h-full min-h-full">
+
+    <!-- Card 1: Full Image -->
+    <div class="h-full relative overflow-hidden rounded-none">
+      <picture>
+        <source srcset="/images/science_innovation1_mobile.png" media="(max-width: 640px)">
+        <source srcset="/images/science_innovation1_tablet.png" media="(max-width: 1024px)">
+        <img src="/images/science_innovation1.png" alt="Science Innovation" 
+             class="absolute inset-0 h-full w-full object-cover">
+      </picture>
+    </div>
+
+    <!-- Card 2: Text Content -->
+    <div class="h-full p-8 flex flex-col justify-between bg-white">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">
+        Innovation
+      </h2>
+      <p class="text-lg text-black mb-6">
+        The tools we are using represent the end state — where spatiotemporal mapping of the entire nervous system reveals every biomarker and every disease course, accelerating the discovery and delivery of transformative therapeutics to patients.
+      </p>
+
+      <!-- New Paragraph Section -->
+      <p class="text-base text-black">
+        — This approach ensures scalability across disciplines and enables collaboration between clinicians and researchers.<br>
+        — Every insight shortens the path from discovery to treatment.<br>
+        — Spatiotemporal mapping of the nervous system enables detection of all biological activity in response to any stimuli.<br>
+        — Translation of electrochemical impulses reveals both the clinical signs and symptoms of any patient without self-report, creating a complete and objective picture of health and disease.<br>
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="py-20 px-6 max-w-6xl mx-auto text-center fade-in">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-800">Partner with Our Science Team</h2>
+    <p class="text-gray-700 mb-6">Position your organization at the forefront of medicine with our quantum-enabled scientific insights.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="mailto:support@aecion.com" class="glass-btn">Request a Science Briefing</a>
+      <a href="partnerships.html" class="glass-btn">Explore Partnership Opportunities</a>
     </div>
   </section>
 
@@ -361,64 +511,104 @@
     <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
 
-<script>
-// Fade-in animations
-const fadeEls = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if(entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
-}, { threshold: 0.2 });
-fadeEls.forEach(el => observer.observe(el));
+  <!-- Swiper core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-// Mobile menu toggle
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-let menuOpen = false;
-menuToggle.addEventListener('click', () => {
-  menuOpen = !menuOpen;
-  menuToggle.classList.toggle('open', menuOpen);
-  if (menuOpen) {
-    mobileMenu.classList.add('open');
-    mobileMenu.style.display = 'block';
-    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-    mobileMenu.style.opacity = '1';
-  } else {
-    mobileMenu.classList.remove('open');
-    mobileMenu.style.maxHeight = '0';
-    mobileMenu.style.opacity = '0';
-    setTimeout(() => { if (!menuOpen) mobileMenu.style.display = 'none'; }, 300);
-  }
-});
+  <!-- Your site scripts (with fade-in, mobile menu, and carousel logic) -->
+  <script>
+    // Fade-in animations
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
 
-// ✅ Helper function to update mobile menu height
-function updateMobileMenuHeight() {
-    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
-}
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
 
-// Mobile Research Dropdown Toggle
-const mobileResearchToggle = document.getElementById('mobile-research-toggle');
-const mobileResearchSubmenu = document.getElementById('mobile-research-submenu');
-const mobileResearchIcon = document.getElementById('mobile-research-icon');
-let researchOpen = false;
-mobileResearchToggle.addEventListener('click', () => {
-  researchOpen = !researchOpen;
-  mobileResearchSubmenu.style.maxHeight = researchOpen ? mobileResearchSubmenu.scrollHeight + 'px' : '0';
-  mobileResearchSubmenu.style.opacity = researchOpen ? '1' : '0';
-  mobileResearchIcon.textContent = researchOpen ? '−' : '+';
-  updateMobileMenuHeight(); // 🔹 adjust height
-});
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => {
+          if (!menuOpen) mobileMenu.style.display = 'none';
+        }, 300);
+      }
+    });
 
-// Mobile Breakthroughs Dropdown Toggle
-const mobileBreakthroughsToggle = document.getElementById('mobile-breakthroughs-toggle');
-const mobileBreakthroughsSubmenu = document.getElementById('mobile-breakthroughs-submenu');
-const mobileBreakthroughsIcon = document.getElementById('mobile-breakthroughs-icon');
-let breakthroughsOpen = false;
-mobileBreakthroughsToggle.addEventListener('click', () => {
-  breakthroughsOpen = !breakthroughsOpen;
-  mobileBreakthroughsSubmenu.style.maxHeight = breakthroughsOpen ? mobileBreakthroughsSubmenu.scrollHeight + 'px' : '0';
-  mobileBreakthroughsSubmenu.style.opacity = breakthroughsOpen ? '1' : '0';
-  mobileBreakthroughsIcon.textContent = breakthroughsOpen ? '−' : '+';
-  updateMobileMenuHeight(); // 🔹 adjust height
-});
-</script>
+    // Highlight current page
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === currentPage || linkHref === currentPath) {
+        link.classList.add('font-semibold', 'underline');
+      }
+    });
+
+    // Mobile dropdown toggle
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const icon = document.getElementById("icon-" + id);
+      if (!dropdown) return;
+
+      const isHidden = dropdown.classList.contains("hidden");
+
+      if (isHidden) {
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("flex");
+        dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+        dropdown.style.transition = "max-height 0.3s ease";
+        if (icon) icon.classList.add("rotate-180");
+      } else {
+        dropdown.style.maxHeight = "0";
+        setTimeout(() => {
+          dropdown.classList.add("hidden");
+          dropdown.classList.remove("flex");
+        }, 300);
+        if (icon) icon.classList.remove("rotate-180");
+      }
+    }
+
+    // ===== Carousel Logic for Our Areas of Focus =====
+    var swiper = new Swiper(".mySwiper", {
+      allowTouchMove: false, // disable manual swiping
+      effect: "fade",        // smooth fade transition
+    });
+
+    // List controls carousel
+    document.querySelectorAll(".focus-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const slideIndex = btn.getAttribute("data-slide");
+        swiper.slideTo(slideIndex);
+
+        // Update active styling
+        document.querySelectorAll(".focus-btn").forEach(el => el.classList.remove("text-blue-600", "active"));
+        btn.classList.add("text-blue-600", "active");
+      });
+    });
+
+    // Sync list when carousel changes
+    swiper.on("slideChange", () => {
+      const items = document.querySelectorAll(".focus-btn");
+      items.forEach((item, i) => {
+        item.classList.toggle("text-blue-600", i === swiper.activeIndex);
+        item.classList.toggle("active", i === swiper.activeIndex);
+      });
+    });
+  </script>
 </body>
 </html>
+
