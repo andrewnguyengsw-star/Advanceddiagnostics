@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AECION | Super Soldier Project</title>
+  <meta name="description" content="Explore AECION's Super Soldier Project: advancing human performance through cutting-edge neuroscience, biotechnology, and innovative military technologies.">
+  <link rel="stylesheet" href="/styles.css" />
+
+ <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Optional: Swiper CSS (carousel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <!-- Custom styles (single <style> block, cleaned) -->
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
+
+    /* Fade-in animations */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Buttons */
+    .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px) scale(1.03); }
+    .btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
+
+    /* Product card hover */
+    .product-card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+
+    /* Navigation (mobile menu) */
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; max-height: 100vh; opacity: 1; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Dropdown styling */
+    .dropdown-menu {
+      max-height: 400px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      width: 14rem;
+      z-index: 50;
+    }
+    .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
+    .dropdown-menu a:hover { background: #f0f0f0; }
+
+    /* Scrollbar styling for dropdowns */
+    .dropdown-menu::-webkit-scrollbar { width: 6px; }
+    .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
+    .dropdown-menu::-webkit-scrollbar-track { background: transparent; }
+
+    /* Aspect ratio helper for embedded video */
+    .aspect-w-16 { position: relative; width: 100%; }
+    .aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
+    .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    /* Mobile dropdowns (scrollbar tweaks) */
+    #research-mobile, #breakthroughs-mobile {
+      max-height: 300px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+    }
+    #research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
+    #research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+    var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,   // only show ONE slide at a time
+  allowTouchMove: false, // disable manual dragging/swiping
+  effect: "fade",     // fade transition
+  speed: 600          // optional: smooth transition speed
+});
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mySwiper, .swiper-wrapper, .swiper-slide {
+  height: 100%;
+}
+  </style>
+</head>
+
+<!-- Navigation -->
+<header class="sticky top-0 bg-white shadow z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="/index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+      <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
+
+      <!-- Science Dropdown -->
+      <div class="relative dropdown">
+        <a href="/science.html" class="hover:text-cyan-500 transition flex items-center">
+          Science
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/science/how-we-develop.html">How We Develop</a>
+          <a href="/science/innovation.html">Innovation</a>
+          <a href="/science/neuroscience.html">Neuroscience</a>
+          <a href="/science/super-soldier.html">Super Soldier Project</a>
+          <a href="/science/superhuman-senses.html">Superhuman Senses Program</a>
+	  <a href="/science/nightvision.html">Nightvision</a>
+        </div>
+      </div>
+
+      <a href="/products.html" class="hover:text-cyan-500 transition">Products</a>
+      <a href="/patients.html" class="hover:text-cyan-500 transition">Patients</a>
+      <a href="/energy.html" class="hover:text-cyan-500 transition">Energy</a>
+      <a href="/resources.html" class="hover:text-cyan-500 transition flex items-center">Resources</a>
+
+<a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
+
+<!-- Careers Dropdown -->
+<div class="relative dropdown">
+  <a href="/careers.html" class="hover:text-cyan-500 transition flex items-center">
+    Careers
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+  <div class="dropdown-menu max-h-96 overflow-y-auto">
+    <a href="/careers/learn-more.html#gulf-war-syndrome">Gulf War Syndrome</a>
+  </div>
+</div>
+
+<a href="/investors.html" class="hover:text-cyan-500 transition flex items-center">Investors</a>
+
+    </nav>
+
+    <!-- Mobile Menu Button -->
+   <div class="sm:hidden">
+      <button id="menu-toggle" 
+              aria-label="Toggle navigation menu" 
+              aria-controls="mobile-menu" 
+              aria-expanded="false" 
+              class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1.5"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+      </button>
+    </div>
+  </div> <nav id="mobile-menu" 
+       class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
+    
+    <div class="flex flex-col p-4 space-y-1">
+
+      <a href="/index.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Home</a>
+
+      <div>
+        <button onclick="toggleDropdown('science-mobile')" 
+                aria-controls="science-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Science</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-science-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="science-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/science.html" class="block hover:text-cyan-500 py-2 rounded">Science Overview</a>
+          <a href="/science/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
+          <a href="/science/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
+          <a href="/science/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
+          <a href="/science/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
+          <a href="/science/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
+          <a href="/science/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
+        </div>
+      </div>
+
+      <a href="/products.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Products</a>
+      <a href="/patients.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Patients</a>
+      <a href="/energy.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Energy</a>
+      
+      <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Resources</a>
+      
+      <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">About Us</a>
+
+      <div>
+        <button onclick="toggleDropdown('careers-mobile')" 
+                aria-controls="careers-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Careers</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="careers-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/careers.html" class="block hover:text-cyan-500 py-2 rounded">Careers Overview</a>
+          <a href="/careers/learn-more.html#gulf-war-syndrome" class="block hover:text-cyan-500 py-2 rounded">Gulf War Syndrome</a>
+        </div>
+      </div>
+
+      <a href="/investors.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Investors</a>
+
+    </div>
+  </nav>
+</header>
+
+
+
+<!-- Unified Hero Section (Reduced Height, Fixed) -->
+<section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center py-16 px-8 sm:px-12 gap-16">
+  <!-- Left Half: Image -->
+  <div class="w-full h-[60vh] sm:h-auto overflow-hidden">
+    <img 
+      src="/images/soldier_head.png" 
+      alt="Super Soldier Program" 
+      class="w-full h-full object-cover object-center select-none"
+    >
+  </div>
+
+  <!-- Right Half: Text (White Background, Black Text, Left-Aligned) -->
+  <div class="flex flex-col justify-center items-start text-left bg-white text-black">
+    <!-- Main Title -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
+      Super Soldier Project
+    </h1>
+
+    <!-- Unified Text Block -->
+    <p class="text-sm sm:text-base md:text-lg max-w-xl mb-6 leading-relaxed fade-in" style="animation-delay:0.4s;">
+AECION’s Super Soldier program has progressed past physical and cognitive enhancement, moving into the realm of true superpowers.
+    </p>
+  </div>
+</section>
+
+<!-- What is a Super Soldier? Section -->
+<section id="what-is-super-soldier" class="py-16 bg-white w-full">
+  
+  <!-- Section Heading -->
+  <div class="text-center px-6 md:px-12 mb-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-black">
+      What is a Super Soldier?
+    </h2>
+  </div>
+
+  <!-- Paragraph matching How Does It Work width -->
+  <div class="max-w-[120rem] mx-auto px-6 mb-8 text-left">
+    <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+      A super soldier represents the pinnacle of human capability, combining advanced neuroscience, biotechnology, and precision engineering to enhance physical performance, cognitive function, and resilience. Through cutting-edge interventions, a super soldier can achieve feats beyond ordinary human limits, from improved endurance and strength to faster decision-making and heightened situational awareness.
+    </p>
+  </div>
+
+<!-- Super Soldier Capabilities Cards Row -->
+<div class="grid sm:grid-cols-5 gap-8 mb-12 items-start max-w-[120rem] mx-auto px-6">
+  
+  <!-- Card 1 -->
+  <div class="fade-in flex flex-col items-center text-center">
+    <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+      <img src="/images/supersoldier_what1.png" alt="Enhanced Strength" class="w-full h-64 object-cover">
+    </div>
+    <h3 class="mt-6 text-xl font-bold text-black">Enhanced Strength</h3>
+    <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+      Super soldiers achieve peak physical performance, with amplified muscular strength and endurance, enabling feats beyond ordinary human capacity.
+    </p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="fade-in flex flex-col items-center text-center">
+    <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+      <img src="/images/supersoldier_what2.png" alt="Accelerated Reflexes" class="w-full h-64 object-cover">
+    </div>
+    <h3 class="mt-6 text-xl font-bold text-black">Accelerated Reflexes</h3>
+    <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+      Through neural and cognitive enhancements, super soldiers respond faster to dynamic environments, improving reaction times and decision-making under pressure.
+    </p>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="fade-in flex flex-col items-center text-center">
+    <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+      <img src="/images/supersoldier_what3.png" alt="Enhanced Resilience" class="w-full h-64 object-cover">
+    </div>
+    <h3 class="mt-6 text-xl font-bold text-black">Enhanced Resilience</h3>
+    <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+      Super soldiers possess heightened resistance to physical and mental stress, reducing fatigue and improving recovery in high-stakes situations.
+    </p>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="fade-in flex flex-col items-center text-center">
+    <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+      <img src="/images/supersoldier_what4.png" alt="Augmented Senses" class="w-full h-64 object-cover">
+    </div>
+    <h3 class="mt-6 text-xl font-bold text-black">Augmented Senses</h3>
+    <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+      Sensory enhancements allow super soldiers to perceive their environment with heightened accuracy, from improved vision and hearing to advanced situational awareness.
+    </p>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="fade-in flex flex-col items-center text-center">
+    <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+      <img src="/images/supersoldier_what5.png" alt="Ultimate Integration" class="w-full h-64 object-cover">
+    </div>
+    <h3 class="mt-6 text-xl font-bold text-black">Ultimate Integration</h3>
+    <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+      The full synergy of enhanced strength, speed, resilience, and senses allows super soldiers to operate at peak efficiency, achieving unmatched performance in complex and high-stakes environments.
+    </p>
+  </div>
+
+</div>
+
+</section>
+
+<!-- Our Breakthroughs Redefine Super Soldiers Section (Carousel Version) -->
+<section id="breakthroughs-redefine-super-soldiers" class="py-16 bg-white w-full text-left">
+  <div class="px-6 md:px-12 max-w-[120rem] mx-auto">
+
+    <!-- Section Heading -->
+    <h2 class="text-3xl sm:text-4xl font-bold text-black mb-8">
+      Our Breakthroughs Redefine Super Soldiers
+    </h2>
+
+    <!-- Paragraph Content -->
+    <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed mb-8">
+We no longer define super soldiers by strength or endurance—those measures belong to the past. True power emerges in the form of entirely new human capabilities, abilities that break through the natural limits of human function. Imagine resilience to electrocution, control over the elements, and feats that verge on the supernatural. These soldiers move, perceive, and act in ways that defy imagination—shaping a future where the impossible becomes routine.
+    </p>
+
+<!-- Carousel Clicker -->
+<div class="flex justify-center mb-12 space-x-4">
+  <!-- Slide 0 Clicker -->
+  <div 
+    class="px-6 py-4 bg-gray-100 border border-gray-300 rounded-md shadow-md flex items-center justify-center text-center cursor-pointer hover:bg-gray-200 transition"
+    onclick="showSlide(0)"
+  >
+    <span class="text-base font-semibold text-black">Human BioRadar</span>
+  </div>
+
+  <!-- Slide 1 Clicker -->
+  <div 
+    class="px-6 py-4 bg-gray-100 border border-gray-300 rounded-md shadow-md flex items-center justify-center text-center cursor-pointer hover:bg-gray-200 transition"
+    onclick="showSlide(1)"
+  >
+    <span class="text-base font-semibold text-black">Electrocution Resistance</span>
+  </div>
+
+  <!-- Slide 2 Clicker -->
+  <div 
+    class="px-6 py-4 bg-gray-100 border border-gray-300 rounded-md shadow-md flex items-center justify-center text-center cursor-pointer hover:bg-gray-200 transition"
+    onclick="showSlide(2)"
+  >
+    <span class="text-base font-semibold text-black">Remote Neural Interface</span>
+  </div>
+
+  <!-- Slide 3 Clicker (Quorum Control) -->
+  <div 
+    class="px-6 py-4 bg-gray-100 border border-gray-300 rounded-md shadow-md flex items-center justify-center text-center cursor-pointer hover:bg-gray-200 transition"
+    onclick="showSlide(3)"
+  >
+    <span class="text-base font-semibold text-black">Quorum Control</span>
+  </div>
+
+  <!-- Slide 4 Clicker (Superhuman Senses) -->
+  <div 
+    class="px-6 py-4 bg-gray-100 border border-gray-300 rounded-md shadow-md flex items-center justify-center text-center cursor-pointer hover:bg-gray-200 transition"
+    onclick="showSlide(4)"
+  >
+    <span class="text-base font-semibold text-black">Superhuman Senses</span>
+  </div>
+
+  <!-- Slide 5 Clicker (X-Ray Vision) -->
+  <div 
+    class="px-6 py-4 bg-gray-100 border border-gray-300 rounded-md shadow-md flex items-center justify-center text-center cursor-pointer hover:bg-gray-200 transition"
+    onclick="showSlide(5)"
+  >
+    <span class="text-base font-semibold text-black">X-Ray Vision</span>
+  </div>
+</div>
+
+      <!-- Add more boxes here for other abilities -->
+    </div>
+
+<!-- Carousel Container -->
+<div id="carousel" class="relative overflow-hidden max-w-[120rem] mx-auto px-6">
+
+  <!-- Slide 0: Human BioRadar -->
+  <div class="flex flex-col md:flex-row items-start transition-transform duration-500" id="slide-0">
+    <!-- Image on left -->
+    <div class="md:w-1/3 w-full flex-shrink-0 md:pr-6 h-48 md:h-[300px] flex justify-center">
+      <img src="/images/breakthroughs1.png" alt="Human BioRadar" class="h-full max-w-full object-contain">
+    </div>
+    <!-- Text on right -->
+    <div class="md:w-2/3 w-full mt-6 md:mt-0">
+      <h3 class="text-2xl font-bold text-black mb-4">Human BioRadar</h3>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+        Human BioRadar is a novel human function that emerged from our Super Soldier program. Similar to bats and whales, this unprecedented form of echolocation—if it can even be called that—operates via a new signal modality imperceptible to all known counter-detection technologies. It enables precise four-dimensional environmental mapping and is engineered to enhance situational and operational awareness, with a field-tested detection range of up to 16,000 kilometers. Ongoing development continues to refine sonar resolution and expand the system’s ability to detect pre-defined bioelectrical and environmental signatures with extraordinary precision.
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 1: Electrocution Resistance -->
+  <div class="flex flex-col md:flex-row items-start transition-transform duration-500" id="slide-1" style="display: none;">
+    <div class="md:w-1/3 w-full flex-shrink-0 md:pr-6 h-48 md:h-[300px] flex justify-center">
+      <img src="/images/breakthroughs2.png" alt="Electrocution Resistance" class="h-full max-w-full object-contain">
+    </div>
+    <div class="md:w-2/3 w-full mt-6 md:mt-0">
+      <h3 class="text-2xl font-bold text-black mb-4">Electrocution Resistance</h3>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+        Electrocution Resistance markedly enhances a soldier’s ability to withstand high-voltage shocks and electrical hazards across combat and operational environments. In addition to systemic resilience, electrocution resistance specifically strengthens cardiac tissue, reinforcing heart muscle cells to resist the arrhythmic and contractile failures commonly triggered by high-voltage shocks. Beyond protection, this advanced human adaptation primes super soldiers for bioelectrical tissue augmentation through a revolutionary process known as Nguyen’s Gradient. During electrocution, Faraday’s electrolysis cleaves water into hydrogen and oxygen, generating a Nguyen concentration gradient that propels mobile hydrogen ions into the mitochondria, while bioavailable oxygen optimizes aerobic respiration. Within the cell, hydrogen integrates into the electron transport chain, amplifying its efficiency. By saturating the electron transport pathway with free electrons and electrolysis-derived oxygen, the system exponentially enhances ATP synthesis—elevating energy capacity, physiological endurance, and performance under extreme conditions.
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 2: Remote Neural Interface -->
+  <div class="flex flex-col md:flex-row items-start transition-transform duration-500" id="slide-2" style="display: none;">
+    <div class="md:w-1/3 w-full flex-shrink-0 md:pr-6 h-48 md:h-[300px] flex justify-center">
+      <img src="/images/breakthroughs3.png" alt="Remote Neural Interface" class="h-full max-w-full object-contain">
+    </div>
+    <div class="md:w-2/3 w-full mt-6 md:mt-0">
+      <h3 class="text-2xl font-bold text-black mb-4">Remote Neural Interface</h3>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+        The Remote Neural Interface allows operators to perceive the World Wide Web as a living network of interconnected threads, with each user and activity functioning as a node and every action, connection, and piece of data visually linked like threads in a vast digital web. In the battlefield domain, operators can visualize digital footprints in an unprecedented, revolutionary way, tracing the flow of information, observing interactions in real time, and understanding complex relationships between users and their digital activity. The system is capable of translating digital data streams into their originating biological signatures; by decoding the neural architecture embedded within human-generated information—tweets, emails, code, or any digital footprint, reconstructing the cognitive and physical parameters of the source mind. Additionally, it translates programming languages and encoded computer data into neural signals, allowing the visual cortex to decode GPU-rendered information directly in the brain, enabling users to perceive digital visualizations and computational outputs as fully immersive, real-time sensory experiences.
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 3: Quorum Control -->
+  <div class="flex flex-col md:flex-row items-start transition-transform duration-500" id="slide-3" style="display: none;">
+    <div class="md:w-1/3 w-full flex-shrink-0 md:pr-6 h-48 md:h-[300px] flex justify-center">
+      <img src="/images/breakthroughs4.png" alt="Quorum Control" class="h-full max-w-full object-contain">
+    </div>
+    <div class="md:w-2/3 w-full mt-6 md:mt-0">
+      <h3 class="text-2xl font-bold text-black mb-4">Quorum Control</h3>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+        Quorum sensing is a biological function in which a behavioral change exhibited by one individual within a colony influences the behavior of others once a specific population density is reached. Inspired by this principle, Quorum Control enables the coordination of collective behavior by super soldiers and connected biological systems. Just as microbes leverage biochemical signals to detect nearby hosts, synchronize activity and mutation, and influence behavior, Quorum Control allows operators to communicate with and modulate microbial populations. This capability not only reduces pathogenic effects but also optimizes systemic coordination and enhances overall physiological resilience.
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 4: Superhuman Senses -->
+  <div class="flex flex-col md:flex-row items-start transition-transform duration-500" id="slide-4" style="display: none;">
+    <div class="md:w-1/3 w-full flex-shrink-0 md:pr-6 h-48 md:h-[300px] flex justify-center">
+      <img src="/images/breakthroughs5.png" alt="Superhuman Senses" class="h-full max-w-full object-contain">
+    </div>
+    <div class="md:w-2/3 w-full mt-6 md:mt-0">
+      <h3 class="text-2xl font-bold text-black mb-4">Superhuman Senses</h3>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+        Superhuman senses enhance a soldier’s perceptual capabilities beyond natural human limits, enabling heightened vision, hearing, smell, taste, and tactile sensitivity. These amplified senses allow operators to detect threats, identify targets, and interpret environmental cues with unprecedented precision. They are capable of detecting law enforcement personnel, both in uniform and undercover, across a field-tested range of 200 miles, and can specifically identify FBI personnel operating in Washington, DC. Additionally, they can differentiate between local and state police forces. In addition, a built-in danger detection function allows a soldier to subconsciously sense imminent threats. By integrating neural augmentation and advanced sensory processing, superhuman senses improve situational awareness, reaction times, and adaptive decision-making in complex operational environments.
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 5: X-Ray Vision -->
+  <div class="flex flex-col md:flex-row items-start transition-transform duration-500" id="slide-5" style="display: none;">
+    <div class="md:w-1/3 w-full flex-shrink-0 md:pr-6 h-48 md:h-[300px] flex justify-center">
+      <img src="/images/breakthroughs6.png" alt="X-Ray Vision" class="h-full max-w-full object-contain">
+    </div>
+    <div class="md:w-2/3 w-full mt-6 md:mt-0">
+      <h3 class="text-2xl font-bold text-black mb-4">X-Ray Vision</h3>
+      <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+        X-Ray vision grants super soldiers the extraordinary ability to perceive the internal structure of objects, organisms, and environments, effectively “seeing through” walls, barriers, and materials with exceptional clarity. This capability significantly improves target recognition, threat assessment, and strategic operational planning in complex and high-stakes environments. By seamlessly integrating neural augmentation with advanced electromagnetic perception, operators can accurately detect concealed weapons, hidden compartments, structural weaknesses, and internal injuries in both allies and adversaries, all while maintaining operational safety. X-Ray Vision delivers unmatched situational awareness, accelerating reaction times, optimizing tactical decision-making, and elevating mission success across a wide spectrum of operational scenarios.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+
+
+      <!-- Additional slides can be added similarly with unique IDs -->
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll('[id^="slide-"]');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'flex' : 'none';
+    });
+  }
+
+  // Initialize carousel to show first slide
+  showSlide(0);
+</script>
+
+<!-- Super Soldier Program Success Section -->
+<section id="super-soldier-success" class="py-16 bg-black w-full">
+
+  <!-- Success Heading -->
+  <div class="max-w-[120rem] mx-auto px-6 mb-8 text-center">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+      The successes of our super soldier program
+    </h2>
+  </div>
+
+  <!-- White Box with Three Sections and Dividers -->
+  <div class="max-w-[90rem] mx-auto px-6 bg-white rounded-lg shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-300 py-8">
+    
+    <!-- Section 1 -->
+    <div class="text-center p-4">
+      <span class="text-5xl sm:text-6xl md:text-7xl font-light text-black block mb-4">15+</span>
+      <p class="text-black text-base leading-relaxed">
+        Superhuman capabilities have been developed, achieving extraordinary physical power that exceeds natural human limits in endurance, agility, and force.
+      </p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="text-center p-4">
+      <span class="text-5xl sm:text-6xl md:text-7xl font-light text-black block mb-4">2015</span>
+      <p class="text-black text-base leading-relaxed">
+        The year we began our journey
+      </p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="text-center p-4">
+      <span class="text-5xl sm:text-6xl md:text-7xl font-light text-black block mb-4">100+</span>
+      <p class="text-black text-base leading-relaxed">
+        The number of untapped pharmaceuticals we have in our future pipeline
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Future Directions Section -->
+<section id="future-directions" class="py-16 bg-white w-full">
+  <div class="max-w-[120rem] mx-auto px-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-light text-black mb-4">
+      Future Directions
+    </h2>
+    <!-- Divider Line -->
+    <div class="w-24 h-0.5 bg-gray-300 mb-8"></div>
+
+    <!-- Two-column layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Column 1: Radiation Resistance -->
+      <div>
+        <h3 class="text-xl sm:text-2xl md:text-3xl font-light text-black mb-3">
+          Radiation Resistance
+        </h3>
+      </div>
+
+<!-- Column 2: Description -->
+<div>
+  <p class="text-black text-base sm:text-lg md:text-xl leading-relaxed font-light mb-2">
+    One of the enduring legacies we aspire to create is a generation of soldiers with extraordinary resistance to radiation, capable of surviving in environments once considered fatal.
+  </p>
+  <p class="text-gray-600 text-sm sm:text-base leading-relaxed font-light mb-2">
+    We recall the harrowing impact of the atomic bomb in World War II, when hundreds of thousands lost their lives and countless others endured lifelong suffering from the invisible hazards of radioactive fallout.
+  </p>
+  <!-- Revised Paragraph -->
+  <p class="text-gray-600 text-sm sm:text-base leading-relaxed font-light mt-4">
+    Our research is focused on developing soldiers who can not only withstand extreme radiation exposure but also operate effectively in such environments, mitigating the catastrophic risks associated with nuclear warfare.
+  </p>
+  <!-- New Final Paragraph -->
+  <p class="text-gray-600 text-sm sm:text-base leading-relaxed font-light mt-4">
+    Imagine a military with high resilience to nuclear devastation while having the nuclear deterrence of tens of thousands of nuclear weapons.
+  </p>
+</div>
+</div>
+</div>
+
+</section>
+
+<section id="program-differentiation" class="py-16 md:py-24 bg-white w-full">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2
+      class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4 text-center"
+    >
+      A New Paradigm in Enhancement
+    </h2>
+    <div class="w-24 h-0.5 bg-gray-300 mb-12 mx-auto"></div>
+
+    <div class="max-w-4xl mx-auto text-left mb-12">
+      <h3
+        class="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4"
+      >
+        How Our Program is Different
+      </h3>
+      <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-light">
+        Our program transcends race, gender, and creed. We are not optimizing
+        within the human spectrum; we are prioritizing capabilities that exist
+        entirely outside the normal human distribution.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div
+        class="relative flex flex-col justify-center items-center h-64 md:h-auto min-h-[24rem] p-4 text-center rounded-xl overflow-hidden shadow-2xl"
+        style="
+          background-image: url('/images/program_difference.png');
+          background-size: cover;
+          background-position: center;
+        "
+      >
+        <div class="absolute inset-0 bg-black/40"></div>
+        <h3
+          class="relative z-10 text-2xl sm:text-3xl md:text-4xl font-light text-white mb-3"
+        >
+          Reconstructing the Foundation
+        </h3>
+      </div>
+
+      <div>
+        <p class="text-gray-800 text-lg leading-relaxed font-medium mb-5">
+          We ask critical questions that are driven solely by quantifiable
+          performance metrics:
+        </p>
+
+        <div class="space-y-4 mb-6">
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800">Strength:</strong>
+                How do you compare to the world’s strongest elite?
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800">Speed:</strong> How
+                fast are you under peak physiological load?
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800">Endurance:</strong>
+                How has super-soldier endurance enhancement improved sustained
+                performance?
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800"
+                  >Regeneration:</strong
+                >
+                How has augmented metabolic recovery accelerated your return to
+                peak output?
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800">Durability:</strong>
+                How does your structural resilience compare to elite-level
+                conditioning?
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800"
+                  >Pain Threshold:</strong
+                >
+                How has your tolerance evolved under neural pain-dampening
+                protocols?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 md:mt-16 max-w-4xl mx-auto text-center">
+      <p class="text-gray-600 text-lg sm:text-xl leading-relaxed font-light">
+        Ultimately, our objective transcends theory. We are not engaged in a
+        descriptive exercise. We are executing a construction mandate to build
+        superhumans—engineering operatives with the verifiable power to warp and
+        control reality itself.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Super Soldier Quotation Section -->
+<section id="super-soldier-quote" class="py-16 bg-white w-full">
+
+  <!-- Quotation Paragraphs -->
+  <div class="max-w-[120rem] mx-auto px-6 mb-4 text-center">
+    <p class="text-base sm:text-lg md:text-xl text-black leading-relaxed font-serif">
+      "We have achieved breakthroughs once confined to fiction—mastering localized atmospheric phenomena, unlocking psionic abilities reminiscent of Xavier and Grey, and engineering feats that defy conventional biology. Yet vast frontiers remain uncharted, from the 'Wolverine-class' regenerative powers we seek to the audacious dream of human flight."
+    </p>
+    <p class="text-base sm:text-lg md:text-xl text-black leading-relaxed font-serif mt-6">
+      "Yet, we want to transcend these individual abilities and achieve the capacity for macro-scale reality manipulation. An asset could, for instance, not only initiate a volcanic eruption and then sculpt its consequences—precisely governing the resulting seismic forces to generate a magnitude 7 earthquake and direct its path along a predetermined trajectory near 10/27/2025—but could just as readily generate a hurricane and meticulously steer its path."
+    </p>
+    <p class="text-base sm:text-lg md:text-xl text-black leading-relaxed font-serif mt-6">
+      "This is our view of super soldiers."
+    </p>
+  </div>
+
+</section>
+
+
+  <!-- Attribution -->
+  <div class="max-w-[120rem] mx-auto px-6 text-left">
+    <p class="text-sm sm:text-base text-black font-serif font-light">
+      — The Black Technology Department, AECION
+    </p>
+  </div>
+
+</section>
+
+
+ <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
+    <div class="mb-4 flex justify-center flex-wrap gap-4">
+      <a href="/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
+      <a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="/research.html" class="hover:text-cyan-500 transition">Research</a>
+      <a href="/careers.html" class="hover:text-cyan-500 transition">Careers</a>
+      <a href="/contact.html" class="hover:text-cyan-500 transition">Contact</a>
+    </div>
+    <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
+    <div class="flex justify-center gap-4 mb-4">
+      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
+      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
+    </div>
+    <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
+  </footer>
+
+<script>
+  // Fade-in animations
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+    });
+  }, { threshold: 0.2 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+  menuToggle.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    menuToggle.classList.toggle('open', menuOpen);
+
+    if (menuOpen) {
+      mobileMenu.classList.add('open');
+      mobileMenu.style.display = 'block';
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.style.opacity = '1';
+    } else {
+      mobileMenu.classList.remove('open');
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.opacity = '0';
+      setTimeout(() => {
+        if (!menuOpen) mobileMenu.style.display = 'none';
+      }, 300);
+    }
+  });
+
+  // Highlight current page
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+  document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage || linkHref === currentPath) {
+      link.classList.add('font-semibold', 'underline');
+    }
+  });
+
+  // Mobile dropdown toggle function
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const icon = document.getElementById("icon-" + id);
+
+    if (!dropdown) return;
+
+    const isHidden = dropdown.classList.contains("hidden");
+
+    // Animate dropdown open/close
+    if (isHidden) {
+      dropdown.classList.remove("hidden");
+      dropdown.classList.add("flex");
+      dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+      dropdown.style.transition = "max-height 0.3s ease";
+      if (icon) icon.classList.add("rotate-180");
+    } else {
+      dropdown.style.maxHeight = "0";
+      setTimeout(() => {
+        dropdown.classList.add("hidden");
+        dropdown.classList.remove("flex");
+      }, 300);
+      if (icon) icon.classList.remove("rotate-180");
+    }
+  }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AECION | Neuroscience</title>
+  <meta name="description" content="Explore the neuroscience driving AECION’s innovations in cognitive enhancement, neural plasticity, and sensory augmentation.">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Optional: Swiper CSS (carousel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <!-- Custom styles (single <style> block, cleaned) -->
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
+
+    /* Fade-in animations */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Buttons */
+    .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px) scale(1.03); }
+    .btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
+
+    /* Product card hover */
+    .product-card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+
+    /* Navigation (mobile menu) */
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; max-height: 100vh; opacity: 1; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Dropdown styling */
+    .dropdown-menu {
+      max-height: 400px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      width: 14rem;
+      z-index: 50;
+    }
+    .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
+    .dropdown-menu a:hover { background: #f0f0f0; }
+
+    /* Scrollbar styling for dropdowns */
+    .dropdown-menu::-webkit-scrollbar { width: 6px; }
+    .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
+    .dropdown-menu::-webkit-scrollbar-track { background: transparent; }
+
+    /* Aspect ratio helper for embedded video */
+    .aspect-w-16 { position: relative; width: 100%; }
+    .aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
+    .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    /* Mobile dropdowns (scrollbar tweaks) */
+    #research-mobile, #breakthroughs-mobile {
+      max-height: 300px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+    }
+    #research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
+    #research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+    var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,   // only show ONE slide at a time
+  allowTouchMove: false, // disable manual dragging/swiping
+  effect: "fade",     // fade transition
+  speed: 600          // optional: smooth transition speed
+});
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mySwiper, .swiper-wrapper, .swiper-slide {
+  height: 100%;
+}
+  </style>
+</head>
+
+<!-- Navigation -->
+<header class="sticky top-0 bg-white shadow z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="/index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+      <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
+
+      <!-- Science Dropdown -->
+      <div class="relative dropdown">
+        <a href="/science.html" class="hover:text-cyan-500 transition flex items-center">
+          Science
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/science/how-we-develop.html">How We Develop</a>
+          <a href="/science/innovation.html">Innovation</a>
+          <a href="/science/neuroscience.html">Neuroscience</a>
+          <a href="/science/super-soldier.html">Super Soldier Project</a>
+          <a href="/science/superhuman-senses.html">Superhuman Senses Program</a>
+	  <a href="/science/nightvision.html">Nightvision</a>
+        </div>
+      </div>
+
+      <a href="/products.html" class="hover:text-cyan-500 transition">Products</a>
+      <a href="/patients.html" class="hover:text-cyan-500 transition">Patients</a>
+      <a href="/energy.html" class="hover:text-cyan-500 transition">Energy</a>
+      <a href="/resources.html" class="hover:text-cyan-500 transition flex items-center">Resources</a>
+
+<a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
+
+<!-- Careers Dropdown -->
+<div class="relative dropdown">
+  <a href="/careers.html" class="hover:text-cyan-500 transition flex items-center">
+    Careers
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+  <div class="dropdown-menu max-h-96 overflow-y-auto">
+    <a href="/careers/learn-more.html#gulf-war-syndrome">Gulf War Syndrome</a>
+  </div>
+</div>
+
+<a href="/investors.html" class="hover:text-cyan-500 transition flex items-center">Investors</a>
+
+    </nav>
+
+    <!-- Mobile Menu Button -->
+   <div class="sm:hidden">
+      <button id="menu-toggle" 
+              aria-label="Toggle navigation menu" 
+              aria-controls="mobile-menu" 
+              aria-expanded="false" 
+              class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1.5"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+      </button>
+    </div>
+  </div> <nav id="mobile-menu" 
+       class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
+    
+    <div class="flex flex-col p-4 space-y-1">
+
+      <a href="/index.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Home</a>
+
+      <div>
+        <button onclick="toggleDropdown('science-mobile')" 
+                aria-controls="science-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Science</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-science-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="science-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/science.html" class="block hover:text-cyan-500 py-2 rounded">Science Overview</a>
+          <a href="/science/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
+          <a href="/science/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
+          <a href="/science/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
+          <a href="/science/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
+          <a href="/science/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
+          <a href="/science/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
+        </div>
+      </div>
+
+      <a href="/products.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Products</a>
+      <a href="/patients.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Patients</a>
+      <a href="/energy.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Energy</a>
+      
+      <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Resources</a>
+      
+      <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">About Us</a>
+
+      <div>
+        <button onclick="toggleDropdown('careers-mobile')" 
+                aria-controls="careers-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Careers</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="careers-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/careers.html" class="block hover:text-cyan-500 py-2 rounded">Careers Overview</a>
+          <a href="/careers/learn-more.html#gulf-war-syndrome" class="block hover:text-cyan-500 py-2 rounded">Gulf War Syndrome</a>
+        </div>
+      </div>
+
+      <a href="/investors.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Investors</a>
+
+    </div>
+  </nav>
+</header>
+
+
+<!-- Unified Hero Section (White Background & Black Text, Left-Aligned with Image Padding, Reduced Text Size) -->
+<section class="relative min-h-screen grid sm:grid-cols-2 items-center bg-white">
+  
+  <!-- Left Half: Image with Padding -->
+  <div class="w-full h-full p-8">
+    <img src="/images/neuroscience_head.png" alt="Neuroscience" class="w-full h-full object-cover shadow-lg">
+  </div>
+  
+  <!-- Right Half: Text (Left-Aligned) -->
+  <div class="flex flex-col justify-center text-left px-12 py-12 bg-white">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-black">
+      Neuroscience
+    </h1>
+    <p class="text-base sm:text-lg md:text-xl text-gray-700 max-w-xl mb-8">
+      By merging insights into the neuroanatomical roots of disease with advanced targeted therapies, we not only treat conditions but also reduce their severity and empower patients to live fuller, healthier lives.
+    </p>
+    <a href="#learn-more" class="px-8 py-4 font-semibold rounded-xl text-white bg-black border border-black hover:bg-gray-800 transition w-fit">
+      Learn More
+    </a>
+  </div>
+
+</section>
+
+<!-- Our Approach Section (Full-Width, Heading on Top, Images Left & Right, Centered Text, Final Statement Below) -->
+<section id="our-approach" class="py-20 bg-white w-full">
+  
+  <!-- Section Heading -->
+  <div class="text-center px-6 md:px-12 mb-12">
+    <h2 class="text-3xl sm:text-4xl font-bold text-black">
+      Our Approach
+    </h2>
+  </div>
+  
+  <!-- Content: Left Image, Center Text, Right Image -->
+  <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 px-6 md:px-12">
+    
+    <!-- Left Image -->
+    <div class="hidden md:block">
+      <img src="/images/neuroscience_approach1.png" alt="Neuroscience Insight" class="w-full h-auto object-cover shadow-lg">
+    </div>
+    
+    <!-- Center Text -->
+    <div class="text-center px-4">
+      <p class="text-sm sm:text-base md:text-base text-gray-700 mb-6">
+        With pinpoint accuracy, we can trace the brain’s hidden choreography — identifying the exact cells and neural patterns that define every condition, from depression to anxiety. In the same breath, we map the world’s phytotherapeutic and animal-derived agents, revealing their unseen connections to the mind — their neural targets, their mechanisms of action, and their untapped power to heal.
+      </p>
+    </div>
+    
+    <!-- Right Image -->
+    <div class="hidden md:block">
+      <img src="/images/neuroscience_approach2.png" alt="Targeted Therapy" class="w-full h-auto object-cover shadow-lg">
+    </div>
+    
+  </div>
+
+  <!-- Final Statement Below -->
+  <div class="text-center px-6 md:px-12 mt-12">
+    <p class="text-sm sm:text-base md:text-base text-gray-700">
+      By fusing these capabilities, we unlock unprecedented insights and create truly personalized, next-generation therapies.
+    </p>
+  </div>
+  
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
+    <div class="mb-4 flex justify-center flex-wrap gap-4">
+      <a href="index.html" class="hover:text-cyan-500 transition">About Us</a>
+      <a href="science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="research.html" class="hover:text-cyan-500 transition">Research</a>
+      <a href="careers.html" class="hover:text-cyan-500 transition">Careers</a>
+      <a href="contact.html" class="hover:text-cyan-500 transition">Contact</a>
+    </div>
+    <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
+    <div class="flex justify-center gap-4 mb-4">
+      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
+      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
+    </div>
+    <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
+  </footer>
+
+  <!-- Swiper core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Your site scripts (with fade-in, mobile menu, and carousel logic) -->
+  <script>
+    // Fade-in animations
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
+
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => {
+          if (!menuOpen) mobileMenu.style.display = 'none';
+        }, 300);
+      }
+    });
+
+    // Highlight current page
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === currentPage || linkHref === currentPath) {
+        link.classList.add('font-semibold', 'underline');
+      }
+    });
+
+    // Mobile dropdown toggle
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const icon = document.getElementById("icon-" + id);
+      if (!dropdown) return;
+
+      const isHidden = dropdown.classList.contains("hidden");
+
+      if (isHidden) {
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("flex");
+        dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+        dropdown.style.transition = "max-height 0.3s ease";
+        if (icon) icon.classList.add("rotate-180");
+      } else {
+        dropdown.style.maxHeight = "0";
+        setTimeout(() => {
+          dropdown.classList.add("hidden");
+          dropdown.classList.remove("flex");
+        }, 300);
+        if (icon) icon.classList.remove("rotate-180");
+      }
+    }
+
+    // ===== Carousel Logic for Our Areas of Focus =====
+    var swiper = new Swiper(".mySwiper", {
+      allowTouchMove: false, // disable manual swiping
+      effect: "fade",        // smooth fade transition
+    });
+
+    // List controls carousel
+    document.querySelectorAll(".focus-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const slideIndex = btn.getAttribute("data-slide");
+        swiper.slideTo(slideIndex);
+
+        // Update active styling
+        document.querySelectorAll(".focus-btn").forEach(el => el.classList.remove("text-blue-600", "active"));
+        btn.classList.add("text-blue-600", "active");
+      });
+    });
+
+    // Sync list when carousel changes
+    swiper.on("slideChange", () => {
+      const items = document.querySelectorAll(".focus-btn");
+      items.forEach((item, i) => {
+        item.classList.toggle("text-blue-600", i === swiper.activeIndex);
+        item.classList.toggle("active", i === swiper.activeIndex);
+      });
+    });
+  </script>
+</body>
+</html>

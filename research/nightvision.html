@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AECION | Superhuman Senses Program</title>
+  <meta name="description" content="Explore the Superhuman Senses Program, enhancing human perception through advanced neuroscience, bioengineering, and cognitive augmentation.">
+  <link rel="stylesheet" href="/styles/global.css" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Optional: Swiper CSS (carousel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <!-- Custom styles (single <style> block, cleaned) -->
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
+
+    /* Fade-in animations */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Buttons */
+    .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px) scale(1.03); }
+    .btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
+
+    /* Product card hover */
+    .product-card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+
+    /* Navigation (mobile menu) */
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; max-height: 100vh; opacity: 1; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Dropdown styling */
+    .dropdown-menu {
+      max-height: 400px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      width: 14rem;
+      z-index: 50;
+    }
+    .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
+    .dropdown-menu a:hover { background: #f0f0f0; }
+
+    /* Scrollbar styling for dropdowns */
+    .dropdown-menu::-webkit-scrollbar { width: 6px; }
+    .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
+    .dropdown-menu::-webkit-scrollbar-track { background: transparent; }
+
+    /* Aspect ratio helper for embedded video */
+    .aspect-w-16 { position: relative; width: 100%; }
+    .aspect-w-16::before { content: ""; display: block; padding-top: 56.25%; }
+    .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+    /* Mobile dropdowns (scrollbar tweaks) */
+    #research-mobile, #breakthroughs-mobile {
+      max-height: 300px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+    }
+    #research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
+    #research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+    var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,   // only show ONE slide at a time
+  allowTouchMove: false, // disable manual dragging/swiping
+  effect: "fade",     // fade transition
+  speed: 600          // optional: smooth transition speed
+});
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mySwiper, .swiper-wrapper, .swiper-slide {
+  height: 100%;
+}
+  </style>
+</head>
+
+<!-- Navigation -->
+<header class="sticky top-0 bg-white shadow z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="/index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+      <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
+
+      <!-- Science Dropdown -->
+      <div class="relative dropdown">
+        <a href="/science.html" class="hover:text-cyan-500 transition flex items-center">
+          Science
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/science/how-we-develop.html">How We Develop</a>
+          <a href="/science/innovation.html">Innovation</a>
+          <a href="/science/neuroscience.html">Neuroscience</a>
+          <a href="/science/super-soldier.html">Super Soldier Project</a>
+          <a href="/science/superhuman-senses.html">Superhuman Senses Program</a>
+	  <a href="/science/nightvision.html">Nightvision</a>
+        </div>
+      </div>
+
+      <a href="/products.html" class="hover:text-cyan-500 transition">Products</a>
+      <a href="/patients.html" class="hover:text-cyan-500 transition">Patients</a>
+      <a href="/energy.html" class="hover:text-cyan-500 transition">Energy</a>
+      <a href="/resources.html" class="hover:text-cyan-500 transition flex items-center">Resources</a>
+
+<a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
+
+<!-- Careers Dropdown -->
+<div class="relative dropdown">
+  <a href="/careers.html" class="hover:text-cyan-500 transition flex items-center">
+    Careers
+    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+  <div class="dropdown-menu max-h-96 overflow-y-auto">
+    <a href="/careers/learn-more.html#gulf-war-syndrome">Gulf War Syndrome</a>
+  </div>
+</div>
+
+<a href="/investors.html" class="hover:text-cyan-500 transition flex items-center">Investors</a>
+
+    </nav>
+
+    <!-- Mobile Menu Button -->
+   <div class="sm:hidden">
+      <button id="menu-toggle" 
+              aria-label="Toggle navigation menu" 
+              aria-controls="mobile-menu" 
+              aria-expanded="false" 
+              class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1.5"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+      </button>
+    </div>
+  </div> <nav id="mobile-menu" 
+       class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
+    
+    <div class="flex flex-col p-4 space-y-1">
+
+      <a href="/index.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Home</a>
+
+      <div>
+        <button onclick="toggleDropdown('science-mobile')" 
+                aria-controls="science-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Science</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-science-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="science-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/science.html" class="block hover:text-cyan-500 py-2 rounded">Science Overview</a>
+          <a href="/science/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
+          <a href="/science/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
+          <a href="/science/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
+          <a href="/science/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
+          <a href="/science/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
+          <a href="/science/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
+        </div>
+      </div>
+
+      <a href="/products.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Products</a>
+      <a href="/patients.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Patients</a>
+      <a href="/energy.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Energy</a>
+      
+      <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Resources</a>
+      
+      <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">About Us</a>
+
+      <div>
+        <button onclick="toggleDropdown('careers-mobile')" 
+                aria-controls="careers-mobile" 
+                aria-expanded="false" 
+                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Careers</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="careers-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/careers.html" class="block hover:text-cyan-500 py-2 rounded">Careers Overview</a>
+          <a href="/careers/learn-more.html#gulf-war-syndrome" class="block hover:text-cyan-500 py-2 rounded">Gulf War Syndrome</a>
+        </div>
+      </div>
+
+      <a href="/investors.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Investors</a>
+
+    </div>
+  </nav>
+</header>
+
+
+
+
+<!-- Unified Hero Section (Reduced Height, Fixed) -->
+<section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center py-16 px-8 sm:px-12 gap-16">
+  <!-- Left Half: Image -->
+  <div class="w-full h-[60vh] sm:h-auto overflow-hidden">
+    <img 
+      src="/images/nightvision_head.png" 
+      alt="Nightvision Technology" 
+      class="w-full h-full object-cover object-center select-none"
+    >
+  </div>
+
+  <!-- Right Half: Text (White Background, Black Text, Left-Aligned) -->
+  <div class="flex flex-col justify-center items-start text-left bg-white text-black">
+    <!-- Main Title -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
+      Nightvision
+    </h1>
+
+    <!-- Unified Text Block -->
+    <p class="text-sm sm:text-base md:text-lg max-w-xl mb-6 leading-relaxed fade-in" style="animation-delay:0.4s;">
+  Nightvision enhances the natural limits of human sight, sharpening perception in near-total darkness. 
+  By refining retinal sensitivity and neural clarity, it restores our ability to see and navigate where light no longer reaches.
+    </p>
+  </div>
+</section>
+
+<!-- Our Exploration of the Night Section -->
+<section class="pt-20 pb-4 px-6 bg-white text-black fade-in">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center">Our Exploration of the Night</h2>
+
+  <p class="max-w-6xl mx-auto mb-6 text-center leading-relaxed">
+    Our research on vampiric vision ventures into the limits of human perception, exploring how eyes adapt to the faintest traces of light. 
+    We study how motion, shapes, and subtle cues emerge in near-total darkness, revealing capacities long hidden from ordinary sight.
+  </p>
+
+  <p class="max-w-6xl mx-auto mb-6 text-center leading-relaxed">
+    By enhancing natural night awareness, we restore instincts dormant in modern humans, allowing perception to expand beyond conventional limits.
+  </p>
+
+  <p class="max-w-6xl mx-auto mb-10 text-center leading-relaxed">
+    Our aim is clear: to push the boundaries of vision, illuminating the unseen and deepening our understanding of the night.
+  </p>
+</section>
+
+<!-- How Vampiric Vision Changes Sight Section -->
+<section id="how-vampiric-vision" class="py-16 bg-white w-full">
+  
+  <!-- Section Heading -->
+  <div class="text-center px-6 md:px-12 mb-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-black">
+      How Vampiric Vision Changes Sight
+    </h2>
+  </div>
+
+  <!-- Vampiric Vision Capabilities Cards Row -->
+  <div class="grid sm:grid-cols-5 gap-8 mb-12 items-start max-w-[120rem] mx-auto px-6">
+  
+  <!-- Card 1 -->
+  <div class="fade-in flex flex-col items-center text-center">
+    <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+      <img src="/images/vision1.png" alt="Nighttime Color Perception" class="w-full h-64 object-cover">
+    </div>
+    <h3 class="mt-6 text-xl font-bold text-black">Nighttime Color Perception</h3>
+    <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+      Under ordinary conditions, humans cannot perceive color at night because rod cells, which dominate in low light, detect only shades of gray. Vampiric vision, however, heightens retinal sensitivity and refines neural processing, enabling the eyes and brain to distinguish and interpret colors even in near-total darkness.
+    </p>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="fade-in flex flex-col items-center text-center">
+    <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+      <img src="/images/vision2.png" alt="Vascular Perception" class="w-full h-64 object-cover">
+    </div>
+    <h3 class="mt-6 text-xl font-bold text-black">Vascular Perception</h3>
+    <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+      Enables the perception of cardiovascular flow, detecting pulses, blood movement, and subtle changes in circulation, effectively revealing the body’s internal rhythm even in low-light environments.
+    </p>
+  </div>
+
+<!-- Card 3 -->
+<div class="fade-in flex flex-col items-center text-center">
+  <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+    <img src="/images/vision3.png" alt="Long-Range Perception" class="w-full h-64 object-cover">
+  </div>
+  <h3 class="mt-6 text-xl font-bold text-black">Long-Range Perception</h3>
+  <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+    Shapes, contours, and distant objects become visible even in near-total darkness, extending natural perception far beyond ordinary human limits.
+  </p>
+</div>
+
+  <!-- Card 4 -->
+  <div class="fade-in flex flex-col items-center text-center">
+    <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+      <img src="/images/vision4.png" alt="Improved Spatial Awareness" class="w-full h-64 object-cover">
+    </div>
+    <h3 class="mt-6 text-xl font-bold text-black">Improved Spatial Awareness</h3>
+    <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+      Enhanced perception allows precise understanding of surroundings, distances, and movement patterns in darkness.
+    </p>
+  </div>
+
+<!-- Card 5 -->
+<div class="fade-in flex flex-col items-center text-center">
+  <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden">
+    <img src="/images/vision5.png" alt="Beyond Line-of-Sight Perception" class="w-full h-64 object-cover">
+  </div>
+  <h3 class="mt-6 text-xl font-bold text-black">Beyond Line-of-Sight Perception</h3>
+  <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+    Perception extends past ordinary line of sight, enabling awareness of distant environments and hidden objects without relying on light or conventional photoreceptors. This advanced sensory ability reveals structures, movement, and patterns beyond natural vision.
+  </p>
+</div>
+
+</section>
+
+
+<!-- Our Areas of Focus Section with Dropdown and Full-Width YouTube -->
+<section id="focus" class="py-20 px-6 fade-in">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start w-full h-full">
+
+    <!-- Left Side: Dropdown List -->
+    <div class="h-full p-8 flex flex-col justify-start bg-white shadow rounded-lg relative">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">
+        Vampiric Vision
+      </h2>
+      <p class="text-lg text-gray-700 mb-6">
+  A field test is underway to explore vampiric vision in real-world night conditions. The evaluation highlights its ability to reveal colors in near-total darkness, extend vision far beyond normal line of sight, and detect objects and details from miles away. This test showcases how vampiric vision expands the boundaries of nighttime perception.
+      </p>
+
+      <!-- Container for dropdown list and the "Expand All" button -->
+      <div class="relative">
+        <!-- "Expand All / Collapse All" button near arrows, closer to the top line -->
+        <button 
+          id="toggleAllDropdowns"
+          class="absolute -top-1 right-2 text-sm text-gray-700 font-semibold hover:text-black transition"
+        >
+          Expand All
+        </button>
+
+        <ul id="focus-list" class="divide-y divide-black border-t border-b border-black text-left flex-1 mt-4">
+
+<!-- Nighttime Color Perception -->
+<li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="0">
+  <span>Nighttime Color Perception</span>
+  <span class="text-black text-xl">▼</span>
+</li>
+<div class="dropdown-content hidden px-4 py-2 text-gray-700 border-t border-black" id="dropdown-0">
+In this experiment, vampiric vision is being used to define the colors of 18-wheelers in the darkness of night, amplifying retinal sensitivity and neural processing to perceive colors and subtle contrasts in near-total darkness.
+</div>
+
+<!-- Vascular Perception -->
+<li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="1">
+  <span>Vascular Perception</span>
+  <span class="text-black text-xl">▼</span>
+</li>
+<div class="dropdown-content hidden px-4 py-2 text-gray-700 border-t border-black" id="dropdown-1">
+Enables detection of pulses, blood flow, and subtle circulatory changes, revealing internal physiological patterns normally invisible in low-light environments. In this field test, vascular perception wasn't tested.
+</div>
+
+<!-- Long-Range Perception -->
+<li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="2">
+  <span>Long-Range Perception</span>
+  <span class="text-black text-xl">▼</span>
+</li>
+<div class="dropdown-content hidden px-4 py-2 text-gray-700 border-t border-black" id="dropdown-2">
+Extends visual range to detect objects, shapes, and details from extreme distances, revealing features normally beyond the naked eye. In this field test, 18-wheelers were identified at distances of half a mile, 1 mile, and 5 miles.
+</div>
+
+
+<!-- Enhanced Spatial Awareness -->
+<li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="3">
+  <span>Enhanced Spatial Awareness</span>
+  <span class="text-black text-xl">▼</span>
+</li>
+<div class="dropdown-content hidden px-4 py-2 text-gray-700 border-t border-black" id="dropdown-3">
+Enhances perception of surroundings, distances, and movement, enabling precise navigation and interpretation in low-light environments. In this test, vampiric vision was used to differentiate between vehicle types at distances of up to 5 miles.
+</div>
+
+<!-- Expanded Visual Acuity -->
+<li class="py-3 px-4 font-bold focus-btn cursor-pointer hover:bg-gray-100 transition flex justify-between items-center" data-dropdown="4">
+  <span>Expanded Visual Acuity</span>
+  <span class="text-black text-xl">▼</span>
+</li>
+<div class="dropdown-content hidden px-4 py-2 text-gray-700" id="dropdown-4">
+  Enhances the ability to perceive fine details and distant objects with remarkable clarity. This capability allows operators to detect subtle features, patterns, and movements far beyond ordinary human vision, effectively extending the range and precision of sight.
+</div>
+        </ul>
+      </div>
+    </div>
+
+<!-- Right Side: YouTube Video Filling Card -->
+<div class="w-full h-full bg-white shadow rounded-lg overflow-hidden">
+  <iframe 
+    class="w-full h-full" 
+    src="https://www.youtube.com/embed/u8rWKx_BKQs" 
+    title="Nightvision Research Overview" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+</div>
+</section>
+
+<!-- The Impact of This Novel Development Section -->
+<section id="future-directions" class="py-16 bg-white w-full">
+  <div class="max-w-[120rem] mx-auto px-6">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-light text-black mb-4">
+      The Impact of This Novel Development
+    </h2>
+    <!-- Divider Line -->
+    <div class="w-24 h-0.5 bg-gray-300 mb-8"></div>
+
+<!-- Two-column layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <!-- Column 1: Vampiric Vision -->
+  <div>
+    <h3 class="text-xl sm:text-2xl md:text-3xl font-light text-black mb-3">
+      Vampiric Vision
+    </h3>
+  </div>
+
+      <!-- Column 2: Description -->
+      <div>
+        <p class="text-black text-base sm:text-lg md:text-xl leading-relaxed font-light mb-2">
+          What we believed about the limits of human vision is no longer absolute—vampiric vision extends perception beyond the boundaries of light and distance.
+        </p>
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed font-light mb-2">
+     Current scientific understanding holds that in total darkness, human vision is limited because rod cells detect only shades of gray while color-sensitive cones are inactive, producing the perception of black or an absence of light.
+        </p>
+        <!-- Revised Paragraph -->
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed font-light mt-4">
+          Yet in this field test, we demonstrate novel observations, including the ability to discern color in the absence of light and at ranges considered theoretically impossible. Imagine seeing an object 50 miles away in the blackness of night—an ability that defies the known limits of human vision.
+        </p>
+        <!-- New Final Paragraph -->
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed font-light mt-4">
+These findings overturn what we thought we knew about human vision, revealing new ways to see the world after dark and proving that accepted truths endure only until discoveries expand our understanding.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Scripts -->
+<script>
+  // Toggle individual dropdowns
+  const buttons = document.querySelectorAll('.focus-btn');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dropdownId = btn.getAttribute('data-dropdown');
+      const content = document.getElementById('dropdown-' + dropdownId);
+      content.classList.toggle('hidden');
+    });
+  });
+
+  // Expand All / Collapse All button
+  const toggleButton = document.getElementById('toggleAllDropdowns');
+  toggleButton.addEventListener('click', function () {
+    const dropdowns = document.querySelectorAll('.dropdown-content');
+    const anyHidden = Array.from(dropdowns).some(div => div.classList.contains('hidden'));
+    
+    dropdowns.forEach(div => {
+      div.classList.toggle('hidden', !anyHidden);
+    });
+    
+    toggleButton.textContent = anyHidden ? 'Collapse All' : 'Expand All';
+  });
+</script>
+
+ <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
+    <div class="mb-4 flex justify-center flex-wrap gap-4">
+      <a href="/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
+      <a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
+      <a href="/research.html" class="hover:text-cyan-500 transition">Research</a>
+      <a href="/careers.html" class="hover:text-cyan-500 transition">Careers</a>
+      <a href="/contact.html" class="hover:text-cyan-500 transition">Contact</a>
+    </div>
+    <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
+    <div class="flex justify-center gap-4 mb-4">
+      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
+      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
+    </div>
+    <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
+  </footer>
+
+  <!-- Swiper core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Your site scripts (with fade-in, mobile menu, and carousel logic) -->
+  <script>
+    // Fade-in animations
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+    menuToggle.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      menuToggle.classList.toggle('open', menuOpen);
+
+      if (menuOpen) {
+        mobileMenu.classList.add('open');
+        mobileMenu.style.display = 'block';
+        mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+        mobileMenu.style.opacity = '1';
+      } else {
+        mobileMenu.classList.remove('open');
+        mobileMenu.style.maxHeight = '0';
+        mobileMenu.style.opacity = '0';
+        setTimeout(() => {
+          if (!menuOpen) mobileMenu.style.display = 'none';
+        }, 300);
+      }
+    });
+
+    // Highlight current page
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === currentPage || linkHref === currentPath) {
+        link.classList.add('font-semibold', 'underline');
+      }
+    });
+
+    // Mobile dropdown toggle
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const icon = document.getElementById("icon-" + id);
+      if (!dropdown) return;
+
+      const isHidden = dropdown.classList.contains("hidden");
+
+      if (isHidden) {
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("flex");
+        dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+        dropdown.style.transition = "max-height 0.3s ease";
+        if (icon) icon.classList.add("rotate-180");
+      } else {
+        dropdown.style.maxHeight = "0";
+        setTimeout(() => {
+          dropdown.classList.add("hidden");
+          dropdown.classList.remove("flex");
+        }, 300);
+        if (icon) icon.classList.remove("rotate-180");
+      }
+    }
+
+    // ===== Carousel Logic for Our Areas of Focus =====
+    var swiper = new Swiper(".mySwiper", {
+      allowTouchMove: false, // disable manual swiping
+      effect: "fade",        // smooth fade transition
+    });
+
+    // List controls carousel
+    document.querySelectorAll(".focus-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const slideIndex = btn.getAttribute("data-slide");
+        swiper.slideTo(slideIndex);
+
+        // Update active styling
+        document.querySelectorAll(".focus-btn").forEach(el => el.classList.remove("text-blue-600", "active"));
+        btn.classList.add("text-blue-600", "active");
+      });
+    });
+
+    // Sync list when carousel changes
+    swiper.on("slideChange", () => {
+      const items = document.querySelectorAll(".focus-btn");
+      items.forEach((item, i) => {
+        item.classList.toggle("text-blue-600", i === swiper.activeIndex);
+        item.classList.toggle("active", i === swiper.activeIndex);
+      });
+    });
+  </script>
+</body>
+</html>
