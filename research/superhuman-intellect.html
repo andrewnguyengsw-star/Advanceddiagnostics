@@ -189,90 +189,88 @@
 
 <main>
 
-<!-- Superintelligence Hero Section (Image Left, Text Right) -->
-<section id="superintelligence-hero" class="relative w-full bg-gray-100 overflow-hidden py-20 md:py-28 fade-in">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-12">
+<!-- Superintelligence Unified Hero Section (Reduced Height, Fixed Layout) -->
+<section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center py-16 px-8 sm:px-12 gap-16 bg-white">
+  <!-- Left Half: Image -->
+  <div class="w-full h-[60vh] sm:h-auto overflow-hidden">
+    <img 
+      src="/images/intellect_head.png" 
+      alt="A conceptual image of superintelligence" 
+      class="w-full h-full object-cover object-center select-none"
+    >
+  </div>
 
-    <!-- Left: Image -->
-    <div class="md:w-1/2 relative flex justify-center md:justify-start fade-in" style="animation-delay: 0.2s;">
-      <div class="relative w-full max-w-lg md:max-w-none aspect-square flex items-center justify-center">
-        <div class="absolute inset-0 bg-blue-50 -z-10 rounded-full scale-105 opacity-75 blur-3xl"></div>
-        <img 
-          src="/images/intellect_head.png" 
-          alt="A conceptual image of superintelligence" 
-          class="w-full h-auto object-contain select-none drop-shadow-2xl"
-        >
-      </div>
-    </div>
-
-    <!-- Right: Text -->
-    <div class="md:w-1/2 text-center md:text-left z-10">
-      <h1 class="text-5xl sm:text-6xl font-bold text-gray-900 mb-6 tracking-tight fade-in" style="animation-delay: 0.4s;">
-        Superintelligence
-      </h1>
-      <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8 fade-in" style="animation-delay: 0.6s;">
-        Moving beyond the human measure of intelligence.
-      </p>
-    </div>
-
+  <!-- Right Half: Text -->
+  <div class="flex flex-col justify-center items-start text-left bg-white text-black">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
+      Superintelligence
+    </h1>
+    <p class="text-sm sm:text-base md:text-lg max-w-xl mb-6 leading-relaxed fade-in" style="animation-delay:0.4s;">
+      Moving beyond the human measure of intelligence.
+    </p>
   </div>
 </section>
 
+<!-- Intellect Principles Section -->
+<section id="intellect-principles" class="py-20 md:py-28 bg-white text-black w-full">
+  <div class="max-w-7xl mx-auto px-6">
 
-  <section id="intellect-principles" class="py-20 md:py-28 bg-white text-black w-full">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <p class="text-lg font-semibold text-gradient mb-4 fade-in">
+        Unlocking Cognitive Potential
+      </p>
+    </div>
 
-      <div class="text-center max-w-3xl mx-auto mb-20">
-        <p class="text-lg font-semibold text-gradient mb-4 fade-in">
-          Unlocking Cognitive Potential
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 fade-in" style="animation-delay: 0.6s;">
+
+      <!-- Neural Mapping -->
+      <div class="text-center md:text-left">
+        <div class="flex justify-center md:justify-start mb-5">
+          <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Neural Mapping</h3>
+        <p class="text-gray-700 font-light leading-relaxed">
+          We mapped every neural impulse derived from participant response to the Stanford-Binet IQ test, capturing the architecture responsible for the cumulative IQ score.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 fade-in" style="animation-delay: 0.6s;">
-
-        <div class="text-center md:text-left">
-          <div class="flex justify-center md:justify-start mb-5">
-            <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-              </svg>
-            </div>
+      <!-- Brain Colonization -->
+      <div class="text-center md:text-left">
+        <div class="flex justify-center md:justify-start mb-5">
+          <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
           </div>
-          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Neural Mapping</h3>
-          <p class="text-gray-700 font-light leading-relaxed">
-            We mapped every neural impulses derived from participant response to the Stanford-Binet IQ test, and captured the neural architecture responsible for the overall cumulative IQ score.
-          </p>
         </div>
-
-        <div class="text-center md:text-left">
-          <div class="flex justify-center md:justify-start mb-5">
-            <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-              </svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Brain colonization</h3>
-          <p class="text-gray-700 font-light leading-relaxed">
-            Once we decoded the rules of intelligence, we initiated a systematic colonization of the brain, exploring newly accessible frontiers and constructing novel neural pathways.
-          </p>
-        </div>
-
-        <div class="text-center md:text-left">
-          <div class="flex justify-center md:justify-start mb-5">
-            <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            </div>
-          </div>
-          <h3 class="text-2xl font-semibold text-gray-900 mb-3">Next-Generation Intelligence</h3>
-          <p class="text-gray-700 font-light leading-relaxed">
-            Unlocking the mind revealed a new prerequisite: to innovate truly paradigm-shifting technology, we first had to redefine intelligence itself.
-          </p>
-        </div>
-
+        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Brain Colonization</h3>
+        <p class="text-gray-700 font-light leading-relaxed">
+          Once we decoded the rules of intelligence, we initiated a systematic colonization of the brain, exploring newly accessible frontiers and constructing novel neural pathways.
+        </p>
       </div>
+
+      <!-- Next-Generation Intelligence -->
+      <div class="text-center md:text-left">
+        <div class="flex justify-center md:justify-start mb-5">
+          <div class="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Next-Generation Intelligence</h3>
+        <p class="text-gray-700 font-light leading-relaxed">
+          Unlocking the mind revealed a new prerequisite: to innovate truly paradigm-shifting technology, we first had to redefine intelligence itself.
+        </p>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="cognitive-optimization" class="py-20 md:py-28 bg-gray-50 w-full fade-in">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
