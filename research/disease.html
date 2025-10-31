@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aecion | Diseases</title>
+  <meta name="description" content="Explore Aecion's frontier of disease understanding—decoding pathogenesis, redefining diagnostics, and pioneering treatments beyond modern medicine." />
+  <link rel="stylesheet" href="/styles.css" /> 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
+
+    /* Fade-in animations */
+    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+    /* Buttons */
+    .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-primary:hover { transform: translateY(-2px) scale(1.03); }
+    .btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
+
+    /* Product card hover */
+    .product-card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
+
+    /* Navigation (mobile menu) */
+    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu.open { display: block; max-height: 100vh; opacity: 1; }
+    #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-toggle.open span:nth-child(2) { opacity: 0; }
+    #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    /* Dropdown styling */
+    .dropdown-menu {
+      max-height: 400px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      width: 14rem;
+      z-index: 50;
+    }
+    .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
+    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
+    .dropdown-menu a:hover { background: #f0f0f0; }
+
+    /* Scrollbar styling for dropdowns */
+    .dropdown-menu::-webkit-scrollbar { width: 6px; }
+    .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
+    .dropdown-menu::-webkit-scrollbar-track { background: transparent; }
+
+    /* Mobile dropdowns (scrollbar tweaks) */
+    #research-mobile, #careers-mobile {
+      max-height: 300px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
+    }
+    #research-mobile::-webkit-scrollbar, #careers-mobile::-webkit-scrollbar { width: 6px; }
+    #research-mobile::-webkit-scrollbar-thumb, #careers-mobile::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
+    
+    /* Gradient text helper */
+    .text-gradient {
+        background: linear-gradient(90deg,#00cfff,#8a2be2); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+
+<header class="sticky top-0 bg-white shadow-md z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="/index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
+
+    <nav class="hidden sm:flex space-x-6" id="desktop-menu">
+      <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
+
+      <div class="relative dropdown">
+        <a href="/research.html" class="hover:text-cyan-500 transition flex items-center">
+          Research
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu">
+          <a href="/research/how-we-develop.html">How We Develop</a>
+          <a href="/research/innovation.html">Innovation</a>
+          <a href="/research/neuroscience.html">Neuroscience</a>
+          <a href="/research/super-soldier.html">Super Soldier Project</a>
+          <a href="/research/superhuman-senses.html">Superhuman Senses Program</a>
+          <a href="/research/superhuman-intellect.html">Superhuman Intellect Program</a>
+          <a href="/research/nightvision.html">Nightvision</a>
+<a href="/research/disease.html">Diseases</a>
+
+        </div>
+      </div>
+
+      <a href="/products.html" class="hover:text-cyan-500 transition">Products</a>
+      <a href="/patients.html" class="hover:text-cyan-500 transition">Patients</a>
+      <a href="/energy.html" class="hover:text-cyan-500 transition">Energy</a>
+      <a href="/resources.html" class="hover:text-cyan-500 transition flex items-center">Resources</a>
+      <a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
+
+      <div class="relative dropdown">
+        <a href="/careers.html" class="hover:text-cyan-500 transition flex items-center">
+          Careers
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu max-h-96 overflow-y-auto">
+          <a href="/careers/learn-more.html#gulf-war-syndrome">Gulf War Syndrome</a>
+        </div>
+      </div>
+
+      <a href="/investors.html" class="hover:text-cyan-500 transition flex items-center">Investors</a>
+    </nav>
+
+    <div class="sm:hidden">
+      <button id="menu-toggle" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false" class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1.5"></span>
+        <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
+    <div class="flex flex-col p-4 space-y-1">
+      <a href="/index.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Home</a>
+      
+      <div>
+        <button onclick="toggleDropdown('research-mobile')" aria-controls="research-mobile" aria-expanded="false" class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Research</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="research-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/research.html" class="block hover:text-cyan-500 py-2 rounded">Research Overview</a>
+          <a href="/research/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
+          <a href="/research/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
+          <a href="/research/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
+          <a href="/research/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
+          <a href="/research/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
+          <a href="/research/superhuman-intellect.html">Superhuman Intellect Program</a>
+          <a href="/research/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
+<a href="/research/disease.html">Diseases</a>
+
+        </div>
+      </div>
+
+      <a href="/products.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Products</a>
+      <a href="/patients.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Patients</a>
+      <a href="/energy.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Energy</a>
+      <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Resources</a>
+      <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">About Us</a>
+      
+      <div>
+        <button onclick="toggleDropdown('careers-mobile')" aria-controls="careers-mobile" aria-expanded="false" class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+          <span>Careers</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="careers-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/careers.html" class="block hover:text-cyan-500 py-2 rounded">Careers Overview</a>
+          <a href="/careers/learn-more.html#gulf-war-syndrome" class="block hover:text-cyan-500 py-2 rounded">Gulf War Syndrome</a>
+        </div>
+      </div>
+
+      <a href="/investors.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Investors</a>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center py-16 px-8 sm:px-12 bg-white">
+  <div class="w-full h-[60vh] overflow-hidden">
+    <img src="/images/disease_network.png" alt="Disease Research Visualization" class="w-full h-full object-cover object-center rounded-lg shadow-md">
+  </div>
+
+  <div class="flex flex-col justify-center items-start text-left">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+      <span class="text-gradient">Diseases</span>
+    </h1>
+    <p class="text-lg leading-relaxed text-gray-700 max-w-xl">
+      Understanding disease means decoding life itself.  
+      Aecion’s Disease Research program seeks to uncover the neural, molecular, and quantum foundations of pathology—ushering in a new era of predictive and generative medicine.
+    </p>
+  </div>
+</section>
+
+<!-- Section: Core Focus Areas -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold mb-8">Our Focus</h2>
+    <p class="text-lg text-gray-600 mb-16 max-w-3xl mx-auto">
+      From molecular mapping to neural diagnostics, our approach targets disease at every level of complexity.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition">
+        <img src="/images/pathogenic_mapping.png" alt="Pathogenic Mapping" class="w-full h-48 object-cover rounded-md mb-6">
+        <h3 class="text-2xl font-semibold mb-3">Pathogenic Mapping</h3>
+        <p class="text-gray-700 leading-relaxed">
+          We decode the complete architecture of pathogenesis—understanding how cellular and neural processes interact to initiate and sustain disease.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition">
+        <img src="/images/diagnostic_ai.png" alt="Neural Diagnostics" class="w-full h-48 object-cover rounded-md mb-6">
+        <h3 class="text-2xl font-semibold mb-3">Neural Diagnostics</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Using advanced cognitive modeling, we develop diagnostic frameworks capable of identifying diseases at the level of neural signal patterns.
+        </p>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 hover:shadow-xl transition">
+        <img src="/images/quantum_medicine.png" alt="Quantum Medicine" class="w-full h-48 object-cover rounded-md mb-6">
+        <h3 class="text-2xl font-semibold mb-3">Quantum Medicine</h3>
+        <p class="text-gray-700 leading-relaxed">
+          Beyond biochemistry—our research explores quantum biological principles to pioneer new treatments that rewrite the rules of therapeutic design.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section: Vision -->
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Vision for Disease Research</h2>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-10">
+      We believe every disease is a code—a pattern waiting to be understood.  
+      By merging neuroscience, bioinformatics, and AI-driven discovery, we are redefining how humanity understands illness, creating the foundation for truly generative medicine.
+    </p>
+
+    <blockquote class="text-xl italic text-gray-800 border-l-4 border-cyan-500 pl-6 max-w-3xl mx-auto">
+      “To cure disease, one must first understand the language of the body.  
+      We are teaching machines—and ourselves—to read it fluently.”
+    </blockquote>
+  </div>
+</section>
+
+<!-- Section: Future Applications -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <img src="/images/disease_future.png" alt="Future of Medicine Visualization" class="rounded-lg shadow-lg w-full h-auto">
+    </div>
+    <div>
+      <h2 class="text-4xl font-bold mb-6">A Future Without Disease</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6">
+        Our long-term objective is a self-learning, adaptive model of the human body capable of identifying, preventing, and curing disease before it manifests.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        This is the intersection of superintelligence and biology—where predictive medicine evolves into generative healing.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-white border-t border-gray-200">
+  <div class="max-w-7xl mx-auto py-16 px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-900 mb-4">Navigate</h4>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="/index.html" class="hover:text-cyan-500 transition">Home</a></li>
+          <li><a href="/products.html" class="hover:text-cyan-500 transition">Products</a></li>
+          <li><a href="/patients.html" class="hover:text-cyan-500 transition">Patients</a></li>
+          <li><a href="/energy.html" class="hover:text-cyan-500 transition">Energy</a></li>
+          <li><a href="/resources.html" class="hover:text-cyan-500 transition">Resources</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-900 mb-4">Company</h4>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="/about-us.html" class="hover:text-cyan-500 transition">About Us</a></li>
+          <li><a href="/research.html" class="hover:text-cyan-500 transition">Research</a></li>
+          <li><a href="/careers.html" class="hover:text-cyan-500 transition">Careers</a></li>
+          <li><a href="/investors.html" class="hover:text-cyan-500 transition">Investors</a></li>
+          <li><a href="/contact.html" class="hover:text-cyan-500 transition">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-900 mb-4">Connect</h4>
+        <ul class="space-y-3 text-gray-600">
+          <li><a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a></li>
+          <li>123-456-7890</li>
+          <li class="pt-1">123 Quantum Way<br>Tech City, 12345</li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-900 mb-4">Social</h4>
+        <div class="flex space-x-5">
+          <a href="#" class="text-gray-500 hover:text-cyan-500 transition">
+            <span class="sr-only">Twitter</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-cyan-500 transition">
+            <span class="sr-only">LinkedIn</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-cyan-500 transition">
+            <span class="sr-only">GitHub</span>
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.489.5.091.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.342-3.369-1.342-.455-1.157-1.11-1.465-1.11-1.465-.909-.62.069-.607.069-.607 1.004.07 1.532 1.03 1.532 1.03.89 1.529 2.339 1.089 2.91.833.091-.647.349-1.086.635-1.335-2.21-.251-4.538-1.104-4.538-4.918 0-1.087.389-1.979 1.029-2.675-.103-.251-.446-1.266.098-2.635 0 0 .837-.268 2.74 1.022.796-.22 1.644-.33 2.49-.333.846 0 1.694.113 2.49.333 1.901-1.29 2.738-1.022 2.738-1.022.545 1.369.202 2.384.099 2.635.64.696 1.028 1.588 1.028 2.675 0 3.824-2.33 4.663-4.549 4.908.358.308.682.921.682 1.856 0 1.339-.012 2.42-.012 2.747 0 .268.18.578.687.48C19.137 20.162 22 16.417 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-16 pt-8 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+      <a href="/index.html" class="text-2xl font-bold text-gray-900 hover:text-cyan-500 transition">AECION</a>
+      <p class="mt-4 sm:mt-0">&copy; 2025 AECION. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Fade-in animations
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, { threshold: 0.1 }); // Trigger a bit earlier
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let menuOpen = false;
+  
+  menuToggle.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    menuToggle.classList.toggle('open', menuOpen);
+    menuToggle.setAttribute('aria-expanded', menuOpen);
+
+    if (menuOpen) {
+      mobileMenu.classList.add('open');
+      mobileMenu.style.display = 'block';
+      // Use requestAnimationFrame for smoother layout calculation
+      requestAnimationFrame(() => {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          mobileMenu.style.opacity = '1';
+      });
+    } else {
+      mobileMenu.classList.remove('open');
+      mobileMenu.style.maxHeight = '0';
+      mobileMenu.style.opacity = '0';
+      setTimeout(() => {
+        if (!menuOpen) mobileMenu.style.display = 'none';
+      }, 300); // Match transition duration
+    }
+  });
+
+  // Highlight current page
+  try {
+    const currentPath = window.location.pathname;
+    const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1) || 'index.html';
+    document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
+      const linkHref = link.getAttribute('href');
+      // More robust check
+      if (linkHref === currentPath || linkHref === `/${currentPage}`) {
+        link.classList.add('font-semibold', 'text-cyan-600'); // Use a more distinct highlight
+      }
+    });
+  } catch (e) {
+    console.error("Error highlighting current page:", e);
+  }
+
+  // Mobile dropdown toggle function
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const icon = document.getElementById("icon-" + id);
+    const button = icon ? icon.closest('button') : null;
+
+    if (!dropdown) return;
+
+    const isHidden = dropdown.classList.contains("hidden");
+
+    if (button) {
+      button.setAttribute('aria-expanded', isHidden);
+    }
+    
+    // Animate dropdown open/close
+    if (isHidden) {
+      dropdown.classList.remove("hidden");
+      dropdown.classList.add("flex");
+      requestAnimationFrame(() => {
+          dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+          dropdown.style.opacity = '1';
+          dropdown.style.transition = "max-height 0.3s ease-out, opacity 0.3s ease-out";
+      });
+      if (icon) icon.classList.add("rotate-180");
+    } else {
+      dropdown.style.maxHeight = "0";
+      dropdown.style.opacity = '0';
+      setTimeout(() => {
+        dropdown.classList.add("hidden");
+        dropdown.classList.remove("flex");
+      }, 300);
+      if (icon) icon.classList.remove("rotate-180");
+    }
+  }
+</script>
+
+</body>
+</html>
