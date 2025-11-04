@@ -114,15 +114,19 @@
     <nav class="hidden sm:flex space-x-6" id="desktop-menu">
       <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
 
-      <!-- Research Dropdown -->
       <div class="relative dropdown">
-        <a href="/research.html" class="hover:text-cyan-500 transition flex items-center">
+        <a href="/research.html" 
+           class="hover:text-cyan-500 transition flex items-center dropdown-toggle"
+           id="desktop-research-toggle" 
+           aria-expanded="false" 
+           aria-controls="desktop-research-menu"
+           role="button">
           Research
           <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </a>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu" id="desktop-research-menu" aria-labelledby="desktop-research-toggle">
           <a href="/research/how-we-develop.html">How We Develop</a>
           <a href="/research/innovation.html">Innovation</a>
           <a href="/research/neuroscience.html">Neuroscience</a>
@@ -134,16 +138,21 @@
         </div>
       </div>
 
-      <!-- ✅ Products Dropdown -->
       <div class="relative dropdown">
-        <a href="/products.html" class="hover:text-cyan-500 transition flex items-center">
+        <a href="/products.html" 
+           class="hover:text-cyan-500 transition flex items-center dropdown-toggle"
+           id="desktop-products-toggle" 
+           aria-expanded="false" 
+           aria-controls="desktop-products-menu"
+           role="button">
           Products
           <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </a>
-        <div class="dropdown-menu">
+        <div class="dropdown-menu" id="desktop-products-menu" aria-labelledby="desktop-products-toggle">
           <a href="/products/black-field-prototype.html">Black Field Prototype</a>
+<a href="/products/genetics-program.html" class="block hover:text-cyan-500 py-2 rounded">Genetics Program</a>
         </div>
       </div>
 
@@ -152,15 +161,19 @@
       <a href="/resources.html" class="hover:text-cyan-500 transition">Resources</a>
       <a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
 
-      <!-- Careers Dropdown -->
       <div class="relative dropdown">
-        <a href="/careers.html" class="hover:text-cyan-500 transition flex items-center">
+        <a href="/careers.html" 
+           class="hover:text-cyan-500 transition flex items-center dropdown-toggle"
+           id="desktop-careers-toggle" 
+           aria-expanded="false" 
+           aria-controls="desktop-careers-menu"
+           role="button">
           Careers
           <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </a>
-        <div class="dropdown-menu max-h-96 overflow-y-auto">
+        <div class="dropdown-menu max-h-96 overflow-y-auto" id="desktop-careers-menu" aria-labelledby="desktop-careers-toggle">
           <a href="/careers/learn-more.html#gulf-war-syndrome">Gulf War Syndrome</a>
         </div>
       </div>
@@ -168,7 +181,6 @@
       <a href="/investors.html" class="hover:text-cyan-500 transition">Investors</a>
     </nav>
 
-    <!-- Mobile Menu Button -->
     <div class="sm:hidden">
       <button id="menu-toggle" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false"
         class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
@@ -179,14 +191,12 @@
     </div>
   </div>
 
-  <!-- ✅ Mobile Menu -->
   <nav id="mobile-menu"
     class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
     <div class="flex flex-col p-4 space-y-1">
       <a href="/index.html"
         class="block w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">Home</a>
 
-      <!-- Research Dropdown (Mobile) -->
       <div>
         <button onclick="toggleDropdown('research-mobile')" aria-controls="research-mobile" aria-expanded="false"
           class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">
@@ -209,7 +219,6 @@
         </div>
       </div>
 
-      <!-- ✅ Products Dropdown (Mobile) -->
       <div>
         <button onclick="toggleDropdown('products-mobile')" aria-controls="products-mobile" aria-expanded="false"
           class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">
@@ -222,6 +231,7 @@
         <div id="products-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
           <a href="/products.html" class="block hover:text-cyan-500 py-2 rounded">Products Overview</a>
           <a href="/products/black-field-prototype.html" class="block hover:text-cyan-500 py-2 rounded">Black Field Prototype</a>
+<a href="/products/genetics-program.html" class="block hover:text-cyan-500 py-2 rounded">Genetics Program</a>
         </div>
       </div>
 
@@ -230,7 +240,6 @@
       <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">Resources</a>
       <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">About Us</a>
 
-      <!-- Careers Dropdown (Mobile) -->
       <div>
         <button onclick="toggleDropdown('careers-mobile')" aria-controls="careers-mobile" aria-expanded="false"
           class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">
@@ -250,7 +259,6 @@
     </div>
   </nav>
 </header>
-
 
 
 
