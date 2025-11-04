@@ -3,37 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aecion | Black Field Prototype</title>
-  <meta name="description" content="Explore the Black Field Prototype, Aecion's advanced 4D remote sensing system that redefines detection with a 10,750km range and complete stealth." />
-  <link rel="stylesheet" href="/styles.css" /> <script src="https://cdn.tailwindcss.com"></script>
+  <title>aecion | Genetics Program</title>
+  <meta name="description" content="Explore Aecion's Genetics Program — a breakthrough initiative redefining biological intelligence and next-generation genetic science." />
+  
+  <!-- Styles & Tailwind -->
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
 
     /* Fade-in animations */
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
+    .fade-in { 
+      opacity: 0; 
+      transform: translateY(20px); 
+      animation: fadeInUp 1s forwards; 
+      animation-play-state: paused; 
+    }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
     /* Buttons */
-    .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+    .btn-primary { 
+      background: linear-gradient(90deg,#00cfff,#8a2be2); 
+      color: white; 
+      font-weight: 600; 
+      padding: 0.75rem 2rem; 
+      border-radius: 0.5rem; 
+      transition: all 0.3s ease; 
+    }
     .btn-primary:hover { transform: translateY(-2px) scale(1.03); }
-    .btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+
+    .btn-secondary { 
+      background: white; 
+      color: black; 
+      font-weight: 600; 
+      padding: 0.75rem 2rem; 
+      border-radius: 0.5rem; 
+      transition: all 0.3s ease; 
+    }
     .btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
 
     /* Product card hover */
     .product-card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
 
     /* Navigation (mobile menu) */
-    #mobile-menu { display: none; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    #mobile-menu { 
+      display: none; 
+      max-height: 0; 
+      overflow: hidden; 
+      opacity: 0; 
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out; 
+    }
     #mobile-menu.open { display: block; max-height: 100vh; opacity: 1; }
+
     #menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     #menu-toggle.open span:nth-child(2) { opacity: 0; }
     #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* ✅ ENHANCEMENT: Updated Dropdown styling for accessibility (click/focus) */
+    /* Dropdown styling */
     .dropdown-menu {
       max-height: 400px;
       overflow-y: auto;
@@ -41,7 +72,7 @@
       box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
       opacity: 0;
       pointer-events: none;
-      transform: translateY(10px); /* Add slight downward motion */
+      transform: translateY(10px);
       transition: opacity 0.2s ease, transform 0.2s ease;
       position: absolute;
       top: 100%;
@@ -52,31 +83,26 @@
       width: 14rem;
       z-index: 50;
     }
-    /* Show menu on hover OR when parent .dropdown has .open class */
+
     .dropdown:hover .dropdown-menu,
     .dropdown.open .dropdown-menu { 
       opacity: 1; 
       pointer-events: auto; 
       transform: translateY(0);
     }
-    
-    /* Rotate dropdown arrow icon */
-    .dropdown-toggle svg {
-      transition: transform 0.3s ease;
-    }
-    .dropdown.open .dropdown-toggle svg {
-      transform: rotate(180deg);
-    }
+
+    .dropdown-toggle svg { transition: transform 0.3s ease; }
+    .dropdown.open .dropdown-toggle svg { transform: rotate(180deg); }
 
     .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: black; transition: background 0.3s; }
     .dropdown-menu a:hover { background: #f0f0f0; }
 
-    /* Scrollbar styling for dropdowns */
+    /* Scrollbar styling */
     .dropdown-menu::-webkit-scrollbar { width: 6px; }
     .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
     .dropdown-menu::-webkit-scrollbar-track { background: transparent; }
 
-    /* Mobile dropdowns (scrollbar tweaks) */
+    /* Mobile dropdowns */
     #research-mobile, #careers-mobile {
       max-height: 300px;
       overflow-y: auto;
@@ -88,24 +114,23 @@
       background-color: rgba(0, 0, 0, 0.2);
       border-radius: 3px;
     }
-    
+
     /* Gradient text helper */
     .text-gradient {
-        background: linear-gradient(90deg,#00cfff,#8a2be2); 
-        -webkit-background-clip: text; 
-        -webkit-text-fill-color: transparent;
+      background: linear-gradient(90deg,#00cfff,#8a2be2); 
+      -webkit-background-clip: text; 
+      -webkit-text-fill-color: transparent;
     }
 
-    /* ✅ ENHANCEMENT: Blockquote styling */
+    /* Blockquote styling */
     blockquote {
-      border-left: 4px solid #00cfff; /* Using gradient-start color */
+      border-left: 4px solid #00cfff;
       padding-left: 1rem;
       font-style: italic;
-      color: #333; /* Darker text for emphasis */
+      color: #333;
     }
   </style>
 </head>
-
 <body class="bg-white">
 
 <header class="sticky top-0 bg-white shadow-md z-50">
@@ -264,13 +289,13 @@
 
 <main>
 
-<!-- Black Field Prototype Hero Section (Reduced Height, Fixed Layout) -->
+<!-- Genetics Program (Reduced Height, Fixed Layout) -->
 <section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center py-16 px-8 sm:px-12 gap-16 bg-white">
   <!-- Left Half: Image -->
   <div class="w-full h-[60vh] sm:h-auto overflow-hidden">
     <img 
-      src="/images/black_head.png" 
-      alt="A conceptual image of the Black Field Prototype" 
+      src="/images/genetics_head.png" 
+      alt="A conceptual image of gene decryption" 
       class="w-full h-full object-cover object-center select-none"
     >
   </div>
@@ -278,10 +303,10 @@
   <!-- Right Half: Text -->
   <div class="flex flex-col justify-center items-start text-left bg-white text-black">
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
-      Black Field Prototype
+      Our Genetics Program
     </h1>
     <p class="text-sm sm:text-base md:text-lg max-w-xl mb-6 leading-relaxed fade-in" style="animation-delay:0.4s;">
-      Moving beyond the limitations of remote detection systems.
+      We've already unraveled or can decode all DNA
     </p>
   </div>
 </section>
