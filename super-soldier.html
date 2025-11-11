@@ -16,6 +16,12 @@
   <!-- Optional: Swiper CSS (carousel) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
+    <!-- 1. SCRIPT TO LOAD TAILWIND (for styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. SCRIPT TO LOAD CHART.JS (for the graph) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- Custom styles (single <style> block, cleaned) -->
   <style>
     html { scroll-behavior: smooth; }
@@ -107,112 +113,145 @@
   </style>
 </head>
 
-<!-- Navigation -->
-<header class="sticky top-0 bg-white shadow z-50">
+<header class="sticky top-0 bg-white shadow-md z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
     <a href="/index.html" class="text-2xl font-bold hover:text-cyan-500 transition">AECION</a>
 
-    <!-- Desktop Menu -->
     <nav class="hidden sm:flex space-x-6" id="desktop-menu">
       <a href="/index.html" class="hover:text-cyan-500 transition">Home</a>
 
-      <!-- Science Dropdown -->
       <div class="relative dropdown">
-        <a href="/science.html" class="hover:text-cyan-500 transition flex items-center">
-          Science
+        <a href="/research.html" 
+           class="hover:text-cyan-500 transition flex items-center dropdown-toggle"
+           id="desktop-research-toggle" 
+           aria-expanded="false" 
+           aria-controls="desktop-research-menu"
+           role="button">
+          Research
           <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </a>
-        <div class="dropdown-menu">
-          <a href="/science/how-we-develop.html">How We Develop</a>
-          <a href="/science/innovation.html">Innovation</a>
-          <a href="/science/neuroscience.html">Neuroscience</a>
-          <a href="/science/super-soldier.html">Super Soldier Project</a>
-          <a href="/science/superhuman-senses.html">Superhuman Senses Program</a>
-	  <a href="/science/nightvision.html">Nightvision</a>
+        <div class="dropdown-menu" id="desktop-research-menu" aria-labelledby="desktop-research-toggle">
+          <a href="/research/how-we-develop.html">How We Develop</a>
+          <a href="/research/innovation.html">Innovation</a>
+          <a href="/research/neuroscience.html">Neuroscience</a>
+          <a href="/research/super-soldier.html">Super Soldier Project</a>
+          <a href="/research/superhuman-senses.html">Superhuman Senses Program</a>
+          <a href="/research/superhuman-intellect.html">Superhuman Intellect Program</a>
+          <a href="/research/nightvision.html">Nightvision</a>
+          <a href="/research/disease.html">Diseases</a>
         </div>
       </div>
 
-      <a href="/products.html" class="hover:text-cyan-500 transition">Products</a>
+      <div class="relative dropdown">
+        <a href="/products.html" 
+           class="hover:text-cyan-500 transition flex items-center dropdown-toggle"
+           id="desktop-products-toggle" 
+           aria-expanded="false" 
+           aria-controls="desktop-products-menu"
+           role="button">
+          Products
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu" id="desktop-products-menu" aria-labelledby="desktop-products-toggle">
+          <a href="/products/black-field-prototype.html">Black Field Prototype</a>
+<a href="/products/genetics-program.html" class="block hover:text-cyan-500 py-2 rounded">Genetics Program</a>
+        </div>
+      </div>
+
       <a href="/patients.html" class="hover:text-cyan-500 transition">Patients</a>
       <a href="/energy.html" class="hover:text-cyan-500 transition">Energy</a>
-      <a href="/resources.html" class="hover:text-cyan-500 transition flex items-center">Resources</a>
+      <a href="/resources.html" class="hover:text-cyan-500 transition">Resources</a>
+      <a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
 
-<a href="https://www.aecion.com/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
+      <div class="relative dropdown">
+        <a href="/careers.html" 
+           class="hover:text-cyan-500 transition flex items-center dropdown-toggle"
+           id="desktop-careers-toggle" 
+           aria-expanded="false" 
+           aria-controls="desktop-careers-menu"
+           role="button">
+          Careers
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        <div class="dropdown-menu max-h-96 overflow-y-auto" id="desktop-careers-menu" aria-labelledby="desktop-careers-toggle">
+          <a href="/careers/learn-more.html#gulf-war-syndrome">Gulf War Syndrome</a>
+        </div>
+      </div>
 
-<!-- Careers Dropdown -->
-<div class="relative dropdown">
-  <a href="/careers.html" class="hover:text-cyan-500 transition flex items-center">
-    Careers
-    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-    </svg>
-  </a>
-  <div class="dropdown-menu max-h-96 overflow-y-auto">
-    <a href="/careers/learn-more.html#gulf-war-syndrome">Gulf War Syndrome</a>
-  </div>
-</div>
-
-<a href="/investors.html" class="hover:text-cyan-500 transition flex items-center">Investors</a>
-
+      <a href="/investors.html" class="hover:text-cyan-500 transition">Investors</a>
     </nav>
 
-    <!-- Mobile Menu Button -->
-   <div class="sm:hidden">
-      <button id="menu-toggle" 
-              aria-label="Toggle navigation menu" 
-              aria-controls="mobile-menu" 
-              aria-expanded="false" 
-              class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
+    <div class="sm:hidden">
+      <button id="menu-toggle" aria-label="Toggle navigation menu" aria-controls="mobile-menu" aria-expanded="false"
+        class="relative flex flex-col justify-center items-center w-12 h-12 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-500">
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out my-1.5"></span>
         <span class="block w-6 h-0.5 bg-black transition-transform duration-300 ease-in-out"></span>
       </button>
     </div>
-  </div> <nav id="mobile-menu" 
-       class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
-    
-    <div class="flex flex-col p-4 space-y-1">
+  </div>
 
-      <a href="/index.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Home</a>
+  <nav id="mobile-menu"
+    class="sm:hidden bg-white shadow-lg absolute top-full left-0 w-full overflow-hidden transition-all duration-300 ease-in-out z-40 max-h-0">
+    <div class="flex flex-col p-4 space-y-1">
+      <a href="/index.html"
+        class="block w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">Home</a>
 
       <div>
-        <button onclick="toggleDropdown('science-mobile')" 
-                aria-controls="science-mobile" 
-                aria-expanded="false" 
-                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
-          <span>Science</span>
-          <svg class="w-5 h-5 transition-transform duration-300" id="icon-science-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <button onclick="toggleDropdown('research-mobile')" aria-controls="research-mobile" aria-expanded="false"
+          class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">
+          <span>Research</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-research-mobile" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </button>
-        <div id="science-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
-          <a href="/science.html" class="block hover:text-cyan-500 py-2 rounded">Science Overview</a>
-          <a href="/science/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
-          <a href="/science/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
-          <a href="/science/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
-          <a href="/science/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
-          <a href="/science/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
-          <a href="/science/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
+        <div id="research-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/research.html" class="block hover:text-cyan-500 py-2 rounded">Research Overview</a>
+          <a href="/research/how-we-develop.html" class="block hover:text-cyan-500 py-2 rounded">How We Develop</a>
+          <a href="/research/innovation.html" class="block hover:text-cyan-500 py-2 rounded">Innovation</a>
+          <a href="/research/neuroscience.html" class="block hover:text-cyan-500 py-2 rounded">Neuroscience</a>
+          <a href="/research/super-soldier.html" class="block hover:text-cyan-500 py-2 rounded">Super Soldier Project</a>
+          <a href="/research/superhuman-senses.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Senses Program</a>
+          <a href="/research/superhuman-intellect.html" class="block hover:text-cyan-500 py-2 rounded">Superhuman Intellect Program</a>
+          <a href="/research/nightvision.html" class="block hover:text-cyan-500 py-2 rounded">Nightvision</a>
+          <a href="/research/disease.html" class="block hover:text-cyan-500 py-2 rounded">Diseases</a>
         </div>
       </div>
 
-      <a href="/products.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Products</a>
-      <a href="/patients.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Patients</a>
-      <a href="/energy.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Energy</a>
-      
-      <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Resources</a>
-      
-      <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">About Us</a>
+      <div>
+        <button onclick="toggleDropdown('products-mobile')" aria-controls="products-mobile" aria-expanded="false"
+          class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">
+          <span>Products</span>
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-products-mobile" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="products-mobile" class="hidden flex flex-col pl-5 mt-1 space-y-1 text-base">
+          <a href="/products.html" class="block hover:text-cyan-500 py-2 rounded">Products Overview</a>
+          <a href="/products/black-field-prototype.html" class="block hover:text-cyan-500 py-2 rounded">Black Field Prototype</a>
+<a href="/products/genetics-program.html" class="block hover:text-cyan-500 py-2 rounded">Genetics Program</a>
+        </div>
+      </div>
+
+      <a href="/patients.html" class="block w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">Patients</a>
+      <a href="/energy.html" class="block w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">Energy</a>
+      <a href="/resources.html" class="block w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">Resources</a>
+      <a href="https://www.aecion.com/about-us.html" class="block w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">About Us</a>
 
       <div>
-        <button onclick="toggleDropdown('careers-mobile')" 
-                aria-controls="careers-mobile" 
-                aria-expanded="false" 
-                class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">
+        <button onclick="toggleDropdown('careers-mobile')" aria-controls="careers-mobile" aria-expanded="false"
+          class="flex justify-between items-center w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">
           <span>Careers</span>
-          <svg class="w-5 h-5 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="w-5 h-5 transition-transform duration-300" id="icon-careers-mobile" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
           </svg>
         </button>
@@ -222,13 +261,10 @@
         </div>
       </div>
 
-      <a href="/investors.html" class="block w-full text-lg font-medium hover:text-cyan-500 focus:outline-none focus-visible:text-cyan-500 py-3 rounded">Investors</a>
-
+      <a href="/investors.html" class="block w-full text-lg font-medium hover:text-cyan-500 py-3 rounded">Investors</a>
     </div>
   </nav>
 </header>
-
-
 
 <!-- Unified Hero Section (Reduced Height, Fixed) -->
 <section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center py-16 px-8 sm:px-12 gap-16">
@@ -511,26 +547,6 @@ We no longer define super soldiers by strength or endurance—those measures bel
   showSlide(0);
 </script>
 
-
-<!-- Super Soldier Quotation Section -->
-<section id="super-soldier-quote" class="py-16 bg-white w-full">
-
-  <!-- Quotation Paragraph -->
-  <div class="max-w-[120rem] mx-auto px-6 mb-4 text-center">
-    <p class="text-base sm:text-lg md:text-xl text-black leading-relaxed font-serif">
-     "We have uncovered profound insights into the science of creating superhuman abilities, yet vast frontiers remain uncharted. Though we’ve achieved breakthroughs once confined to fiction—weather manipulation, psionic phenomena reminiscent of Charles Xavier and Jean Grey, and feats that defy conventional biology—our understanding remains in its infancy. Translating extraordinary theory into tangible reality, from regenerative power akin to Deadpool and Wolverine to the audacious dream of human flight, continues to challenge and inspire us. Still, it is within these challenges that our imagination thrives, driving us ever closer to transcending the limits of human potential."
-    </p>
-  </div>
-
-  <!-- Attribution -->
-  <div class="max-w-[120rem] mx-auto px-6 text-left">
-    <p class="text-sm sm:text-base text-black font-serif font-light">
-      — The Black Technology Department, AECION
-    </p>
-  </div>
-
-</section>
-
 <!-- Super Soldier Program Success Section -->
 <section id="super-soldier-success" class="py-16 bg-black w-full">
 
@@ -612,71 +628,343 @@ We no longer define super soldiers by strength or endurance—those measures bel
 
 </section>
 
-<section id="program-differentiation" class="py-10 md:py-16 bg-gray-50 w-full">
-  <div class="max-w-[120rem] mx-auto px-6">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-light text-black mb-4">
+<section id="program-differentiation" class="py-16 md:py-24 bg-white w-full">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2
+      class="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 mb-4 text-center"
+    >
       A New Paradigm in Enhancement
     </h2>
-    <div class="w-full h-0.5 bg-gray-300 mb-8"></div>
+    <div class="w-24 h-0.5 bg-gray-300 mb-12 mx-auto"></div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 md:mb-16">
-      
+    <div class="max-w-4xl mx-auto text-left mb-12">
+      <h3
+        class="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-4"
+      >
+        How Our Program is Different
+      </h3>
+      <p class="text-gray-600 text-base sm:text-lg leading-relaxed font-light">
+        Our program transcends race, gender, and creed. We are not optimizing
+        within the human spectrum; we are prioritizing capabilities that exist
+        entirely outside the normal human distribution.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
       <div
-        class="relative flex flex-col justify-center items-center h-64 md:h-auto min-h-[20rem] p-4 text-center rounded-lg overflow-hidden shadow-lg"
+        class="relative flex flex-col justify-center items-center h-64 md:h-auto min-h-[24rem] p-4 text-center rounded-xl overflow-hidden shadow-2xl"
         style="
-          background-image: url('/images/program_difference.png'); /* <-- Placeholder image */
+          background-image: url('/images/program_difference.png');
           background-size: cover;
           background-position: center;
         "
       >
         <div class="absolute inset-0 bg-black/40"></div>
         <h3
-          class="relative z-10 text-xl sm:text-2xl md:text-3xl font-light text-white mb-3"
+          class="relative z-10 text-2xl sm:text-3xl md:text-4xl font-light text-white mb-3"
         >
           Reconstructing the Foundation
         </h3>
       </div>
 
       <div>
-        <h3 class="text-xl sm:text-2xl md:text-3xl font-light text-black mb-3">
-          How Our Super Soldier Program is Different
-        </h3>
-        <p
-          class="text-black text-base sm:text-lg md:text-xl leading-relaxed font-light mb-2"
-        >
-Our Super Soldier Program transcends race, gender, and creed. It is driven solely by quantifiable performance metrics. While we have successfully engineered enhanced intellect, we recognize that true intelligence—beyond conventional IQ—may manifest differently. Therefore, we prioritize measurable outcomes.
+        <p class="text-gray-800 text-lg leading-relaxed font-medium mb-5">
+          We ask critical questions that are driven solely by quantifiable
+          performance metrics:
         </p>
 
-<p class="text-black-600 text-sm sm:text-base leading-relaxed font-light mb-2">
-  We ask critical questions:
-</p>
-<ul class="list-disc list-inside text-black-600 text-sm sm:text-base leading-relaxed font-light mb-4">
-  <li><strong>Strength:</strong> How do you compare to the world’s strongest elite?</li>
-  <li><strong>Speed:</strong> How fast are you under peak physiological load?</li>
-  <li><strong>Endurance:</strong> How has super-soldier endurance enhancement improved sustained performance against elite athletes?</li>
-  <li><strong>Metabolic Regeneration:</strong> How has augmented metabolic recovery accelerated your return to peak output?</li>
-  <li><strong>Durability:</strong> How does your structural resilience compare to elite-level physical conditioning?</li>
-  <li><strong>Pain Threshold:</strong> How has your tolerance evolved under neural pain-dampening protocols?</li>
-</ul>
-        </p>
+        <div class="space-y-4 mb-6">
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800">Strength:</strong>
+                How do you compare to the world’s strongest elite?
+              </p>
+            </div>
+          </div>
 
-        <p
-          class="text-black-600 text-sm sm:text-base leading-relaxed font-light mt-2"
-        >
-Our objective transcends theoretical description. We are actively engineering super soldiers with verifiable mutant-class abilities, focusing on the power to warp and control reality. This is not a descriptive exercise; it is a construction mandate to build superhumans.
-        </p>
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800">Speed:</strong> How
+                fast are you under peak physiological load?
+              </p>
+            </div>
+          </div>
 
-        <p
-          class="text-black-600 text-sm sm:text-base leading-relaxed font-light mt-2"
-        >
-          This method allows for integrated enhancements that are indistinguishable from natural biology. We are not creating augmented humans; we are defining the next stage of human potential, built on a complete understanding of the body's most basic commands.
-        </p>
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800">Endurance:</strong>
+                How has super-soldier endurance enhancement improved sustained
+                performance?
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800"
+                  >Regeneration:</strong
+                >
+                How has augmented metabolic recovery accelerated your return to
+                peak output?
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800">Durability:</strong>
+                How does your structural resilience compare to elite-level
+                conditioning?
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start">
+            <div class="flex-shrink-0">
+              <svg
+                class="h-6 w-6 text-indigo-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                />
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-base text-gray-600 font-light">
+                <strong class="font-semibold text-gray-800"
+                  >Pain Threshold:</strong
+                >
+                How has your tolerance evolved under neural pain-dampening
+                protocols?
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
     </div>
   </div>
 </section>
 
- <!-- Footer -->
+<!-- Technological Development Snapshot Section -->
+<section id="tech-development-snapshot" class="py-16 bg-gray-50 w-full">
+
+  <!-- Section Heading -->
+  <div class="text-center px-6 md:px-12 mb-8">
+    <h2 class="text-3xl sm:text-4xl font-bold text-black">
+      Technological Development Snapshot
+    </h2>
+  </div>
+
+  <!-- Overview Paragraph -->
+  <div class="max-w-[120rem] mx-auto px-6 mb-12 text-left">
+    <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+Our super soldier program has entered an advanced stage of applied research. This new phase marks a fundamental shift from simple augmentation to total metamorphosis. The protocol begins with the AECION Compound Omega, which installs a new biological system to produce 'super-cells.' This system then leverages the body's natural cellular turnover, systematically replacing all native human cells, tissues, and organ systems. Physical exercise acts as the key catalyst, inducing and accelerating this cellular turnover to drive the rapid, full-body conversion.
+    </p>
+  </div>
+
+  <!-- Development Highlights Cards Row -->
+  <div class="grid sm:grid-cols-3 gap-8 items-start max-w-[120rem] mx-auto px-6">
+
+<!-- Card 1 -->
+<div class="fade-in flex flex-col items-center text-center">
+  <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden rounded-xl">
+    <img src="/images/techsnapshot_1.png" alt="Serum-Induced Transformation" class="w-full h-64 object-cover">
+  </div>
+  <h3 class="mt-6 text-xl font-bold text-black">Serum-Induced Transformation</h3>
+  <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+First, AECION Compound Omega establishes a self-integrating framework within the body’s natural cell turnover cycle. As cells regenerate, the serum orchestrates tissue remodeling, systematically replacing ordinary human cells with super soldier cells. This gradual, directed process reshapes cellular architecture and function, progressively transforming the body at the molecular level into a fully integrated super soldier framework.
+  </p>
+</div>
+
+<!-- Card 2 -->
+<div class="fade-in flex flex-col items-center text-center">
+  <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden rounded-xl">
+    <img src="/images/techsnapshot_2.png" alt="Regenerative Remodeling" class="w-full h-64 object-cover">
+  </div>
+  <h3 class="mt-6 text-xl font-bold text-black">Regenerative Remodeling</h3>
+  <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+Cell turnover is the body’s natural process of replacing old or damaged cells with new ones. In the context of the serum, this cycle is harnessed and guided: as old cells are cleared, new super soldier cells are generated, integrating enhanced genetic programs and optimized tissue structure. Over successive cycles, this directed replacement gradually remodels the body, transforming conventional tissue into high-performance, superhuman cellular systems.
+  </p>
+</div>
+
+
+<div class="fade-in flex flex-col items-center text-center">
+      <div class="relative shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 w-full overflow-hidden rounded-xl">
+        <img src="/images/techsnapshot_3.png" alt="Exercise-Driven Cellular Integration" class="w-full h-64 object-cover">
+      </div>
+      <h3 class="mt-6 text-xl font-bold text-black">Exercise-Driven Cellular Integration</h3>
+      <p class="mt-2 text-gray-700 leading-relaxed max-w-sm">
+By leveraging exercise-stimulated muscle protein synthesis, the body’s cellular turnover is optimized. Super soldier cells, inherently more resilient than normal tissue, survive exercise-induced stress while conventional cells incur greater microdamage. As damaged normal cells are replaced, the relative concentration of super soldier cells gradually increases, eventually dominating the tissue and transforming the muscle matrix into a predominantly super soldier cellular structure.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Super Soldier Program Success Section -->
+<section id="super-soldier-success" class="py-16 bg-black w-full">
+
+  <!-- Success Heading -->
+  <div class="max-w-[120rem] mx-auto px-6 mb-8 text-center">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+      The successes of our super soldier program
+    </h2>
+  </div>
+
+<!-- === GRAPH INSERTED HERE === -->
+  <div class="max-w-6xl mx-auto bg-gray-900 rounded-lg shadow-xl p-6 md:p-8">
+      <h1 class="text-2xl md:text-3xl font-bold mb-2 text-cyan-400">Validation Protocol: Diagnostic Graph</h1>
+      <p class="text-lg text-gray-300 mb-6">Subject: Subject Zero (Validation Date: Sept. 30, 2025)</p>
+      
+      <div class="bg-gray-700 p-4 rounded-lg">
+          <canvas id="validationChart"></canvas>
+      </div>
+  
+      <!-- Analysis Section -->
+      <div class="mt-8">
+          <h2 class="text-xl md:text-2xl font-semibold mb-4 text-cyan-400">Data Analysis: The "Smoking Gun"</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Left Column: What the graph shows -->
+              <div class="bg-gray-700 p-6 rounded-lg">
+                  <h3 class="text-lg font-semibold mb-3">What This Graph Shows</h3>
+                  <p class="text-gray-300">
+                      <span class="font-bold text-blue-400">The blue bars</span> represent the total physical work done per set (Weight x Reps). Note that the work output is massive, with sets exceeding 10,000 lbs of total volume.
+                      <br><br>
+                      <span class="font-bold text-red-400">The red line</span> represents the peak heart rate during that same set.
+                  </p>
+              </div>
+              <!-- Right Column: The Impossible Conclusion -->
+              <div class="bg-gray-700 p-6 rounded-lg border-2 border-red-500">
+                  <h3 class="text-lg font-semibold mb-3 text-red-400">The Impossible Conclusion</h3>
+                  <p class="text-gray-300">
+                      For a normal human, the red line (Heart Rate) would spike to 170-190+ bpm to match the blue bars (Work).
+                      <br><br>
+                      <span class="font-bold text-white">This graph proves the system's core premise:</span> The subject's heart rate remains at a resting level (79-117 bpm) despite a superhuman workload.
+                      <br><br>
+                      <span class="font-bold text-cyan-400">This is the visual proof. The cardiovascular system is under zero stress. This data confirms the validation.</span>
+                  </sppan>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- === END OF GRAPH INSERTION === -->
+
+</section>
+
+
+<!-- === QUOTATION SECTION INSERTED HERE === -->
+<section id="super-soldier-quote" class="py-16 bg-white w-full">
+  
+  <!-- Quotation Paragraphs -->
+  <div class="max-w-[120rem] mx-auto px-6 mb-4 text-center">
+    <p class="text-base sm:text-lg md:text-xl text-black leading-relaxed font-serif">
+      "We always knew that creating super soldiers required fundamentally altering human physiology. Superhuman strength requires superhuman muscles. Superpowers require super cells. To achieve this, our first iteration of the AECION Compound Omega established a self-integrating scaffolding system, driving transformation through controlled cellular turnover and bypassing the high fatality rates of traditional super soldier serums. Through the serum, we have created a super soldier capable of controlling storms, wielding psychic powers like Charles Xavier and Jean Grey, manipulating electromagnetism like Magneto, and directing volcanic and seismic activity. Yet vast frontiers remain, including 'Deadpool-class' and 'Wolverine-class' regenerative abilities.."
+    </p>
+    <p class="text-base sm:text-lg md:text-xl text-black leading-relaxed font-serif mt-6">
+      "This is our view of super soldiers."
+    </p>
+  </div>
+
+</section>
+
+
+  <!-- Attribution -->
+  <div class="max-w-[120rem] mx-auto px-6 text-left bg-white pb-16">
+    <p class="text-sm sm:text-base text-black font-serif font-light">
+      — The Black Technology Department, AECION
+    </p>
+  </div>
+<!-- === END OF QUOTATION SECTION === -->
+
+
+<!-- === FOOTER INSERTED HERE === -->
   <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
     <div class="mb-4 flex justify-center flex-wrap gap-4">
       <a href="/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
@@ -687,13 +975,18 @@ Our objective transcends theoretical description. We are actively engineering su
     </div>
     <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
     <div class="flex justify-center gap-4 mb-4">
-      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
-      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
-      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6" onerror="this.style.display='none'"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6" onerror="this.style.display='none'"></a>
+      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6" onerror="this.style.display='none'"></a>
     </div>
     <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
+<!-- === END OF FOOTER === -->
 
+<!-- Optional: Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- === COMBINED SCRIPT BLOCKS === -->
 <script>
   // Fade-in animations
   const fadeEls = document.querySelectorAll('.fade-in');
@@ -763,6 +1056,153 @@ Our objective transcends theoretical description. We are actively engineering su
     }
   }
 
+
+</script>
+
+<!-- Graph Script -->
+<script>
+  const ctx = document.getElementById('validationChart').getContext('2d');
+  
+  // Data from the user's log (Sept 30, 2025 workout)
+  const labels = [
+      'Bench: 295x15',
+      'Bench: 215x59',
+      'Bench: 135x52',
+      'Pec Fly: 50x225',
+      'Pec Fly: 60x100',
+      'Bench: 135x80',
+      'Bench: 215x21'
+  ];
+  
+  const workData = [
+      295 * 15, // 4425
+      215 * 59, // 12685
+      135 * 52, // 7020
+      50 * 225, // 11250
+      60 * 100, // 6000
+      135 * 80, // 10800
+      215 * 21  // 4515
+  ];
+  
+  const heartRateData = [
+      79,
+      85,
+      106,
+      101,
+      117,
+      92,
+      89
+  ];
+
+  // Chart.js configuration
+  new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: labels,
+          datasets: [
+              {
+                  label: 'Work Done (Lbs x Reps)',
+                  data: workData,
+                  backgroundColor: 'rgba(59, 130, 246, 0.7)', // Blue
+                  borderColor: 'rgba(59, 130, 246, 1)',
+                  borderWidth: 1,
+                  yAxisID: 'yWork'
+              },
+              {
+                  label: 'Heart Rate (BPM)',
+                  data: heartRateData,
+                  type: 'line',
+                  fill: false,
+                  backgroundColor: 'rgba(248, 113, 113, 1)', // Red
+                  borderColor: 'rgba(248, 113, 113, 1)',
+                  tension: 0.1,
+                  yAxisID: 'yHeartRate'
+              }
+          ]
+      },
+      options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          scales: {
+              x: {
+                  ticks: {
+                      color: 'white'
+                  },
+                  grid: {
+                      color: 'rgba(255, 255, 255, 0.1)'
+                  }
+              },
+              yWork: { // Y-axis for Work
+                  type: 'linear',
+                  position: 'left',
+                  beginAtZero: true,
+                  title: {
+                      display: true,
+                      text: 'Work Done (Volume in Lbs)',
+                      color: 'white',
+                      font: {
+                          size: 16
+                      }
+                  },
+                  ticks: {
+                      color: 'white'
+                  },
+                  grid: {
+                      color: 'rgba(255, 255, 255, 0.1)'
+                  }
+              },
+              yHeartRate: { // Y-axis for Heart Rate
+                  type: 'linear',
+                  position: 'right',
+                  beginAtZero: false,
+                  suggestedMin: 60,
+                  suggestedMax: 200,
+                  title: {
+                      display: true,
+                      text: 'Heart Rate (BPM)',
+                      color: 'white',
+                      font: {
+                          size: 16
+                      }
+                  },
+                  ticks: {
+                      color: 'white'
+                  },
+                  grid: {
+                      drawOnChartArea: false, // Only show grid for the 'Work' axis
+                  }
+              }
+          },
+          plugins: {
+              legend: {
+                  labels: {
+                      color: 'white',
+                      font: {
+                          size: 14
+                      }
+                  }
+              },
+              tooltip: {
+                  mode: 'index',
+                  intersect: false,
+                  callbacks: {
+                      label: function(context) {
+                          let label = context.dataset.label || '';
+                          if (label) {
+                              label += ': ';
+                          }
+                          if (context.dataset.yAxisID === 'yHeartRate') {
+                              label += context.parsed.y + ' bpm';
+                          } else {
+                              label += context.parsed.y.toLocaleString() + ' lbs';
+                          }
+                          return label;
+                      }
+                  }
+              }
+          }
+      }
+  });
 
 </script>
 
