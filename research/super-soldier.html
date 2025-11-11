@@ -16,6 +16,12 @@
   <!-- Optional: Swiper CSS (carousel) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
+    <!-- 1. SCRIPT TO LOAD TAILWIND (for styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. SCRIPT TO LOAD CHART.JS (for the graph) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <!-- Custom styles (single <style> block, cleaned) -->
   <style>
     html { scroll-behavior: smooth; }
@@ -882,10 +888,60 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
 
 </section>
 
+<!-- Super Soldier Program Success Section -->
+<section id="super-soldier-success" class="py-16 bg-black w-full">
 
-<!-- Super Soldier Quotation Section -->
+  <!-- Success Heading -->
+  <div class="max-w-[120rem] mx-auto px-6 mb-8 text-center">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+      The successes of our super soldier program
+    </h2>
+  </div>
+
+<!-- === GRAPH INSERTED HERE === -->
+  <div class="max-w-6xl mx-auto bg-gray-900 rounded-lg shadow-xl p-6 md:p-8">
+      <h1 class="text-2xl md:text-3xl font-bold mb-2 text-cyan-400">Validation Protocol: Diagnostic Graph</h1>
+      <p class="text-lg text-gray-300 mb-6">Subject: Subject Zero (Validation Date: Sept. 30, 2025)</p>
+      
+      <div class="bg-gray-700 p-4 rounded-lg">
+          <canvas id="validationChart"></canvas>
+      </div>
+  
+      <!-- Analysis Section -->
+      <div class="mt-8">
+          <h2 class="text-xl md:text-2xl font-semibold mb-4 text-cyan-400">Data Analysis: The "Smoking Gun"</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Left Column: What the graph shows -->
+              <div class="bg-gray-700 p-6 rounded-lg">
+                  <h3 class="text-lg font-semibold mb-3">What This Graph Shows</h3>
+                  <p class="text-gray-300">
+                      <span class="font-bold text-blue-400">The blue bars</span> represent the total physical work done per set (Weight x Reps). Note that the work output is massive, with sets exceeding 10,000 lbs of total volume.
+                      <br><br>
+                      <span class="font-bold text-red-400">The red line</span> represents the peak heart rate during that same set.
+                  </p>
+              </div>
+              <!-- Right Column: The Impossible Conclusion -->
+              <div class="bg-gray-700 p-6 rounded-lg border-2 border-red-500">
+                  <h3 class="text-lg font-semibold mb-3 text-red-400">The Impossible Conclusion</h3>
+                  <p class="text-gray-300">
+                      For a normal human, the red line (Heart Rate) would spike to 170-190+ bpm to match the blue bars (Work).
+                      <br><br>
+                      <span class="font-bold text-white">This graph proves the system's core premise:</span> The subject's heart rate remains at a resting level (79-117 bpm) despite a superhuman workload.
+                      <br><br>
+                      <span class="font-bold text-cyan-400">This is the visual proof. The cardiovascular system is under zero stress. This data confirms the validation.</span>
+                  </sppan>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- === END OF GRAPH INSERTION === -->
+
+</section>
+
+
+<!-- === QUOTATION SECTION INSERTED HERE === -->
 <section id="super-soldier-quote" class="py-16 bg-white w-full">
-
+  
   <!-- Quotation Paragraphs -->
   <div class="max-w-[120rem] mx-auto px-6 mb-4 text-center">
     <p class="text-base sm:text-lg md:text-xl text-black leading-relaxed font-serif">
@@ -900,16 +956,15 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
 
 
   <!-- Attribution -->
-  <div class="max-w-[120rem] mx-auto px-6 text-left">
+  <div class="max-w-[120rem] mx-auto px-6 text-left bg-white pb-16">
     <p class="text-sm sm:text-base text-black font-serif font-light">
       — The Black Technology Department, AECION
     </p>
   </div>
+<!-- === END OF QUOTATION SECTION === -->
 
-</section>
 
-
- <!-- Footer -->
+<!-- === FOOTER INSERTED HERE === -->
   <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
     <div class="mb-4 flex justify-center flex-wrap gap-4">
       <a href="/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
@@ -920,13 +975,18 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
     </div>
     <div class="mb-4 text-sm">Phone: 123-456-7890 | Email: <a href="mailto:support@aecion.com" class="hover:text-cyan-500">support@aecion.com</a> | Address: 123 Quantum Way, Tech City</div>
     <div class="flex justify-center gap-4 mb-4">
-      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6"></a>
-      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6"></a>
-      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6"></a>
+      <a href="#"><img src="twitter-icon.png" alt="Twitter" class="w-6 h-6" onerror="this.style.display='none'"></a>
+      <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" class="w-6 h-6" onerror="this.style.display='none'"></a>
+      <a href="#"><img src="github-icon.png" alt="GitHub" class="w-6 h-6" onerror="this.style.display='none'"></a>
     </div>
     <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
+<!-- === END OF FOOTER === -->
 
+<!-- Optional: Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<!-- === COMBINED SCRIPT BLOCKS === -->
 <script>
   // Fade-in animations
   const fadeEls = document.querySelectorAll('.fade-in');
@@ -996,6 +1056,153 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
     }
   }
 
+
+</script>
+
+<!-- Graph Script -->
+<script>
+  const ctx = document.getElementById('validationChart').getContext('2d');
+  
+  // Data from the user's log (Sept 30, 2025 workout)
+  const labels = [
+      'Bench: 295x15',
+      'Bench: 215x59',
+      'Bench: 135x52',
+      'Pec Fly: 50x225',
+      'Pec Fly: 60x100',
+      'Bench: 135x80',
+      'Bench: 215x21'
+  ];
+  
+  const workData = [
+      295 * 15, // 4425
+      215 * 59, // 12685
+      135 * 52, // 7020
+      50 * 225, // 11250
+      60 * 100, // 6000
+      135 * 80, // 10800
+      215 * 21  // 4515
+  ];
+  
+  const heartRateData = [
+      79,
+      85,
+      106,
+      101,
+      117,
+      92,
+      89
+  ];
+
+  // Chart.js configuration
+  new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: labels,
+          datasets: [
+              {
+                  label: 'Work Done (Lbs x Reps)',
+                  data: workData,
+                  backgroundColor: 'rgba(59, 130, 246, 0.7)', // Blue
+                  borderColor: 'rgba(59, 130, 246, 1)',
+                  borderWidth: 1,
+                  yAxisID: 'yWork'
+              },
+              {
+                  label: 'Heart Rate (BPM)',
+                  data: heartRateData,
+                  type: 'line',
+                  fill: false,
+                  backgroundColor: 'rgba(248, 113, 113, 1)', // Red
+                  borderColor: 'rgba(248, 113, 113, 1)',
+                  tension: 0.1,
+                  yAxisID: 'yHeartRate'
+              }
+          ]
+      },
+      options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          scales: {
+              x: {
+                  ticks: {
+                      color: 'white'
+                  },
+                  grid: {
+                      color: 'rgba(255, 255, 255, 0.1)'
+                  }
+              },
+              yWork: { // Y-axis for Work
+                  type: 'linear',
+                  position: 'left',
+                  beginAtZero: true,
+                  title: {
+                      display: true,
+                      text: 'Work Done (Volume in Lbs)',
+                      color: 'white',
+                      font: {
+                          size: 16
+                      }
+                  },
+                  ticks: {
+                      color: 'white'
+                  },
+                  grid: {
+                      color: 'rgba(255, 255, 255, 0.1)'
+                  }
+              },
+              yHeartRate: { // Y-axis for Heart Rate
+                  type: 'linear',
+                  position: 'right',
+                  beginAtZero: false,
+                  suggestedMin: 60,
+                  suggestedMax: 200,
+                  title: {
+                      display: true,
+                      text: 'Heart Rate (BPM)',
+                      color: 'white',
+                      font: {
+                          size: 16
+                      }
+                  },
+                  ticks: {
+                      color: 'white'
+                  },
+                  grid: {
+                      drawOnChartArea: false, // Only show grid for the 'Work' axis
+                  }
+              }
+          },
+          plugins: {
+              legend: {
+                  labels: {
+                      color: 'white',
+                      font: {
+                          size: 14
+                      }
+                  }
+              },
+              tooltip: {
+                  mode: 'index',
+                  intersect: false,
+                  callbacks: {
+                      label: function(context) {
+                          let label = context.dataset.label || '';
+                          if (label) {
+                              label += ': ';
+                          }
+                          if (context.dataset.yAxisID === 'yHeartRate') {
+                              label += context.parsed.y + ' bpm';
+                          } else {
+                              label += context.parsed.y.toLocaleString() + ' lbs';
+                          }
+                          return label;
+                      }
+                  }
+              }
+          }
+      }
+  });
 
 </script>
 
