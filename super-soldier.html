@@ -888,30 +888,26 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
 
 </section>
 
-<!-- Super Soldier Program Success Section -->
+<!-- === GRAPH INSERTED HERE === -->
 <section id="super-soldier-success" class="py-16 bg-black w-full">
 
-  <!-- Success Heading -->
   <div class="max-w-[120rem] mx-auto px-6 mb-8 text-center">
     <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
       The successes of our super soldier program
     </h2>
   </div>
 
-<!-- === GRAPH INSERTED HERE === -->
-  <div class="max-w-6xl mx-auto bg-gray-900 rounded-lg shadow-xl p-6 md:p-8">
+<div class="max-w-6xl mx-auto bg-gray-900 rounded-lg shadow-xl p-6 md:p-8">
       <h1 class="text-2xl md:text-3xl font-bold mb-2 text-cyan-400">Validation Protocol: Diagnostic Graph</h1>
-      <p class="text-lg text-gray-300 mb-6">Subject: Subject Zero (Validation Date: Sept. 30, 2025)</p>
+      <p class="text-lg text-gray-300 mb-6">Subject: Subject Zero (Validation Date: Sept. 30, 2025)| 1 hour and 30 minutes</p>
       
       <div class="bg-gray-700 p-4 rounded-lg">
           <canvas id="validationChart"></canvas>
       </div>
   
-      <!-- Analysis Section -->
       <div class="mt-8">
           <h2 class="text-xl md:text-2xl font-semibold mb-4 text-cyan-400">Data Analysis: The "Smoking Gun"</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <!-- Left Column: What the graph shows -->
               <div class="bg-gray-700 p-6 rounded-lg">
                   <h3 class="text-lg font-semibold mb-3">What This Graph Shows</h3>
                   <p class="text-gray-300">
@@ -920,7 +916,6 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
                       <span class="font-bold text-red-400">The red line</span> represents the peak heart rate during that same set.
                   </p>
               </div>
-              <!-- Right Column: The Impossible Conclusion -->
               <div class="bg-gray-700 p-6 rounded-lg border-2 border-red-500">
                   <h3 class="text-lg font-semibold mb-3 text-red-400">The Impossible Conclusion</h3>
                   <p class="text-gray-300">
@@ -929,20 +924,16 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
                       <span class="font-bold text-white">This graph proves the system's core premise:</span> The subject's heart rate remains at a resting level (79-117 bpm) despite a superhuman workload.
                       <br><br>
                       <span class="font-bold text-cyan-400">This is the visual proof. The cardiovascular system is under zero stress. This data confirms the validation.</span>
-                  </sppan>
+                  </p>
               </div>
           </div>
       </div>
   </div>
-  <!-- === END OF GRAPH INSERTION === -->
-
-</section>
+  </section>
 
 
-<!-- === QUOTATION SECTION INSERTED HERE === -->
 <section id="super-soldier-quote" class="py-16 bg-white w-full">
   
-  <!-- Quotation Paragraphs -->
   <div class="max-w-[120rem] mx-auto px-6 mb-4 text-center">
     <p class="text-base sm:text-lg md:text-xl text-black leading-relaxed font-serif">
       "We always knew that creating super soldiers required fundamentally altering human physiology. Superhuman strength requires superhuman muscles. Superpowers require super cells. To achieve this, our first iteration of the AECION Compound Omega established a self-integrating scaffolding system, driving transformation through controlled cellular turnover and bypassing the high fatality rates of traditional super soldier serums. Through the serum, we have created a super soldier capable of controlling storms, wielding psychic powers like Charles Xavier and Jean Grey, manipulating electromagnetism like Magneto, and directing volcanic and seismic activity. Yet vast frontiers remain, including 'Deadpool-class' and 'Wolverine-class' regenerative abilities.."
@@ -955,17 +946,12 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
 </section>
 
 
-  <!-- Attribution -->
   <div class="max-w-[120rem] mx-auto px-6 text-left bg-white pb-16">
     <p class="text-sm sm:text-base text-black font-serif font-light">
       — The Black Technology Department, AECION
     </p>
   </div>
-<!-- === END OF QUOTATION SECTION === -->
-
-
-<!-- === FOOTER INSERTED HERE === -->
-  <footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
+<footer class="bg-white border-t border-gray-200 py-12 px-6 text-center text-gray-600">
     <div class="mb-4 flex justify-center flex-wrap gap-4">
       <a href="/about-us.html" class="hover:text-cyan-500 transition">About Us</a>
       <a href="/science.html" class="hover:text-cyan-500 transition">Science</a>
@@ -981,44 +967,44 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
     </div>
     <div class="text-sm">&copy; 2025 AECION. All rights reserved.</div>
   </footer>
-<!-- === END OF FOOTER === -->
-
-<!-- Optional: Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-<!-- === COMBINED SCRIPT BLOCKS === -->
 <script>
   // Fade-in animations
   const fadeEls = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
-    });
-  }, { threshold: 0.2 });
-  fadeEls.forEach(el => observer.observe(el));
+  if (fadeEls) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+        });
+      }, { threshold: 0.2 });
+      fadeEls.forEach(el => observer.observe(el));
+  }
 
   // Mobile menu toggle
   const menuToggle = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   let menuOpen = false;
-  menuToggle.addEventListener('click', () => {
-    menuOpen = !menuOpen;
-    menuToggle.classList.toggle('open', menuOpen);
+  if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        menuOpen = !menuOpen;
+        menuToggle.classList.toggle('open', menuOpen);
 
-    if (menuOpen) {
-      mobileMenu.classList.add('open');
-      mobileMenu.style.display = 'block';
-      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-      mobileMenu.style.opacity = '1';
-    } else {
-      mobileMenu.classList.remove('open');
-      mobileMenu.style.maxHeight = '0';
-      mobileMenu.style.opacity = '0';
-      setTimeout(() => {
-        if (!menuOpen) mobileMenu.style.display = 'none';
-      }, 300);
-    }
-  });
+        if (menuOpen) {
+            mobileMenu.classList.add('open');
+            mobileMenu.style.display = 'block';
+            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            mobileMenu.style.opacity = '1';
+        } else {
+            mobileMenu.classList.remove('open');
+            mobileMenu.style.maxHeight = '0';
+            mobileMenu.style.opacity = '0';
+            setTimeout(() => {
+                if (!menuOpen) mobileMenu.style.display = 'none';
+            }, 300);
+        }
+      });
+  }
 
   // Highlight current page
   const currentPath = window.location.pathname;
@@ -1026,7 +1012,7 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
   document.querySelectorAll('#desktop-menu a, #mobile-menu a').forEach(link => {
     const linkHref = link.getAttribute('href');
     if (linkHref === currentPage || linkHref === currentPath) {
-      link.classList.add('font-semibold', 'underline');
+        link.classList.add('font-semibold', 'underline');
     }
   });
 
@@ -1041,169 +1027,186 @@ By leveraging exercise-stimulated muscle protein synthesis, the body’s cellula
 
     // Animate dropdown open/close
     if (isHidden) {
-      dropdown.classList.remove("hidden");
-      dropdown.classList.add("flex");
-      dropdown.style.maxHeight = dropdown.scrollHeight + "px";
-      dropdown.style.transition = "max-height 0.3s ease";
-      if (icon) icon.classList.add("rotate-180");
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("flex");
+        dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+        dropdown.style.transition = "max-height 0.3s ease";
+        if (icon) icon.classList.add("rotate-180");
     } else {
-      dropdown.style.maxHeight = "0";
-      setTimeout(() => {
-        dropdown.classList.add("hidden");
-        dropdown.classList.remove("flex");
-      }, 300);
-      if (icon) icon.classList.remove("rotate-180");
+        dropdown.style.maxHeight = "0";
+        setTimeout(() => {
+            dropdown.classList.add("hidden");
+            dropdown.classList.remove("flex");
+        }, 300);
+        if (icon) icon.classList.remove("rotate-180");
     }
   }
-
-
 </script>
 
-<!-- Graph Script -->
 <script>
-  const ctx = document.getElementById('validationChart').getContext('2d');
+  // Wait for the DOM to be loaded before running the chart script
+  document.addEventListener("DOMContentLoaded", function() {
   
-  // Data from the user's log (Sept 30, 2025 workout)
-  const labels = [
-      'Bench: 295x15',
-      'Bench: 215x59',
-      'Bench: 135x52',
-      'Pec Fly: 50x225',
-      'Pec Fly: 60x100',
-      'Bench: 135x80',
-      'Bench: 215x21'
-  ];
-  
-  const workData = [
-      295 * 15, // 4425
-      215 * 59, // 12685
-      135 * 52, // 7020
-      50 * 225, // 11250
-      60 * 100, // 6000
-      135 * 80, // 10800
-      215 * 21  // 4515
-  ];
-  
-  const heartRateData = [
-      79,
-      85,
-      106,
-      101,
-      117,
-      92,
-      89
-  ];
+    const ctx = document.getElementById('validationChart').getContext('2d');
+    
+    // Data from your full workout log
+    
+    // SOLUTION: Use simple labels for the axis...
+    const labels = [
+        'Set 1', 'Set 2', 'Set 3', 'Set 4', 'Set 5', 'Set 6', 'Set 7', 'Set 8', 'Set 9', 
+        'Set 10', 'Set 11', 'Set 12', 'Set 13', 'Set 14', 'Set 15', 'Set 16', 'Set 17', 'Set 18',
+        'Set 19', 'Set 20', 'Set 21', 'Set 22', 'Set 23', 'Set 24', 'Set 25', 'Set 26', 'Set 27',
+        'Set 28', 'Set 29', 'Set 30', 'Set 31', 'Set 32', 'Set 33', 'Set 34', 'Set 35', 'Set 36', 'Set 37'
+    ];
+    
+    // ...but use detailed raw labels for the HOVER TOOLTIP
+    const rawLabels = [
+        'Bench: 295x15', 'Bench: 215x59', 'Bench: 135x52', 'Bench: 185x12', 'Bench: 225x3',
+        'Bench: 155x40', 'Bench: 215x9', 'Bench: 265x3', 'Bench: 135x40', 'Pec Fly: 50x225',
+        'Pec Fly: 60x100', 'Pec Fly: 70x14', 'Pec Fly: 80x20', 'Pec Fly: 90x30', 'Pec Fly: 40x100',
+        'Pec Fly: 50x101', 'Incline: 135x30', 'Incline: 215x2', 'Incline: 185x8', 'Incline: 135x40',
+        'Pec Fly: 60x108', 'Pec Fly: 70x50', 'Pec Fly: 160x5', 'Pec Fly: 60x20', 'Bench: 135x80',
+        'Pec Fly: 90x32', 'Pec Fly: 40x65', 'Pec Fly: 200x2', 'Incline: 155x17', 'Incline: 175x5',
+        'Incline: 135x11', 'Pec Fly: 50x158', 'Pec Fly: 100x7', 'Pec Fly: 140x5', 'Pec Fly: 50x16',
+        'Bench: 215x21', 'Bench: 135x30'
+    ];
+    
+    // Bar Chart Data: (Weight * Reps)
+    const workData = [
+        4425, 12685, 7020, 2220, 675, 6200, 1935, 795, 5400, 11250,
+        6000, 980, 1600, 2700, 4000, 5050, 4050, 430, 1480, 5400,
+        6480, 3500, 800, 1200, 10800, 2880, 2600, 400, 2635, 875,
+        1485, 7900, 700, 700, 800, 4515, 4050
+    ];
+    
+    // Line Chart Data: (Heart Rate)
+    const heartRateData = [
+        79, 85, 106, 105, 101, 117, 109, 107, 102, 101,
+        117, 101, 107, 111, 101, 100, 98, 111, 92, 104,
+        105, 108, 97, 98, 92, 108, 101, 111, 98, 96,
+        96, 112, 107, 100, 98, 89, 104
+    ];
 
-  // Chart.js configuration
-  new Chart(ctx, {
-      type: 'bar',
-      data: {
-          labels: labels,
-          datasets: [
-              {
-                  label: 'Work Done (Lbs x Reps)',
-                  data: workData,
-                  backgroundColor: 'rgba(59, 130, 246, 0.7)', // Blue
-                  borderColor: 'rgba(59, 130, 246, 1)',
-                  borderWidth: 1,
-                  yAxisID: 'yWork'
-              },
-              {
-                  label: 'Heart Rate (BPM)',
-                  data: heartRateData,
-                  type: 'line',
-                  fill: false,
-                  backgroundColor: 'rgba(248, 113, 113, 1)', // Red
-                  borderColor: 'rgba(248, 113, 113, 1)',
-                  tension: 0.1,
-                  yAxisID: 'yHeartRate'
-              }
-          ]
-      },
-      options: {
-          responsive: true,
-          maintainAspectRatio: true,
-          scales: {
-              x: {
-                  ticks: {
-                      color: 'white'
-                  },
-                  grid: {
-                      color: 'rgba(255, 255, 255, 0.1)'
-                  }
-              },
-              yWork: { // Y-axis for Work
-                  type: 'linear',
-                  position: 'left',
-                  beginAtZero: true,
-                  title: {
-                      display: true,
-                      text: 'Work Done (Volume in Lbs)',
-                      color: 'white',
-                      font: {
-                          size: 16
-                      }
-                  },
-                  ticks: {
-                      color: 'white'
-                  },
-                  grid: {
-                      color: 'rgba(255, 255, 255, 0.1)'
-                  }
-              },
-              yHeartRate: { // Y-axis for Heart Rate
-                  type: 'linear',
-                  position: 'right',
-                  beginAtZero: false,
-                  suggestedMin: 60,
-                  suggestedMax: 200,
-                  title: {
-                      display: true,
-                      text: 'Heart Rate (BPM)',
-                      color: 'white',
-                      font: {
-                          size: 16
-                      }
-                  },
-                  ticks: {
-                      color: 'white'
-                  },
-                  grid: {
-                      drawOnChartArea: false, // Only show grid for the 'Work' axis
-                  }
-              }
-          },
-          plugins: {
-              legend: {
-                  labels: {
-                      color: 'white',
-                      font: {
-                          size: 14
-                      }
-                  }
-              },
-              tooltip: {
-                  mode: 'index',
-                  intersect: false,
-                  callbacks: {
-                      label: function(context) {
-                          let label = context.dataset.label || '';
-                          if (label) {
-                              label += ': ';
-                          }
-                          if (context.dataset.yAxisID === 'yHeartRate') {
-                              label += context.parsed.y + ' bpm';
-                          } else {
-                              label += context.parsed.y.toLocaleString() + ' lbs';
-                          }
-                          return label;
-                      }
-                  }
-              }
-          }
-      }
-  });
-
+    // Chart.js configuration
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Work Done (Lbs x Reps)',
+                    data: workData,
+                    backgroundColor: 'rgba(59, 130, 246, 0.7)', // Blue
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 1,
+                    yAxisID: 'yWork'
+                },
+                {
+                    label: 'Heart Rate (BPM)',
+                    data: heartRateData,
+                    type: 'line',
+                    fill: false,
+                    backgroundColor: 'rgba(248, 113, 113, 1)', // Red
+                    borderColor: 'rgba(248, 113, 113, 1)',
+                    tension: 0.1,
+                    yAxisID: 'yHeartRate'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                x: {
+                    ticks: {
+                        color: 'white',
+                        // Hide most labels to prevent crowding
+                        callback: function(value, index, values) {
+                           return (index % 5 === 0) ? 'Set ' + (index + 1) : ''; // Only show every 5th label
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
+                yWork: { // Y-axis for Work
+                    type: 'linear',
+                    position: 'left',
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Work Done (Volume in Lbs)',
+                        color: 'white',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    ticks: {
+                        color: 'white'
+                    },
+                    grid: {
+                        color: 'rgba(255, 255, 255, 0.1)'
+                    }
+                },
+                yHeartRate: { // Y-axis for Heart Rate
+                    type: 'linear',
+                    position: 'right',
+                    beginAtZero: false,
+                    suggestedMin: 60,
+                    suggestedMax: 140, // Changed from 200 to "zoom in" on your 79-117 range
+                    title: {
+                        display: true,
+                        text: 'Heart Rate (BPM)',
+                        color: 'white',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    ticks: {
+                        color: 'white'
+                    },
+                    grid: {
+                        drawOnChartArea: false, // Only show grid for the 'Work' axis
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: 'white',
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                    callbacks: {
+                        // This custom callback shows the 'rawLabel' as the title
+                        title: function(tooltipItems) {
+                            const index = tooltipItems[0].dataIndex;
+                            return rawLabels[index];
+                        },
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.dataset.yAxisID === 'yHeartRate') {
+                                label += context.parsed.y + ' bpm';
+                            } else {
+                                label += context.parsed.y.toLocaleString() + ' lbs';
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+  
+  }); // End of DOMContentLoaded
 </script>
 
 </body>
