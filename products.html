@@ -264,6 +264,7 @@ body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
   </div>
 </section>
 
+<!-- Table Section -->
 <section id="pipeline" class="py-20 px-6 fade-in bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 text-white">
   <div class="max-w-6xl mx-auto">
     <h2 class="text-3xl sm:text-4xl font-bold mb-10 text-center">Our Pipeline</h2>
@@ -972,6 +973,45 @@ Vampiric vision is a revolutionary sensory augmentation that elevates human sigh
     <span class="font-semibold text-white text-lg">Description</span>:
     <p class="mt-2">
 "He Does the Body Good" is a profound somatic ability that elevates human sensation beyond all natural limits. It empowers an individual to experience a potent, full-body orgasmic response through simple, non-traditional touch. Granting an immediate climax within minutes, this singular gift bypasses conventional arousal triggers, activating unparalleled ecstasy from contact points like the hands, feet, or back. With the extraordinary power to induce a state described as "heavenly," this ability reveals previously hidden neurological pathways of pleasure, unlocking entirely new dimensions of euphoria and transforming the way individuals experience their own capacity for bliss.
+    </p>
+  </div>
+</div>
+
+<!-- Row: Temporary Singing Buff -->
+<div x-data="{ open: false }" class="bg-white/10 rounded-lg overflow-hidden mt-4">
+  <button @click="open = !open" class="w-full grid grid-cols-1 md:grid-cols-5 gap-y-4 md:gap-y-0 items-start px-6 py-4 text-left focus:outline-none">
+    <div class="flex items-start gap-2">
+      <svg :class="{ 'rotate-180': open }" class="w-5 h-5 transition-transform duration-300 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+      <span class="font-medium"> Aurea Vox</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Therapeutic Area</span>
+      <span>Vocal Enhancement</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Potential Use</span>
+      <span>Voice Modulation</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Status</span>
+      <span>Field test</span>
+    </div>
+
+    <div class="flex justify-between items-start md:block">
+      <span class="font-semibold text-sm uppercase tracking-wide md:hidden text-gray-300">Modality</span>
+      <span>Vocal Performance</span>
+    </div>
+  </button>
+
+  <div x-show="open" x-collapse class="px-6 pb-4 text-base leading-relaxed text-gray-100">
+    <span class="font-semibold text-white text-lg">Description</span>:
+    <p class="mt-2">
+This modality is a targeted human enhancement that temporarily elevates the singing potential of an individual performer. By augmenting vocal resonance, respiratory control, and neuromuscular precision, it enables singers to achieve expanded range, sustained tonal stability, and heightened expressive power during the enhancement window. The effect is transient, optimized for performance contexts, and carefully calibrated to preserve vocal health while unlocking peak artistic capability.
     </p>
   </div>
 </div>
