@@ -7,16 +7,12 @@
   <meta name="description" content="Discover how AECION develops transformative technologies through neuroscience, computational modeling, and biological innovation.">
   <link rel="stylesheet" href="/styles.css" />
 
- <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Optional: Swiper CSS (carousel) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
 
-  <!-- Custom styles (single <style> block, cleaned) -->
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; }
@@ -85,25 +81,22 @@
       background-color: rgba(0, 0, 0, 0.2);
       border-radius: 3px;
     }
-    var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,   // only show ONE slide at a time
-  allowTouchMove: false, // disable manual dragging/swiping
-  effect: "fade",     // fade transition
-  speed: 600          // optional: smooth transition speed
-});
-.swiper {
-  width: 100%;
-  height: 100%;
-}
 
-.swiper-slide {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.mySwiper, .swiper-wrapper, .swiper-slide {
-  height: 100%;
-}
+    /* Swiper Base Layout Fixes */
+    .swiper { width: 100%; height: 100%; }
+    .swiper-slide { display: flex; flex-direction: column; justify-content: center; }
+    .mySwiper, .swiper-wrapper, .swiper-slide { height: 100%; }
+
+    /* Responsive Slide Layout Fixes for 'Clinicals to Market' */
+    .responsive-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+    .row-label { font-size: 0.95rem; color: #ffffff; font-weight: 600; flex-shrink: 0; letter-spacing: 0.5px; width: 220px; }
+    .row-text { margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right; }
+
+    @media (max-width: 768px) {
+        .responsive-row { flex-direction: column; gap: 4px; }
+        .row-label { width: 100%; }
+        .row-text { text-align: left; }
+    }
   </style>
 </head>
 
@@ -585,29 +578,29 @@ We discover potent bioactive compounds found in nature and refine them into clin
 
             <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: flex-start; opacity: 0; transition: opacity 0.5s ease-in-out; z-index: 1; pointer-events: none;">
                 <div style="background-color: transparent; padding: 20px 0px; width: 100%; box-sizing: border-box; text-align: left;">
-                    <h3 style="font-size: 1.85rem; margin-top: 0; margin-bottom: 16px; letter-spacing: 0.5px; font-weight: 600;">Active Pipeline</h3>
+                    <h3 style="font-size: 1.85rem; margin-top: 0; margin-bottom: 16px; letter-spacing: 0.5px; font-weight: 600;">CLINICALS TO MARKET</h3>
                     <p style="font-size: 0.95rem; line-height: 1.6; margin: 0; color: #e0e0e0; font-weight: 300;">
-                        Our goal is full market deployment. We validate the physical prototype, scale production, and secure the underlying intellectual property to ensure each breakthrough transitions from experimental asset to commercial, market‑ready solution. We classify our technology by how far into the future its originating science exists.
+Our goal is full market deployment. We move each candidate through clinical trials and FDA approval so every breakthrough can reach the market as a viable therapeutic.  We classify each program by the time and cost savings achieved across the full development pathway.
                     </p>
                     <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
                         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">NEAR FUTURE</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Science/Technology 0-100 years into the future</p>
+                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">PRECLINICALS</span>
+                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Up to $1–2.6B in savings per candidate by compressing 10 years of preclinical R&D into 10 minutes./ </p>
                         </div>
                         <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
                         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">MID-FUTURE</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Science/Technology 100-500 years into the future</p>
+                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">CLINICAL TRIALS</span>
+                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Knowing a drug’s full preclinical‑to‑FDA outcome upfront secures $1–2.6B in savings and delivers a 10–12 year efficiency gain per candidate.</p>
                         </div>
                         <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
                         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">FAR-FUTURE</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Science/Technology 500-1000 years into the future</p>
+                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">FDA REVIEW & APPROVAL</span>
+                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;"> Eliminating nearly all regulatory risk and securing $500M–$1B in avoided FDA‑related costs.</p>
                         </div>
                         <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
                         <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">DEEP-FUTURE</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Science/Technology 1000+ years into the future</p>
+                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">MARKET DEPLOYMENT</span>
+                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Knowing the full market‑deployment outcome upfront secures $500M–$1.5B in commercial savings and increases deployment efficiency by 5–10×.</p>
                         </div>
                     </div>
                 </div>
