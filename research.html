@@ -15,19 +15,17 @@
 
 <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: #000000; color: #ffffff; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; margin: 0; padding: 0; }
 
-    /* --- NAVIGATION TEXT FIXED TO BLACK (DESKTOP MAIN BAR ONLY) --- */
-    /* Target ONLY top-level main bar links so dropdown items don't turn black */
-    nav > div > a,
-    nav > a,
+    /* --- FIXED NAVIGATION TEXT & DROPDOWN STYLING --- */
+    /* Forces desktop top-level nav links and dropdown triggers to be visible black */
+    header a,
+    nav a, 
     .nav-link, 
-    .dropdown-toggle,
-    header > div > a { 
+    .dropdown-toggle { 
         color: #000000 !important; 
     }
     
-    /* Subtle hover effect for the black nav links */
     nav a:hover, 
     .nav-link:hover { 
         opacity: 0.7; 
@@ -38,12 +36,10 @@
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 
     /* Buttons */
-    .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: #ffffff; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; border: none; cursor: pointer; }
+    .btn-primary { background: linear-gradient(90deg,#00cfff,#8a2be2); color: white; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; border: none; cursor: pointer; }
     .btn-primary:hover { transform: translateY(-2px) scale(1.03); }
-    
-    /* Secondary button: Transparent background with white border for dark mode */
-    .btn-secondary { background: rgba(255, 255, 255, 0.1); color: #ffffff; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.4); cursor: pointer; }
-    .btn-secondary:hover { transform: translateY(-2px) scale(1.03); background: rgba(255, 255, 255, 0.2); }
+    .btn-secondary { background: white; color: black; font-weight: 600; padding: 0.75rem 2rem; border-radius: 0.5rem; transition: all 0.3s ease; border: none; cursor: pointer; }
+    .btn-secondary:hover { transform: translateY(-2px) scale(1.03); filter: brightness(1.05); }
 
     /* Product card hover */
     .product-card:hover { transform: scale(1.02); transition: transform 0.3s ease; }
@@ -55,41 +51,41 @@
     #menu-toggle.open span:nth-child(2) { opacity: 0; }
     #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* Dropdown styling: Deep charcoal background with crisp white links */
+    /* Dropdown styling */
     .dropdown-menu {
       max-height: 400px;
       overflow-y: auto;
       scrollbar-width: thin;
-      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.5);
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
       position: absolute;
       top: 100%;
       left: 0;
-      background: #111111;
-      border: 1px solid #333333;
+      background: white;
+      border: 1px solid #ddd;
       border-radius: 0.5rem;
       width: 14rem;
       z-index: 50;
     }
     .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
     
-    /* FIXED: Explicitly keeping sub-links white inside the dropdown container */
+    /* Explicitly forcing dropdown inner text to be crisp, readable black against the white background */
     .dropdown-menu a,
-    .dropdown-menu div a,
-    .dropdown-menu span { 
-        color: #ffffff !important; 
+    .dropdown-menu span,
+    .dropdown-menu div a { 
         display: block; 
         padding: 0.5rem 1rem; 
+        color: #000000 !important; 
+        transition: background 0.3s; 
         text-decoration: none; 
-        transition: background 0.3s;
     }
-    .dropdown-menu a:hover { background: #222222; color: #00cfff !important; }
+    .dropdown-menu a:hover { background: #f0f0f0; }
 
     /* Scrollbar styling for dropdowns */
     .dropdown-menu::-webkit-scrollbar { width: 6px; }
-    .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(255,255,255,0.2); border-radius: 3px; }
+    .dropdown-menu::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 3px; }
     .dropdown-menu::-webkit-scrollbar-track { background: transparent; }
 
     /* Aspect ratio helper for embedded video */
@@ -102,11 +98,11 @@
       max-height: 300px;
       overflow-y: auto;
       scrollbar-width: thin;
-      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.5);
+      box-shadow: inset 0 -10px 10px -10px rgba(0,0,0,0.2);
     }
     #research-mobile::-webkit-scrollbar, #breakthroughs-mobile::-webkit-scrollbar { width: 6px; }
     #research-mobile::-webkit-scrollbar-thumb, #breakthroughs-mobile::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(0, 0, 0, 0.2);
       border-radius: 3px;
     }
 
@@ -117,13 +113,13 @@
 
     /* --- CAROUSEL FIXES --- */
 
-    /* CSS Grid Wrapper */
+    /* CSS Grid Wrapper: This completely eliminates the need for fixed heights */
     .carousel-text-wrapper {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         width: 100%;
-        max-width: 800px; 
+        max-width: 520px;
         margin-bottom: 40px;
     }
     
@@ -136,49 +132,27 @@
         transition: opacity 0.5s ease-in-out;
     }
 
-    /* Desktop Typography Default Settings */
-    .carousel-slide-content h3 { font-size: 2.5rem; margin: 0 0 16px 0; letter-spacing: 0.5px; font-weight: 600; color: #ffffff; }
-    .carousel-slide-content p.main-text { font-size: 1.1rem; line-height: 1.6; margin: 0 0 30px 0; color: #ffffff; font-weight: 300; }
-    .carousel-divider { border: 0; height: 1px; background: rgba(255,255,255,0.15); margin: 6px 0; }
+    .carousel-slide-content h3 { font-size: 1.85rem; margin: 0 0 16px 0; letter-spacing: 0.5px; font-weight: 600; color: #ffffff; }
+    .carousel-slide-content p.main-text { font-size: 0.95rem; line-height: 1.6; margin: 0 0 20px 0; color: #ffffff; font-weight: 300; }
+    .carousel-divider { border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 6px 0; }
 
-    /* Data Row Layout */
-    .responsive-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 12px 0; }
-    .row-label { font-size: 0.85rem; color: #ffffff; font-weight: 600; flex: 0 0 250px; letter-spacing: 1px; }
-    .row-text { margin: 0; font-size: 0.95rem; color: #ffffff; font-weight: 300; line-height: 1.6; text-align: left; flex: 1; }
+    /* Responsive Slide Layout Fixes for 'Clinicals to Market' and Data Rows */
+    .responsive-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; margin-top: 8px; }
+    .row-label { font-size: 0.95rem; color: #ffffff; font-weight: 600; flex-shrink: 0; letter-spacing: 0.5px; }
+    .row-text { margin: 0; font-size: 0.95rem; color: #ffffff; font-weight: 300; line-height: 1.6; text-align: right; }
 
-    /* Responsive Media Query Breakpoint */
     @media (max-width: 768px) {
-        .carousel-section { 
-            height: auto !important;
-            min-height: 100vh !important;
-        }
-
-        /* Target inner container wrapper padding */
-        .carousel-content-wrapper {
-            padding: 40px 20px 100px 20px !important;
-            min-height: auto !important;
-            justify-content: flex-start !important;
-        }
-
-        /* Mobile Viewport Link Force: Keeps everything white on mobile backgrounds */
+        .carousel-section { padding: 40px 5% 100px 5% !important; }
+        .carousel-slide-content h3 { font-size: 1.5rem; }
+        .responsive-row { flex-direction: column; gap: 4px; align-items: flex-start; }
+        .row-label { width: 100%; font-size: 0.85rem; color: #ccc; }
+        .row-text { text-align: left; width: 100%; }
+        
+        /* If your mobile sliding menu has a black background, switch mobile text to white here */
         #mobile-menu a,
-        #mobile-menu button,
-        .mobile-nav-link {
+        #mobile-menu button {
             color: #ffffff !important;
         }
-
-        /* Shrink typography dynamically on small viewports */
-        .carousel-slide-content h3 { font-size: 1.8rem; color: #ffffff; }
-        .carousel-slide-content p.main-text { font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; color: #ffffff; }
-        
-        /* Pivot structural horizontal layout to vertically stacked elements */
-        .responsive-row { flex-direction: column; gap: 6px; align-items: flex-start; padding: 15px 0; }
-        .row-label { width: 100%; font-size: 0.8rem; color: #ffffff; flex: none; }
-        .row-text { text-align: left; width: 100%; font-size: 0.85rem; color: #ffffff; }
-
-        /* Reposition arrow interfaces for clean alignment */
-        .carousel-btn-prev { left: 10px !important; bottom: 15px !important; width: 35px !important; height: 35px !important; }
-        .carousel-btn-next { right: 10px !important; bottom: 15px !important; width: 35px !important; height: 35px !important; }
     }
 </style>
 </head>
