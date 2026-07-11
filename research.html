@@ -95,7 +95,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         width: 100%;
-        max-width: 520px;
+        max-width: 800px; /* Increased to give your scientific text breathing room on desktop */
         margin-bottom: 40px;
     }
     
@@ -108,21 +108,42 @@
         transition: opacity 0.5s ease-in-out;
     }
 
-    .carousel-slide-content h3 { font-size: 1.85rem; margin: 0 0 16px 0; letter-spacing: 0.5px; font-weight: 600; color: #ffffff; }
-    .carousel-slide-content p.main-text { font-size: 0.95rem; line-height: 1.6; margin: 0 0 20px 0; color: #ffffff; font-weight: 300; }
-    .carousel-divider { border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 6px 0; }
+    /* Desktop Typography Default Settings */
+    .carousel-slide-content h3 { font-size: 2.5rem; margin: 0 0 16px 0; letter-spacing: 0.5px; font-weight: 600; color: #ffffff; }
+    .carousel-slide-content p.main-text { font-size: 1.1rem; line-height: 1.6; margin: 0 0 30px 0; color: #ffffff; font-weight: 300; }
+    .carousel-divider { border: 0; height: 1px; background: rgba(255,255,255,0.15); margin: 6px 0; }
 
-    /* Responsive Slide Layout Fixes for 'Clinicals to Market' and Data Rows */
-    .responsive-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; margin-top: 8px; }
-    .row-label { font-size: 0.95rem; color: #ffffff; font-weight: 600; flex-shrink: 0; letter-spacing: 0.5px; }
-    .row-text { margin: 0; font-size: 0.95rem; color: #ffffff; font-weight: 300; line-height: 1.6; text-align: right; }
+    /* Data Row Layout */
+    .responsive-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 12px 0; }
+    .row-label { font-size: 0.85rem; color: #ffffff; font-weight: 600; flex: 0 0 250px; letter-spacing: 1px; }
+    .row-text { margin: 0; font-size: 0.95rem; color: #ccc; font-weight: 300; line-height: 1.6; text-align: left; flex: 1; }
 
+    /* Responsive Media Query Breakpoint */
     @media (max-width: 768px) {
-        .carousel-section { padding: 40px 5% 100px 5% !important; }
-        .carousel-slide-content h3 { font-size: 1.5rem; }
-        .responsive-row { flex-direction: column; gap: 4px; align-items: flex-start; }
-        .row-label { width: 100%; font-size: 0.85rem; color: #ccc; }
-        .row-text { text-align: left; width: 100%; }
+        .carousel-section { 
+            height: auto !important;
+            min-height: 100vh !important;
+        }
+
+        /* Target inner container wrapper padding to prevent clipping rules on mobile */
+        .carousel-content-wrapper {
+            padding: 40px 20px 100px 20px !important;
+            min-height: auto !important;
+            justify-content: flex-start !important;
+        }
+
+        /* Shrink typography dynamically on small viewports */
+        .carousel-slide-content h3 { font-size: 1.8rem; }
+        .carousel-slide-content p.main-text { font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; }
+        
+        /* Pivot structural horizontal layout to vertically stacked elements */
+        .responsive-row { flex-direction: column; gap: 6px; align-items: flex-start; padding: 15px 0; }
+        .row-label { width: 100%; font-size: 0.8rem; color: #2563eb; flex: none; }
+        .row-text { text-align: left; width: 100%; font-size: 0.85rem; }
+
+        /* Reposition arrow interfaces for clean alignment */
+        .carousel-btn-prev { left: 10px !important; bottom: 15px !important; width: 35px !important; height: 35px !important; }
+        .carousel-btn-next { right: 10px !important; bottom: 15px !important; width: 35px !important; height: 35px !important; }
     }
 </style>
 </head>
@@ -1003,29 +1024,34 @@ Energy is the exploitation of physical substrates, from chemical bonds to photon
 
             <div class="carousel-slide" style="opacity: 0; z-index: 1; pointer-events: none;">
                 <div class="carousel-slide-content">
-                    <h3>Anti‑Aging</h3>
+                    <h3>Entropy</h3>
                     <p class="main-text">
-Our anti‑aging approach takes the most advanced formulations available and systematically identifies biological domains where targeted enhancements can evolve into a more effective intervention.
+We detect entropy changes my measuring how physical processes alter the number of accessible microstates.
                     </p>
                     <div style="display: flex; flex-direction: column;">
                         <div class="responsive-row">
-                            <span class="row-label">IDENTIFY EXISTING AGENT</span>
-                            <p class="row-text">Select the current anti‑aging agent</p>
+                            <span class="row-label">ENTROPY CHANGES</span>
+                            <p class="row-text">Particle Emission · Field Perturbation · Chemical Species Multiplication </p>
                         </div>
                         <hr class="carousel-divider">
                         <div class="responsive-row">
-                            <span class="row-label">MAP ANTI-AGING IN 4D</span>
-                            <p class="row-text">Characterize how rejuvenation unfolds across tissues, pathways, and cellular programs</p>
+                            <span class="row-label">REAL-TIME EVOLUTION OF MICROSTATES</span>
+                            <p class="row-text">Thermal energy redistribution</p>
                         </div>
                         <hr class="carousel-divider">
                         <div class="responsive-row">
-                            <span class="row-label">DEFINE ENHANCEMENT</span>
-                            <p class="row-text">Identify domains where improvement can strengthen performance</p>
+                            <span class="row-label">ENERGY-TRANSFER MODALITIES</span>
+                            <p class="row-text">Nuclear · Chemical · Electromagnetic · Fundamental Force Energy Transfer</p>
                         </div>
                         <hr class="carousel-divider">
                         <div class="responsive-row">
-                            <span class="row-label">CREATE EVOLVED PRODUCT</span>
-                            <p class="row-text">Evolve rejuvenation</p>
+                            <span class="row-label">STRUCTURAL TRANSFORMATIONS</span>
+                            <p class="row-text">Nuclear Deformation · Bond Rearrangement · Lattice Distortion · Phase Transitions</p>
+                        </div>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">ENERGY CASCADES ACROSS MATTER AND SPACETIME</span>
+                            <p class="row-text">Stellar Fusion Waves · Magnetic Reconnection · Accretion Dynamics · Relativistic Jet Formation</p>
                         </div>
                     </div>
                 </div>
