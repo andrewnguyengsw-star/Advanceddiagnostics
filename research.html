@@ -143,10 +143,14 @@
 
     @media (max-width: 768px) {
         .carousel-section { padding: 40px 5% 100px 5% !important; }
-        .carousel-slide-content h3 { font-size: 1.5rem; }
+        
+        /* Font sizes downscaled for mobile layouts */
+        .carousel-slide-content h3 { font-size: 1.25rem; }
+        .carousel-slide-content p.main-text { font-size: 0.85rem; }
+        
         .responsive-row { flex-direction: column; gap: 4px; align-items: flex-start; }
         .row-label { width: 100%; font-size: 0.85rem; color: #ccc; }
-        .row-text { text-align: left; width: 100%; }
+        .row-text { text-align: left; width: 100%; font-size: 0.85rem; }
         
         /* If your mobile sliding menu has a black background, switch mobile text to white here */
         #mobile-menu a,
