@@ -17,6 +17,21 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #000000; color: #ffffff; margin: 0; padding: 0; }
 
+    /* --- NAVIGATION TEXT FIXED TO BLACK --- */
+    /* Target your nav links, dropdown buttons, and header utility text */
+    nav a, 
+    .nav-link, 
+    .dropdown-toggle,
+    header a { 
+        color: #000000 !important; 
+    }
+    
+    /* Optional: Subtle hover effect for the black nav links */
+    nav a:hover, 
+    .nav-link:hover { 
+        opacity: 0.7; 
+    }
+
     /* Fade-in animations */
     .fade-in { opacity: 0; transform: translateY(20px); animation: fadeInUp 1s forwards; animation-play-state: paused; }
     @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
@@ -58,8 +73,8 @@
       z-index: 50;
     }
     .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
-    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: #ffffff; transition: background 0.3s; text-decoration: none; }
-    .dropdown-menu a:hover { background: #222222; color: #00cfff; }
+    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: #ffffff !important; transition: background 0.3s; text-decoration: none; }
+    .dropdown-menu a:hover { background: #222222; color: #00cfff !important; }
 
     /* Scrollbar styling for dropdowns */
     .dropdown-menu::-webkit-scrollbar { width: 6px; }
@@ -140,7 +155,7 @@
         
         /* Pivot structural horizontal layout to vertically stacked elements */
         .responsive-row { flex-direction: column; gap: 6px; align-items: flex-start; padding: 15px 0; }
-        .row-label { width: 100%; font-size: 0.8rem; color: #ffffff; flex: none; } /* FIXED: Blue changed to White */
+        .row-label { width: 100%; font-size: 0.8rem; color: #ffffff; flex: none; }
         .row-text { text-align: left; width: 100%; font-size: 0.85rem; color: #ffffff; }
 
         /* Reposition arrow interfaces for clean alignment */
@@ -305,7 +320,7 @@
 
 
 <!-- Unified Hero Section (Reduced Height, Fixed) -->
-<section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center py-16 px-8 sm:px-12 gap-16">
+<section class="relative min-h-[60vh] grid sm:grid-cols-2 items-center py-16 px-8 sm:px-12 gap-16 bg-black">
   <!-- Left Half: Image -->
   <div class="w-full h-[60vh] sm:h-auto overflow-hidden">
     <img 
@@ -315,25 +330,74 @@
     >
   </div>
 
-  <!-- Right Half: Text (White Background, Black Text, Left-Aligned) -->
-  <div class="flex flex-col justify-center items-start text-left bg-white text-black">
+  <!-- Right Half: Text (Black Background, White Text, Left-Aligned) -->
+  <div class="flex flex-col justify-center items-start text-left bg-black text-white p-6 sm:p-8">
     <!-- Main Title -->
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay:0.2s;">
       How We Develop
     </h1>
 
     <!-- Unified Text Block -->
- <div class="max-w-xl mb-6">
-    <p class="text-sm sm:text-base md:text-lg leading-relaxed fade-in mb-4" style="animation-delay:0.4s;">
-AECION draws knowledge from future timelines and turns it into technologies that advance today’s world.
-    </p>
+    <div class="max-w-xl mb-6">
+      <p class="text-sm sm:text-base md:text-lg leading-relaxed fade-in mb-4" style="animation-delay:0.4s;">
+        AECION draws knowledge from future timelines and turns it into technologies that advance today’s world.
+      </p>
 
-    <p class="text-sm sm:text-base md:text-lg leading-relaxed fade-in" style="animation-delay:0.6s;">
+      <p class="text-sm sm:text-base md:text-lg leading-relaxed fade-in" style="animation-delay:0.6s;">
         Quantum leaping ensures we aren't just pioneering single breakthroughs. Instead, it fuels an active pipeline of future technologies beyond the limits of our imagination.
-    </p>
-</div>
+      </p>
+    </div>
   </div>
 </section>
+
+<!-- START OF SECTION -->
+<section class="py-20 bg-white"> <!-- You can adjust padding and background color -->
+  <div class="container mx-auto px-6 max-w-7xl"> <!-- Main wrapper to keep things centered -->
+    
+    <!-- Your Grid Starts Here -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 fade-in" style="animation-delay: 0.8s;">
+
+      <!-- Card 1 -->
+      <div class="text-center md:text-left">
+        <img src="/images/quantum_leap.png" alt="Discovery of a New Signal" class="w-full h-56 object-cover rounded-xl mb-6 shadow-md">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-3">The Whispered</h3>
+        <p class="text-gray-700 font-light leading-relaxed">
+Our exclusive Whispered initiates the process, reaching centuries to millennia ahead to retrieve unwritten scientific knowledge and fully grasp its principles, applications, and technological impact.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="text-center md:text-left">
+        <img src="/images/data_transformation.png" alt="All matter exists in spacetime" class="w-full h-56 object-cover rounded-xl mb-6 shadow-md">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Data Transformation</h3>
+        <p class="text-gray-700 font-light leading-relaxed">
+Withought scientific language, we map each observation into a physical coordinate system and then create the terminology, theories, and conclusions needed to translate them into today’s scientific framework.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="text-center md:text-left">
+        <img src="/images/waves.png" alt="Wave Propagation" class="w-full h-56 object-cover rounded-xl mb-6 shadow-md">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Materialization</h3>
+        <p class="text-gray-700 font-light leading-relaxed">
+Guided by temporal insight, our teams convert abstract far‑future data into actionable blueprints and working prototypes, engineering solutions centuries ahead of schedule.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="text-center md:text-left">
+        <img src="/images/black_field_prototype.png" alt="Next Generation Sonar/Radar System" class="w-full h-56 object-cover rounded-xl mb-6 shadow-md">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-3">Active Pipeline</h3>
+        <p class="text-gray-700 font-light leading-relaxed">
+Our goal is successful launch to market. To get there, we evaluate the prototype, scale its production, and protect the unique intellectual property behind it. This ensures each breakthrough moves cleanly from experimental asset to a fully commercialized, market‑ready solution.
+        </p>
+      </div>
+
+    </div>
+    
+  </div>
+</section>
+<!-- END OF SECTION -->
 
 <!-- START OF SECTION -->
 <section class="carousel-section section-one" style="position: relative; overflow: hidden; background-color: #000; min-height: 100vh; font-family: sans-serif;">
