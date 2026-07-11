@@ -17,16 +17,17 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #000000; color: #ffffff; margin: 0; padding: 0; }
 
-    /* --- NAVIGATION TEXT FIXED TO BLACK --- */
-    /* Target your nav links, dropdown buttons, and header utility text */
-    nav a, 
+    /* --- NAVIGATION TEXT FIXED TO BLACK (DESKTOP MAIN BAR ONLY) --- */
+    /* Target ONLY top-level main bar links so dropdown items don't turn black */
+    nav > div > a,
+    nav > a,
     .nav-link, 
     .dropdown-toggle,
-    header a { 
+    header > div > a { 
         color: #000000 !important; 
     }
     
-    /* Optional: Subtle hover effect for the black nav links */
+    /* Subtle hover effect for the black nav links */
     nav a:hover, 
     .nav-link:hover { 
         opacity: 0.7; 
@@ -54,7 +55,7 @@
     #menu-toggle.open span:nth-child(2) { opacity: 0; }
     #menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* Dropdown styling: Deep charcoal background with white links */
+    /* Dropdown styling: Deep charcoal background with crisp white links */
     .dropdown-menu {
       max-height: 400px;
       overflow-y: auto;
@@ -73,7 +74,17 @@
       z-index: 50;
     }
     .dropdown:hover .dropdown-menu { opacity: 1; pointer-events: auto; }
-    .dropdown-menu a { display: block; padding: 0.5rem 1rem; color: #ffffff !important; transition: background 0.3s; text-decoration: none; }
+    
+    /* FIXED: Explicitly keeping sub-links white inside the dropdown container */
+    .dropdown-menu a,
+    .dropdown-menu div a,
+    .dropdown-menu span { 
+        color: #ffffff !important; 
+        display: block; 
+        padding: 0.5rem 1rem; 
+        text-decoration: none; 
+        transition: background 0.3s;
+    }
     .dropdown-menu a:hover { background: #222222; color: #00cfff !important; }
 
     /* Scrollbar styling for dropdowns */
@@ -147,6 +158,13 @@
             padding: 40px 20px 100px 20px !important;
             min-height: auto !important;
             justify-content: flex-start !important;
+        }
+
+        /* Mobile Viewport Link Force: Keeps everything white on mobile backgrounds */
+        #mobile-menu a,
+        #mobile-menu button,
+        .mobile-nav-link {
+            color: #ffffff !important;
         }
 
         /* Shrink typography dynamically on small viewports */
