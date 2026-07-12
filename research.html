@@ -17,6 +17,16 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; margin: 0; padding: 0; }
 
+    /* --- IMAGE MOBILE ZOOM & INTERACTION FIX --- */
+    img {
+        -webkit-user-drag: none; /* Prevents dragging */
+        -webkit-touch-callout: none; /* Disables the long-press popup menu on iOS */
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: pan-y; /* Allows vertical scrolling but blocks pinch-to-zoom */
+        pointer-events: none; /* Prevents tap interactions on the image itself */
+    }
+
     /* --- FIXED NAVIGATION TEXT & DROPDOWN STYLING --- */
     /* Forces desktop top-level nav links and dropdown triggers to be visible black */
     header a,
