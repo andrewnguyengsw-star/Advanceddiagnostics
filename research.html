@@ -347,7 +347,8 @@
 </section>
 
 <!-- START OF SECTION -->
-<section class="carousel-section section-one" style="position: relative; overflow: hidden; background-color: #000; min-height: 100vh; font-family: sans-serif;">
+
+<section class="carousel-section section-one" style="position: relative; overflow: hidden; background-color: #000; min-height: 100vh; font-family: sans-serif; display: flex; align-items: center;">
     
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
         <img class="bg-slide" src="/images/time_travel.png" alt="The Whispered" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 1; transition: opacity 0.6s ease-in-out;">
@@ -356,115 +357,122 @@
         <img class="bg-slide" src="/images/black_field_prototype.png" alt="Active Pipeline" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; opacity: 0; transition: opacity 0.6s ease-in-out;">
     </div>
     
-    <div style="position: relative; z-index: 2; min-height: 100vh; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; color: #ffffff; padding: 20px 40px 100px 5%; box-sizing: border-box;">
-        
-        <div style="position: relative; width: 100%; max-width: 520px; height: 540px; overflow: hidden;">
+    <div style="position: relative; z-index: 2; width: 100%; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; color: #ffffff; padding: 20px 40px 100px 5%; box-sizing: border-box;">
+
+        <div class="carousel-text-wrapper">
             
-            <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: flex-start; opacity: 1; transition: opacity 0.5s ease-in-out; z-index: 5;">
-                <div style="background-color: transparent; padding: 20px 0px; width: 100%; box-sizing: border-box; text-align: left;">
-                    <h3 style="font-size: 1.85rem; margin-top: 0; margin-bottom: 16px; letter-spacing: 0.5px; font-weight: 600;">WHISPERED OVERVIEW</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.6; margin: 0 0 20px 0; color: #e0e0e0; font-weight: 300;">
-                        Aecion’s innovators — collectively known as Whispered — are individuals capable of traversing timelines decades to thousands of years beyond Earth’s present. The Whispered represents the most powerful research and development instrument ever conceived, engineered to generate discoveries not only for today or tomorrow, but from the far future itself.
+            <div class="carousel-slide" style="opacity: 1; z-index: 5;">
+                <div class="carousel-slide-content">
+                    <h3>WHISPERED OVERVIEW</h3>
+                    <p class="main-text">
+Aecion’s innovators — collectively known as Whispered — are individuals capable of traversing timelines decades to thousands of years beyond Earth’s present. The Whispered represents the most powerful research and development instrument ever conceived, engineered to generate discoveries not only for today or tomorrow, but from the far future itself.
                     </p>
-                    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">HEIGHT</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">1.75 m / 5'9 ft</p>
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="responsive-row">
+                            <span class="row-label">HEIGHT</span>
+                            <p class="row-text">1.75 m / 5'9 ft</p>
                         </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">SCIENTIFIC SPECIALIZATION</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Natural Sciences</p>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">SCIENTIFIC SPECIALIZATION</span>
+                            <p class="row-text">Natural Sciences</p>
                         </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">TEMPORAL RANGE</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">10–30,000+ years into the future</p>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">TEMPORAL RANGE</span>
+                            <p class="row-text">10–30,000+ years into the future</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="carousel-slide" style="opacity: 0; z-index: 1; pointer-events: none;">
+                <div class="carousel-slide-content">
+                    <h3>DATA TRANSFORMATION</h3>
+                    <p class="main-text">
+ Future‑state discoveries arrive in the modern era where the scientific language to describe them does not yet exist. our teams must reconstruct the missing scientific infrastructure—terminology, models, and experimental frameworks—so these discoveries can be anchored in modern science.
+                    </p>
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="responsive-row">
+                            <span class="row-label">INPUT</span>
+                            <p class="row-text">Future insight arrives</p>
+                        </div>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">TEMPORAL INTEGRATION</span>
+                            <p class="row-text">Anchor future to present</p>
+                        </div>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">THEORY FORMATION</span>
+                            <p class="row-text">Engineer scientific language</p>
+                        </div>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">EXPERIMENTATION</span>
+                            <p class="row-text">Design evidentiary proofing</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: flex-start; opacity: 0; transition: opacity 0.5s ease-in-out; z-index: 1; pointer-events: none;">
-                <div style="background-color: transparent; padding: 20px 0px; width: 100%; box-sizing: border-box; text-align: left;">
-                    <h3 style="font-size: 1.85rem; margin-top: 0; margin-bottom: 16px; letter-spacing: 0.5px; font-weight: 600;">DATA TRANSFORMATION</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.6; margin: 0 0 20px 0; color: #e0e0e0; font-weight: 300;">
-                        Future‑state discoveries arrive in the modern era where the scientific language to describe them does not yet exist. our teams must reconstruct the missing scientific infrastructure—terminology, models, and experimental frameworks—so these discoveries can be anchored in modern science.
+            <div class="carousel-slide" style="opacity: 0; z-index: 1; pointer-events: none;">
+                <div class="carousel-slide-content">
+                    <h3>Materialization</h3>
+                    <p class="main-text">
+Materialization is the reverse‑engineering process that translates a quantum leap in understanding into present‑day technology. Our engineering teams reconstruct abstract, future‑state data into actionable blueprints and functional prototypes that arrive centuries ahead of their intended timeline.
                     </p>
-                    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">INPUT</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Future insight arrives</p>
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="responsive-row">
+                            <span class="row-label">WHISPERED BLUEPRINT</span>
+                            <p class="row-text">A future technology blueprint</p>
                         </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">TEMPORAL INTEGRATION</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Anchor future to present</p>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">ENGINEERING</span>
+                            <p class="row-text">Blueprint translation into modern engineering language</p>
                         </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">THEORY FORMATION</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Engineer scientific language</p>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">PROTOTYPING</span>
+                            <p class="row-text">Transformation into tangible technology</p>
                         </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">EXPERIMENTATION</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Design evidentiary proofing</p>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">THERAPEUTIC INTERVENTION</span>
+                            <p class="row-text">Design therapy that alters aging programs</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: flex-start; opacity: 0; transition: opacity 0.5s ease-in-out; z-index: 1; pointer-events: none;">
-                <div style="background-color: transparent; padding: 20px 0px; width: 100%; box-sizing: border-box; text-align: left;">
-                    <h3 style="font-size: 1.85rem; margin-top: 0; margin-bottom: 16px; letter-spacing: 0.5px; font-weight: 600;">Materialization</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.6; margin: 0; color: #e0e0e0; font-weight: 300;">
-                        Materialization is the reverse‑engineering process that translates a quantum leap in understanding into present‑day technology. Our engineering teams reconstruct abstract, future‑state data into actionable blueprints and functional prototypes that arrive centuries ahead of their intended timeline.
+            <div class="carousel-slide" style="opacity: 0; z-index: 1; pointer-events: none;">
+                <div class="carousel-slide-content">
+                    <h3>Active Pipeline</h3>
+                    <p class="main-text">
+ Our goal is full market deployment. We validate the physical prototype, scale production, and secure the underlying intellectual property to ensure each breakthrough transitions from experimental asset to commercial, market‑ready solution. We classify our technology by how far into the future its originating science exists.
                     </p>
-                    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">WHISPERED BLUEPRINT</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">A future technology blueprint</p>
+                    <div style="display: flex; flex-direction: column;">
+                        <div class="responsive-row">
+                            <span class="row-label">NEAR FUTURE</span>
+                            <p class="row-text">Science/Technology 0-100 years into the future</p>
                         </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">ENGINEERING</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Blueprint translation into modern engineering language</p>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">MID-FUTURE</span>
+                            <p class="row-text">Science/Technology 100-500 years into the future</p>
                         </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">PROTOTYPING</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Transformation into tangible technology</p>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">FAR-FUTURE</span>
+                            <p class="row-text">Science/Technology 500-1000 years into the future</p>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: flex-start; opacity: 0; transition: opacity 0.5s ease-in-out; z-index: 1; pointer-events: none;">
-                <div style="background-color: transparent; padding: 20px 0px; width: 100%; box-sizing: border-box; text-align: left;">
-                    <h3 style="font-size: 1.85rem; margin-top: 0; margin-bottom: 16px; letter-spacing: 0.5px; font-weight: 600;">Active Pipeline</h3>
-                    <p style="font-size: 0.95rem; line-height: 1.6; margin: 0; color: #e0e0e0; font-weight: 300;">
-                        Our goal is full market deployment. We validate the physical prototype, scale production, and secure the underlying intellectual property to ensure each breakthrough transitions from experimental asset to commercial, market‑ready solution. We classify our technology by how far into the future its originating science exists.
-                    </p>
-                    <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">NEAR FUTURE</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Science/Technology 0-100 years into the future</p>
-                        </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">MID-FUTURE</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Science/Technology 100-500 years into the future</p>
-                        </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">FAR-FUTURE</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Science/Technology 500-1000 years into the future</p>
-                        </div>
-                        <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.25); margin: 2px 0;">
-                        <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 20px;">
-                            <span style="font-size: 0.95rem; color: #ffffff; font-weight: 500; flex-shrink: 0; letter-spacing: 0.5px;">DEEP-FUTURE</span>
-                            <p style="margin: 0; font-size: 0.95rem; color: #cccccc; font-weight: 300; line-height: 1.6; text-align: right;">Science/Technology 1000+ years into the future</p>
+                        <hr class="carousel-divider">
+                        <div class="responsive-row">
+                            <span class="row-label">DEEP-FUTURE</span>
+                            <p class="row-text">Science/Technology 1000+ years into the future</p>
                         </div>
                     </div>
                 </div>
@@ -1148,23 +1156,23 @@ Biological systems that operate entirely outside Earth’s scientific constraint
                     </p>
                     <div style="display: flex; flex-direction: column;">
                         <div class="responsive-row">
-                            <span class="row-label">MAP AGING IN 4D</span>
-                            <p class="row-text">Identify the anatomical sites of aging</p>
+                            <span class="row-label">CLASS I</span>
+                            <p class="row-text">Antibiotics</p>
                         </div>
                         <hr class="carousel-divider">
                         <div class="responsive-row">
-                            <span class="row-label">GENE-EXPRESSION LAYER MAPPING</span>
-                            <p class="row-text">Identifying the transcriptional programs, regulatory states, and pathway‑level gene activity that drive aging.</p>
+                            <span class="row-label">CLASS II</span>
+                            <p class="row-text">Vaccines</p>
                         </div>
                         <hr class="carousel-divider">
                         <div class="responsive-row">
-                            <span class="row-label">MAP COORDINATED GENE EXPRESSION</span>
-                            <p class="row-text">Trace how those gene‑expression programs coordinate across tissues and downstream biological systems</p>
+                            <span class="row-label">CLASS III</span>
+                            <p class="row-text">The third immune system</p>
                         </div>
                         <hr class="carousel-divider">
                         <div class="responsive-row">
-                            <span class="row-label">THERAPEUTIC INTERVENTION</span>
-                            <p class="row-text">Design therapy that alters aging programs</p>
+                            <span class="row-label">CLASS IV</span>
+                            <p class="row-text">Augmentation and modulation of Class III itself</p>
                         </div>
                     </div>
                 </div>
@@ -1174,27 +1182,27 @@ Biological systems that operate entirely outside Earth’s scientific constraint
                 <div class="carousel-slide-content">
                     <h3>NON-TERRESTRIAL COGNITION</h3>
                     <p class="main-text">
-Our super serum program stands in a class of its own.
+Cognitive architectures that operate outside of terrestrial brain theory.
                     </p>
                     <div style="display: flex; flex-direction: column;">
                         <div class="responsive-row">
-                            <span class="row-label">NON-SAMPLE IN VIVO MAPPING</span>
-                            <p class="row-text">Mapping the biochemical fate of a compound inside a living organism without requiring physical sampling</p>
+                            <span class="row-label">IMPULSE‑DEFINED BEHAVIORAL ARCHITECTURE</span>
+                            <p class="row-text">Begins when behavior is reduced to its ordered, time‑sequenced neural impulses..</p>
                         </div>
                         <hr class="carousel-divider">
                         <div class="responsive-row">
-                            <span class="row-label">CHARACTERIZATION</span>
-                            <p class="row-text">Define the active transcriptional programs</p>
+                            <span class="row-label">DIFFERENTIATION OF BEHAVIORAL VARIANCE</span>
+                            <p class="row-text">Differentiate variance between behaviors by comparing their impulse‑level structure, temporal ordering, and performance signatures.</p>
                         </div>
                         <hr class="carousel-divider">
                         <div class="responsive-row">
-                            <span class="row-label">MAP COORDINATED EXPRESSION</span>
-                            <p class="row-text">Trace how the super serum recoordinates gene‑expression cascades across tissues and downstream biological system</p>
+                            <span class="row-label">OPTIMIZATION</span>
+                            <p class="row-text">Optimizes behavior toward the upper end of the performance spectrum by engineering impulse‑level improvements, stabilizing high‑performance signatures, and modulating cognitive output.</p>
                         </div>
                         <hr class="carousel-divider">
                         <div class="responsive-row">
-                            <span class="row-label">THERAPEUTIC DEVELOPMENT</span>
-                            <p class="row-text">Determine the receptor classes, binding profiles, biochemical pathways, and nodes to engineer the super serum</p>
+                            <span class="row-label">GENERATION</span>
+                            <p class="row-text">Create entirely new neural circuits, impulse geometries, and behaviors that did not previously exist.</p>
                         </div>
                     </div>
                 </div>
