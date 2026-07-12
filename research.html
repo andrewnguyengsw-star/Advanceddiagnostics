@@ -15,7 +15,7 @@
 
 <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; margin: 0; padding: 0; touch-action: pan-y; }
+    body { font-family: 'Inter', sans-serif; background-color: #fff; color: #000; margin: 0; padding: 0; }
 
     /* --- IMAGE MOBILE ZOOM & INTERACTION FIX --- */
     img {
@@ -25,11 +25,6 @@
         -webkit-user-select: none;
         touch-action: pan-y; /* Allows vertical scrolling but blocks pinch-to-zoom */
         pointer-events: none; /* Prevents tap interactions on the image itself */
-    }
-
-    /* Force images to show full content instead of cropping */
-    .bg-slide {
-        object-fit: contain !important;
     }
 
     /* --- FIXED NAVIGATION TEXT & DROPDOWN STYLING --- */
